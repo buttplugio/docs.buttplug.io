@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["clsx", "npm:1.2.1"],\
             ["docusaurus-plugin-matomo", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:0.0.6"],\
             ["prism-react-renderer", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:1.3.5"],\
+            ["raw-loader", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:4.0.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:17.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"]\
@@ -5864,6 +5865,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["clsx", "npm:1.2.1"],\
             ["docusaurus-plugin-matomo", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:0.0.6"],\
             ["prism-react-renderer", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:1.3.5"],\
+            ["raw-loader", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:4.0.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:17.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"]\
@@ -11924,6 +11926,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["http-errors", "npm:2.0.0"],\
             ["iconv-lite", "npm:0.4.24"],\
             ["unpipe", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["raw-loader", [\
+        ["npm:4.0.2", {\
+          "packageLocation": "./.yarn/cache/raw-loader-npm-4.0.2-94da6c700d-51cc1b0d0e.zip/node_modules/raw-loader/",\
+          "packageDependencies": [\
+            ["raw-loader", "npm:4.0.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:4.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/raw-loader-virtual-71599bf124/0/cache/raw-loader-npm-4.0.2-94da6c700d-51cc1b0d0e.zip/node_modules/raw-loader/",\
+          "packageDependencies": [\
+            ["raw-loader", "virtual:8fb1d0892e54d25cd4db94615f8720411e8e7a44db08002c571b7e9655321617741b6742d71cfe67bbe48baf1e423b933f626924706401f2ba3690c361f14258#npm:4.0.2"],\
+            ["@types/webpack", null],\
+            ["loader-utils", "npm:2.0.4"],\
+            ["schema-utils", "npm:3.1.1"],\
+            ["webpack", null]\
+          ],\
+          "packagePeers": [\
+            "@types/webpack",\
+            "webpack"\
           ],\
           "linkType": "HARD"\
         }]\

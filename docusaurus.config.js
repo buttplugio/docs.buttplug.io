@@ -37,7 +37,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -59,6 +58,24 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+          {
+            type: "doc",
+            docId: "dev-guide/index",
+            label: "Dev Guide",
+            position: "left"
+          },
+          {
+            type: "doc",
+            docId: "spec/index",
+            label: "Protocol Spec",
+            position: "left"
+          },
+          {
+            type: "doc",
+            docId: "stpihkal/index",
+            label: "Device Protocols",
+            position: "left"
+          },
           {
             href: 'https://github.com/buttplugio/buttplug',
             label: 'GitHub',
