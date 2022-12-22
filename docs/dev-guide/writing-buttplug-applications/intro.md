@@ -9,7 +9,7 @@ We'll now cover the minimal amount of information needed to get you up and runni
 This section will cover the absolute minimum functionality you need to get up and running with
 Buttplug. However, the library is far more extensive than this section covers. It is recommended you
 go through this section first, get a simple program up and running with your hardware, then check
-out the [Winning Ways section](/cookbook/intro) for advice on how to structure your application and
+out the [Winning Ways section](/docs/dev-guide/cookbook/intro) for advice on how to structure your application and
 use some of the other features in the library.
 
 ## Example Code Access
@@ -26,4 +26,4 @@ Before we get into the actual code, a quick note about how Buttplug is implement
 
 Why is Buttplug implemented this way? In order to keep the project maintainable by a small team (at the time of this writing, Buttplug is maintained by a single developer), the core logic, including device communications and protocols, Buttplug protocol handling, etc..., is implemented in Rust. Various methods are used to let other languages talk to the Rust library. These methods are covered in depth in the Writing Your Own Client section of the Inflating Buttplug chapter, and language specific information is usually included in the README of the Buttplug implementation in that language.
 
-The hope is that this system will be seamless to most developers. That said, this implementation strategy means that when debugging non-Rust code, you may hit the end of tracable library code. For instance, if you get a C# exception, you'll only be able to debug to the C#/Rust boundary in Visual Studio. We do our best to return usable errors and stacks from Rust, but if you hit problems, [please contact us via one of the community systems](/intro/getting-help), as we're always looking for feedback and input.
+The hope is that this system will be seamless to most developers. That said, this implementation strategy means that when debugging non-Rust code, you may hit the end of tracable library code. For instance, if you get a C# exception, you'll only be able to debug to the C#/Rust boundary in Visual Studio. We do our best to return usable errors and stacks from Rust, but if you hit problems, [please contact us via one of the community systems](/docs/dev-guide/intro/getting-help), as we're always looking for feedback and input.
