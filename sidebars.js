@@ -70,7 +70,19 @@ const sidebars = {
     {
       type: 'category',
       label: 'Inflating Buttplug',
-      items: ['dev-guide/inflating-buttplug/intro'],
+      items: ['dev-guide/inflating-buttplug/intro',
+        {
+          type: 'category',
+          label: 'Adding and Customizing Devices',
+          items: [
+            "dev-guide/inflating-buttplug/devices/intro",
+            "dev-guide/inflating-buttplug/devices/device-configuration-file",
+            "dev-guide/inflating-buttplug/devices/websocket-device-manager",
+            "dev-guide/inflating-buttplug/devices/adding-device-protocols",
+            "dev-guide/inflating-buttplug/devices/adding-device-comm-managers",
+          ]
+        }
+      ],
     },
   ],
   specSidebar: [
