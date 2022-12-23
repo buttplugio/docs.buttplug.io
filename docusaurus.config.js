@@ -174,7 +174,7 @@ const config = {
       },
       matomo: {
         matomoUrl: 'https://nonpolynomial.matomo.cloud/',
-        siteId: '8',
+        siteId: '9',
         phpLoader: 'matomo.php',
         jsLoader: 'matomo.js',
       },
