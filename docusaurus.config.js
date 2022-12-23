@@ -58,11 +58,13 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+          /*
           {
             href: '/',
             label: "Apps & Games",
             position: "left"
           },
+          */
           {
             type: "doc",
             docId: "dev-guide/index",
@@ -81,11 +83,13 @@ const config = {
             label: "Device Protocols",
             position: "left"
           },
+          /*
           {
             href: '/',
             label: "Support",
             position: "left"
           },
+          */
           {
             href: 'https://patreon.com/qdot',
             label: 'Patreon',
