@@ -59,6 +59,11 @@ const config = {
         },
         items: [
           {
+            href: '/',
+            label: "Apps & Games",
+            position: "left"
+          },
+          {
             type: "doc",
             docId: "dev-guide/index",
             label: "Dev Guide",
@@ -77,7 +82,17 @@ const config = {
             position: "left"
           },
           {
-            href: 'https://github.com/buttplugio/buttplug',
+            href: '/',
+            label: "Support",
+            position: "left"
+          },
+          {
+            href: 'https://patreon.com/qdot',
+            label: 'Patreon',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/buttplugio/',
             label: 'GitHub',
             position: 'right',
           },
