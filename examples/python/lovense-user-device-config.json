@@ -1,0 +1,15 @@
+{
+  "version": {
+    "major": 2,
+    "minor": 6
+  },
+  "user-configs": {
+    "specifiers": {
+      "lovense": {
+        "websocket": {
+          "names": ["LVSDevice"]
+        }
+      }
+    }
+  }
+}
