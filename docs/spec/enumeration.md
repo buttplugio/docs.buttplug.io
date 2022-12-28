@@ -183,11 +183,12 @@ sequenceDiagram
     configuration file.
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device
     Messages.
-  * _DeviceMessageGap_ (_optional_, unsigned integer): Recommended minimum gap between device
+  * _DeviceMessageTimingGap_ (_optional_, unsigned integer): Recommended minimum gap between device
     commands, in milliseconds. This is only a recommendation, and will not be enforced on the
     server, as most times the server does not actually know the exact message gap timing required
     (hence this being recommended). Enforcement on the client (with developer option to disable) is
-    encouraged. Optional field, not required to be included in message. Missing value should be assumed that server does not know recommended message gap.
+    encouraged. Optional field, not required to be included in message. Missing value should be
+    assumed that server does not know recommended message gap.
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
@@ -240,12 +241,13 @@ sequenceDiagram
         {
           "DeviceName": "Test Stroker",
           "DeviceIndex": 1,
-          "DeviceMessageGap": 100,
+          "DeviceMessageTimingGap": 100,
           "DeviceDisplayName": "User set name",
           "DeviceMessages": {
             "LinearCmd": [ {
               "StepCount": 100,
-              "FeatureDescriptor": "Stroker"
+              "FeatureDescriptor": "Stroker",
+              "ActuatorType": "Linear"
             } ],
             "StopDeviceCmd": {}
           }
@@ -274,7 +276,7 @@ scanning/discovery sessions.
 * _DeviceName_ (string): Descriptive name of the device, as taken from the base device
   configuration file.
 * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device Messages.
-* _DeviceMessageGap_ (_optional_, unsigned integer): Recommended minimum gap between device
+* _DeviceMessageTimingGap_ (_optional_, unsigned integer): Recommended minimum gap between device
   commands, in milliseconds. This is only a recommendation, and will not be enforced on the
   server, as most times the server does not actually know the exact message gap timing required
   (hence this being recommended). Enforcement on the client (with developer option to disable) is
@@ -311,7 +313,7 @@ sequenceDiagram
       "Id": 0,
       "DeviceName": "Test Vibrator",
       "DeviceIndex": 0,
-      "DeviceMessageGap": 100,
+      "DeviceMessageTimingGap": 100,
       "DeviceDisplayName": "Rabbit Vibrator",
       "DeviceMessages": {
         "ScalarCmd": [
@@ -357,7 +359,7 @@ Messages on all Devices; in these cases the attributes will not be included.
   * Description: For each feature, lists the number of discrete steps the feature can use. This
     value can be used in calculating the 0.0-1.0 range required for ScalarCmd and other messages.
 * _ActuatorType_
-  * Valid for Messages: ScalarCmd
+  * Valid for Messages: ScalarCmd, RotateCmd, LinearCmd
   * Type: String
   * Description: Type of actuator this feature represents.
 * _SensorType_

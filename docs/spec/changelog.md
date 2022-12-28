@@ -1,5 +1,12 @@
 # Spec Changelog
 
+## Version 3 Patch 2 (2022-12-27)
+
+- Message Definitions Fixed:
+  - DeviceAdded/DeviceList use `DeviceMessageTimingGap`, not `DeviceMessageGap`.
+  - LinearCmd/RotateCmd information in the message attributes of DeviceAdded/DeviceList will have an
+    ActuatorType (Previously stated that only ScalarCmd has an actuator type).
+
 ## Version 3 Patch 1 (2022-10-14)
 
 - Message Descriptions Changed:
