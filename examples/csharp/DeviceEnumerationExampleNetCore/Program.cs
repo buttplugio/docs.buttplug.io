@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug;
+using Buttplug.Client;
+using Buttplug.Core;
+using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace DeviceEnumerationExample
 {
@@ -31,12 +33,12 @@ namespace DeviceEnumerationExample
             // Now that everything is set up, we can connect.
             try
             {
-                await client.ConnectAsync(new ButtplugEmbeddedConnectorOptions());
+                await client.ConnectAsync(new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345")));
             }
             catch (Exception ex)
             {
                 Console.WriteLine(
-                    $"Can't connect, exiting! Message: {ex.InnerException.Message}");
+                    $"Can't connect, exiting! Message: {ex?.InnerException?.Message}");
                 await WaitForKey();
                 return;
             }

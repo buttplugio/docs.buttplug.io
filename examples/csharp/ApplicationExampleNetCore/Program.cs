@@ -1,4 +1,6 @@
-﻿using Buttplug;
+﻿using Buttplug.Client;
+using Buttplug.Client.Connectors.WebsocketConnector;
+using Buttplug.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +26,7 @@ namespace ApplicationExample
             // put them together in a small program.
             //
             // This program will:
-            // - Create an embedded (or possibly websocket) connector
+            // - Create an websocket connector
             // - Scan, this time using real Managers, so we'll see devices
             //   (assuming you have them hooked up)
             // - List the connected devices for the user
@@ -36,28 +38,10 @@ namespace ApplicationExample
             // created connector directly to the client.
             var client = new ButtplugClient("Example Client");
 
-            // If you want to use a websocket client and talk to a websocket
-            // server instead, uncomment the following line and comment the one
-            // above out. Note you will need to turn off TLS/SSL on the server.
-
-            //await client.Connect(new ButtplugWebsocketConnectorOptions(
-            //    new Uri("ws://localhost:12345/buttplug")));
-
-            await client.ConnectAsync(new ButtplugEmbeddedConnectorOptions());
-
-            // At this point, if you want to see everything that's happening,
-            // uncomment this block to turn on logging. Warning, it might be
-            // pretty spammy.
-
-            // void HandleLogMessage(object aObj, LogEventArgs aArgs) {
-            // Console.WriteLine($"LOG: {aArgs.Message.LogMessage}"); }
-            // client.Log += HandleLogMessage;
-
-            // Now we scan for devices. Since we didn't add any Subtype Managers
-            // yet, this will go out and find them for us. They'll be reported in
-            // the logs as they are found.
-            //
-            // We'll scan for devices, and print any time we find one.
+            // Whenever a client connects, it asks the server for a list of devices
+            // that may already be connected. Therefore we'll want to set up our
+            // device handlers before we connect, so we can see what devices may
+            // already be connected to the server.
             void HandleDeviceAdded(object aObj, DeviceAddedEventArgs aArgs)
             {
                 Console.WriteLine($"Device connected: {aArgs.Device.Name}");
@@ -71,6 +55,10 @@ namespace ApplicationExample
             }
 
             client.DeviceRemoved += HandleDeviceRemoved;
+
+            // Now we can connect.
+            await client.ConnectAsync(new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345")));
+
 
             // The structure here is gonna get a little weird now, because I'm
             // using method scoped functions. We'll be defining our scanning
@@ -143,28 +131,16 @@ namespace ApplicationExample
                 // Each device supported by the Buttplug C# library supports at
                 // least one of these 3 commands, so we know that the user will
                 // always have some option.
-                var commandTypes = device.AllowedMessages.Keys.Intersect(new[]
-                {
-                    ServerMessage.Types.MessageAttributeType.VibrateCmd,
-                    ServerMessage.Types.MessageAttributeType.RotateCmd,
-                    ServerMessage.Types.MessageAttributeType.LinearCmd,
-                }).ToArray();
 
                 Console.WriteLine("Choose an action:");
-                uint i = 1;
-                foreach (var command in commandTypes)
-                {
-                    // We know all device commands end in "Cmd", so we can cut
-                    // off the last 3 characters and just have the action shown
-                    // in our interface. Handy, if hacky.
-                    var cmdVerb = command
-                        .ToString()
-                        .Substring(0, command.ToString().Length - 3);
-                    Console.WriteLine($"{i}. {cmdVerb}");
-                    ++i;
-                }
+                Console.WriteLine("1. Vibrate");
+                Console.WriteLine("2. Oscillate");
+                Console.WriteLine("3. Rotate");
+                Console.WriteLine("4. Linear");
+                Console.WriteLine("5. Get Battery Level");
+
                 if (!uint.TryParse(Console.ReadLine(), out var cmdChoice) ||
-                    cmdChoice - 1 > commandTypes.Length)
+                    cmdChoice == 0 || cmdChoice > 5)
                 {
                     Console.WriteLine("Invalid choice, try again.");
                     return;
@@ -182,54 +158,79 @@ namespace ApplicationExample
                 // try block, as a device might be disconnected between the time
                 // we enter the command menu and send the command, and we don't
                 // want to crash when that happens.
-                var cmdType = commandTypes[cmdChoice - 1];
-
-                // Pattern matching for switch blocks doesn't seem to work here. :(
-                if (cmdType == ServerMessage.Types.MessageAttributeType.VibrateCmd)
+                if (cmdChoice == 1)
                 {
                     Console.WriteLine(
-                        $"Vibrating all motors of {device.Name} at 50% for 1s.");
+                        $"Running all vibrators of {device.Name} at 50% for 1s.");
                     try
                     {
-                        await device.SendVibrateCmd(0.5);
+                        await device.VibrateAsync(0.5);
                         await Task.Delay(1000);
-                        await device.SendVibrateCmd(0);
+                        await device.VibrateAsync(0);
                     }
-                    catch (ButtplugDeviceException)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("Device disconnected. Please try another device.");
+                        Console.WriteLine($"Problem vibrating: {e}");
                     }
                 }
-                else if (cmdType == ServerMessage.Types.MessageAttributeType.RotateCmd)
+                else if (cmdChoice == 2)
+                {
+                    Console.WriteLine(
+                        $"Running all oscillators of {device.Name} at 50% for 1s.");
+                    try
+                    {
+                        await device.OscillateAsync(0.5);
+                        await Task.Delay(1000);
+                        await device.OscillateAsync(0);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Problem oscillating: {e}");
+                    }
+                }
+                else if (cmdChoice == 3)
                 {
                     Console.WriteLine($"Rotating {device.Name} at 50% for 1s.");
                     try
                     {
-                        await device.SendRotateCmd(0.5, true);
+                        await device.RotateAsync(0.5, true);
                         await Task.Delay(1000);
-                        await device.SendRotateCmd(0, true);
+                        await device.RotateAsync(0, true);
                     }
-                    catch (ButtplugDeviceException)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("Device disconnected. Please try another device.");
+                        Console.WriteLine($"Problem rotating: {e}"); 
                     }
                 }
-                else if (cmdType == ServerMessage.Types.MessageAttributeType.LinearCmd)
+                else if (cmdChoice == 4)
                 {
                     Console.WriteLine(
                         $"Oscillating linear motors of {device.Name} from 20% to 80% over 3s");
                     try
                     {
-                        await device.SendLinearCmd(1000, 0.2);
+                        await device.LinearAsync(1000, 0.2);
                         await Task.Delay(1100);
-                        await device.SendLinearCmd(1000, 0.8);
+                        await device.LinearAsync(1000, 0.8);
                         await Task.Delay(1100);
-                        await device.SendLinearCmd(1000, 0.2);
+                        await device.LinearAsync(1000, 0.2);
                         await Task.Delay(1100);
                     }
-                    catch (ButtplugDeviceException)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("Device disconnected. Please try another device.");
+                        Console.WriteLine($"Problem moving linearly: {e}");
+                    }
+                }
+                else if (cmdChoice == 5)
+                {
+                    Console.WriteLine(
+                        $"Checking battery level of {device.Name}");
+                    try
+                    {
+                        Console.WriteLine($"Battery Level: {await device.BatteryAsync()}");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Problem getting battery level: {e}");
                     }
                 }
             }
@@ -276,9 +277,6 @@ namespace ApplicationExample
             // Mission Accomplished.
         }
 
-        // Since not everyone is probably going to want to run under C# 7.1+,
-        // we'll use a non-async Main and call to a Wait()'d task. C# 8 can't
-        // come soon enough.
         private static void Main()
         {
             // Setup a client, and wait until everything is done before exiting.

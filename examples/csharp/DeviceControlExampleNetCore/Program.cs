@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug;
+using Buttplug.Core;
+using Buttplug.Client;
+using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace DeviceControlExample
 {
@@ -18,9 +20,9 @@ namespace DeviceControlExample
 
         private static async Task RunExample()
         {
-            var connector = new ButtplugEmbeddedConnectorOptions();
             var client = new ButtplugClient("Example Client");
-            
+            var connector = new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345"));
+
             try
             {
                 await client.ConnectAsync(connector);
@@ -28,7 +30,7 @@ namespace DeviceControlExample
             catch (Exception ex)
             {
                 Console.WriteLine("Can't connect, exiting!");
-                Console.WriteLine($"Message: {ex.InnerException.Message}");
+                Console.WriteLine($"Message: {ex.InnerException?.Message}");
                 await WaitForKey();
                 return;
             }
@@ -48,14 +50,10 @@ namespace DeviceControlExample
 
             foreach (var device in client.Devices)
             {
-                Console.WriteLine($"{device.Name} supports these messages:");
-                foreach (var msgInfo in device.AllowedMessages)
+                Console.WriteLine($"{device.Name} supports vibration: ${device.VibrateAttributes.Count > 0}");
+                if (device.VibrateAttributes.Count > 0)
                 {
-                    Console.WriteLine($"- {msgInfo.Key.ToString()}");
-                    if (msgInfo.Value.FeatureCount != 0)
-                    {
-                        Console.WriteLine($" - Features: {msgInfo.Value.FeatureCount}");
-                    }
+                   Console.WriteLine($" - Number of Vibrators: {device.VibrateAttributes.Count}");
                 }
             }
 
@@ -72,7 +70,7 @@ namespace DeviceControlExample
             // We can use the convenience functions on ButtplugClientDevice to
             // send the message. This version sets all of the motors on a
             // vibrating device to the same speed.
-            await testClientDevice.SendVibrateCmd(1.0);
+            await testClientDevice.VibrateAsync(1.0);
 
             // If we wanted to just set one motor on and the other off, we could
             // try this version that uses an array. It'll throw an exception if
@@ -86,10 +84,8 @@ namespace DeviceControlExample
             // characters for the dev guide, so don't feel that you have to reassign 
             // types like this. I'm just trying to make it so you don't have to
             // horizontally scroll in the manual. :)
-            var vibrateType = ServerMessage.Types.MessageAttributeType.VibrateCmd;
-            var vibratorCount = 
-                testClientDevice.AllowedMessages[vibrateType].FeatureCount;
-            await testClientDevice.SendVibrateCmd(new[] { 1.0, 0.0 });
+            var vibratorCount = testClientDevice.VibrateAttributes.Count;
+            await testClientDevice.VibrateAsync(new[] { 1.0, 0.0 });
 
             await WaitForKey();
 
@@ -100,9 +96,9 @@ namespace DeviceControlExample
             // disconnected, we'll get an exception thrown.
             try
             {
-                await testClientDevice.SendVibrateCmd(1.0);
+                await testClientDevice.VibrateAsync(1.0);
             }
-            catch (ButtplugConnectorException e)
+            catch (ButtplugClientConnectorException e)
             {
                 Console.WriteLine("Tried to send after disconnection! Exception: ");
                 Console.WriteLine(e);

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug;
+using Buttplug.Core;
+using Buttplug.Client;
+using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace ConnectionExample
 {
@@ -20,18 +22,12 @@ namespace ConnectionExample
 
         private static async Task RunExample()
         {
+            // First, we create our Client
+            var client = new ButtplugClient("Example Client");
+
             // After you've created a connector, the connection looks the same no
             // matter what, though the errors thrown may be different.
-            var connector = new ButtplugEmbeddedConnectorOptions();
-
-            // If you'd like to try a remote network connection, comment the
-            // connector line above and uncomment the one below. Note that you'll
-            // need to turn off SSL on whatever server you're using.
-
-            // var connector = new ButtplugWebsocketConnector(
-            //   new Uri("ws://localhost:12345/buttplug"));
-
-            var client = new ButtplugClient("Example Client");
+            var connector = new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345"));
 
             // Now we connect. If anything goes wrong here, we'll either throw
             //
@@ -44,7 +40,7 @@ namespace ConnectionExample
             {
                 await client.ConnectAsync(connector);
             }
-            catch (ButtplugConnectorException ex)
+            catch (ButtplugClientConnectorException ex)
             {
                 // If our connection failed, because the server wasn't turned on,
                 // SSL/TLS wasn't turned off, etc, we'll just print and exit

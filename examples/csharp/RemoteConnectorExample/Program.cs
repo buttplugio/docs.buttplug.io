@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug;
+using Buttplug.Client;
+using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace RemoteConnectorExample
 {
@@ -10,7 +11,7 @@ namespace RemoteConnectorExample
         {
             // Creating a Websocket Connector is as easy as using the right
             // options object.
-            var connector = new ButtplugWebsocketConnectorOptions(
+            var connector = new ButtplugWebsocketConnector(
                 new Uri("ws://localhost:12345/buttplug"));
             var client = new ButtplugClient("Example Client");
             await client.ConnectAsync(connector);

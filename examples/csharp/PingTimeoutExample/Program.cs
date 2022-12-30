@@ -1,4 +1,5 @@
-﻿using Buttplug;
+﻿using Buttplug.Client;
+using Buttplug.Client.Connectors.WebsocketConnector;
 using System;
 using System.Threading.Tasks;
 
@@ -19,15 +20,14 @@ namespace PingTimeoutExample
 
         private static async Task RunExample()
         {
-            // Let's go back to our embedded connector now, to discuss what the
+            // Let's go back to our websocket connector now, to discuss what the
             // lifetime of a connection looks like.
             //
-            // We'll create an embedded connector, but this time we're going to
-            // include a maximum ping timeout of 100ms. This is a fairly short
-            // timer, but since everything is running in our current process, it
-            // should be fine.
-            var connector = new ButtplugEmbeddedConnectorOptions();
-            connector.MaxPingTime = 100;
+            // We'll create a connector, but this time we're going to
+            // include a maximum ping timeout of 1 second on the server side (this
+            // will need to be configured in Intiface Central).
+            var connector = new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345"));
+
             var client = new ButtplugClient("Example Client");
 
             // Just because the Client takes care of sending the ping message for

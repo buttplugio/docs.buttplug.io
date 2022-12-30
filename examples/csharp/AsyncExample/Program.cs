@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug;
+using Buttplug.Client;
+using Buttplug.Core;
+using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace AsyncExample
 {
@@ -23,7 +25,7 @@ namespace AsyncExample
             // connection is discussed more in the Connecting section of this
             // document.
             var connector = 
-                new ButtplugWebsocketConnectorOptions(
+                new ButtplugWebsocketConnector(
                     new Uri("ws://localhost:12345/buttplug"));
             var client = 
                 new ButtplugClient("Example Client");
@@ -44,7 +46,7 @@ namespace AsyncExample
             {
                 await client.ConnectAsync(connector);
             }
-            catch (ButtplugConnectorException ex)
+            catch (ButtplugClientConnectorException ex)
             {
                 Console.WriteLine(
                     "Can't connect to Buttplug Server, exiting!" +
