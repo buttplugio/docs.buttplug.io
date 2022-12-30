@@ -2,28 +2,22 @@
 // inclusion by a script tag, i.e.
 //
 // <script lang="javascript" 
-//   src="https://cdn.jsdelivr.net/npm/buttplug@1.0.16/dist/web/buttplug.min.js">
+//   src="https://cdn.jsdelivr.net/npm/buttplug@3.0.0-alpha1/dist/web/buttplug.min.js">
 // </script>
 //
 // If you're trying to load this, change the version to the latest available.
 
 async function runDeviceControlExample() {
-  // Instantiate our wasm module. This only needs to be done once. If you did it
-  // elsewhere, ignore this.
-  await Buttplug.buttplugInit();
-
   // Usual embedded connector setup.
-  const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
+  const connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345");
   const client = new Buttplug.ButtplugClient("Device Control Example");
-  await client.connect(connector);
-
   // Set up our DeviceAdded/DeviceRemoved event handlers before connecting. If
   // devices are already held to the server when we connect to it, we'll get
   // "deviceadded" events on successful connect.
   client.addListener("deviceadded", async (device) => {
-    console.log(`Device Connected: ${device.Name}`);
+    console.log(`Device Connected: ${device.name}`);
     console.log("Client currently knows about these devices:");
-    client.Devices.forEach((device) => console.log(`- ${device.Name}`));
+    client.devices.forEach((device) => console.log(`- ${device.name}`));
 
     // In Javascript, allowedMessages is a map, so we'll need to iterate its
     // properties.
@@ -31,7 +25,7 @@ async function runDeviceControlExample() {
     console.log("Sending commands");
 
     // If we aren't working with a toy that vibrates, just return at this point.
-    if (!device.messageAttributes(Buttplug.ButtplugDeviceMessageType.VibrateCmd)) {
+    if (device.vibrateAttributes.length == 0) {
       return;
     }
 
@@ -54,6 +48,14 @@ async function runDeviceControlExample() {
     await new Promise(r => setTimeout(r, 1000));
     await device.stop();
 
+    const batteryAttrs = device.messageAttributes.SensorReadCmd?.filter(
+      (x) => x.SensorType === Buttplug.SensorType.Battery
+    );
+
+    if (device.hasBattery) {
+      console.log(`${device.name} Battery Level: ${await device.battery()}`);
+    }
+
     // If we wanted to just set one motor on and the other off, we could
     // try this version that uses an array. It'll throw an exception if
     // the array isn't the same size as the number of motors available as
@@ -74,7 +76,9 @@ async function runDeviceControlExample() {
     */
   });
   client
-    .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
+    .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.name}`));
+  
+  await client.connect(connector);
 
   // Now that everything is set up, we can scan.
   await client.startScanning();

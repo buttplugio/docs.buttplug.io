@@ -18,12 +18,8 @@
 
 
   async function ButtplugErrors() {
-    // Instantiate our wasm module. This only needs to be done once. If you did it
-    // elsewhere, ignore this.
-    await Buttplug.buttplugInit();
-
+    const invalid_options = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://notadomain.local");
     const client = new Buttplug.ButtplugClient("Error Example Client");
-    const invalid_options = new Buttplug.ButtplugWebsocketConnectorOptions();
     //invalid_options.Address = "this is not a websocket address";
 
     // In javascript, there are 2 ways we can call functions and catch exceptions.
@@ -35,7 +31,7 @@
       })
       .catch(e => {
         console.log("Using .catch()");
-        console.log(e.reason);
+        console.log(e);
       });
     // There's also try/catch, which is handy for async.
     try {
@@ -45,7 +41,7 @@
       // be a system exception or something else not buttplug related. If you're
       // interested in Buttplug related exceptions, it's best to check for them
       // here.
-      console.log(e);
+      console.log(`${e}`);
       if (e instanceof Buttplug.ButtplugError) {
         console.log("this is a buttplug error");
         // This will make sure we're doing something specific to Buttplug.
@@ -53,6 +49,8 @@
           console.log("This is a connector error");
           // And possibly even more specific.
         }
+      } else {
+        console.log("Was another type of error");
       }
     }
     // However, as all async javascript functions also return promises, so we can

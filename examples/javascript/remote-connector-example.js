@@ -8,18 +8,14 @@
 // If you're trying to load this, change the version to the latest available.
 
 const runWebsocketConnectionExample = async () => {
-  // Instantiate our wasm module. This only needs to be done once. If you did it
-  // elsewhere, ignore this.
-  await buttplugInit();
+  // This is the default insecure address for Intiface Central (https://intiface.com/central). You
+  // can connect to it via most browsers.
+  let address = "ws://localhost:12345"
 
-  // After you've created a connector, the connection looks the same no
-  // matter what, though the errors thrown may be different.
-  let connector = new Buttplug.ButtplugWebsocketConnectorOptions();
+  // After you've created a connector, the connection looks the same no matter what, though the
+  // errors thrown may be different.
+  let connector = new Buttplug.ButtplugBrowserWebsocketClientConnector(address);
 
-  // This is the default insecure address for Intiface Desktop
-  // (https://intiface.com/desktop). You can connect to it via Chrome, but
-  // Safari/Firefox will require secure certs (covered later).
-  connector.address = "ws://localhost:12345"
   let client = new Buttplug.ButtplugClient("Websocket Connection Example");
 
   // Now we connect. If anything goes wrong here, we'll either throw
@@ -30,7 +26,7 @@ const runWebsocketConnectionExample = async () => {
   // - A ButtplugHandshakeException if there is a client/server version
   //   mismatch.
   try {
-    await client.connect("Developer Guide Example", connector);
+    await client.connect(connector);
   }
   catch (ex)
   {
@@ -46,6 +42,10 @@ const runWebsocketConnectionExample = async () => {
   // We're connected, yay!
   console.log("Connected!");
 
-  // And now we disconnect as usual
-  await client.disconnect();
+  setTimeout(async () => {
+    // And now we disconnect as usual
+    console.log("Disconnecting");
+    await client.disconnect();
+  }, 3000);
+  
 };

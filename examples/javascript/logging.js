@@ -8,23 +8,10 @@
 // If you're trying to load this, change the version to the latest available.
 
 async function runEmbeddedConnectionExample () {
-  // Instantiate our wasm module. This only needs to be done once. If you did it
-  // elsewhere, ignore this.
-  await Buttplug.buttplugInit();
-
-  // Unfortunately we don't expose many options for logging in JS at the moment.
-  // This will change in the future, but due to API differences in WASM versus
-  // native, we've gotta add some extra stuff. 
-  //
-  // Right now we're taking the lazy route and using tracing-wasm, which will
-  // print tracing messages to the developer console. To turn it on, run the
-  // following method, with the log level as an argument:
-  Buttplug.activateConsoleLogger("debug");
-
   // With the console logger active, the following code should cause log
   // messages to show up in the dev console.
 
-  let connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
+  let connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345");
   let client = new Buttplug.ButtplugClient("Developer Guide Example");
   try {
     await client.connect(connector);
