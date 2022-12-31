@@ -1,9 +1,10 @@
 use buttplug::{
-  client::{device::VibrateCommand, ButtplugClient, ButtplugClientError},
-  core::connector::ButtplugInProcessClientConnectorBuilder,
-  server::{
-    device::hardware::communication::btleplug::BtlePlugCommunicationManagerBuilder,
-    ButtplugServerBuilder,
+  client::{device::ScalarValueCommand, ButtplugClient, ButtplugClientError},
+  core::{
+    connector::{
+      new_json_ws_client_connector,
+    },
+    message::{ClientGenericDeviceMessageAttributes},
   },
 };
 use tokio::io::{self, AsyncBufReadExt, BufReader};
@@ -18,25 +19,10 @@ async fn wait_for_input() {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-  let mut server_builder = ButtplugServerBuilder::default();
-  // This is how we add Bluetooth manually. (We could also do this with any other communication manager.)
-  server_builder.comm_manager(BtlePlugCommunicationManagerBuilder::default());
-  let server = server_builder.finish().unwrap();
-
-  let connector = ButtplugInProcessClientConnectorBuilder::default()
-    .server(server)
-    .finish();
+  let connector = new_json_ws_client_connector("ws://127.0.0.1:12345");
 
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;
-
-  // For this example, we'll use the Test device. This is included in Buttplug
-  // Rust >= v0.1.0. It emulates how a regular device manager would work,
-  // exposing access to a Test Device which can take VibrateCmd messages. This
-  // exists as a way to test connection and setup UI without having to use
-  // actual hardware.
-  // TODO migrate to buttplug v6.
-  // let (_, _) = new_bluetoothle_test_device("Test Device").await?;
 
   println!("Connected!");
 
@@ -51,16 +37,26 @@ async fn main() -> anyhow::Result<()> {
   }
   wait_for_input().await;
 
-  // TODO migrate to buttplug v6.
-  // for device in client.devices() {
-  //   println!("{} supports these messages:", device.name());
-  //   for (r#type, attributes) in &device.allowed_messages {
-  //     println!("- {}", r#type);
-  //     if let Some(count) = attributes.feature_count {
-  //       println!(" - Features: {}", count);
-  //     }
-  //   }
-  // }
+  for device in client.devices() {
+    fn print_attrs(attrs: &Vec<ClientGenericDeviceMessageAttributes>) {
+      for attr in attrs {
+        println!(
+          "{}: {} - Steps: {}",
+          attr.actuator_type(),
+          attr.feature_descriptor(),
+          attr.step_count()
+        );
+      }
+    }
+    println!("{} supports these actions:", device.name());
+    if let Some(attrs) = device.message_attributes().scalar_cmd() {
+      print_attrs(attrs);
+    }
+    print_attrs(&device.rotate_attributes());
+    print_attrs(&device.linear_attributes());
+    println!("Battery: {}", device.has_battery_level());
+    println!("RSSI: {}", device.has_rssi_level());
+  }
 
   println!("Sending commands");
 
@@ -75,7 +71,7 @@ async fn main() -> anyhow::Result<()> {
   // send the message. This version sets all of the motors on a
   // vibrating device to the same speed.
   test_client_device
-    .vibrate(&VibrateCommand::Speed(1.0))
+    .vibrate(&ScalarValueCommand::ScalarValue(1.0))
     .await?;
 
   // If we wanted to just set one motor on and the other off, we could
@@ -86,10 +82,7 @@ async fn main() -> anyhow::Result<()> {
   // You can get the vibrator count using the following code, though we
   // know it's 2 so we don't really have to use it.
   let vibrator_count = test_client_device
-    .message_attributes()
-    .scalar_cmd()
-    .as_ref()
-    .unwrap()
+    .vibrate_attributes()
     .len();
 
   println!(
@@ -98,9 +91,14 @@ async fn main() -> anyhow::Result<()> {
     vibrator_count,
   );
 
-  test_client_device
-    .vibrate(&VibrateCommand::SpeedVec(vec![1.0, 0.0]))
-    .await?;
+  // Just set all of the vibrators to full speed.
+  if vibrator_count > 1 {
+    test_client_device
+      .vibrate(&ScalarValueCommand::ScalarValueVec(vec![1.0, 0.0]))
+      .await?;
+  } else {
+    println!("Device does not have > 1 vibrators, not running multiple vibrator test.");
+  }
 
   wait_for_input().await;
 
@@ -110,7 +108,7 @@ async fn main() -> anyhow::Result<()> {
   // If we try to send a command to a device after the client has
   // disconnected, we'll get an exception thrown.
   let vibrate_result = test_client_device
-    .vibrate(&VibrateCommand::Speed(1.0))
+    .vibrate(&ScalarValueCommand::ScalarValue(1.0))
     .await;
   if let Err(ButtplugClientError::ButtplugConnectorError(error)) = vibrate_result {
     println!("Tried to send after disconnection! Error: ");

@@ -1,6 +1,10 @@
 use buttplug::{
   client::{ButtplugClient, ButtplugClientError},
-  core::{connector::ButtplugInProcessClientConnectorBuilder, errors::ButtplugError},
+  core::{
+    connector::{ButtplugRemoteClientConnector, ButtplugWebsocketClientTransport, new_json_ws_client_connector},
+    errors::ButtplugError,
+    message::serializer::ButtplugClientJSONSerializer,
+  },
 };
 use tokio::io::{self, AsyncBufReadExt, BufReader};
 
@@ -16,15 +20,7 @@ async fn wait_for_input() {
 async fn main() -> anyhow::Result<()> {
   // After you've created a connector, the connection looks the same no
   // matter what, though the errors thrown may be different.
-  let connector = ButtplugInProcessClientConnectorBuilder::default().finish();
-
-  // If you'd like to try a remote network connection, comment the
-  // connector line above and uncomment the one below. Note that you'll
-  // need to turn off SSL on whatever server you're using.
-
-  // let connector: ButtplugRemoteConnector<_, ButtplugClientJSONSerializer, _, _> = ButtplugRemoteConnector::new(
-  //     ButtplugWebsocketClientTransport::new_insecure_connector("ws://localhost:12345/buttplug")
-  // );
+  let connector = new_json_ws_client_connector("ws://127.0.0.1:12345");
 
   // Now we connect. If anything goes wrong here, we'll get an Err with either
   //
