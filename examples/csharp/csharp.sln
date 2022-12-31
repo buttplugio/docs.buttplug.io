@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectionExample", "Connec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingTimeoutExample", "PingTimeoutExample\PingTimeoutExample.csproj", "{D5833955-40B4-48B8-800F-A82C8025FD1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControlExampleNetCore", "DeviceControlExampleNetCore\DeviceControlExampleNetCore.csproj", "{463B680C-AC2D-467E-AF06-BBF8D147499E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceControlExampleNetCore", "DeviceControlExampleNetCore\DeviceControlExampleNetCore.csproj", "{463B680C-AC2D-467E-AF06-BBF8D147499E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceEnumerationExampleNetCore", "DeviceEnumerationExampleNetCore\DeviceEnumerationExampleNetCore.csproj", "{09440C84-B369-49A3-BF0F-0D681AA5DF17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceEnumerationExampleNetCore", "DeviceEnumerationExampleNetCore\DeviceEnumerationExampleNetCore.csproj", "{09440C84-B369-49A3-BF0F-0D681AA5DF17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationExampleNetCore", "ApplicationExampleNetCore\ApplicationExampleNetCore.csproj", "{FB071375-4910-43AD-9955-DAA4BE232858}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationExampleNetCore", "ApplicationExampleNetCore\ApplicationExampleNetCore.csproj", "{FB071375-4910-43AD-9955-DAA4BE232858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{C2CBC6FA-3CD1-464A-8234-BFE39AEB7456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FB071375-4910-43AD-9955-DAA4BE232858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB071375-4910-43AD-9955-DAA4BE232858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB071375-4910-43AD-9955-DAA4BE232858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CBC6FA-3CD1-464A-8234-BFE39AEB7456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CBC6FA-3CD1-464A-8234-BFE39AEB7456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CBC6FA-3CD1-464A-8234-BFE39AEB7456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CBC6FA-3CD1-464A-8234-BFE39AEB7456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

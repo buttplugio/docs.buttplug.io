@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Buttplug" Version="3.0.0-alpha1" />
+  </ItemGroup>
+
 </Project>
