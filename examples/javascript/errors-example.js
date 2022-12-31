@@ -1,8 +1,8 @@
 // This example assumes Buttplug is brought in as a root namespace, via
 // inclusion by a script tag, i.e.
 //
-// <script lang="javascript"
-//  src="https://cdn.jsdelivr.net/npm/buttplug@1.0.16/dist/web/buttplug.min.js">
+// <script lang="javascript" 
+//   src="https://cdn.jsdelivr.net/npm/buttplug@3.0.0/dist/web/buttplug.min.js">
 // </script>
 //
 // If you're trying to load this, change the version to the latest available.

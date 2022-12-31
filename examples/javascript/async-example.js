@@ -2,7 +2,7 @@
 // inclusion by a script tag, i.e.
 //
 // <script lang="javascript" 
-//  src="https://cdn.jsdelivr.net/npm/buttplug@3.0.0-alpha0/dist/web/buttplug.min.js">
+//  src="https://cdn.jsdelivr.net/npm/buttplug@3.0.0/dist/web/buttplug.min.js">
 // </script>
 //
 // If you're trying to load this, change the version to the latest available.
