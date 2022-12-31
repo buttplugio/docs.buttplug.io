@@ -363,11 +363,11 @@ Messages on all Devices; in these cases the attributes will not be included.
   * Type: String
   * Description: Type of actuator this feature represents.
 * _SensorType_
-  * Valid for Messages: SensorReadCmd
+  * Valid for Messages: SensorReadCmd, SensorSubscribeCmd
   * Type: String
   * Description: Sensor types that can be read by Sensor.
 * _SensorRange_
-  * Valid for Messages: SensorReadCmd (but applies to values returned by SensorReading)
+  * Valid for Messages: SensorReadCmd, SensorSubscribeCmd (but applies to values returned by SensorReading)
   * Type: array of arrays of 2 integers
   * Description: Range of values a sensor can return. As sensors can possibly return multiple values
     in the same SensorReading message (i.e. an 3-axis accelerometer may return all 3 axes in one read), this is sent as an array of ranges. The length of this array will always match the number of readings that will be returned from a sensor, and can be used to find the reading count for a sensor.

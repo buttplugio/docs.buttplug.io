@@ -1,5 +1,11 @@
 # Spec Changelog
 
+## Version 3 Patch 3 (2022-12-30)
+
+- Message Definitions Fixed:
+  - The `SensorType` and `SensorRange` message attributes are valid for SensorSubscribeCmd as well
+    as SensorReadCmd.
+
 ## Version 3 Patch 2 (2022-12-27)
 
 - Message Definitions Fixed:
