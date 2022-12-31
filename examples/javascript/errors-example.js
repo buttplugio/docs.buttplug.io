@@ -27,7 +27,7 @@
     client
       .connect(invalid_options)
       .then(() => {
-        console.log("If you got here, shut down Intiface Desktop or whatever other server you're running :P");
+        console.log("If you got here, shut down Intiface Central or whatever other server you're running :P");
       })
       .catch(e => {
         console.log("Using .catch()");
