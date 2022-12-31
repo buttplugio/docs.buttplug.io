@@ -2,65 +2,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Choosing a Connector
+# Websocket Connectors
 
-The first thing to do when writing a Buttplug application is figuring out where the server is going
-to live.
+The first thing to do when writing a Buttplug application is figuring out how to talk to a Buttplug
+Server. For sake of simplicity, we'll cover the most common option in this part of the manual, with
+other solutions covered in the cookbook section.
 
-- **Inside the Application (aka Embedded)**
-  - You'll bundle a buttplug server with your application. Easier to distribute and create UI for,
-    but also means if the Buttplug libraries change or upgrade, you may need to do the same. This
-    can also tie your application to a single platform (which may or may not be an issue), if you
-    redistribute libraries that only run on a single platform. See the README for the Buttplug
-    implementation you're using for more info on this.
-- **Outside the Application**
-  - You'll allow the user to connect to a Buttplug server they're running on their system, outside
-    of your application (this usually means the user will be running [Intiface
-    Desktop](https://intiface.com/desktop)). This usually means you'll connect via some IPC method,
-    like pipes or websockets. Buttplug Client Connector libraries usually implement the system
-    specific transports for you, so it's just a matter of presenting the user with a UI that lets
-    them connect as they need.
-- **Both!**
-  - Bundling a server with your application *and* allowing users to connect to an outside server is
-    the most complete option, though also the most complicated. Buttplug libraries are usually
-    distributed with Client and Server capabilities, so you can embed a server if that's simple for
-    you, and allow the user to connect out if you don't feel like upgrading later. This may require
-    more in-depth UI work to let the user know what's going on.
+In the websocket case, you'll allow the user to connect to a Buttplug server they're running on
+their system, outside of your application (this usually means the user will be running [Intiface
+Central](https://intiface.com/central) or [Intiface Engine](https://github.com/intiface-engine)). In
+almost all cases, your app will connect via websockets, most likely provided by the Buttplug Client
+implementation you are using.
 
-## Embedded Servers and Connectors
+For using Websocket servers, you'll need to provide the user a way to pass in the server address,
+then you just create the connector object using that address.
 
-An Embedded server means both the client and server are part of the application are you building.
-While doing this ends up being more convenient for the user in some ways, as they have less setup to
-do and choices to make, there are a few drawbacks, including:
+:::tip The Accidental Standard Port of 12345
 
-- If the libraries upgrade (which is how we usually deal with new hardware/protocol support), you'll
-  need to upgrade your app too.
-- This may tie you to a certain platform, i.e. if you're using Windows libraries, your application
-  might only run on windows. This all depends on the library you're using, though.
-- You may need to set up the server yourself in your application.
+When Buttplug's first public server came out in 2017, it used port 12345 as a test value. This stuck
+with the system, so now most applications that use Intiface or Buttplug use port 12345 for
+connection by default. Some client applications have gone as far as to hardcore the value, but this
+is not recommended.
 
-There's not really much to cover about the first two problems, they're just part of the choice you
-make in using this method. For now, we'll assume you'll want to set up a default Server with no
-Device Communication Managers, connection watchdogs, etc... We'll cover those options in the Winning
-Ways section.
+This can sometimes be an issue for users running certain software that collides with the port. [We
+have some recommended fixes on our
+forums.](https://discuss.buttplug.io/t/what-to-do-if-intiface-central-shows-socket-collision-errors/32)
 
-This process is outlined in the code example below.
-
-<Tabs groupId="examples">
-<TabItem value="rust" label="Rust">
-
-import RustConnectorExample from '!!raw-loader!/examples/rust/src/bin/embedded_connector.rs';
-
-<CodeBlock language="rust">{RustConnectorExample}</CodeBlock>
-
-</TabItem>
-</Tabs>
-
-## External Servers and Connectors
-
-For using external servers, such as Websocket or IPC Servers, the process is slightly different.
-You'll need to provide the user a way to pass in the server address, then you just create the
-connector object using that address.
+:::
 
 <Tabs groupId="examples">
 <TabItem value="rust" label="Rust">

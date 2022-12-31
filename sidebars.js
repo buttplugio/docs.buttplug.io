@@ -44,6 +44,7 @@ const sidebars = {
       'dev-guide/architecture/protocol-in-depth', 
       'dev-guide/architecture/client-in-depth', 
       'dev-guide/architecture/server-in-depth', 
+      'dev-guide/architecture/intiface', 
       'dev-guide/architecture/terms'],
     },
     {
@@ -62,8 +63,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'Winning Ways For Your Buttplug Plays',
-      items: ['dev-guide/cookbook/intro', 
-      'dev-guide/cookbook/connector-setup-in-depth',
+      items: ['dev-guide/cookbook/intro',
+      {
+        type: 'category',
+        label: 'Connectors, Connections, and Engines',
+        items: [
+          'dev-guide/cookbook/connections/embedding',
+          'dev-guide/cookbook/connections/ping',
+        ]
+      },
       'dev-guide/cookbook/privacy-models', 
       'dev-guide/cookbook/raw-device-commands'],
     },
@@ -84,6 +92,11 @@ const sidebars = {
         }
       ],
     },
+    {
+      type: 'category',
+      label: 'Appendices',
+      items: ['dev-guide/appendices/history-of-buttplug']
+    }
   ],
   specSidebar: [
     'spec/index',

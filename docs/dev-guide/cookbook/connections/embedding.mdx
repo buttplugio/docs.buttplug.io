@@ -1,0 +1,108 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+# Embedding
+
+The Application Guide portion of this document focuses solely on connecting to Intiface Central in
+order to access a Buttplug Server. However, there are some situations in which embedding a server in
+your application may be desirable, or even required.
+
+For instance, you may want your users to be able to use your application right after install,
+without having to also install Intiface Central. Less commonly, your application may be deployed on
+a platform where talking to Intiface Central may not be available (like running completely in a web
+browser, or standalone on mobile).
+
+There are two methods of achieving this, each with their own drawbacks.
+
+:::caution Before You Tackle Embedding
+
+If you are going to embed an engine, try to make sure you also provide a way for the user to access
+Intiface Central if they so choose. This will allow users to use new hardware that may not be
+supported by the version of Buttplug/Intiface you embed in your application.
+
+If you embed without giving users a way to connect outward to updated versions, you may get
+complaints once new hardware is released and your program does not support it.
+
+:::
+
+## Embedding Intiface Engine
+
+For desktop applications that can spawn external processes, one option is to ship with the latest
+version of [Intiface Engine](https://github.com/intiface/intiface-engine). This is a command line
+version of the Buttplug Server, with all configuration elements exposed via arguments.
+
+The downsides here are mostly related to user configuration. Buttplug ships with support for a lot
+of devices, and many of those devices may require special configuration by the user. This
+configuration is handled by Intiface Central, so that when a users starts a server using Central,
+they can only load what they need and expect. When embedding a server, you may have to use a default
+setup that may not work with the user's needs.
+
+Another downside is modern OS sandboxing. Windows and macOS do not like programs that start other
+programs, and you may run into problems with a user's security system blocking process execution.
+
+The usual strategy for embedding an engine is:
+
+- Ship your application with a copy of Intiface Engine for the platform your application is on.
+- When your application starts, try to connect to Intiface Central (or give the user the ability to
+  pick a new address, as they may be using the mobile app and have to set a new address).
+- If no port is found for Intiface Central, you can try starting your own Intiface Engine process
+  and connecting to that.
+
+You will need to provide the user with a way to restart the engine process in case things lock up or
+crash.
+
+## Embedded Servers and Connectors
+
+:::warning You Probably Don't Want This
+
+For most normal desktop and mobile applications, you do not want to use an embedded connector. While
+embedded connections used to be recommended for Buttplug development, they have ended up causing
+more harm than good, but are still required for certain situations, which is why they're included
+here.
+
+This section should really only be used if:
+
+- You want a fully web based system with no outside dependencies (i.e. using WASM inside the
+  browser)
+- You need to compile the full server into your application for some reason. For instance, Intiface
+  Central on desktop and mobile has to build with an embedded server in order to host it for other
+  applications, as another process cannot be started due to sandboxing. This is a fairly rare occasion.
+- Quick one-off examples in Rust since you get it for free there, and even then, you should really
+  use Intiface Central
+
+If you want to avoid your users having to download Intiface Central to use your program, see the
+[Embedded Engines](./embedded-engines.md) section.
+
+:::
+
+An Embedded server means both the client and server are part of the application are you building.
+While doing this ends up being more convenient for the user in some ways, as they have less setup to
+do and choices to make, there are a few drawbacks, including:
+
+- If the libraries upgrade (which is how we usually deal with new hardware/protocol support), you'll
+  need to upgrade your app too.
+- This may tie you to a certain platform, i.e. if you're using Windows libraries, your application
+  might only run on windows. This all depends on the library you're using, though.
+- You may need to set up the server yourself in your application.
+- The only reference server is currently written in Rust, which means using an embedded server
+  requires pulling in the Rust codebase in one way or another. This is usually done with FFI of some
+  sort (including compiling to WASM). Errors in this setup can be extremely difficult to debug if
+  you are not familiar with your base language and FFI bindings.
+
+There's not really much to cover about the first two problems, they're just part of the choice you
+make in using this method. The example below shows how to set up a server with a bluetooth device
+manager, using the configuration file built into the library.
+
+<Tabs groupId="examples">
+<TabItem value="rust" label="Rust">
+
+Currently, this example is only available in Rust. A Javascript example will be added once the FFI
+system has been rebuilt to use it.
+
+import RustConnectorExample from '!!raw-loader!/examples/rust/src/bin/embedded_connector.rs';
+
+<CodeBlock language="rust">{RustConnectorExample}</CodeBlock>
+
+</TabItem>
+</Tabs>
