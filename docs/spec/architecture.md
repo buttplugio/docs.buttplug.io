@@ -66,7 +66,7 @@ sequenceDiagram
   Client->>+Server: StartScanning Id=3
   Server->>-Client: Ok Id=3
   
-  Note over Client,Server: While the server is scanning, the<br/>server will notify the client of new</br>devices.
+  Note over Client,Server: While the server is scanning, the<br/>server will notify the client of new<br/>devices.
   Server->>Client: DeviceAdded Id=0
   Server->>Client: DeviceAdded Id=0
   
