@@ -1,3 +1,7 @@
+---
+description: Sex Toy Protocols I Have Known And Loved
+slug: /stpihkal
+---
 # Sex Toy Protocols I Have Known And Loved
 
 A Sex Tech Reverse Engineering Love Story.

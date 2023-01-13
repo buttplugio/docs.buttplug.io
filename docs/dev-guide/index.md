@@ -1,7 +1,6 @@
 ---
-description: Front page
-slug: /
-sidebar_position: 1
+description: Buttplug Developer Guide
+slug: /dev-guide
 ---
 
 # Buttplug Developer Guide

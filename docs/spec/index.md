@@ -1,3 +1,7 @@
+---
+description: Buttplug Protocol Specification
+slug: /spec
+---
 # The Buttplug Intimate Device Control Standard
 
 * **Version:** 3
