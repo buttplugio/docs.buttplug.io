@@ -19,7 +19,7 @@ async fn wait_for_input() {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-  let connector = new_json_ws_client_connector("ws://127.0.0.1:12345");
+  let connector = new_json_ws_client_connector("ws://192.168.123.107:12345");
 
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;
@@ -101,10 +101,10 @@ async fn main() -> anyhow::Result<()> {
   }
 
   wait_for_input().await;
-
+  println!("Disconnecting");
   // And now we disconnect as usual.
   client.disconnect().await?;
-
+  println!("Trying error");
   // If we try to send a command to a device after the client has
   // disconnected, we'll get an exception thrown.
   let vibrate_result = test_client_device

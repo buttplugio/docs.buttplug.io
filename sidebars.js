@@ -37,8 +37,13 @@ const sidebars = {
       'dev-guide/intro/getting-help'],
     },
     {
+      type: 'doc',
+      label: 'Quick Start',
+      id: "dev-guide/quickstart"
+    },
+    {
       type: 'category',
-      label: 'Strategies Against Buttplug Architecture',
+      label: 'Project and Library Architecture',
       items: ['dev-guide/architecture/intro', 
       'dev-guide/architecture/sessions-and-components', 
       'dev-guide/architecture/protocol-in-depth', 
@@ -49,7 +54,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Sticking Buttplug In',
+      label: 'Build A Simple Buttplug Application',
       items: ['dev-guide/writing-buttplug-applications/intro', 
       'dev-guide/writing-buttplug-applications/api-basics',
       'dev-guide/writing-buttplug-applications/connectors', 
@@ -62,22 +67,45 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Winning Ways For Your Buttplug Plays',
+      label: 'Advanced Buttpluging',
       items: ['dev-guide/cookbook/intro',
       {
         type: 'category',
-        label: 'Connectors, Connections, and Engines',
+        label: 'Buttplug Connectors, Connections, and Engines',
         items: [
           'dev-guide/cookbook/connections/embedding',
           'dev-guide/cookbook/connections/ping',
         ]
       },
+      {
+        type: 'category',
+        label: 'Devices and Commands',
+        items: [
+          'dev-guide/cookbook/devices-and-commands/intro',
+          'dev-guide/cookbook/devices-and-commands/device-configurations',
+          'dev-guide/cookbook/devices-and-commands/scalar-command',
+          'dev-guide/cookbook/devices-and-commands/linear-command',
+          'dev-guide/cookbook/devices-and-commands/rotate-command',
+          'dev-guide/cookbook/devices-and-commands/sensor-commands',
+          'dev-guide/cookbook/devices-and-commands/raw-commands',
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Integrating Buttplug in Games',
+        items: [
+          'dev-guide/cookbook/games/intro',
+          'dev-guide/cookbook/games/unity',
+          'dev-guide/cookbook/games/unreal',
+          'dev-guide/cookbook/games/modding',
+        ]
+      },
       'dev-guide/cookbook/privacy-models', 
-      'dev-guide/cookbook/raw-device-commands'],
+      ],
     },
     {
       type: 'category',
-      label: 'Inflating Buttplug',
+      label: 'Implementing new Devices and Clients',
       items: ['dev-guide/inflating-buttplug/intro',
         {
           type: 'category',

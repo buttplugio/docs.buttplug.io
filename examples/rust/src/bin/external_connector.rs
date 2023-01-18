@@ -1,7 +1,7 @@
 use buttplug::{
   client::ButtplugClient,
   core::{
-    connector::{ButtplugRemoteConnector, ButtplugWebsocketClientTransport},
+    connector::{ButtplugRemoteConnector, ButtplugWebsocketClientTransport, new_json_ws_client_connector},
     message::serializer::ButtplugClientJSONSerializer,
   },
 };
@@ -9,10 +9,7 @@ use buttplug::{
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // To create a Websocket Connector, you need the websocket address and some generics fuckery.
-  let connector: ButtplugRemoteConnector<_, ButtplugClientJSONSerializer, _, _> =
-    ButtplugRemoteConnector::new(ButtplugWebsocketClientTransport::new_insecure_connector(
-      "ws://localhost:12345/buttplug",
-    ));
+  let connector = new_json_ws_client_connector("ws://192.168.123.103:12345/buttplug");
 
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;

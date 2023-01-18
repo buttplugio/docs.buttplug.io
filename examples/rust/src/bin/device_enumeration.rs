@@ -1,4 +1,4 @@
-use buttplug::{client::ButtplugClientEvent, util::in_process_client};
+use buttplug::{client::{ButtplugClientEvent, ButtplugClient}, util::in_process_client, core::connector::new_json_ws_client_connector};
 use futures::StreamExt;
 use tokio::io::{self, AsyncBufReadExt, BufReader};
 
@@ -14,7 +14,11 @@ async fn wait_for_input() {
 async fn main() -> anyhow::Result<()> {
   // Usual embedded connector setup. We'll assume the server found all
   // of the subtype managers for us (the default features include all of them).
-  let client = in_process_client("Example Client", false).await;
+  //let client = in_process_client("Example Client", false).await;
+  // To create a Websocket Connector, you need the websocket address and some generics fuckery.
+  let connector = new_json_ws_client_connector("ws://192.168.123.107:12345/buttplug");
+  let client = ButtplugClient::new("Example Client");
+  client.connect(connector).await?;
   let mut events = client.event_stream();
 
   // Set up our DeviceAdded/DeviceRemoved/ScanningFinished event handlers before connecting.
