@@ -29,14 +29,14 @@ Activation can happen via:
 - Passing the `--allowraw` option to [Intiface Engine](https://github.com/intiface/intiface-engine/)
 - Turning on the "Allow Raw Messages" option in [Intiface Central](http://intiface.com/central)
 - Assigning the `raw` protocol to a device in the [Device Configuration
-  File](../inflating-buttplug/devices/device-configuration-file). This is the only way to access raw commands without setting the raw options in the server.
+  File](/docs/dev-guide/inflating-buttplug/devices/device-configuration-file). This is the only way to access raw commands without setting the raw options in the server.
 
 ## Identifying Devices
 
 Once raw message capabilities have been turned on, the next question is knowing what messages to
 send which device(s). As raw message are considered to be a developer level feature, we expect that
 you will be able to figure out what device you are looking for via name alone, as that is the only
-device identification the client provides ([for privacy reasons](privacy-models)).
+device identification the client provides ([for privacy reasons](../privacy-models)).
 
 Unless the user has specified otherwise, most devices at least list their brand as part of their name, which can be used to identify protocols. For instance, when trying to identify Lovense toys to send missing commands like Light or Inflation, it can be assumed most Lovense toys will have "Lovense" in the name, and that can be used for lookup. This is usually the best way to identify which devices are suitable for certain raw messages. In remote connection situations, such as users with Intiface Central, the name may have been changed by the user and therefore may not be useful for lookup.
 
@@ -48,7 +48,7 @@ support enumerations) with [their canonical definition in the Rust
 library](https://github.com/buttplugio/buttplug-rs/blob/master/buttplug/src/device/mod.rs#L38). Each
 FFI library will have some version of this enumeration in order to form Raw messages.
 
-To find out what endpoints are assigned to devices, you can check out the [device configuration file](../inflating-buttplug/devices/device-configuration-file).
+To find out what endpoints are assigned to devices, you can check out the [device configuration file](/docs/dev-guide/inflating-buttplug/devices/device-configuration-file).
 
 ## Raw Read/Write
 
