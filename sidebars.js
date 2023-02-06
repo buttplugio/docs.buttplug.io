@@ -39,7 +39,7 @@ const sidebars = {
     {
       type: 'doc',
       label: 'Quick Start',
-      id: "dev-guide/quickstart"
+      id: "dev-guide/getting-started"
     },
     {
       type: 'category',
