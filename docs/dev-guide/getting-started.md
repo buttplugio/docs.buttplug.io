@@ -1,4 +1,4 @@
-# Buttplug Quickstart
+# Getting Started
 
 :::warning Section not finished (or started)
 
