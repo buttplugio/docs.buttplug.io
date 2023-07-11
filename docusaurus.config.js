@@ -136,12 +136,25 @@ const config = {
                 label: 'Discord',
                 href: 'https://discord.buttplug.io',
               },
+            ],
+          },
+          {
+            title: 'Social',
+            items: [
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/buttplugio',
               },
+              {
+                label: 'Mastodon',
+                href: 'https://buttplug.zone/@buttplugio',
+              },
+              {
+                label: 'Bluesky',
+                href: 'https://bsky.app/profile/buttplug.io',
+              },
             ],
-          },
+          },          
           {
             title: 'More',
             items: [
@@ -152,14 +165,6 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/buttplugio',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/buttplugio',
-              },
-              {
-                label: 'Mastodon',
-                href: 'https://buttplug.zone/@buttplugio',
               },
               {
                 label: 'Youtube',
