@@ -22,19 +22,22 @@ function HomepageHeader() {
           >
             Buttplug Developer Guide
           </Link>
+        </div>
+        <div className={styles.buttons}>
           <Link
             className="button button--secondary button--md"
             to="/docs/spec"
           >
             Buttplug Protocol Specification
           </Link>
+        </div>
+        <div className={styles.buttons}>
           <Link
             className="button button--secondary button--md"
             to="/docs/stpihkal"
           >
             Sex Toy Protocols I Have Known And Loved
           </Link>
-
         </div>
       </div>
     </header>
