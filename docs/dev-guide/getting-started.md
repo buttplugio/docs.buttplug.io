@@ -1,16 +1,11 @@
 # Getting Started
 
-:::warning Section not finished (or started)
+As a potential Buttplug Developer, the first thing you should do is...
 
-Unfortunately right now quickstarting Buttplug is... not very quick. I'd like to get a better summary up so developers can get an idea of what they're in for without having to read multiple sections. 
+**BE A BUTTPLUG USER!**
 
-Until then, best you can do is read through the Architecture and Your First Application sections.
+This means becoming familiar with Intiface Central, the application that the users of your apps and games involving Buttplug will use to manage and connect to their hardware.
 
-To write:
+Before embarking on the developer guide, I highly recommend reading the [Intiface Central Quickstart](https://docs.intiface.com/docs/intiface-central/quickstart) and going through the steps to set up the application. Much of this developer guide assumes you'll be connecting examples (and later, your own apps) to Intiface Central, so it's good to be familiar with it up front.
 
-- Introduce Intiface Central
-- Go over a basic user flow
-- Build simplest application possible
-- Guide to which sections to read next
-
-:::
+After you've done that, continue on to the [Your First Buttplug Application section](writing-buttplug-applications/intro).
