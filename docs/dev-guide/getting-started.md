@@ -8,4 +8,4 @@ This means becoming familiar with Intiface Central, the application that the use
 
 Before embarking on the developer guide, I highly recommend reading the [Intiface Central Quickstart](https://docs.intiface.com/docs/intiface-central/quickstart) and going through the steps to set up the application. Much of this developer guide assumes you'll be connecting examples (and later, your own apps) to Intiface Central, so it's good to be familiar with it up front.
 
-After you've done that, continue on to the [Your First Buttplug Application section](writing-buttplug-applications/intro).
+After you've done that, continue on to the [Architecture Section](architecture/intro) (or [Your First Buttplug Application section](writing-buttplug-applications/intro) if you're really in a hurry).
