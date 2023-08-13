@@ -34,7 +34,7 @@ to allow the receiver to set its gain.
 Messages are always 42 bit long and always consist of the same fields. There is
 no field to signal the duration of a given command, instead, the messages are
 just repeated for as long as the command should be done (e.g. the remote just
-sends the same message over and over again until the button is released). 
+sends the same message over and over again until the button is released).
 
 bits | field         | description
 ---- | ------------- | -----------
@@ -72,7 +72,7 @@ tested yet.
 ### Commands
 
 Three commands are supported by the original remote and shockers. With the
-given number of bits, the protocol could, in theory, support more. 
+given number of bits, the protocol could, in theory, support more.
 
 While the intensity field is sent in every message, not all commands make use
 of it - you can set it to whatever value for those.
@@ -201,7 +201,7 @@ def tx_raw(d, raw, repeat=8):
     """encodes message, precedes pulse, pads with silcence, sends 8x
 
     adds 00000000000000011111 in front of the encoded part
-    (silence, then a pulse) 
+    (silence, then a pulse)
     and  000000000000000000000000 behind it.
     (silence)
 
@@ -295,7 +295,7 @@ def tx_raw(d, raw, repeat=8):
     d.RFxmit(tosend.tobytes(), repeat=repeat)
 
 def zap(d, intensity):
-    assert intensity <= 100 
+    assert intensity <= 100
     assert intensity >= 0
 
     template=bitstring.BitString(bin="010000001101110100101011100101000011111100")
