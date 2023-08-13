@@ -8,46 +8,126 @@ over 433Mhz-Band Radio Control.
 
 Credit to [XMPPWocky](https://twitter.com/xmppwocky) for the proof of concept control code.
 
-All information in this document was taken from this code.
+The information in this document was taken from this code initially and
+extended with information found while coding
+[GoToShock](https://praios.lf-net.org/littlefox/gotoshock).
 
-## Communication via RF
+## RF protocol
 
-The Petrainer listens to OOK on a 434Mhz carrier wave.
+The Petrainer shockers listens to ASK on a 433Mhz carrier wave. While the
+original version of this document said OOK, it understands data sent with ASK
+transmitters like the FS1000A, so it more likely understands OOK "by accident".
 
-The RC-transmitted commands are bitwise encoded as
+Bits are encoded using PWM with two different duty cycles, 25% for a 0 and 75%
+for a 1. The total length of each bit is 1ms.
 
-bit | pwm
---- | ---
-0 | 1000
-1 | 1110
+protocol bit | pwm duty cycle | on-time | off-time
+------------ | -------------- | ------- | --------
+0            | 25%            | 250µs   | 750µs
+1            | 75%            | 750µs   | 250µs
 
-Each message send is preceded by a 5 pwm-bit long pulse (Likely to allow the receiver to set its gain), and every message is repeated 8 times, with pauses in between.
+Each message send is preceded by a longer pulse of 1.25 to 1.5ms, most likely
+to allow the receiver to set its gain.
 
-The provided code talks to an RFCat dongle. Other devices like a YardStickOne likely work with minimal modification.  
-DIY solutions like [this](https://rurandom.org/justintime/w/Cheapest_ever_433_Mhz_transceiver_for_PCs) might also work.
+## Digital protocol
 
-## Commands
+Messages are always 42 bit long and always consist of the same fields. There is
+no field to signal the duration of a given command, instead, the messages are
+just repeated for as long as the command should be done (e.g. the remote just
+sends the same message over and over again until the button is released). 
 
-Only the Shock function has been documented. The collar also has vibration and beeping capabilities which have not been documented so far.
+bits | field         | description
+---- | ------------- | -----------
+2    | header        | constant `01`
+4    | channel       | see below
+3    | command       | see below
+17   | *unknown*     | not yet reverse-enbyneered - most likely contains a more-or-less unique ID for the remote that sent the message
+7    | intensity     | how much to shock, capped by the shockers at 100
+3    | command check | check value for the command
+4    | channel check | check value for the channel
+2    | footer        | constant `00`
 
-Command | Description | Parameter
---- | --- | ---
-Zap | Issues a static shock of specified strength| 0-100, high is strong
+### Check values
 
-## Protocol
+Some fields have a kinda "checksum" at a later place in the message. The
+purpose of this is most likely to have something not done by other protocols on
+this RF band, making sure your shockers are not triggered by someone turning on
+their remote controlled outlet.
 
-The Zap command looks like
+To build those check values, you take the original bit sequence, flip all the
+bits and reverse their order. Examples:
+
+* original bits: 001, all flipped: 110, order reversed: 011
+* original bits: 010, all flipped: 101, order reversed: 101
+* original bits: 0000, all flipped: 1111, order reversed: 1111
+* original bits: 1110, all flipped: 0001, order reversed: 1000
+
+### Channels
+
+The original remote can send on two different channels, called channels 1 and 2
+by it. The bit encoding for them is `0000` for channel 1 and `1110` for channel
+two, meaning the protocol might understand more such channels, but this was not
+tested yet.
+
+### Commands
+
+Three commands are supported by the original remote and shockers. With the
+given number of bits, the protocol could, in theory, support more. 
+
+While the intensity field is sent in every message, not all commands make use
+of it - you can set it to whatever value for those.
+
+command   | bits | intensity? | description
+--------- | ---- | ---------- | ---
+Zap/Shock | 001  | yes        | Issues a static shock of specified intensity.
+Vibrate   | 010  | yes        | Make the shock collar vibrate, great for "announcing" an incoming shock - and then just not sending one after all :>
+Beep      | 100  | no         | Beep.
+
+
+### Full example with annotations
+
+Here is a full message ("channel 2: shock with intensity 38%") with annotations:
 
 ```
-01000000 11011101 00101011 10010100 00111111 00
-0        8       16         ^^^^^^^
+01  1110  001  00101110001010110  0100110  011  1000  00
+|-  |---  |--  |----------------  |------  |--  |---  |-
+|   |     |    |                  |        |    |     \- footer, always 00
+|   |     |    |                  |        |    |
+|   |     |    |                  |        |    \------- checksum for the channel
+|   |     |    |                  |        |
+|   |     |    |                  |        \------------ checksum for the command
+|   |     |    |                  |
+|   |     |    |                  \--------------------- unsigned int for intensity,
+|   |     |    |                                         38 here
+|   |     |    |
+|   |     |    \---------------------------------------- unknown usage :(
+|   |     |
+|   |     \--------------------------------------------- command, "zap"/"shock" here
+|   |                                                    (we should decide on a name)
+|   |
+|   \--------------------------------------------------- channel, here "channel 2"
+|
+\------------------------------------------------------- header, always "01"
 ```
 
-where bits no 25:32 (7 bits starting at the 26th) are the zap intensity as a binary number between 0b0000000 and 0b1100100
+## Implementation in Go
+
+Supporting output via Raspberry Pi GPIOs and probably other drivers in the
+future. Meant to built a kinda PiShock experience but in OpenSource, can also
+be used as a library in other projects:
+
+* developers Gitlab: https://praios.lf-net.org/littlefox/gotoshock
+* Github mirror: https://github.com/LittleFox94/gotoshock
+* Go docs: https://pkg.go.dev/praios.lf-net.org/littlefox/gotoshock
+  - [pkg/types](https://pkg.go.dev/praios.lf-net.org/littlefox/gotoshock/pkg/types) has all the spicy protocol things
 
 ## Python script
 
+This code talks to an RFCat dongle. Other devices like a YardStickOne likely work with minimal modification.  
+DIY solutions like [this](https://rurandom.org/justintime/w/Cheapest_ever_433_Mhz_transceiver_for_PCs) might also work.
+
 The ported python3 script, which should work, provided rflib works with python3.
+
 ```python
 """
 Module for connecting to a Petrainer Shock Collar and sending commands
@@ -161,7 +241,7 @@ class ShockCollar:
 
 ```
 
-The original python2 script.
+### The original python2 script
 ```python
 import rflib
 import binascii
