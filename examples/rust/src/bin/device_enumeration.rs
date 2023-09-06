@@ -16,7 +16,7 @@ async fn main() -> anyhow::Result<()> {
   // of the subtype managers for us (the default features include all of them).
   //let client = in_process_client("Example Client", false).await;
   // To create a Websocket Connector, you need the websocket address and some generics fuckery.
-  let connector = new_json_ws_client_connector("ws://192.168.123.107:12345/buttplug");
+  let connector = new_json_ws_client_connector("ws://127.0.0.1:12345/buttplug");
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;
   let mut events = client.event_stream();
