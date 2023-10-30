@@ -30,7 +30,7 @@ A DCM is responsible for making sure its subsystem is usable (for instance, that
 
 DCMs need to know what devices to look for. They use the Device Configuration Manager to do this. Device Configuration Managers map device identifiers (Bluetooth names, USB VID/PID pairs, etc) to metadata like device names, proprietary protocols, etc... 
 
-If you're interested in what this data looks like, the latest version is kept as JSON at [https://buttplug-device-config.buttplug.io](https://buttplug-device-config.buttplug.io).
+If you're interested in what this data looks like, the latest version is kept as JSON at [https://intiface-engine-device-config.intiface.com/](https://intiface-engine-device-config.intiface.com/).
 
 Whenever a DCM finds a device, it pulls the identifying data and sends it through the Device Configuration Manager to see if there is matching metadata. If matching metadata exists, the information is returned to the DCM, and the DCM continues with making a connection with the device, returning a Buttplug Device, which consists of an Implementation and a Protocol.
 
