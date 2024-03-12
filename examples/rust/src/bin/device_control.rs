@@ -19,7 +19,7 @@ async fn wait_for_input() {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-  let connector = new_json_ws_client_connector("ws://192.168.123.107:12345");
+  let connector = new_json_ws_client_connector("ws://localhost:12345");
 
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;
