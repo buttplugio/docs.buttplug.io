@@ -45,7 +45,7 @@ Unless the user has specified otherwise, most devices at least list their brand 
 When writing raw messages, an Endpoint must be passed to let the device know where the message
 should be routed to. Endpoints are an enumeration (or set of constants in languages that do not
 support enumerations) with [their canonical definition in the Rust
-library](https://github.com/buttplugio/buttplug-rs/blob/master/buttplug/src/device/mod.rs#L38). Each
+library](https://github.com/buttplugio/buttplug/blob/master/buttplug/src/core/message/endpoint.rs#L32). Each
 FFI library will have some version of this enumeration in order to form Raw messages.
 
 To find out what endpoints are assigned to devices, you can check out the [device configuration file](/docs/dev-guide/inflating-buttplug/devices/device-configuration-file).
