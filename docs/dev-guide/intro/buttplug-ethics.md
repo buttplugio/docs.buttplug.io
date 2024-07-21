@@ -64,7 +64,7 @@ Does this means you shouldn't develop for sex tech? Absolutely not. It just mean
 
 As you'd think your design through for your users based on the criteria from the first section of this section, think your design through for yourself too. What is it you want to be responsible for with the software you're releasing? What do and don't you want your users to be able to do with it?
 
-Note that this list is maleable. You don't have to get it right the first time, and it doesn't need to be formally stated for most smaller projects. It can grow and change as your software grows and changes, but having the stated requirements will help both you and your users in case things ever "blow up".
+Note that this list is malleable. You don't have to get it right the first time, and it doesn't need to be formally stated for most smaller projects. It can grow and change as your software grows and changes, but having the stated requirements will help both you and your users in case things ever "blow up".
 
 ## The Buttplug Mission Statement
 
