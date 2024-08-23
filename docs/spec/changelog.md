@@ -36,8 +36,13 @@
     actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 <= x =< 1 value,
     letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
     condense methods.
-- Remove `RotateCmd`, use `ScalarCmd`/`StaticCmd`
+- Remove `RotateCmd`, use `StaticCmd`
   - See note on last bullet for more info.
+- Remove `ActuatorType` from `StaticCmd` _(Ed Note: This is still a maybe)_
+  - This was initially added as a safety check on `ScalarCmd`, to make sure that the developer was
+    actually triggering the type of actuator they meant to be. However, as clients usually (or at
+    least should) hide this detail from end users, it's not useful to anyone but client developers.
+
 
 ## Version 3 Patch 3 (2022-12-30)
 
