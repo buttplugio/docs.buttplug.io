@@ -4,8 +4,8 @@ slug: /spec
 ---
 # The Buttplug Intimate Device Control Standard
 
-* **Version:** 3
-* **Documentation Repo**: [https://github.com/buttplugio/buttplug](https://github.com/buttplugio/buttplug)
+* **Version:** 4
+* **Documentation Repo**: [https://github.com/buttplugio/docs.buttplug.io](https://github.com/buttplugio/docs.buttplug.io)
 
 Buttplug is a quasi-standard set of technologies and protocols to allow developers to write software
 that can access an array of computer controlled devices (sex toys, kegelcizers, etc...) in a
