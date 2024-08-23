@@ -1,5 +1,44 @@
 # Spec Changelog
 
+## Version 4 (2024-09-??)
+
+- Change from Message Attributes to Device Features
+  - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
+    had multiple problems, including index collisions, difficult figuring out what a device actually
+    does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 3 different types of features: Actuators, Sensors, and Raw. This allows us to state what a device can do, and then define messages within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
+  - This change will be seen in the `DeviceAdded` and `DeviceList` messages, as well as in commands
+    that need to refer to specific feature indexes (see next bullet).
+- Define `FeatureType` in message spec and require spec point updates to add new features
+  - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
+    let developers know what type of value they were setting. The values of `ActuatorType` were never set in the message spec, only in the reference implementations of the Buttplug server. These values should be defined within the message spec to let Client writers know exactly what to expect, and how to handle types they may not know (i.e. a client built for message spec v4.1 receives a `FeatureType` defined in v4.2 should not completely break, but should complain).
+- Rename `Index` fields of subcommands to `FeatureIndex`
+  - As we now refer to features instead of message attribute array positions, we're updating the
+    `Index` field of commands with corresponding subcommands (`ScalarCmd`/`RotateCmd`/`LinearCmd` in
+    v3) to take `FeatureIndex` instead. The name change here is purely for context, as leaving it as
+    "Index" when the value changed to different origin between message spec versions seemed like it
+    may be confusing.
+- Rename `LinearCmd` to `GoalWithDurationCmd` _(Ed. Note: This is still a maybe)_
+  - Much like the move to `ScalarCmd` in v3, `LinearCmd` is now being generalized to "movement
+    toward a goal value with a duration". Added to the definition will be a curve type for the
+    movement, though at the moment the only supported curve will be of "Linear" type (later versions
+    may include different curves or the ability to define a curve function over time). For now, this
+    means we can handle both stroker style movement as well as things like angular rotation in TCode
+    v3, denoting the movement type via feature types.
+- Rename `ScalarCmd` to `StaticCmd` _(Ed. Note: I'm not sure about this name yet :| )_
+  - `ScalarCmd` is being renamed to `StaticCmd` to denote that sending the command is expected to
+    set a value and leave it set until another `StaticCmd` or `StopDeviceCmd` call is sent.
+    `ScalarCmd` didn't properly relay this meaning.
+- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
+  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
+    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
+- Change `StaticCmd` to take signed double instead of unsigned double
+  - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
+    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 <= x =< 1 value,
+    letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
+    condense methods.
+- Remove `RotateCmd`, use `ScalarCmd`/`StaticCmd`
+  - See note on last bullet for more info.
+
 ## Version 3 Patch 3 (2022-12-30)
 
 - Message Definitions Fixed:
