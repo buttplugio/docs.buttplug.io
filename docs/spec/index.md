@@ -21,9 +21,11 @@ If a user wants to access a computer controlled sex device in a way not supporte
 
 The Buttplug Sex Device Control Standard seeks to lower these bars as much as possible.
 
-* By proposing a standard that can be implemented in a cross-platform way, software based on the Buttplug Standard can reduce the amount of knowledge required to access hardware from a certain operating system or platform. Using technologies like Cordova or Xamarin to build software that implements Buttplug means that access could happen via desktop or mobile platforms.
+* By proposing a standard that can be implemented in a cross-platform way, software based on the Buttplug Standard can reduce the amount of knowledge required to access hardware from a certain operating system or platform. Using web technologies or cross-platform systems like Flutter, Electron, or Tauri to build software that implements Buttplug means that access could happen via desktop or mobile platforms.
 * By standardizing the methods that can be used to talk to these devices, implementations of the standard can happen in multiple languages and still interact with each other. This opens development opportunities to multiple communities and ecosystems.
 * Assuming some sort of widespread adoption happens, this could drive the commercial market to build devices with the Buttplug Standard in mind, or even to use it directly. Until that point, the portion of the community familiar with reverse engineering can help open device access to those who are interested in controlling the devices.
+  * The prior point was written in 2017. As of 2024, the Buttplug project is now in touch with
+    several manufacturers, working together to implement open support for devices.
 
 ## Generalized Control
 
@@ -39,16 +41,13 @@ The user has a particular function they would like to implement in a software ap
 
 Without Buttplug, this would require knowing how to talk to both USB and Bluetooth, and also knowing how each of these devices communicates with the computer in order to control vibration levels. They would then have to add both of these to their application.
 
-With Buttplug, Server implementations are expected to take care of the different manufacturer and hardware communication requirements. However, if there were only ways to communicate with specific hardware, the application they were making would have to provide separate logic paths to cover either device instance.
+With Buttplug, "Server" implementations are expected to take care of the different manufacturer and hardware communication requirements. However, if there were only ways to communicate with specific hardware, the application they were making would have to provide separate logic paths to cover either device instance.
 
-This is where the idea of "generalized haptics" comes in. Instead of either a "Device A" or "Device B" command to the server, the user can just send a "VibrateCmd" command to the server, along with the identifier for which device they wanted to use. Not only that, their software would work with any device \(including devices they do not own/have tested with\) that could translate the "VibrateCmd" command.
+This is where the idea of "generalized haptics" comes in. Instead of either a "Device A" or "Device B" command to the server, the user can just send a generic speed command to the server, along with the identifier for which device (and which features of which device) they wanted to use. Not only that, their software would work with any device \(including devices they do not own/have tested with\) that could translate the aforementioned generic speed command.
 
 Now, the not so simple case.
 
-Let's add Device C, an stroker. To use Device C with the same application as Device A and Device B,
-the Vibrate command has to be translated into some facsimile that is valid for stroking. While this
-is most likely not tractable for a global solution, the goal of Buttplug is to make explorations of
-ideas like this accessible and easy to play with.
+Let's add Device C, a stroker. To use Device C with the same application as Device A and Device B, the generic speed command has to be translated into some facsimile that is valid for a stroker. While this is most likely not tractable for a global solution, the goal of Buttplug is to make explorations of ideas like this accessible and easy to play with.
 
 ## Comparisons to Existing Software
 
