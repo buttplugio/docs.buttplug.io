@@ -56,10 +56,19 @@ implement, or to contract the Buttplug designers to build it for them.
 
 ## JSON Message Serialization
 
-For reference implementations of the Buttplug standard, we use JSON for serialization. The format of
-the json object for each specific message mimics that of object output from Rust's
-[serde-json](https://github.com/serde-rs/json) crate. This is simply due to the first implementation
-of Buttplug with working serialization being in Rust.
+For reference implementations of the Buttplug standard, we use JSON for serialization. 
+
+:::tip Why is the JSON format for Buttplug messages so weird?
+
+The format of Buttplug json messages mimics the output from Rust's
+[serde-json](https://github.com/serde-rs/json) crate. This is due to the first implementation of
+Buttplug with working serialization being in Rust.
+
+The second, usable implementation of Buttplug happened in C#. The message structure was inherited from Rust, but the PascalCase named of messages and their fields was taken from C#.
+
+That is how we've ended up with the mess we're in now. There is most likely no language that will handle both the structure and capitalization scheme naturally, and the spec has been around for long enough that it is difficult to change. This is now just an accepted point of shared pain for anyone that wants to use this protocol.
+
+:::
 
 When sending messages over the line to a server/client, we wrap them in a JSON array, so that
 multiple messages can be sent and parsed simultaneously.
