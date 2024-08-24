@@ -102,11 +102,12 @@ documentation, and are included in the JSON schema in this repo.
 ## Adding New Messages
 
 The message list as described here is only set in stone for this version of the spec. New messages
-will be added as new devices are released, or as new generic messages are deemed necessary. The only
-rule is that once a message is added to this document, it may be deprecated but should never be
-removed. Newer versions of the message may succeed it. This will allow parsing and schema checking
-to be as strict as possible. If edits to a message need to be made, a new message type will most
-likely be added.
+will be added as new devices with different capabilities are released, or as new generic messages
+are deemed necessary. The only rule is that once a message is added to this document, it may be
+deprecated but should never be removed completely from the document (though it may not be available
+in newer protocol versions), in order for backward compatibility to be implemented in servers. Newer
+versions of the message may succeed it. This will allow parsing and schema checking to be as strict
+as possible. If edits to a message need to be made, message names can be reused, as it is assumed the [Message Version](#message-versioning) acts as a namespace for messages.
 
 Any changes to the spec will also cause a spec version update (covered in the next section), which
 will need to be reflected across systems and implementations. So far, these updates have been rare.
@@ -138,9 +139,15 @@ user can most likely update the server version to something newer. The client ma
 upgraded for many reasons, such as being a proprietary application or source code not being easily
 accessible, being to complex to work on and upgrade, etc...
 
-**Note:** Spec Version 0 was listed as Spec Version 0.1.0 initially.
+:::tip Version 0 Issues
 
-**Note**: Version 0 of the RequestServerInfo message does not have a parameter for protocol version.
-Servers that implement version 0 will reject clients capable of using the version 1 schema. This is
-not seen as an issue, as the server is likely to be the first component in the Buttplug archtecture
-to be updated, and is most likely to be under the end-user's control to update.
+Version 0 of the Message Spec was implemented without much thought for the future development of Buttplug. While very few client applications still exist for use with Version 0, backward compatibility implementation is possible.
+
+Spec Version 0 was listed as Spec Version 0.1.0 initially.
+
+Version 0 of the [RequestServerInfo](identification.md#requestserverinfo) message does not have a
+parameter for protocol version. It is assumed that any
+[RequestServerInfo](identification.md#requestserverinfo) message received without a version number
+is from a Version 0 client, and should be communicated with at that spec level.
+
+:::
