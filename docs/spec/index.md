@@ -15,15 +15,28 @@ semi-future-proof way.
 
 If a user wants to access a computer controlled sex device in a way not supported by the original manufacturer, the requirement list to is not trivial. There are some major hurdles between obtaining a device and having DIY control of it:
 
-* Experience in the operating system the user will want to access the device from, including capabilities and programming interfaces to work with the connection medium \(serial/usb/bluetooth/etc\)
-* Experience using a programming language that allows the user access to hardware via the operating system.
-* Knowledge of the communications protocol the device uses. This is rarely, if ever, publicly documented information.
+* Experience in the operating system the user will want to access the device from, including
+  capabilities and programming interfaces to work with the connection medium
+  \(serial/usb/bluetooth/etc\)
+* Experience using a programming language that allows the user access to hardware via the operating
+  system.
+* Knowledge of the communications protocol the device uses. This is rarely, if ever, publicly
+  documented information.
 
 The Buttplug Sex Device Control Standard seeks to lower these bars as much as possible.
 
-* By proposing a standard that can be implemented in a cross-platform way, software based on the Buttplug Standard can reduce the amount of knowledge required to access hardware from a certain operating system or platform. Using web technologies or cross-platform systems like Flutter, Electron, or Tauri to build software that implements Buttplug means that access could happen via desktop or mobile platforms.
-* By standardizing the methods that can be used to talk to these devices, implementations of the standard can happen in multiple languages and still interact with each other. This opens development opportunities to multiple communities and ecosystems.
-* Assuming some sort of widespread adoption happens, this could drive the commercial market to build devices with the Buttplug Standard in mind, or even to use it directly. Until that point, the portion of the community familiar with reverse engineering can help open device access to those who are interested in controlling the devices.
+* By proposing a standard that can be implemented in a cross-platform way, software based on the
+  Buttplug Standard can reduce the amount of knowledge required to access hardware from a certain
+  operating system or platform. Using web technologies or cross-platform systems like Flutter,
+  Electron, or Tauri to build software that implements Buttplug means that access could happen via
+  desktop or mobile platforms.
+* By standardizing the methods that can be used to talk to these devices, implementations of the
+  standard can happen in multiple languages and still interact with each other. This opens
+  development opportunities to multiple communities and ecosystems.
+* Assuming some sort of widespread adoption happens, this could drive the commercial market to build
+  devices with the Buttplug Standard in mind, or even to use it directly. Until that point, the
+  portion of the community familiar with reverse engineering can help open device access to those
+  who are interested in controlling the devices.
   * The prior point was written in 2017. As of 2024, the Buttplug project is now in touch with
     several manufacturers, working together to implement open support for devices.
 
@@ -66,7 +79,7 @@ All of these programs take input from various devices and translate them as some
 
 It probably seems silly to call a generic device control standard "Buttplug".
 
-That's because it is.
+That's because silly is the point.
 
 I could probably call this project something neutral like Sex Device Control Standard (SDCS?), but I've been referring to computer controlled sex devices as "Internet Buttplugs" for years, and that's what influenced the name of this project. It's hard to pick terms for these products.
 
@@ -76,9 +89,26 @@ I could probably call this project something neutral like Sex Device Control Sta
 * "Adult novelty" just sounds stale and corporate. You buy adult novelties in bulk from warehouses. You go to adult novelty conventions.
 * "Marital aide" No.
 
-I ended up with "Internet Buttplug" because everyone has a butt, and buttplug is a fun word to say. It's inclusive and it's humorous. I admit that it may confuse people when they're wondering why they're using something called Buttplug to control their fucking machine or robotic onahole or who knows what else.
+I ended up with "Internet Buttplug" because everyone has a butt, and buttplug is a fun word to say.
+It's inclusive and humorous. I admit that it may confuse people when they're wondering why they're
+using something called Buttplug to control their fucking machine or robotic onahole or who knows
+what else.
 
 One of the hardest problems in Computer Science is naming things. I just stopped trying to name the thing and selected a name and here we are. Much like the other hard problems in Computer Science, I fully expect this to come back to bite me in the ass at some point.
 
-**Please Note:** Even though this project is called Buttplug, it does not mean you have to put something in your butt to develop with it or use applications that integrate it. We are not saying you shouldn't, as we condone butt stuff as performed in a safe and sane manner, but it's not a requirement, either.
+:::tip Just to make sure this is clear: THIS WORKS FOR MORE THAN BUTTPLUGS
 
+Even though this project is called Buttplug, it does not mean you have to put something in your butt to develop with it or use applications that integrate it. We are not saying you shouldn't, as we condone butt stuff as performed in a safe and sane manner, but it's not a requirement, either.
+
+:::
+
+## Why have a protocol specification? Why not just write some API docs like a normal developer?
+
+When I first started the Buttplug project in 2017, I was working on web browsers. This meant that I
+was already surrounded by specifications of different types, and therefore it seemed like the best
+way to define the way my system worked was via (a simplification of) that format.
+
+Much like browsers, I want other developers to be able to rebuild the system completely from
+documentation if at all possible. I don't really expect that anyone will do so, as, much like implementing a browser, the work required to implement the server side of the system is immense. Even so, this document should provide an up-to-date way to reimplement the base system if anyone actually does wish to do so.
+
+Most importantly, I just like putting fancy names on things that also include the word Buttplug.
