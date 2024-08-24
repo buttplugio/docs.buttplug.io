@@ -112,18 +112,18 @@ If return is 7 bytes:
 
 - High nibble of Byte[0] - Address Increment
 - Low nibble of Byte[0] - Word Size
-- Byte[1] << 8 || Byte[2] - Program Length
-- Byte[3] << 8 || Byte[4] - Program Base
-- Byte[5] << 8 || Byte[6] - Row Length
+- Byte[1] \<\< 8 || Byte[2] - Program Length
+- Byte[3] \<\< 8 || Byte[4] - Program Base
+- Byte[5] \<\< 8 || Byte[6] - Row Length
 
 If return is 9 bytes:
 
 - Byte[0] - Flash Erase Value
 - High nibble of Byte[1] - Address Increment
 - Low nibble of Byte[1] - Word Size
-- Byte[2] << 8 || Byte[3] - Program Length
-- Byte[4] << 16 || Byte[5] << 8 || Byte[6] - Program Base
-- Byte[7] << 8 || Byte[8] - Row Length
+- Byte[2] \<\< 8 || Byte[3] - Program Length
+- Byte[4] \<\< 16 || Byte[5] \<\< 8 || Byte[6] - Program Base
+- Byte[7] \<\< 8 || Byte[8] - Row Length
 
 #### Erase Memory
 

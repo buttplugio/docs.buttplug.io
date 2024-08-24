@@ -13,9 +13,9 @@ the FTDI TTL-232R-5V-AJ.
 To wire your own cable, use the following connections between the TTL
 serial chip and TRS connector:
 
-- Tip <-> TX
-- Ring <-> RX
-- Sleeve <-> GND
+- Tip &lt;-&gt; TX
+- Ring &lt;-&gt; RX
+- Sleeve &lt;-&gt; GND
 
 ### Port Settings
 

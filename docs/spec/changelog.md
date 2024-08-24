@@ -33,7 +33,7 @@
     the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
 - Change `StaticCmd` to take signed double instead of unsigned double
   - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
-    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 <= x =< 1 value,
+    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 \<= x \<= 1 value,
     letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
     condense methods.
 - Remove `RotateCmd`, use `StaticCmd`

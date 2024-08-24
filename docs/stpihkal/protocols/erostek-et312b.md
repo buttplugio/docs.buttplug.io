@@ -656,9 +656,9 @@ to 0, meaning that at the 8mhz clock, the serial port will run at 19200
 baud. If this byte is set to 0x0c, the serial port will run at 38400
 baud with no noticeable effects on the ET312.
 
-Other non-standard, higher baud rates may be possible, but testing has
-not been successful thus far. See <http://wormfood.net/avrbaudcalc.php>
-for baud rate calculations, using the 8mhz table.
+Other non-standard, higher baud rates may be possible, but testing has not been successful thus far.
+See [http://wormfood.net/avrbaudcalc.php](http://wormfood.net/avrbaudcalc.php) for baud rate
+calculations, using the 8mhz table.
 
 ### \$402b - UCSRA I/O Register {#b---ucsra-io-register id="bda5abfd-e159-4e0b-867f-46a5eb62d50f"}
 
