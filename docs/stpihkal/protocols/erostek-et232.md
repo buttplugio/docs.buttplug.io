@@ -14,9 +14,9 @@ the Link port of the box. The link cable consists of a 3.5mm TRS
 Female DB-9 or a RS232-to-USB converter. The pin connections are as
 follows:
 
-- 3.5mm Tip <-> RX (DB-9 Pin 2)
-- 3.5mm Ring <-> TX (DB-9 Pin 3)
-- 3.5mm Sleeve <-> Ground (DB-9 Pin 5)
+- 3.5mm Tip &lt;-&gt; RX (DB-9 Pin 2)
+- 3.5mm Ring &lt;-&gt; TX (DB-9 Pin 3)
+- 3.5mm Sleeve &lt;-&gt; Ground (DB-9 Pin 5)
 
 Serial connections are 19200/8/N/1, or:
 

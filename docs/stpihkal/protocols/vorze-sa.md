@@ -92,14 +92,14 @@ Speed is specified by the 7 remaining bits of the 3rd byte. There are
 ### Examples
 
 To set the A10 Cyclone (byte 0: 0x01) spinning clockwise at 50% speed
-(byte 2: (0x00 << 7) | 0x32 = 0x32), use the following command:
+(byte 2: (0x00 &lt;&lt; 7) | 0x32 = 0x32), use the following command:
 
 ```
 0x01 0x01 0x32
 ```
 
 To set the UFO SA (byte 0: 0x02) spinning counterclockwise at 100%
-speed (byte 2: (0x01 << 7) | 0x64 = 0xe4), use the following command:
+speed (byte 2: (0x01 &lt;&lt; 7) | 0x64 = 0xe4), use the following command:
 
 ```
 0x02 0x01 0xe4
