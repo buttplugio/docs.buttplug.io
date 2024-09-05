@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Buttplug" Version="3.0.1" />
-    <PackageReference Include="Buttplug.Client.Connectors.WebsocketConnector" Version="3.0.1" />
+    <PackageReference Include="Buttplug" Version="3.1.1" />
   </ItemGroup>
 
 </Project>

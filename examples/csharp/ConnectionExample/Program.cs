@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Buttplug.Core;
 using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace ConnectionExample
 {

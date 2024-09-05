@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace RemoteConnectorExample
 {

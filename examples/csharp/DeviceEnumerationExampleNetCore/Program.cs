@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Buttplug.Client;
-using Buttplug.Core;
-using Buttplug.Client.Connectors.WebsocketConnector;
+﻿using Buttplug.Client;
 
 namespace DeviceEnumerationExample
 {

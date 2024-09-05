@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Buttplug.Client;
 using Buttplug.Core;
-using Buttplug.Client.Connectors.WebsocketConnector;
 
 namespace AsyncExample
 {

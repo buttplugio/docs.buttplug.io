@@ -1,5 +1,4 @@
 ﻿using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
 using System;
 using System.Threading.Tasks;
 

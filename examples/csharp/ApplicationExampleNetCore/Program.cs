@@ -1,6 +1,4 @@
 ﻿using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
-using Buttplug.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
