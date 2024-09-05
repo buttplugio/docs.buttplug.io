@@ -113,15 +113,15 @@ const config = {
             items: [
               {
                 label: 'Buttplug Developer Guide',
-                to: 'https://buttplug-developer-guide.docs.buttplug.io',
+                to: 'https://docs.buttplug.io/docs/dev-guide/',
               },
               {
                 label: 'Buttplug Protocol Spec',
-                to: 'https://buttplug-spec.docs.buttplug.io',
+                to: 'https://docs.buttplug.io/docs/spec/',
               },
               {
                 label: 'Sex Toy Protocols I Have Known And Loved',
-                to: 'https://stpihkal.docs.buttplug.io',
+                to: 'https://docs.buttplug.io/docs/stpihkal/',
               },
             ],
           },

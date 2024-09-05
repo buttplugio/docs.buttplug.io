@@ -14,7 +14,7 @@ use some of the other features in the library.
 
 ## Example Code Access
 
-All of the example code in this section, as well as in the rest of the Developer Guide, is available in the [github repo for the Dev Guide](https://github.com/buttplugio/buttplug-developer-guide/tree/master/examples). This includes both the code itself and sometimes project files (VS Studio projects, Cargo.toml for rust, etc) for building the applications.
+All of the example code in this section, as well as in the rest of the Developer Guide, is available in the [github repo for the Dev Guide](https://github.com/buttplugio/docs.buttplug.io/tree/master/examples). This includes both the code itself and sometimes project files (VS Studio projects, Cargo.toml for rust, etc) for building the applications.
 
-We will do our best to keep these as up to date as possible, but if you run into any issues with compatibility or compilation, please [file an issue on the dev guide repo](https://github.com/buttplugio/buttplug-developer-guide/issues).
+We will do our best to keep these as up to date as possible, but if you run into any issues with compatibility or compilation, please [file an issue on the dev guide repo](https://github.com/buttplugio/docs.buttplug.io/issues).
 
