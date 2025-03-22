@@ -27,8 +27,8 @@ knows about. Useful for protocols like Bluetooth, which require an explicit disc
 sequenceDiagram
     Client->>+Server: StartScanning Id=1
     Server->>-Client: Ok Id=1
-    Server->>Client: DeviceAdded Id=0
-    Server->>Client: DeviceAdded Id=0
+    Server->>Client: DeviceList Id=0
+    Server->>Client: DeviceList Id=0
 ```
 
 **Serialization Example:**
@@ -67,8 +67,8 @@ like Bluetooth, which may not timeout otherwise.
 sequenceDiagram
     Client->>+Server: StartScanning Id=1
     Server->>-Client: Ok Id=1
-    Server->>Client: DeviceAdded Id=0
-    Server->>Client: DeviceAdded Id=0
+    Server->>Client: DeviceList Id=0
+    Server->>Client: DeviceList Id=0
     Client->>+Server: StopScanning Id=2
     Server->>-Client: Ok Id=2
 ```
@@ -111,8 +111,8 @@ None. Server-to-Client only.
 sequenceDiagram
     Client->>+Server: StartScanning Id=1
     Server->>-Client: Ok Id=1
-    Server->>Client: DeviceAdded Id=0
-    Server->>Client: DeviceAdded Id=0
+    Server->>Client: DeviceList Id=0
+    Server->>Client: DeviceList Id=0
     Server->>Client: ScanningFinished Id=0
 ```
 
@@ -172,7 +172,7 @@ sequenceDiagram
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 3 (See [Deprecated Messages](deprecated.md) for older versions.)
+**Last Updated In Spec Version:** 4 (See [Deprecated Messages](deprecated.md) for older versions.)
 
 **Fields:**
 
@@ -192,12 +192,23 @@ sequenceDiagram
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
     name should be used.
-  * _DeviceMessages_ (dictionary): Accepted Device Messages 
-    * Keys (string): Type names of Device Messages that the device will accept
-    * Values (Array of [Message
-      Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded)):
-      Attributes for the Device Messages. Each feature is a seperate array element, and its index in the array matches how it should be addressed in generic command messages. For instance, in the example below, the Clitoral Stimulator would be Actuator Index 0 in ScalarCmd.
-
+  * _DeviceFeatures_ (array of feature objects)
+    * _Description_ (string): Text descriptor for a feature.
+    * _FeatureType_ (string): The type of feature this descriptor represents. See [feature types]()
+    * _Actuator_ (Object, may be null): Represents an actuator that is part of this feature
+      * _Messages_ (array of strings): List of control message types that can be used by this feature.
+      * _StepCount_ (unsigned 32-bit integer): Range of values that can be
+        sent to control messages. For instance, if a vibrator has 20 steps of speed control,
+        StepRange will be 20.
+    * _Sensor_ (Object, may be null): Represents a sensor that may be part of this feature
+      * _Messages_ (array of strings): List of control message types that can be used by this feature.
+      * _ValueRange_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
+        received from the sensor.
+    * _Raw_ (Object, may be null): If raw messages are turned on in the server, relays information
+      needed to use them.
+      * _Endpoints_ (array of strings): Array of endpoint names that can be used within raw
+        messages.
+    
 **Expected Response:**
 
 None. Server-to-Client message only.
@@ -221,78 +232,51 @@ sequenceDiagram
         {
           "DeviceName": "Test Vibrator",
           "DeviceIndex": 0,
-          "DeviceMessages": {
-            "ScalarCmd": [
-              {
+          "Features": [
+            {
+              "FeatureType": "Vibrate",
+              "Descriptor": "Clitoral Stimulator",
+              "Actuator": {
                 "StepCount": 20,
-                "FeatureDescriptor": "Clitoral Stimulator",
-                "ActuatorType": "Vibrate"
-              },
-              {
-                "StepCount": 20,
-                "FeatureDescriptor": "Insertable Vibrator",
-                "ActuatorType": "Vibrate"
+                "Messages": ["ValueCmd"]
               }
-            ],
-            "StopDeviceCmd": {}
-          }
+            },
+            {
+              "FeatureType": "Vibrate",
+              "Descriptor": "Insertable Stimulator",
+              "Actuator": {
+                "StepCount": 20,
+                "Messages": ["ValueCmd"]
+              }
+            },
+            {
+              "FeatureType": "Battery",
+              "Descriptor": "Battery",
+              "Sensor": {
+                "ValueRange": [0, 100],
+                "Messages": ["SensorReadCmd"]
+              }
+            }
+          ]
         },
         {
           "DeviceName": "Test Stroker",
           "DeviceIndex": 1,
           "DeviceMessageTimingGap": 100,
           "DeviceDisplayName": "User set name",
-          "DeviceMessages": {
-            "LinearCmd": [ {
-              "StepCount": 100,
-              "FeatureDescriptor": "Stroker",
-              "ActuatorType": "Linear"
-            } ],
-            "StopDeviceCmd": {}
-          }
+          "Features": [
+            {
+              "FeatureType": "PositionWithDuration",
+              "Descriptor": "Stroker",
+              "Actuator": {
+                "StepCount": 100,
+                "Messages": ["ValueWithParameterCmd"]
+              }
+            }
+          ]
         }
       ]
     }
   }
 ]
 ```
-
-### Message Attributes for DeviceList
-
-**Description:** A collection of message attributes. This object is always an array element of a
-Device Message key/value pair within a [DeviceList](enumeration.md#devicelist) or
-[DeviceAdded](enumeration.md#deviceadded) message. Not all attributes are relevant for all Device
-Messages on all Devices; in these cases the attributes will not be included.
-
-**Introduced In Spec Version:** 1
-
-**Last Updated In Spec Version**: 3 (See [Deprecated Messages](deprecated.md) for older versions.)
-
-**Attributes:**
-
-* _FeatureDescriptor_
-  * Valid for Messages: ScalarCmd, RotateCmd, LinearCmd, SensorReadCmd
-  * Type: String
-  * Description: Text descriptor for a feature.
-* _StepCount_ 
-  * Valid for Messages: ScalarCmd, RotateCmd, LinearCmd
-  * Type: unsigned int
-  * Description: For each feature, lists the number of discrete steps the feature can use. This
-    value can be used in calculating the 0.0-1.0 range required for ScalarCmd and other messages.
-* _ActuatorType_
-  * Valid for Messages: ScalarCmd, RotateCmd, LinearCmd
-  * Type: String
-  * Description: Type of actuator this feature represents.
-* _SensorType_
-  * Valid for Messages: SensorReadCmd, SensorSubscribeCmd
-  * Type: String
-  * Description: Sensor types that can be read by Sensor.
-* _SensorRange_
-  * Valid for Messages: SensorReadCmd, SensorSubscribeCmd (but applies to values returned by SensorReading)
-  * Type: array of arrays of 2 integers
-  * Description: Range of values a sensor can return. As sensors can possibly return multiple values
-    in the same SensorReading message (i.e. an 3-axis accelerometer may return all 3 axes in one read), this is sent as an array of ranges. The length of this array will always match the number of readings that will be returned from a sensor, and can be used to find the reading count for a sensor.
-* _Endpoints_
-  * Valid for Messages: RawReadCmd, RawWriteCmd, RawSubscribeCmd
-  * Type: array of strings
-  * Description: Endpoints that can be used by Raw commands.
