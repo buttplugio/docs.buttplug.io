@@ -52,7 +52,7 @@ ideas like this accessible and easy to play with.
 
 ## Comparisons to Existing Software
 
-It's somewhat difficult to point to a real world counterpart for the Buttplug Standard. While companies like [Frixion](http://twitter.com/frixionme) and [FeelMe](http://feelme.com) have created systems for controlling different devices, neither of those is open source, so it's hard to point at them as examples.
+It's somewhat difficult to point to a real world counterpart for the Buttplug Standard. While brands like [xtoys](http://xtoys.app) and [FeelMe](http://feelme.com) have created systems for controlling different devices, neither of those is open source, so it's hard to point at them as examples.
 
 The closest existing projects are those which reinterpret or generalize control schemes. Projects like:
 
