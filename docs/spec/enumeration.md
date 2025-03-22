@@ -71,7 +71,6 @@ sequenceDiagram
     Server->>Client: DeviceAdded Id=0
     Client->>+Server: StopScanning Id=2
     Server->>-Client: Ok Id=2
-    Server->>Client: ScanningFinished Id=0
 ```
 
 **Serialization Example:**
