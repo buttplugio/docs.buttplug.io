@@ -33,16 +33,14 @@
 - Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
   - We're seeing devices that require a one-off command to cause an event to happen. For instance,
     the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
-- Rename `MessageVersion` to `MessageMajorVersion` and add `MessageMinorVersion` to `ServerInfo`
-  message.
-  - This allows us to notify clients that a version update has happened that may affect usability.
-    `MessageMinorVersion` will increase when a change is made that adds functionality (i.e. new
-    messages that aren't required for general protocol flow, or new feature types are added), while
-    `MessageMajorVersion` will increase when a change is made that breaks existing functionality.
-- Servers can return `MessageMajorVersion` and `MessageMinorVersion` that doesn't match the current
-  client version.
-  - This was supposed to always be the case, but early implementation of the Buttplug Client had
-    hard checks that message versions requested by the client equalled what the server sent back. In reality, the server will send an error if a client requests an unsupported version, otherwise the server should return _the highest version that server itself supports_, with the understanding that the server will also be backward compatible with the requested version if it doesn't return an error.
+- Rename `MessageVersion` to `MessageMajorVersion` and add `MessageMinorVersion` to
+  `RequestServerInfo` message.
+  - This allows us to add features to message versions without having to bump major versions every
+    time. 
+- Servers no longer return a message version in `ServerInfo`
+  - There's no reason a client needs to know the version a server supports. Rather, the server
+    should just say yes (by replying with `ServerInfo` to a `RequestServerInfo` call) or no (by
+    replying with an `Error`) to the version requested by the client.
 
 ## Version xx (2024-09-??)
 
