@@ -7,7 +7,9 @@ slug: /spec
 * **Version:** 3
 * **Documentation Repo**: [https://github.com/buttplugio/buttplug](https://github.com/buttplugio/buttplug)
 
-Buttplug is a quasi-standard set of technologies and protocols to allow developers to write software that can access an array of computer controlled devices (sex toys, estim hardware, kegelcizers, etc...) in a semi-future-proof way.
+Buttplug is a quasi-standard set of technologies and protocols to allow developers to write software
+that can access an array of computer controlled devices (sex toys, kegelcizers, etc...) in a
+semi-future-proof way.
 
 ## The Need for a Computer Controlled Intimate Device Protocol Standard
 
@@ -43,7 +45,10 @@ This is where the idea of "generalized haptics" comes in. Instead of either a "D
 
 Now, the not so simple case.
 
-Let's add Device C, an electrostimulation unit. To use Device C with the same application as Device A and Device B, the Vibrate command has to be translated into some facsimile that is valid for estim. While this is most likely not tractable for a global solution, the goal of Buttplug is to make explorations of ideas like this accessible and easy to play with.
+Let's add Device C, an stroker. To use Device C with the same application as Device A and Device B,
+the Vibrate command has to be translated into some facsimile that is valid for stroking. While this
+is most likely not tractable for a global solution, the goal of Buttplug is to make explorations of
+ideas like this accessible and easy to play with.
 
 ## Comparisons to Existing Software
 

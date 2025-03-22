@@ -11,9 +11,8 @@ Just in case you don't want to go digging through the architecture section again
     other mechanisms.
 * **Device**
   * A device is the general term for anything that buttplug connects to and controls. Sex toys,
-    gamepads, estim units, fucking machines, whatever. Inside the library, it refers to either a
-    representation of the hardware (in the client), or the actual code to talk to the hardware (in
-    the server).
+    gamepads, fucking machines, whatever. Inside the library, it refers to either a representation
+    of the hardware (in the client), or the actual code to talk to the hardware (in the server).
 * **Intiface Central**
   * GUI interface to a configure and start a Buttplug server, distributed by the same team that
     makes Buttplug. This is what most users of Buttplug will have on their system for your

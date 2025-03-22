@@ -12,7 +12,8 @@ By the time you finish reading this guide, you will be an expert in using the Bu
 
 For the purposes of this guide, "Buttplug" refers to two things:
 
-- A system for enumerating, connecting to, and controlling intimate interaction hardware (sex toys, estim, fucking machines, etc...).
+- A system for enumerating, connecting to, and controlling intimate interaction hardware (sex toys,
+  fucking machines, etc...).
 - Implementations of the aforementioned protocol in a specific programming language/environment, providing an API for developers to build applications on.
 
 "Buttplug" used alone usually refers to the system in the abstract, while "Buttplug [language]" (like "Buttplug C#") refers to the implementations of the system in a specific programming language (C#, in this case).
@@ -26,7 +27,6 @@ This is one of the most asked questions around the Buttplug project. The Buttplu
 - Gamepads
 - Vibrators (of all sorts, be it rabbit, buttplug, prostate, wand, etc...)
 - Strokers
-- Electostimulation
 
 This list will continue to grow over time. For the most up to date version, checkout [IOSTIndex](https://iostindex.com), the most comprehensive list of sex tech devices on the internet. There are filters that will allow you to see which devices are supported by the library.
 
