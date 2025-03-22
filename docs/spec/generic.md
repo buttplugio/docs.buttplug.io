@@ -1,8 +1,9 @@
 # Generic Device Messages
 
 Generic device messages pertain to classes of devices, versus specific devices. For instance, the
-generic VibrateCmd should be supported by all vibrating devices, and StopDeviceCmd should be
-supported by all devices in order to stop them from whatever their current action may be.
+generic ValueCmd with a FeatureType of Vibrate should be supported by all vibrating devices, and
+StopDeviceCmd should be supported by all devices in order to stop them from whatever their current
+action may be.
 
 ---
 ## StopDeviceCmd

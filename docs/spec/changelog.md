@@ -26,6 +26,8 @@
 - Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
   - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
     `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
+- Renamed `Sensor*` fields to `Feature*` in `Sensor*Cmd` Messages
+  - Aligns with new feature system
 - Change device commands (`ValueCmd`, `ValueWithParameterCmd`) to use integers instead of floats for
   control values
   - When Buttplug started we decided to use floats instead of integers for command values. This
@@ -41,6 +43,11 @@
   - There's no reason a client needs to know the version a server supports. Rather, the server
     should just say yes (by replying with `ServerInfo` to a `RequestServerInfo` call) or no (by
     replying with an `Error`) to the version requested by the client.
+- `StopDeviceCmd` no longer sent as a possible message on a device description
+  - We now let developers assume all devices can take `StopDeviceCmd`, so there is no need to attach
+    it to device descriptors.
+  - `StopDeviceCmd` will be valid for both actuators (i.e. make a vibrator stop vibrating) and
+    sensors (i.e. cause an unsubscribe from a subscribed endpoint)
 
 ## Version xx (2024-09-??)
 
