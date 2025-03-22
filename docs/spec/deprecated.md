@@ -116,7 +116,7 @@ provides optional display name and message timing information, as well as simpli
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version:** 1 (See [Deprecated
-Messages](deprecated.md#devicelist-version-0) for older versions.)
+Messages](deprecated.md#devicelist---version-0) for older versions.)
 
 **Fields:**
 
@@ -185,7 +185,7 @@ capabilities that do not require specific scanning/discovery sessions.
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version**: 1 (See [Deprecated
-Messages](deprecated.md#deviceadded-version-0) for older versions.)
+Messages](deprecated.md#deviceadded---version-0) for older versions.)
 
 **Fields:**
 
@@ -566,8 +566,8 @@ sequenceDiagram
 ## LovenseCmd
 
 **Reason for Deprecation:** Never implemented in any reference version of the library. Superceded by
-a combination of [VibrateCmd](generic.md#linearcmd), [RotateCmd](generic.md#rotatecmd),
-[BatteryCmd](generic.md#batterycmd), and the [Raw*Cmd](raw.md) commands.
+a combination of [ScalarCmd](generic.md#scalarcmd), [RotateCmd](generic.md#rotatecmd),
+[BatteryCmd](deprecated.md#batterycmd), and the [Raw*Cmd](raw.md) commands.
 
 **Description:** Causes a device that supports Lovense style commands to run whatever event may be
 related. More information on Lovense commands can be found in STPIHKAL.

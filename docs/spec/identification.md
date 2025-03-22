@@ -11,7 +11,7 @@ server.
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version:** 1 (See [Deprecated
-Messages](deprecated.md#requestserverinfo-version-0) for older versions.)
+Messages](deprecated.md#requestserverinfo---spec-v0) for older versions.)
 
 **Fields:**
 
