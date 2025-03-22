@@ -17,7 +17,7 @@
     v3) to take `FeatureIndex` instead. The name change here is purely for context, as leaving it as
     "Index" when the value changed to different origin between message spec versions seemed like it
     may be confusing.
-- Remove `DeviceAdded`, `DeviceRemoved`, and `RequestDeviceList`
+- Remove `DeviceAdded` and `DeviceRemoved`
   - We will now just send `DeviceList` when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
 - Rename `ScalarCmd` to `ValueCmd`
@@ -26,12 +26,23 @@
 - Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
   - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
     `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
-- Change device commands (`ValueCmd`, `ValueWithParameterCmd`) to use integers instead of floats
+- Change device commands (`ValueCmd`, `ValueWithParameterCmd`) to use integers instead of floats for
+  control values
   - When Buttplug started we decided to use floats instead of integers for command values. This
     meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.    
 - Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
   - We're seeing devices that require a one-off command to cause an event to happen. For instance,
     the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
+- Rename `MessageVersion` to `MessageMajorVersion` and add `MessageMinorVersion` to `ServerInfo`
+  message.
+  - This allows us to notify clients that a version update has happened that may affect usability.
+    `MessageMinorVersion` will increase when a change is made that adds functionality (i.e. new
+    messages that aren't required for general protocol flow, or new feature types are added), while
+    `MessageMajorVersion` will increase when a change is made that breaks existing functionality.
+- Servers can return `MessageMajorVersion` and `MessageMinorVersion` that doesn't match the current
+  client version.
+  - This was supposed to always be the case, but early implementation of the Buttplug Client had
+    hard checks that message versions requested by the client equalled what the server sent back. In reality, the server will send an error if a client requests an unsupported version, otherwise the server should return _the highest version that server itself supports_, with the understanding that the server will also be backward compatible with the requested version if it doesn't return an error.
 
 ## Version xx (2024-09-??)
 

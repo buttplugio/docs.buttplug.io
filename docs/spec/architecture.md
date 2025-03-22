@@ -75,8 +75,9 @@ the user will allow the client to connect and interact.
 ### Enumeration
 
 After the _Client_/_Server_ connection is set up, device enumeration can begin. The _Client_ can ask
-the _Server_ to scan for devices on various busses or media (serial, usb, bluetooth, network, etc),
-and return a list of devices it can communicate with.
+the _Server_ for a list of currently connected devices. It can also request the server scan for
+devices on various busses or media (serial, usb, bluetooth, network, etc), and return a list of
+devices it has found.
 
 ### Consummation
 
@@ -114,19 +115,18 @@ sequenceDiagram
   Server->>-Client: Ok Id=3
   
   Note over Client,Server: While the server is scanning, the<br/>server will notify the client of new<br/>devices.
-  Server->>Client: DeviceAdded Id=0
-  Server->>Client: DeviceAdded Id=0
+  Server->>Client: DeviceList Id=0
+  Server->>Client: DeviceList Id=0
   
   Note over Client,Server: Once devices have been discovered,<br/> the client instruct the server to<br/> stop scanning. Once all device<br/>managers have stopped scanning,<br/>the server will notify the client.
   Client->>+Server: StopScanning Id=4
   Server->>-Client: Ok Id=4
-  Server->>Client: ScanningFinished Id=0
   
   Note over Client,Server: Devices may disconnect at any time.<br/>The server will notify the client<br/>when this happens.
-  Server->>Client: DeviceRemoved Id=0
+  Server->>Client: DeviceList Id=0
   
-  Note over Client,Server: The client may instruct devices to<br/>perform actions. Actions vary per<br/>device. Device capabilities are<br/>relayed as part of DeviceAdded and<br/>DeviceList messages.
-  Client->>+Server: VibrateCmd Id=5
+  Note over Client,Server: The client may instruct devices to<br/>perform actions. Actions vary per<br/>device. Device capabilities are<br/>relayed as part of DeviceList messages.
+  Client->>+Server: ValueCmd Id=5
   Server->>-Client: Ok Id=5
   
   Note over Client,Server: The client may instruct the server to<br/>stop a device from whatever it<br/>may be doing.
