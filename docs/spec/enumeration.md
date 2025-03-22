@@ -192,8 +192,10 @@ sequenceDiagram
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
     name should be used.
-  * _DeviceFeatures_ (array of feature objects)
+  * _DeviceFeatures_ (array of feature objects, with each object having the following fields)
     * _Description_ (string): Text descriptor for a feature.
+    * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
+      messages like `ValueCmd`, `SensorReadCmd`, etc...
     * _FeatureType_ (string): The type of feature this descriptor represents. See [feature types]()
     * _Actuator_ (Object, may be null): Represents an actuator that is part of this feature
       * _Messages_ (array of strings): List of control message types that can be used by this feature.

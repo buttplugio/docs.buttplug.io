@@ -11,16 +11,16 @@ buttons, etc.
 
 **Introduced In Spec Version:** 3
 
-**Last Updated In Spec Version:** 3
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device to read data from.
-* _SensorIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
+* _FeatureIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
   position of sensor in SensorReadCmd message attributes).
-* _SensorType_ (string): Type of sensor, used as confirmation of context, must match value in
-  SensorReadCmd message attributes.
+* _FeatureType_ (string): Type of sensor, used as confirmation of context, must match value in
+  Feature attributes.
 
 **Expected Response:**
 
@@ -43,8 +43,8 @@ sequenceDiagram
     "SensorReadCmd": {
       "Id": 1,
       "DeviceIndex": 0,
-      "SensorIndex": 0,
-      "SensorType": "Pressure"
+      "FeatureIndex": 0,
+      "FeatureType": "Pressure"
     }
   }
 ]
@@ -58,15 +58,15 @@ SensorSubscribe) from a device sensor.
 
 **Introduced In Spec Version:** 3
 
-**Last Updated In Spec Version:** 3
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device to read data from.
-* _SensorIndex_ (unsigned int): Index of sensor on device that data was read from (index relates to
+* _FeatureIndex_ (unsigned int): Index of sensor on device that data was read from (index relates to
   position of sensor in SensorReadCmd message attributes).
-* _SensorType_ (string): Type of sensor.
+* _FeatureType_ (string): Type of sensor.
 * _Data_ (array of signed int): Array of signed integers representing data. Signed integers are used
   due to varying return values (for instance, RSSI is negative, battery is [0, 100], buttons are [0,
   1], etc...). Information on formatting/units of measurement/etc may be included in feature
@@ -80,8 +80,8 @@ SensorSubscribe) from a device sensor.
     "SensorReading": {
       "Id": 1,
       "DeviceIndex": 0,
-      "SensorIndex": 0,
-      "SensorType": "Pressure",
+      "FeatureIndex": 0,
+      "FeatureType": "Pressure",
       "Data": [591]
     }
   }
@@ -99,15 +99,15 @@ streaming data endpoints.
 
 **Introduced In Spec Version:** 3
 
-**Last Updated In Spec Version:** 3
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device to read data from.
-* _SensorIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
+* _FeatureIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
   position of sensor in SensorReadCmd message attributes).
-* _SensorType_ (string): Type of sensor, used as confirmation of context, must match value in
+* _FeatureType_ (string): Type of sensor, used as confirmation of context, must match value in
   SensorReadCmd message attributes.
 
 **Expected Response:**
@@ -133,8 +133,8 @@ sequenceDiagram
     "SensorSubscribeCmd": {
       "Id": 1,
       "DeviceIndex": 0,
-      "SensorIndex": 0,
-      "SensorType": "Pressure"
+      "FeatureIndex": 0,
+      "FeatureType": "Pressure"
     }
   }
 ]
@@ -150,15 +150,15 @@ previously subscribed.
 
 **Introduced In Spec Version:** 3
 
-**Last Updated In Spec Version:** 3
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device to read data from.
-* _SensorIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
+* _FeatureIndex_ (unsigned int): Index of sensor on device to read data from (index relates to
   position of sensor in SensorReadCmd message attributes).
-* _SensorType_ (string): Type of sensor, used as confirmation of context, must match value in
+* _FeatureType_ (string): Type of sensor, used as confirmation of context, must match value in
   SensorReadCmd message attributes.
 
 **Expected Response:**
@@ -182,8 +182,8 @@ sequenceDiagram
     "SensorUnsubscribeCmd": {
       "Id": 1,
       "DeviceIndex": 0,
-      "SensorIndex": 0,
-      "SensorType": "Pressure"
+      "FeatureIndex": 0,
+      "FeatureType": "Pressure"
     }
   }
 ]
