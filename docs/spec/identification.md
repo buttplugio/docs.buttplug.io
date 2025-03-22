@@ -10,19 +10,20 @@ server.
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 1 (See [Deprecated
-Messages](deprecated.md#requestserverinfo---spec-v0) for older versions.)
+**Last Updated In Spec Version:** 4 (See [Deprecated
+Messages](deprecated.md#requestserverinfo---spec-v1) for older versions.)
 
 **Fields:**
 
 * _Id_ \(unsigned int\): Message Id
 * _ClientName_ \(string\): Name of the client, for the server to use for UI if needed. Cannot be
   null.
-* _MessageVersion_ \(uint\): Message spec version of the client software.
+* _MessageMajorVersion_ \(uint\): Message spec major version of the client software.
+* _MessageMinorVersion_ \(uint\): Message spec minor version of the client software.
 
 **Expected Response:**
 
-* ServerInfo message on success
+* ServerInfo message on success.
 * Error message on malformed message, null client name, server not able to use requested message
   spec version, or other error.
 
@@ -42,7 +43,8 @@ sequenceDiagram
     "RequestServerInfo": {
       "Id": 1,
       "ClientName": "Test Client",
-      "MessageVersion": 1
+      "MessageMajorVersion": 4,
+      "MessageMinorVersion": 0
     }
   }
 ]
@@ -50,8 +52,7 @@ sequenceDiagram
 ---
 ## ServerInfo
 
-**Description:** Send by server to client, contains information about the server name \(optional\),
-template version, and ping time expectations.
+**Description:** Send by server to client, contains information about the server name \(optional\) and ping time expectations.
 
 **Introduced In Spec Version:** 0
 
@@ -60,9 +61,7 @@ template version, and ping time expectations.
 **Fields:**
 
 * _Id_ \(unsigned int\): Message Id
-* _ServerName_ \(string\): Name of the server. Can be null \(0-length\).
-* _MessageVersion_ \(uint\): Message template version of the server software. Should equal
-  the version that the client sent in RequestServerInfo.
+* _ServerName_ \(string\): Name of the server. Can be null \(0-length, but field will still exist\).
 * _MaxPingTime_ \(uint\): Maximum internal for pings from the client, in milliseconds. If a client
   takes to longer than this time between sending Ping messages, the server is expected to
   disconnect.
@@ -87,7 +86,6 @@ sequenceDiagram
     "ServerInfo": {
       "Id": 1,
       "ServerName": "Test Server",
-      "MessageVersion": 1,
       "MaxPingTime": 100
     }
   }
