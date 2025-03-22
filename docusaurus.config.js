@@ -188,6 +188,9 @@ const config = {
         jsLoader: 'matomo.js',
       },
     }),
+  future: {
+    experimental_faster: true,
+  },
 };
 
 module.exports = config;
