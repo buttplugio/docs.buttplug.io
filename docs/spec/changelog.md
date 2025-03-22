@@ -1,6 +1,6 @@
 # Spec Changelog
 
-## Version 4 (2024-09-??)
+## Version 4 (2025-??-??)
 
 - Change from Message Attributes to Device Features
   - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
@@ -17,6 +17,16 @@
     v3) to take `FeatureIndex` instead. The name change here is purely for context, as leaving it as
     "Index" when the value changed to different origin between message spec versions seemed like it
     may be confusing.
+- Remove `DeviceAdded`, `DeviceRemoved`, and `RequestDeviceList`
+  - We will now just send `DeviceList` when a client connects (post handshake), and on any device
+    connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
+- 
+
+
+## Version xx (2024-09-??)
+
+This version never actually existed. I'm just leaving it here to show how things change if I let the project sit for months at a time.
+
 - Rename `LinearCmd` to `GoalWithDurationCmd` _(Ed. Note: This is still a maybe)_
   - Much like the move to `ScalarCmd` in v3, `LinearCmd` is now being generalized to "movement
     toward a goal value with a duration". Added to the definition will be a curve type for the
