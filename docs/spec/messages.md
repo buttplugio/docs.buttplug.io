@@ -31,7 +31,7 @@ orchestrate messaging.
 
 There are two types of message flows.
 
-* Messages can be sent from the server to a client. Messages like DeviceAdded, DeviceRemoved, and
+* Messages can be sent from the server to a client. Messages like DeviceList, ServerInfo, and
   certain device specific input messages can happen without the client making a request. The server
   will not expect a reply from the client for these messages.
 * Messages sent from the client to the server will always receive a reply from the server. The

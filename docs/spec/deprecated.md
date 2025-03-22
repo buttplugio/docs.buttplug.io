@@ -1360,6 +1360,8 @@ sequenceDiagram
 ---
 ## DeviceList - Spec v3
 
+**Reason for Deprecation:** Updated in Spec v4 for new features system
+
 **Description:** Server reply to a client request for a device list.
 
 **Introduced In Spec Version:** 0
@@ -1450,6 +1452,9 @@ sequenceDiagram
 ```
 ---
 ## Message Attributes for DeviceAdded/DeviceList - Spec v3
+
+**Reason for Deprecation:** Removed in Spec v4, simplified protocol to only send DeviceList, so
+folding section in there and updating for features.
 
 **Description:** A collection of message attributes. This object is always an array element of a
 Device Message key/value pair within a [DeviceList](enumeration.md#devicelist) or
