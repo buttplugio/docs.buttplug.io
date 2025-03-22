@@ -95,7 +95,7 @@ SensorSubscribe) from a device sensor.
 device sensor that is not explicitly read. Usually useful for Bluetooth notify endpoints, or other
 streaming data endpoints.
 
-*Note:* Only the Subscribe command will show up in the MessageAttributes portion of DeviceAdded or DeviceList. It is assumed that if Subscribe can happen, Unsubscribe can also happen, so the information is not duplicated. Having the Subscribe command in the MessageAttributes implies that Unsubscribe will also work.
+*Note:* Only the Subscribe command will show up in the Features portion of DeviceList. It is assumed that if Subscribe can happen, Unsubscribe can also happen, so the information is not duplicated. Having the Subscribe command in Features implies that Unsubscribe will also work.
 
 **Introduced In Spec Version:** 3
 
@@ -146,7 +146,7 @@ sequenceDiagram
 **Description:** Client request to have the server unsubscribe from a device sensor to which it had
 previously subscribed.
 
-*Note:* Only the Subscribe command will show up in the MessageAttributes portion of DeviceAdded or DeviceList. It is assumed that if Subscribe can happen, Unsubscribe can also happen, so the information is not duplicated. Having the Subscribe command in the MessageAttributes implies that Unsubscribe will also work.
+*Note:* Only the Subscribe command will show up in the Features portion of a device in DeviceList. It is assumed that if Subscribe can happen, Unsubscribe can also happen, so the information is not duplicated. Having the Subscribe command in Features implies that Unsubscribe will also work.
 
 **Introduced In Spec Version:** 3
 
