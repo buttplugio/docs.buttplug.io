@@ -32,6 +32,7 @@
     "styled-components": "^6.1.16"
   },
   "devDependencies": {
+    "@docusaurus/faster": "^3.7.0",
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
