@@ -90,7 +90,7 @@ sequenceDiagram
 
 **Description:** Sets the static level for a feature. For instance, the vibration speed of a
 vibrator, the oscillating speed of a fucking machine, etc... The [Message
-Attributes](enumeration.md#messageattributes) for the ScalarCmd message in the
+Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded) for the ScalarCmd message in the
 [DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message contain
 information on the actuator type and description, number of actuators, level ranges, and more.
 
@@ -163,10 +163,7 @@ sequenceDiagram
 ## LinearCmd
 
 **Description:** Causes a device that supports linear movement to move to a position over a certain
-amount of time. Devices with multiple linear actuator features may take multiple values. The length
-of the [Message Attributes array](enumeration.md#messageattributes) for the message in the
-[DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message will
-contain that information.
+amount of time. Devices with multiple linear actuator features may take multiple values.
 
 **Introduced In Spec Version:** 1
 
@@ -222,10 +219,7 @@ sequenceDiagram
 ## RotateCmd
 
 **Description:** Causes a device that supports rotation to rotate at a certain speeds in specified
-directions. Devices with multiple rotating features may have multiple values. The length of the
-[Message Attributes array](enumeration.md#messageattributes) for the message in the
-[DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message will
-contain that information.
+directions. Devices with multiple rotating features may have multiple values. 
 
 **Introduced In Spec Version:** 1
 
