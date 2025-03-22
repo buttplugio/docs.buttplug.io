@@ -6,8 +6,8 @@
   - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
     had multiple problems, including index collisions, difficult figuring out what a device actually
     does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 3 different types of features: Actuators, Sensors, and Raw. This allows us to state what a device can do, and then define messages within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
-  - This change will be seen in the `DeviceAdded` and `DeviceList` messages, as well as in commands
-    that need to refer to specific feature indexes (see next bullet).
+  - This change will be seen in the `DeviceList` messages, as well as in commands that need to refer
+    to specific feature indexes (see next bullet).
 - Define `FeatureType` in message spec and require spec point updates to add new features
   - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
     let developers know what type of value they were setting. The values of `ActuatorType` were never set in the message spec, only in the reference implementations of the Buttplug server. These values should be defined within the message spec to let Client writers know exactly what to expect, and how to handle types they may not know (i.e. a client built for message spec v4.1 receives a `FeatureType` defined in v4.2 should not completely break, but should complain).
@@ -20,8 +20,18 @@
 - Remove `DeviceAdded`, `DeviceRemoved`, and `RequestDeviceList`
   - We will now just send `DeviceList` when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
-- 
-
+- Rename `ScalarCmd` to `ValueCmd`
+  - What we're really doing with this command is setting a value on a piece of hardware that we do
+    not expect to change until either `ValueCmd` or `StopDevice` is called at a later point. Name has been changed to try to describe this properly.
+- Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
+  - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
+    `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
+- Change device commands (`ValueCmd`, `ValueWithParameterCmd`) to use integers instead of floats
+  - When Buttplug started we decided to use floats instead of integers for command values. This
+    meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.    
+- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
+  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
+    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
 
 ## Version xx (2024-09-??)
 
@@ -38,21 +48,17 @@ This version never actually existed. I'm just leaving it here to show how things
   - `ScalarCmd` is being renamed to `StaticCmd` to denote that sending the command is expected to
     set a value and leave it set until another `StaticCmd` or `StopDeviceCmd` call is sent.
     `ScalarCmd` didn't properly relay this meaning.
-- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
-  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
-    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
-- Change `StaticCmd` to take signed double instead of unsigned double
-  - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
-    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 \<= x \<= 1 value,
-    letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
-    condense methods.
 - Remove `RotateCmd`, use `StaticCmd`
   - See note on last bullet for more info.
 - Remove `ActuatorType` from `StaticCmd` _(Ed Note: This is still a maybe)_
   - This was initially added as a safety check on `ScalarCmd`, to make sure that the developer was
     actually triggering the type of actuator they meant to be. However, as clients usually (or at
     least should) hide this detail from end users, it's not useful to anyone but client developers.
-
+- Change `StaticCmd` to take signed double instead of unsigned double
+  - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
+    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 \<= x \<= 1 value,
+    letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
+    condense methods.
 
 ## Version 3 Patch 3 (2022-12-30)
 
