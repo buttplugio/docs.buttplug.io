@@ -214,7 +214,7 @@ OK;
 
 #### Set Vibration Speed Using Mply
 
-Changes vibration speed for toy features. Takes multiple integer values from 0-20.
+Changes vibration speed for toy features. Takes multiple integer values from -1-20.
 
 _Availability:_ Flexer, Lapis, Solace, and used by default for devices with more than two features.
 
