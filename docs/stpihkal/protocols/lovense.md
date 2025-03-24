@@ -198,7 +198,7 @@ _Return Example_
 OK;
 ```
 
-Set speed on specific feature.
+Set speed of specific feature.
 
 _Command Format_
 ```
