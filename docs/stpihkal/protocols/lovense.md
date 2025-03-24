@@ -123,6 +123,7 @@ Denotes Nora toy, running v1.1 firmware, BT Addr of 00:82:05:9A:D3:BD
 | Domi | W |
 | Edge | P |
 | Osci | O |
+| Solace | H |
 
 
 #### Get Battery Level
@@ -161,7 +162,7 @@ OK;
 
 #### Device Status
 
-Retreive the status of the toy. 
+Retrieve the status of the toy. 
 
 _Availability:_ All toys
 
@@ -191,6 +192,38 @@ Vibrate:10;
 ```
 
 Sets vibration speed to 10 (50%).
+
+_Return Example_
+```
+OK;
+```
+
+Set speed on specific feature.
+
+_Command Format_
+```
+Vibrate:2:10;
+```
+
+Sets vibration speed of feature 2 to 10 (50%).
+
+_Return Example_
+```
+OK;
+```
+
+#### Set Vibration Speed Using Mply
+
+Changes vibration speed for toy features. Takes multiple integer values from 0-20.
+
+_Availability:_ Flexer, Lapis, Solace, and used by default for devices with more than two features.
+
+_Command Format_
+```
+Mply:10:-1:15;
+```
+
+Sets vibration speed to 10 (50%) for feature 1, -1 (no change) for feature 2, and 15 (75%) for feature 3.
 
 _Return Example_
 ```
@@ -516,7 +549,7 @@ P:01234;
 ```
 
 This return tells us that there are currently five patterns programmed
-on the device, with indicies 0 through 4.
+on the device, with indices 0 through 4.
 
 #### View Programmed Pattern
 
@@ -533,9 +566,9 @@ the response.
 
 For the Domi, the pattern length must be between 5 and 50 seconds, so
 the response will use a maximum of 9 messages, so the part count and
-indicies will always be a single digit.
+indices will always be a single digit.
 
-For the Lush 2, the part count and indicies are padded to always use
+For the Lush 2, the part count and indices are padded to always use
 two digits.
 
 _Availability:_ Lush 2, Domi
@@ -563,7 +596,7 @@ _Return Example_
 P4:01/01:346797643;
 ```
 
-#### Run Programmed Patern
+#### Run Programmed Pattern
 
 Starts running a programmed pattern on a loop. Takes an positive
 integer pattern index to start running it, or 0 to stop running the pattern.
