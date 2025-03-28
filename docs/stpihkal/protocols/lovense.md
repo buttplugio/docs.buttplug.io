@@ -202,7 +202,7 @@ Set speed of specific feature.
 
 _Command Format_
 ```
-Vibrate:2:10;
+Vibrate2:10;
 ```
 
 Sets vibration speed of feature 2 to 10 (50%).
