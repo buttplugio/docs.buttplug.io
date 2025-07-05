@@ -1,10 +1,8 @@
 # OutputCmd and OutputType
 
+Controlling devices is done via OutputCmd. Within this message we encode all possible output information, making it simple to add new functionality.
+
 ---
-
-## OutputType
-
-### OutputType Table
 
 ## OutputCmd
 
@@ -83,3 +81,215 @@ sequenceDiagram
   }
 ]
 ```
+
+---
+
+## OutputType
+
+OutputType denotes a thing that a device feature does to a user. Think of it like a verb, possibly with an added bit of context. 
+
+### Vibrate
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value. 
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Vibrate": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### Rotate
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets a rotator speed to a certain amount. It is assumed we cannot control the direction of the rotation for this feature. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Rotate": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### RotationWithDirection
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
+- Clockwise
+  - **Type**: Boolean
+  - **Description**: If true, rotate in a clockwise direction. Otherwise, rotate in a
+    counterclockwise direction.  
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "RotateWithDirection": {
+          "Value": 10,
+          "Clockwise": false
+        }
+      }
+    }
+  }]
+```
+
+### Oscillate
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Oscillate": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### Constrict
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Constrict": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### Inflate
+
+**Introduced In Spec Version:** 4
+
+### Heater
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets the heat level for a device with a heating element. It will be vanishingly rare that we have information about the exact temperature that we can set the heater to, so this will normally be some number of "heating steps". 0 always denotes turning off the heater, otherwise valid commands are between 0 and the StepCount value.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Inflate": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### LED (Encoded as Led)
+
+**Introduced In Spec Version:** 4
+
+**Description**: Sets the brightness value of an LED. If StepCount = 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED, otherwise valid commands are between 0 and the StepCount value. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Brightness, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Led": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
+### Position
+
+**Introduced In Spec Version:** 4
+
+### PositionWithDuration
+
+**Introduced In Spec Version:** 4
