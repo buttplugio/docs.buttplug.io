@@ -517,7 +517,7 @@ sequenceDiagram
 ---
 ## FleshlightLaunchFW12Cmd
 
-**Reason for Deprecation:** Superceded by [LinearCmd](generic.md#linearcmd), which provided an
+**Reason for Deprecation:** Superceded by [LinearCmd](deprecated.md#linearcmd), which provided an
 easier way to reason about movement time and position.
 
 **Description:** Causes a device that supports Fleshlight Launch (Firmware Version 1.2) style
@@ -890,7 +890,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [BatteryLevelReading](sensors#batterylevelreading) message with
+* [BatteryLevelReading](deprecated.md#batterylevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -920,7 +920,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading.
 
 **Description:** Message containing a battery level reading from a
-device, as requested by [BatteryLevelCmd](sensors#batterylevelcmd).
+device, as requested by [BatteryLevelCmd](deprecated.md#batterylevelcmd).
 
 **Introduced In Spec Version:** 2
 
@@ -975,7 +975,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [RSSILevelReading](sensors#rssilevelreading) message with
+* [RSSILevelReading](deprecated.md#rssilevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -1005,7 +1005,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading. Also never implemented in any official reference implementation of Buttplug.
 
 **Description:** Message containing a RSSI level reading from a
-device, as requested by [RSSILevelCmd](sensors#rssilevelcmd).
+device, as requested by [RSSILevelCmd](deprecated.md#rssilevelcmd).
 
 **Introduced In Spec Version:** 2
 

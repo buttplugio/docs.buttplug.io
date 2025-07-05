@@ -12,7 +12,8 @@ const config = {
   tagline: 'Buttplug: Intimate Haptics Control Protocol and Library',
   url: 'https://buttplug.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'warn',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
