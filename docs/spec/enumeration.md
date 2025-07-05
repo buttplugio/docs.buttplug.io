@@ -196,7 +196,7 @@ sequenceDiagram
     * _Description_ (string): Text descriptor for a feature.
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
       messages like `ValueCmd`, `SensorReadCmd`, etc...
-    * _FeatureType_ (string): The type of feature this descriptor represents. See [feature types]()
+    * _FeatureType_ (string): The type of feature this descriptor represents. See feature types.
     * _Actuator_ (Object, may be null): Represents an actuator that is part of this feature
       * _Messages_ (array of strings): List of control message types that can be used by this feature.
       * _StepCount_ (unsigned 32-bit integer): Range of values that can be
