@@ -1587,3 +1587,228 @@ sequenceDiagram
   }
 ]
 ```
+
+---
+## RawWriteCmd
+
+**Reason for Deprecation:** Raw commands removed completely in spec v4.
+
+**Description:** Client request to have the server write a byte array to a device endpoint.
+
+**Introduced In Spec Version:** 2
+
+**Last Updated In Spec Version:** 2
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _DeviceIndex_ (unsigned int): Index of device to write to.
+* _Endpoint_ (string): Name of endpoint to write data to.
+* _Data_ (array of unsigned 8-bit int): Raw data to write to endpoint.
+* _WriteWithResponse_ (boolean): True if BLE WriteWithResponse required, False otherwise.
+
+**Expected Response:**
+
+* Ok message with matching Id on successful request.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: RawWriteCmd Id=1
+    Server->>-Client: Ok Id=1
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "RawWriteCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Endpoint": "tx",
+      "Data": [0, 1, 0],
+      "WriteWithResponse": false
+    }
+  }
+]
+```
+---
+## RawReadCmd
+
+**Reason for Deprecation:** Raw commands removed completely in spec v4.
+
+**Description:** Client request to have the server read a byte array from a device endpoint.
+
+**Introduced In Spec Version:** 2
+
+**Last Updated In Spec Version:** 2
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _DeviceIndex_ (unsigned int): Index of device to read data from.
+* _Endpoint_ (string): Name of endpoint to read data from.
+* _ExpectedLength_ (unsigned int): Amount of data to read, 0 if "Read all currently available".
+* _WaitForData_ (boolean): True if return should only be sent when there is data available, or until
+  expected length is met.
+
+**Expected Response:**
+
+* RawReading message with matching Id on successful request.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: RawReadCmd Id=1
+    Server->>-Client: RawReading Id=1
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "RawReadCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Endpoint": "tx",
+      "ExpectedLength": 0,
+      "WaitForData": false
+    }
+  }
+]
+```
+
+---
+## RawReading
+
+**Reason for Deprecation:** Raw commands removed completely in spec v4.
+
+**Description:** Server response when data is read (in response to RawReadCmd) or received (after
+RawSubscribe) from a device endpoint.
+
+**Introduced In Spec Version:** 2
+
+**Last Updated In Spec Version:** 2
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id. Can be 0 in cases of subscription data.
+* _DeviceIndex_ (unsigned int): Index of device to data was read from.
+* _Endpoint_ (string): Name of endpoint to data was read from.
+* _Data_ (array of unsigned 8-bit int): Raw data read from endpoint.
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "RawReading": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Endpoint": "rx",
+      "Data": [0, 1, 0]
+    }
+  }
+]
+```
+
+---
+## RawSubscribeCmd
+
+**Reason for Deprecation:** Raw commands removed completely in spec v4.
+
+**Description:** Client request to have the server subscribe and send all data that comes in from an
+endpoint that is not explicitly read. Usually useful for Bluetooth notify endpoints, or other
+streaming data endpoints.
+
+**Introduced In Spec Version:** 2
+
+**Last Updated In Spec Version:** 2
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _DeviceIndex_ (unsigned int): Index of device to subscribe to.
+* _Endpoint_ (string): Name of endpoint to subscribe to.
+
+**Expected Response:**
+
+* Ok if subscription is successful, followed by RawReading
+  messages on all new readings.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: RawSubscribeCmd Id=1
+    Server->>-Client: Ok Id=1
+    Server->>+Client: RawReading Id=0
+    Server->>+Client: RawReading Id=0
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "RawSubscribeCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Endpoint": "tx"
+    }
+  }
+]
+```
+
+---
+## RawUnsubscribeCmd
+
+**Reason for Deprecation:** Raw commands removed completely in spec v4.
+
+**Description:** Client request to have the server unsubscribe from an endpoint to which it had
+previously subscribed.
+
+**Introduced In Spec Version:** 2
+
+**Last Updated In Spec Version:** 2
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _DeviceIndex_ (unsigned int): Index of device to subscribe to.
+* _Endpoint_ (string): Name of endpoint to subscribe to.
+
+**Expected Response:**
+
+* Ok if unsubscription is successful.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: RawUnsubscribeCmd Id=1
+    Server->>-Client: Ok Id=1
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "RawUnsubscribeCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Endpoint": "tx"
+    }
+  }
+]
+```
+
