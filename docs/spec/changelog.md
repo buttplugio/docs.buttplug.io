@@ -9,7 +9,7 @@
     ourselves off as some unifying piece between these entities has been a fine branding move, but
     ultimately futile in terms of actually setting anything usable in stone.
   - On top of that, Buttplug as a project is operating without a plan. There's no real direction,
-    we're mostly throwing stuff at the wall and seeing what sticks, then reorienting around that.
+    we're mostly pulling stuff out of our butt, seeing what works, then reorienting around that.
     Not a particularly good way to standardize anything. The rest of this changelog will bear out
     that fact in excrusiating detail.
   - Also, we're 8 years into this project now and not a single person has tried building a server
