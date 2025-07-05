@@ -136,8 +136,8 @@ introduced in, and is represented as an unsigned integer.
 
 To establish protocol versions between clients and servers, the client sends the protocol message
 version as part of the [RequestServerInfo](identification.md#requestserverinfo) message (as the
-ApiMajorVersion/ApiMinorVersion fields), and the server includes its protocol version in the
-[ServerInfo](identification.md#serverinfo) response (as the same fields field).
+ProtocolMajorVersion/ProtocolMinorVersion fields), and the server includes its protocol version in
+the [ServerInfo](identification.md#serverinfo) response (as the same fields field).
 
 ### Major Version Differences
 

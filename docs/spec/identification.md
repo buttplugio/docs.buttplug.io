@@ -18,8 +18,8 @@ Messages](deprecated.md#requestserverinfo---spec-v1) for older versions.)
 * _Id_ \(unsigned int\): Message Id
 * _ClientName_ \(string\): Name of the client, for the server to use for UI if needed. Cannot be
   null.
-* _MessageMajorVersion_ \(uint\): Message spec major version of the client software.
-* _MessageMinorVersion_ \(uint\): Message spec minor version of the client software.
+* _ProtocolMajorVersion_ \(uint\): Message spec major version of the client software.
+* _ProtocolMinorVersion_ \(uint\): Message spec minor version of the client software.
 
 **Expected Response:**
 
@@ -43,8 +43,8 @@ sequenceDiagram
     "RequestServerInfo": {
       "Id": 1,
       "ClientName": "Test Client",
-      "MessageMajorVersion": 4,
-      "MessageMinorVersion": 0
+      "ProtocolMajorVersion": 4,
+      "ProtocolMinorVersion": 0
     }
   }
 ]
@@ -56,7 +56,7 @@ sequenceDiagram
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 2
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
