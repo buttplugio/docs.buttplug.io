@@ -65,6 +65,8 @@ sequenceDiagram
 * _MaxPingTime_ \(uint\): Maximum internal for pings from the client, in milliseconds. If a client
   takes to longer than this time between sending Ping messages, the server is expected to
   disconnect.
+* _ProtocolMajorVersion_ \(uint\): Message spec major version of the client software.
+* _ProtocolMinorVersion_ \(uint\): Message spec minor version of the client software.
 
 **Expected Response:**
 
