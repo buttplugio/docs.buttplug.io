@@ -379,7 +379,7 @@ sequenceDiagram
 
 **Reason for Deprecation:** Message is ill-defined (doesn't specify where the data should go,
 assumes all devices have one endpoint which is very not true), was never actually implemented in any
-reference implemenation. Being superceded by [Raw\*Cmd](raw.md). As the message was never in any
+reference implemenation. Being superceded by Raw\*Cmd. As the message was never in any
 protocol implementation, it can safely be ignored when implementing new servers, but should also not
 be used to name new messages.
 
@@ -566,8 +566,8 @@ sequenceDiagram
 ## LovenseCmd
 
 **Reason for Deprecation:** Never implemented in any reference version of the library. Superceded by
-a combination of [ScalarCmd](generic.md#scalarcmd), [RotateCmd](generic.md#rotatecmd),
-[BatteryCmd](deprecated.md#batterycmd), and the [Raw*Cmd](raw.md) commands.
+a combination of [ScalarCmd](deprecated.md#scalarcmd), [RotateCmd](deprecated.md#rotatecmd),
+[BatteryCmd](deprecated.md#batterycmd), and the [Raw*Cmd](deprecated.md#rawreadcmd) commands.
 
 **Description:** Causes a device that supports Lovense style commands to run whatever event may be
 related. More information on Lovense commands can be found in STPIHKAL.
@@ -613,8 +613,8 @@ sequenceDiagram
 ---
 ## VorzeA10CycloneCmd
 
-**Reason for Deprecation:** Superceded by a combination of [VibrateCmd](generic.md#linearcmd) and
-[RotateCmd](generic.md#rotatecmd).
+**Reason for Deprecation:** Superceded by a combination of [VibrateCmd](deprecated.md#linearcmd) and
+[RotateCmd](deprecated.md#rotatecmd).
 
 **Description:** Causes a device that supports Vorze A10 Cyclone style commands to run whatever
 event may be related. More information on Vorze commands can be found in STPIHKAL.
