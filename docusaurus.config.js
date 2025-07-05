@@ -9,7 +9,7 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'buttplug.io',
   staticDirectories: ['examples', 'static'],
-  tagline: 'Buttplug: Intimate Haptics Control Standard and Library',
+  tagline: 'Buttplug: Intimate Haptics Control Protocol and Library',
   url: 'https://buttplug.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',

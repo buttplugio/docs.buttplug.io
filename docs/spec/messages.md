@@ -56,7 +56,7 @@ implement, or to contract the Buttplug designers to build it for them.
 
 ## JSON Message Serialization
 
-For reference implementations of the Buttplug standard, we use JSON for serialization. 
+For reference implementations of the Buttplug protocol, we use JSON for serialization. 
 
 :::tip Why is the JSON format for Buttplug messages so weird?
 
@@ -112,7 +112,7 @@ as possible. If edits to a message need to be made, message names can be reused,
 Any changes to the spec will also cause a spec version update (covered in the next section), which
 will need to be reflected across systems and implementations. So far, these updates have been rare.
 
-Requests for new messages can be submitted to [the Buttplug Standard Github Issue
+Requests for new messages can be submitted to [the Buttplug Github Issue
 Tracker](https://github.com/buttplugio/buttplug/issues).
 
 ## Message Versioning

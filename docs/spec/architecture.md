@@ -50,15 +50,14 @@ terms are used as a generic way to denote different communication endpoints. Cli
 
 ## Protocol
 
-The Buttplug Standard defines a message based protocol between a _Client_ and a _Server_.
+The Buttplug Protocol defines a message based protocol between a _Client_ and a _Server_.
 
 Client are expected to request information from the server about devices that are connected, and to
 send information to those devices via the server. Servers will handle device enumeration, connection
 management to hardware, and failure recoveries (for instance, stopping all connected devices on
 client disconnect).
 
-While serialization formats are not yet standardized, current references implementations of the
-Standard use JSON for serialization. More information on this is available in the Messages section.
+Buttplug uses JSON for serialization in most situations, but this is not a hard rule. Any serialization standard could work depending on context.
 
 ## Stages
 
