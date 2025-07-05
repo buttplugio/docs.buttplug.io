@@ -1,4 +1,4 @@
-# Generic Sensor Messages
+# InputCmd and InputType
 
 Messages for requesting and receiving information about generic
 sensors on devices, including batteries, radio levels, accelerometers,
