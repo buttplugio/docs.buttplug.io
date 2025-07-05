@@ -14,7 +14,7 @@
     that fact in excrusiating detail.
   - Also, we're 8 years into this project now and not a single person has tried building a server
     themselves. Which is good, because doing so requires a level of mental instability that would make quality of life questionable for anyone who tried. The ecosystem exists on top of us, but it is not us. I don't think it's ever going to be, and that's fine. 
-  - From here on out, this will now just be referred to as the Buttplug API Spec.
+  - From here on out, this will now just be referred to as the Buttplug Protocol Spec.
 - Change from Message Attributes to Device Features
   - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
     had multiple problems, including index collisions, difficult figuring out what a device actually

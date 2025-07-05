@@ -1,12 +1,12 @@
 # Messages
 
-Messages are the core of communication for Buttplug.
+Messages are the core object for Buttplug communication.
 
 How messages are represented depends on the implementation in question. For instance, in a C\#
-library implementation of Buttplug, messages are classes. In Rust, they're structs.
+library implementation of Buttplug, messages are classes. In Rust, they're structs. This is an implementation detail left up to the client library developer.
 
 In a server implementation, messages need to be serialized in some way to be sent between the client
-and server. In this case, they may exist in some sort of intermediate format, like JSON or OSC.
+and server. In this case, they may exist in some sort of intermediate format, like JSON, ProtoBuf, or CBOR.
 
 ## Basic Message Structure
 
@@ -33,8 +33,8 @@ There are two types of message flows.
 
 * Messages can be sent from the server to a client. Messages like DeviceList, ServerInfo, and
   certain device specific input messages can happen without the client making a request. The server
-  will not expect a reply from the client for these messages.
-* Messages sent from the client to the server will always receive a reply from the server. The
+  **will not expect a reply** from the client for these messages.
+* Messages sent from the client to the server **will always receive a reply** from the server. The
   message type the client will receive in reply is based on the type of message sent. Some messages
   may receive a simple "Ok" message in reply in order to denote successful receiving, while others
   may receive something context specific. Messages reply types are listed in the message
@@ -62,9 +62,9 @@ For reference implementations of the Buttplug protocol, we use JSON for serializ
 
 The format of Buttplug json messages mimics the output from Rust's
 [serde-json](https://github.com/serde-rs/json) crate. This is due to the first implementation of
-Buttplug with working serialization being in Rust.
+Buttplug with working serialization being in Rust in 2016.
 
-The second, usable implementation of Buttplug happened in C#. The message structure was inherited from Rust, but the PascalCase named of messages and their fields was taken from C#.
+The second, usable implementation of Buttplug happened in C# in 2017. The message structure was inherited from Rust, but the PascalCase named of messages and their fields was taken from C#.
 
 That is how we've ended up with the mess we're in now. There is most likely no language that will handle both the structure and capitalization scheme naturally, and the spec has been around for long enough that it is difficult to change. This is now just an accepted point of shared pain for anyone that wants to use this protocol.
 
@@ -99,10 +99,10 @@ Message descriptions in this document will reflect this layout.
 Similarly, some message values will have certain bounds and limitations. These are described in this
 documentation, and are included in the JSON schema in this repo.
 
-## Adding New Messages
+## Adding and Updating Messages
 
 The message list as described here is only set in stone for this version of the spec. New messages
-will be added as new devices with different capabilities are released, or as new generic messages
+may be added as new devices with different capabilities are released, or as new generic messages
 are deemed necessary. The only rule is that once a message is added to this document, it may be
 deprecated but should never be removed completely from the document (though it may not be available
 in newer protocol versions), in order for backward compatibility to be implemented in servers. Newer
@@ -114,30 +114,6 @@ will need to be reflected across systems and implementations. So far, these upda
 
 Requests for new messages can be submitted to [the Buttplug Github Issue
 Tracker](https://github.com/buttplugio/buttplug/issues).
-
-## Message Versioning
-
-To cope with protocol version differences between servers and clients, each protocol message type
-has a version number. The message version number is based on the protocol version the message was
-introduced in, and is represented as an unsigned integer.
-
-To establish protocol versions between clients and servers, the client sends the protocol message
-version as part of the [RequestServerInfo](identification.md#requestserverinfo) message (as the
-MessageVersion field), and the server includes its protocol version in the
-[ServerInfo](identification.md#serverinfo) response (as the MessageVersion field).
-
-If a server supports a newer protocol version than a client, any messages that the server attempts
-to send will be checked against the client protocol version, and either downgraded to a previous
-version where possible, or simply dropped. Server support for downgrading a message is optional, and
-it is not expected that all servers will support downgrading through all versions of the protocol.
-If a server implementation does not have downgrade capabilities, it should disconnect clients with
-lower schema versions.
-
-If a client supports a newer protocol version than a server, this is considered an invalid
-connection situation, and a disconnect should insue. This rule is based on the assumption that the
-user can most likely update the server version to something newer. The client may not be easily
-upgraded for many reasons, such as being a proprietary application or source code not being easily
-accessible, being to complex to work on and upgrade, etc...
 
 :::tip Version 0 Issues
 
@@ -151,3 +127,37 @@ parameter for protocol version. It is assumed that any
 is from a Version 0 client, and should be communicated with at that spec level.
 
 :::
+
+## Message Versioning
+
+To cope with protocol version differences between servers and clients, each protocol message type
+has a version number. The message version number is based on the protocol version the message was
+introduced in, and is represented as an unsigned integer.
+
+To establish protocol versions between clients and servers, the client sends the protocol message
+version as part of the [RequestServerInfo](identification.md#requestserverinfo) message (as the
+ApiMajorVersion/ApiMinorVersion fields), and the server includes its protocol version in the
+[ServerInfo](identification.md#serverinfo) response (as the same fields field).
+
+### Major Version Differences
+
+If a server supports a newer major protocol version than a client, any messages that the server
+attempts to send will be checked against the client protocol version, and either downgraded to a
+previous version where possible, or simply dropped. Server support for downgrading a message is
+optional, and it is not expected that all servers will support downgrading through all versions of
+the protocol. If a server implementation does not have downgrade capabilities, it should disconnect
+clients with lower schema versions.
+
+If a client supports a newer major protocol version than a server, this is considered an invalid
+connection situation, and a disconnect should insue. This rule is based on the assumption that the
+user can most likely update the server version to something newer. The client may not be easily
+upgraded for many reasons, such as being a proprietary application or source code not being easily
+accessible, being to complex to work on and upgrade, etc...
+
+### Minor Version Differences
+
+As of Spec v4, the Buttplug Protocol now supports Minor Versions. These denote differences in `OutputType`/`InputType`, as well as possibly new Client -> Server message capabilities.
+
+If a server supports a newer minor protocol version than a client, the client should ignore any `OutputType`/`InputType` features it does not understand. There will be no breaking changes, just additions.
+
+If a client supports a newer minor protocol version than a server, no considerations should be needed. Newer minor versions are a superset of older minor version capabilities, so everything is considered to _just work_.

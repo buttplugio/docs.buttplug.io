@@ -18,20 +18,18 @@ Buttplug define systems it is used in via a few different structures:
 - _Device_
   - In Buttplug terms, a _Device_ is a set of _Features_. Each feature can have the following
     attributes:
-    - _Actuators_: Device outputs like vibration, stroking, etc...
-    - _Sensors_: Device inputs like buttons, pressure gauges, accelerometers/IMUs, etc...
-    - _Raw_: A special attribute used for direct device communication without Buttplug as a protocol
-      translation intermediary. _Raw_ attributes are rarely seen, mostly in the context of developer
-      debugging or special requirements for DIY devices.
+    - _Outputs_: Device outputs like vibration, stroking, etc...
+    - _Inputs_: Device inputs like buttons, pressure gauges, accelerometers/IMUs, etc...
+    - There can be multiple outputs within the same feature, representing different ways to
+      addressing the output context. For instance, a stroker may take commands that specify moving to a position over time, or moving to a position immediately (servoing). Both of these contexts would act on the same feature, so they are listed as different `OutputType`s on the same feature.
   - A device may not always directly represent a piece of hardware. For instance, a device may be
     simulated as part of a developer tool, or act as an intermediary for network access to a remote
     controller. This distinction matters at the server level, but is usually hidden from clients.
 - _Server_
   - The portion of the system that handles direct device communication. The Buttplug Server handles
     connections from clients, as well as translating messages from the client into corresponding proprietary commands for devices.
-  - Servers are by far the most complicated portion of a Buttplug system, and are expected to be
-    rarely implemented outside of the [reference
-    implementation](https://github.com/buttplugio/buttplug).
+  - Servers are by far the most complicated portion of a Buttplug system, and are not expected to be
+    implemented by others unless those people really hate their free time and/or lives. Seriously, just use the Intiface
 - _Client_
   - An application that integrates a Buttplug Client library or API. These applications (which can
     be games, music players, movie players, other development tools, etc) use a Buttplug Client
@@ -50,7 +48,7 @@ terms are used as a generic way to denote different communication endpoints. Cli
 
 ## Protocol
 
-The Buttplug Protocol defines a message based protocol between a _Client_ and a _Server_.
+The Buttplug Protocol defines a message based protocol between a _Client_ and a _Server_. This document is the explanation of that protocol.
 
 Client are expected to request information from the server about devices that are connected, and to
 send information to those devices via the server. Servers will handle device enumeration, connection
@@ -59,7 +57,7 @@ client disconnect).
 
 Buttplug uses JSON for serialization in most situations, but this is not a hard rule. Any serialization standard could work depending on context.
 
-## Stages
+## Session Lifetime
 
 Buttplug sessions between the _Client_ and _Server_ consist of 3 stages. While these stages need not
 be discrete, due to the way Buttplug will likely be used, they will usually end up being so.
@@ -117,7 +115,7 @@ sequenceDiagram
   Server->>Client: DeviceList Id=0
   Server->>Client: DeviceList Id=0
   
-  Note over Client,Server: Once devices have been discovered,<br/> the client instruct the server to<br/> stop scanning. Once all device<br/>managers have stopped scanning,<br/>the server will notify the client.
+  Note over Client,Server: Once devices have been discovered,<br/> the client instruct the server to<br/> stop scanning.
   Client->>+Server: StopScanning Id=4
   Server->>-Client: Ok Id=4
   
@@ -125,7 +123,7 @@ sequenceDiagram
   Server->>Client: DeviceList Id=0
   
   Note over Client,Server: The client may instruct devices to<br/>perform actions. Actions vary per<br/>device. Device capabilities are<br/>relayed as part of DeviceList messages.
-  Client->>+Server: ValueCmd Id=5
+  Client->>+Server: OutputCmd Id=5
   Server->>-Client: Ok Id=5
   
   Note over Client,Server: The client may instruct the server to<br/>stop a device from whatever it<br/>may be doing.
