@@ -122,9 +122,9 @@ const sidebars = {
     'spec/status',
     'spec/identification',
     'spec/enumeration',
-    'spec/generic',
-    'spec/sensors',
-    'spec/raw',
+    'spec/stop',
+    'spec/output',
+    'spec/input',
     'spec/deprecated'
   ],
   stpihkalSidebar: [
