@@ -1,55 +1,94 @@
 # Spec Changelog
 
-## Version 4 (2025-??-??)
+## Version 4 (2025-07-??)
 
+- Nomenclature change: Standard -> API
+  - Gonna stop calling this a standard. it's not. There's nothing to standardize here. No one wants
+    to work together in this field. This library is glue between a bunch of devices and
+    manufacturers that either don't recognize or actively hate each other, and trying to pass
+    ourselves off as some unifying piece between these entities has been a fine branding move, but
+    ultimately futile in terms of actually setting anything usable in stone.
+  - On top of that, Buttplug as a project is operating without a plan. There's no real direction,
+    we're mostly throwing stuff at the wall and seeing what sticks, then reorienting around that.
+    Not a particularly good way to standardize anything. The rest of this changelog will bear out
+    that fact in excrusiating detail.
+  - Also, we're 8 years into this project now and not a single person has tried building a server
+    themselves. Which is good, because doing so requires a level of mental instability that would make quality of life questionable for anyone who tried. The ecosystem exists on top of us, but it is not us. I don't think it's ever going to be, and that's fine. 
+  - From here on out, this will now just be referred to as the Buttplug API Spec.
 - Change from Message Attributes to Device Features
   - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
     had multiple problems, including index collisions, difficult figuring out what a device actually
-    does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 3 different types of features: Actuators, Sensors, and Raw. This allows us to state what a device can do, and then define messages within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
-  - This change will be seen in the `DeviceList` messages, as well as in commands that need to refer
-    to specific feature indexes (see next bullet).
-- Define `FeatureType` in message spec and require spec point updates to add new features
+    does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 2 different types of features: Outputs and Inputs. This allows us to state what a device can do, and then define capabilities within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
+  - This change will be seen in the `DeviceAdded`/`DeviceList` messages, as well as in the new
+    `OutputCmd`/`InputCmd` commands.
+- Define `FeatureType`, `OutputType`, and `InputType` in message spec and require spec point updates
+  to add new features
   - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
-    let developers know what type of value they were setting. The values of `ActuatorType` were never set in the message spec, only in the reference implementations of the Buttplug server. These values should be defined within the message spec to let Client writers know exactly what to expect, and how to handle types they may not know (i.e. a client built for message spec v4.1 receives a `FeatureType` defined in v4.2 should not completely break, but should complain).
-- Rename `Index` fields of subcommands to `FeatureIndex`
+    let developers know what type of value they were setting, as well as `SensorType` for sensors.
+    The values of `ActuatorType`/`SensorType` were never set in the message spec, only in the
+    reference implementations of the Buttplug server. These values should be defined within the
+    message spec to let Client writers know exactly what to expect, and how to handle types they may
+    not know (i.e. a client built for message spec v4.1 receives a
+    `FeatureType`/`OutputType`/`InputType` defined in v4.2 should not completely break, but should
+    complain).
+- Remove ability to send multiple commands ("subcommands") in device command messages
+  - In past versions of Buttplug, we allowed multiple commands to be sent within a command package.
+    For instance, if a device had multiple vibrators, a single v3 `ScalarCmd` could contain commands for both of these devices. Creating a usable API to form these messages was damn near impossible, and just ended up in implementation complexity on the server side that was never really exposed to developers well. From v4 on, command packets take one command for one output, and the server can handle that as it will.
+- Add `FeatureIndex` to commands
   - As we now refer to features instead of message attribute array positions, we're updating the
-    `Index` field of commands with corresponding subcommands (`ScalarCmd`/`RotateCmd`/`LinearCmd` in
-    v3) to take `FeatureIndex` instead. The name change here is purely for context, as leaving it as
-    "Index" when the value changed to different origin between message spec versions seemed like it
-    may be confusing.
-- Remove `DeviceAdded` and `DeviceRemoved`
+    `Index` field of commands with corresponding commands (what would've been subcommands in
+    `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's `OutputCmd`/`InputCmd`
+    instead.
+- Remove `DeviceAdded` and `DeviceRemoved` (**NOTE:** Still unimplemented, may not happen due to
+  backward compat reasons)
   - We will now just send `DeviceList` when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
-- Rename `ScalarCmd` to `ValueCmd`
-  - What we're really doing with this command is setting a value on a piece of hardware that we do
-    not expect to change until either `ValueCmd` or `StopDevice` is called at a later point. Name has been changed to try to describe this properly.
-- Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
-  - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
-    `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
-- Renamed `Sensor*` fields to `Feature*` in `Sensor*Cmd` Messages
-  - Aligns with new feature system
-- Change device commands (`ValueCmd`, `ValueWithParameterCmd`) to use integers instead of floats for
-  control values
+- Remove `Raw*Cmd`
+  - `RawReadCmd`/`RawWriteCmd`/`Raw[Un]Subscribe` were introduced in the v2 spec to aid development,
+    allowing developers to bypass the protocol system in Buttplug and directly write byte buffers to
+    devices. This was a bad idea, as Buttplug is built to be a protocol translation system, and this routed around the main point of the library. It ended up being about 2000 extra lines of code around the library to support, with almost no use, and the possibility of users turning it on and exposing their devices to bricking.
+- Remove `ScalarCmd`/`RotateCmd`/`LinearCmd`, replace with `OutputCmd` and `OutputType` variations
+  - We have flipped the context of device command messages. Instead of stating intention by action,
+    we now simply state that we are addressing the output of a device, and give more context with
+    the message. This allows us to only update possible field values within a message versus having
+    to add new messages any time we want to address a new context.
+  - In ELI5 terms: If a new device comes out that moves or does something in a new way, we don't
+    have to do a major revision to the message spec to add support.
+- Remove `Sensor*Cmd`, replace with `InputCmd` and `InputCommand` variations
+  - Due to index collision issues, `Sensor*Cmd` was never really directly supported or used in
+    Buttplug outside of getting Battery values. These issues have now been fixed, and the same context flip as `OutputCmd` has been applied to provide us with `InputCmd`.
+  - Why are they named `OutputCmd` and `InputCmd` instead of following the nomenclature of v3 and
+    using `ActuatorCmd` and `SensorCmd`? Because our domain is buttplug.io and now we have io commands. You can never say we do not commit to the bit fully on this project.
+- Change device commands to use integers instead of floats for control values
   - When Buttplug started we decided to use floats instead of integers for command values. This
     meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.    
-- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
-  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
-    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
 - Rename `MessageVersion` to `MessageMajorVersion` and add `MessageMinorVersion` to
   `RequestServerInfo` message.
   - This allows us to add features to message versions without having to bump major versions every
-    time. 
-- Servers no longer return a message version in `ServerInfo`
-  - There's no reason a client needs to know the version a server supports. Rather, the server
-    should just say yes (by replying with `ServerInfo` to a `RequestServerInfo` call) or no (by
-    replying with an `Error`) to the version requested by the client.
+    time.
+- Servers return `MessageMajorVersion` and `MessageMinorVersion` for connections on >= v4, just `MessageMajorVersion` for < v4
+  - Changes in Minor version let developers/users know they may be missed features but that the
+    system will still be usable.
 - `StopDeviceCmd` no longer sent as a possible message on a device description
   - We now let developers assume all devices can take `StopDeviceCmd`, so there is no need to attach
     it to device descriptors.
   - `StopDeviceCmd` will be valid for both actuators (i.e. make a vibrator stop vibrating) and
     sensors (i.e. cause an unsubscribe from a subscribed endpoint)
 
-## Version xx (2024-09-??)
+### Imaginary Version ~4 Beta 1 (2025-03-??)
+
+THEN IT HAPPENED AGAIN.
+
+- Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
+  - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
+    `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
+- Renamed `Sensor*` fields to `Feature*` in `Sensor*Cmd` Messages
+  - Aligns with new feature system
+- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
+  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
+    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.  
+
+### Imaginary Version ~4 Beta 0 (2024-09-??)
 
 This version never actually existed. I'm just leaving it here to show how things change if I let the project sit for months at a time.
 
