@@ -127,7 +127,7 @@ Messages](deprecated.md#devicelist---version-0) for older versions.)
   * _DeviceMessages_ (dictionary): Accepted Device Messages 
     * Keys (string): Type names of Device Messages that the device will accept
     * Values ([Message
-      Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded)):
+      Attributes](deprecated.md#message-attributes-for-devicelist-and-deviceadded)):
       Attributes for the Device Messages.
 
 **Expected Response:**
@@ -174,7 +174,7 @@ sequenceDiagram
 ---
 ## DeviceAdded - Spec V1
 
-**Reason for Deprecation:** Superceded by [DeviceAdded Version 3](enumeration#deviceadded), which
+**Reason for Deprecation:** Superceded by [DeviceAdded Version 3](deprecated.md#deviceadded), which
 provides more information about feature limits of generic messages, as well as simplifies the format of message attributes.
 
 **Description:** Sent by the server whenever a device is added to the
@@ -196,7 +196,7 @@ Messages](deprecated.md#deviceadded---version-0) for older versions.)
 * _DeviceMessages_ (dictionary): Accepted Device Messages 
   * Keys (string): Type names of Device Messages that the device will accept
   * Values ([Message
-    Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded)):
+    Attributes](deprecated.md#deviceadded)):
     Attributes for the Device Messages.
 
 **Expected Response:**
@@ -242,8 +242,8 @@ etc...
 **Last Updated In Spec Version**: 2
 
 **Description:** A collection of message attributes. This object is always the child of a Device
-Message type name within a [DeviceList](enumeration.md#devicelist) or
-[DeviceAdded](enumeration.md#deviceadded) message. Not all attributes are relevant for all Device
+Message type name within a [DeviceList](deprecated.md#devicelist---spec-v1) or
+[DeviceAdded](deprecated.md#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
 Messages on all Devices; in these cases the attributes will not be included.
 
 **Attributes:**
@@ -270,8 +270,8 @@ Messages on all Devices; in these cases the attributes will not be included.
 **Last Updated In Spec Version**: 2
 
 **Description:** A collection of message attributes. This object is always the child of a Device
-Message type name within a [DeviceList](enumeration.md#devicelist) or
-[DeviceAdded](enumeration.md#deviceadded) message. Not all attributes are relevant for all Device
+Message type name within a [DeviceList](deprecated.md#devicelist---spec-v1) or
+[DeviceAdded](deprecated.md#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
 Messages on all Devices; in these cases the attributes will not be included.
 
 **Attributes:**
@@ -820,8 +820,8 @@ sequenceDiagram
 
 **Description:** Causes a device that supports vibration to run specific vibration motors at a
 certain speeds. Devices with multiple vibrator features may take multiple values. The
-[FeatureCount](enumeration.md#messageattributes) attribute for the message in the
-[DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message will
+[FeatureCount](deprecated#message-attributes-for-deviceaddeddevicelist---spec-v3) attribute for the message in the
+[DeviceList](deprecated#devicelist---spec-v1)/[DeviceAdded](deprecated#deviceadded---spec-v1) message will
 contain that information.
 
 **Introduced In Spec Version:** 1
@@ -1049,9 +1049,9 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by ValueCmd.
 
 **Description:** Sets the static level for a feature. For instance, the vibration speed of a
-vibrator, the oscillating speed of a fucking machine, etc... The [Message
-Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded) for the ScalarCmd message in the
-[DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message contain
+vibrator, the oscillating speed of a fucking machine, etc... The 
+[Message Attributes](deprecated.md#message-attributes-for-deviceaddeddevicelist---spec-v3) for the ScalarCmd message in the
+[DeviceList](#devicelist---spec-v3)/[DeviceAdded](#deviceadded) message contain
 information on the actuator type and description, number of actuators, level ranges, and more.
 
 Due to the amount of different controls that are scalars within haptics (vibration speed,
@@ -1267,9 +1267,10 @@ scanning/discovery sessions.
   name should be used.
 * _DeviceMessages_ (dictionary): Accepted Device Messages 
   * Keys (string): Type names of Device Messages that the device will accept
-  * Values (Array of [Message
-    Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded)): Attributes for
-    the Device Messages. Each feature is a seperate array element, and its index in the array matches how it should be addressed in generic command messages. For instance, in the example below, the Clitoral Stimulator would be Actuator Index 0 in ScalarCmd.
+  * Values (Array of [Message Attributes](#message-attributes-for-deviceaddeddevicelist---spec-v3)):
+    Attributes for the Device Messages. Each feature is a seperate array element, and its index in
+    the array matches how it should be addressed in generic command messages. For instance, in the
+    example below, the Clitoral Stimulator would be Actuator Index 0 in ScalarCmd.
 
 **Expected Response:**
 
@@ -1389,8 +1390,10 @@ sequenceDiagram
   * _DeviceMessages_ (dictionary): Accepted Device Messages 
     * Keys (string): Type names of Device Messages that the device will accept
     * Values (Array of [Message
-      Attributes](enumeration.md#message-attributes-for-devicelist-and-deviceadded)):
-      Attributes for the Device Messages. Each feature is a seperate array element, and its index in the array matches how it should be addressed in generic command messages. For instance, in the example below, the Clitoral Stimulator would be Actuator Index 0 in ScalarCmd.
+      Attributes](#message-attributes-for-deviceaddeddevicelist---spec-v3)): Attributes for the
+      Device Messages. Each feature is a seperate array element, and its index in the array matches
+      how it should be addressed in generic command messages. For instance, in the example below,
+      the Clitoral Stimulator would be Actuator Index 0 in ScalarCmd.
 
 **Expected Response:**
 
@@ -1457,8 +1460,8 @@ sequenceDiagram
 folding section in there and updating for features.
 
 **Description:** A collection of message attributes. This object is always an array element of a
-Device Message key/value pair within a [DeviceList](enumeration.md#devicelist) or
-[DeviceAdded](enumeration.md#deviceadded) message. Not all attributes are relevant for all Device
+Device Message key/value pair within a [DeviceList](#devicelist---spec-v3) or
+[DeviceAdded](#deviceadded) message. Not all attributes are relevant for all Device
 Messages on all Devices; in these cases the attributes will not be included.
 
 **Introduced In Spec Version:** 1
