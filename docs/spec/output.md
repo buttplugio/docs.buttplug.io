@@ -94,6 +94,8 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value. 
 
+**Device Examples**: It's... vibrators. Just vibrators. If you're using this library you are probably familiar with Vibrators. Buttplug's device support is probably 90% vibrators, so this will be used more than any other OutputType. The one thing to note here is that this is mostly assuming Off-axis/Eccentric Rotation Motor (ERM) vibrators. LRA/Voice Coil based vibrating sex toys do exist, but are rare, and can still usually be controlled with this command.
+
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
@@ -121,6 +123,8 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Description**: Sets a rotator speed to a certain amount. It is assumed we cannot control the direction of the rotation for this feature. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
 
+**Device Examples**: Any RotationWithDirection capable device, Lovense Flexer, several Joyhub devices
+
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
@@ -146,7 +150,9 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value. Note that RotationWithDirection features usually support the simpler Rotate command as a fallback.
+
+**Device Examples**: Lovense Nora, Motorbunny Classic, Nexus Revo, Vorze UFO SA, Cyclone SA,
 
 **Fields**
 - Value
@@ -180,6 +186,8 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
 
+**Device Examples**: Hismith Fucking Machines, Lovense Fucking Machine, Lovense Gravity, etc...
+
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
@@ -205,7 +213,9 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+**Description**: Used for pumps and squeezing devices. Usually sets a constriction to a level, though whether or not that level is held until next setting can vary per device. 0 always denotes full release, otherwise valid levels are between 0 and the StepCount value.
+
+**Device Examples**: Lovense Max, Svakom Sam Neo 2
 
 **Fields**
 - Value
@@ -228,15 +238,13 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
   }]
 ```
 
-### Inflate
-
-**Introduced In Spec Version:** 4
-
 ### Heater
 
 **Introduced In Spec Version:** 4
 
 **Description**: Sets the heat level for a device with a heating element. It will be vanishingly rare that we have information about the exact temperature that we can set the heater to, so this will normally be some number of "heating steps". 0 always denotes turning off the heater, otherwise valid commands are between 0 and the StepCount value.
+
+**Device Examples**: N/A
 
 **Fields**
 - Value
@@ -251,8 +259,8 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
       "DeviceIndex": 0,
       "FeatureIndex": 0,
       "Command": {
-        "Inflate": {
-          "Value": 10
+        "Heater": {
+          "Value": 2
         }
       }
     }
@@ -264,6 +272,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 **Introduced In Spec Version:** 4
 
 **Description**: Sets the brightness value of an LED. If StepCount = 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED, otherwise valid commands are between 0 and the StepCount value. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
+
+:::tip Why is this Led and not LED?
+
+Because a LOT of programming languages hate multiple capital letters next to each other in container names, so we just call it Led. Remember, this is just the line protocol, you can call it whatever you want in your client API methods.
+
+:::
+
+**Device Examples**: Lovense Domi
 
 **Fields**
 - Value
@@ -290,6 +306,60 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
+**Description**: Command device to move to a certain position as quickly as possible, aka servoing. Should only be used for very small movements at a time, and in most cases is expected to run at a maximum update rate for the device. There is no _Stop_ handling for a position movement, as it is expected to move then stop quickly.
+
+**Device Examples**: Various axes of the OSR-2/SR-6/SR-1 systems, including the stroker as well as twist/pressure cap/etc mechanisms, possibly other strokers like the Kiiroo Keon or Lovense Solace Pro but with less accuracy than wired devices. Not sure if there's a way to do this with The Handy.
+
+**Fields**
+- Position
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Position to servo to, valid settings are within 0 < x < StepCount 
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Position": {
+          "Value": 10
+        }
+      }
+    }
+  }]
+```
+
 ### PositionWithDuration
 
 **Introduced In Spec Version:** 4
+
+**Description**: Command device to move to a certain position as quickly as possible, aka servoing. Should only be used for very small movements at a time, and in most cases is expected to run at a maximum update rate for the device. There is no _Stop_ handling for a position movement, as it is expected to move then stop quickly.
+
+**Device Examples**: Various axes of the OSR-2/SR-6/SR-1 systems, including the stroker as well as twist/pressure cap/etc mechanisms, other strokers like the Kiiroo Keon, Lovense Solace Pro, or The Handy.
+
+**Fields**
+- Position
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Position to move to over \[duration\] time, valid settings are within 0 < x < StepCount 
+- Duration
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Duration in milliseconds for move to new goal position
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "PositionWithDuration": {
+          "Position": 85,
+          "Duration": 15
+        }
+      }
+    }
+  }]
+```
