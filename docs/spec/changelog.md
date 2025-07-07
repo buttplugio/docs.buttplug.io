@@ -39,8 +39,7 @@
     `Index` field of commands with corresponding commands (what would've been subcommands in
     `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's `OutputCmd`/`InputCmd`
     instead.
-- Remove `DeviceAdded` and `DeviceRemoved` (**NOTE:** Still unimplemented, may not happen due to
-  backward compat reasons)
+- Remove `DeviceAdded` and `DeviceRemoved`
   - We will now just send `DeviceList` when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
 - Remove `Raw*Cmd`
