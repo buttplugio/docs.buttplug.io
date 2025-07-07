@@ -5,7 +5,7 @@ Messages that convey information about devices currently connected to the system
 ---
 ## DeviceList
 
-**Description:** Server reply to a client request for a device list.
+**Description:** Server reply to a client request for a device list, or sent as an event when a device is connected or disconnected.
 
 **Introduced In Spec Version:** 0
 
