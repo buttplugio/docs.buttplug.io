@@ -25,6 +25,17 @@ cause issues (i.e. someone driving a vibrator and a fucking machine with the sam
 Mitigation for that type of issue may be UX related versus system/protocol related, by letting users
 set speed limits and ranges for devices.
 
+:::tip What happened to Subcommands?
+
+In Buttplug Spec v1-v3, our generic commands took multiple "subcommands", allowing developers to send updates to multiple features in the same message, possibly for update at the same time.
+
+Building APIs for messages in this format was a nightmare, so the feature was either ignored or turned libraries into a complete mess of multiple call types per output type (depending on if all features should be set to the same value, or different values, etc...). Also, developers were never actually aware if devices _needed_ multiple features updated at the same time, or if they'd send one message per device update. This information is in the protocol, which is hidden from the Client level. Subcommands added complexity without any benefit.
+
+As of v4, we move to 1 command per message. This will now require extra logic in the server, in order to bundle commands that come in quick succession if a protocol allows it so we can reduce messages. The removed complexity for client/app developers easily makes the added server side logic pay off though.
+
+:::
+
+
 **Introduced In Spec Version:** 4
 
 **Last Updated In Spec Version:** 4
