@@ -14,21 +14,23 @@ Messages that convey information about devices currently connected to the system
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
-* _Devices_ (array): Array of device objects
+* _Devices_ (map of indexes to device object, with each object having the following fields):
   * _DeviceName_ (string): Descriptive name of the device, as taken from the base device
     configuration file.
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device
     Messages.
+    * This is a repeat of the map key
   * _DeviceMessageTimingGap_ (unsigned integer): Recommended minimum gap between device
     commands, in milliseconds, **TO BE ENFORCED ON THE SERVER**. If multiple messages are sent within the timespan defined here, only the latest commands will be sent on the next message trigger. This relieves developers of having to regulate input from users or tune their clients, at the cost of added server complexity. As no one but the Buttplug Core Team writes servers, that means you're getting less work for free here. If this is set to 0, it means there is no minimum update rate (if there is a device updating at after that 1khz in buttplug, please get in touch, I have concerns).
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
     name should be used.
-  * _DeviceFeatures_ (array of feature objects, with each object having the following fields)
+  * _DeviceFeatures_ (map of indexes to feature objects, with each object having the following fields)
     * _Description_ (string): Text descriptor for a feature.
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
       messages like `ValueCmd`, `SensorReadCmd`, etc...
+      * This is a repeat of the map key.
     * _FeatureType_ (string): **Recommended** type for the feature, but _not necessarily the only
       thing it can do_. For instance, a stroker like the Lovense Solace Pro or Kiiroo Keon would have a feature type of _PositionWithDuration_, but can also handle the _Position_ message. This is useful for programmatically deducing more information about what a feature does.
     * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
@@ -45,6 +47,18 @@ Messages that convey information about devices currently connected to the system
         * _ValueRange_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
           received from the sensor, if known.
     
+:::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and an object fields?
+
+DeviceIndex and FeatureIndex are how client implementations refer to a device in InputCmd and OutputCmd messages. They are the main identifiers for Buttplug. In most client implementations we've built so far, we end up using Map<number, object> types to represent Devices and Features, mapping indexes to the related objects. However, for the objects themselves, it tends be to handy for the object to know its index when forming device control messages.
+
+With client ergonomics in mind, we just pack device info this way to begin with, so that serialization can happen from our base storage structures, and deserialization gives us the type of data structures we usually had to build by iterating through object arrays in past versions. This also gives us the added bonus of not being able to somehow pack devices with matching IDs (which would be a massive bug anyways but now it's not even structurally possible.).
+
+There is some awkwardness in the JSON implementation of this, as object field names cannot be numeric. These are normally converted to strings when serialized, then back to numeric types automatically when deserialized for whatever language a client may be implemented in, assuming it has a decent serde library.
+
+For those screaming "BUT ADDED SIZE AND REDUNDANCY AND YOU COULD STILL SOMEHOW PACK KEYS THAT DON'T MATCH INTERNAL INDEX FIELDS": DeviceList messages are sent a few times a minutes, so size doesn't matter. We could screw up consistency, but once again that'd be a huge bug and there's been one server implementation for 8 years.
+
+:::
+
 **Expected Response:**
 
 None. Server-to-Client message only.
@@ -64,12 +78,13 @@ sequenceDiagram
   {
     "DeviceList": {
       "Id": 1,
-      "Devices": [
-        {
+      "Devices": {
+        "0": {
           "DeviceName": "Test Vibrator",
           "DeviceIndex": 0,
-          "Features": [
-            {
+          "Features": {
+            "0": {
+              "FeatureIndex": 0,
               "FeatureType": "Vibrate",
               "Descriptor": "Clitoral Stimulator",
               "Output": {
@@ -78,16 +93,18 @@ sequenceDiagram
                 }
               }
             },
-            {
+            "1": {
+              "FeatureIndex": 1,
               "FeatureType": "Vibrate",
               "Descriptor": "Insertable Stimulator",
               "Output": {
                 "Vibrate": {
-                  "StepCount": 20,
+                  "StepCount": 20
                 }
               }
             },
-            {
+            "2": {
+              "FeatureIndex": 2,
               "FeatureType": "Battery",
               "Descriptor": "Battery",
               "Input": {
@@ -97,15 +114,16 @@ sequenceDiagram
                 }
               }
             }
-          ]
+          }
         },
-        {
+        "1": {
           "DeviceName": "Test Stroker",
           "DeviceIndex": 1,
           "DeviceMessageTimingGap": 100,
           "DeviceDisplayName": "User set name",
-          "Features": [
-            {
+          "Features": {
+            "0": {
+              "FeatureIndex": 0,
               "FeatureType": "PositionWithDuration",
               "Descriptor": "Stroker",
               "Output": {
@@ -120,7 +138,8 @@ sequenceDiagram
                 }
               }
             },
-            {
+            "1": {
+              "FeatureIndex": 1,
               "FeatureType": "RSSI",
               "Descriptor": "Bluetooth Radio RSSI",
               "Input": {
@@ -130,10 +149,9 @@ sequenceDiagram
                 }
               }
             }
-
-          ]
+          }
         }
-      ]
+      }
     }
   }
 ]
