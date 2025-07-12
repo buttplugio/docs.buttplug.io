@@ -89,7 +89,7 @@ sequenceDiagram
               "Descriptor": "Clitoral Stimulator",
               "Output": {
                 "Vibrate": {
-                  "StepCount": 20,
+                  "StepCount": 20
                 }
               }
             },
@@ -128,7 +128,7 @@ sequenceDiagram
               "Descriptor": "Stroker",
               "Output": {
                 "PositionWithDuration": {
-                  "StepCount": 100,
+                  "StepCount": 100
                 }
               },
               "Input": {
