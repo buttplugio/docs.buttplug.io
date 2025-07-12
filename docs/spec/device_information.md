@@ -49,7 +49,7 @@ Messages that convey information about devices currently connected to the system
     
 :::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and an object fields?
 
-DeviceIndex and FeatureIndex are how client implementations refer to a device in InputCmd and OutputCmd messages. They are the main identifiers for Buttplug. In most client implementations we've built so far, we end up using Map<number, object> types to represent Devices and Features, mapping indexes to the related objects. However, for the objects themselves, it tends be to handy for the object to know its index when forming device control messages.
+DeviceIndex and FeatureIndex are how client implementations refer to a device in InputCmd and OutputCmd messages. They are the main identifiers for Buttplug. In most client implementations we've built so far, we end up using Map\<number, object\> types to represent Devices and Features, mapping indexes to the related objects. However, for the objects themselves, it tends be to handy for the object to know its index when forming device control messages.
 
 With client ergonomics in mind, we just pack device info this way to begin with, so that serialization can happen from our base storage structures, and deserialization gives us the type of data structures we usually had to build by iterating through object arrays in past versions. This also gives us the added bonus of not being able to somehow pack devices with matching IDs (which would be a massive bug anyways but now it's not even structurally possible.).
 
