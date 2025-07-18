@@ -28,7 +28,9 @@ A Buttplug Server is the piece that manages communication with hardware. This is
 - The server contains the knowledge of how to talk to a specific toy in the way that it understands. Toy protocols are rarely shared between different brands, so the server contains many different implementations.
 - If a client is controlling a device, then for some reason disconnects, it is the server's job to stop the device until the client has reconnected and sends new control commands.
 
-The server may be in charge of other tasks, which we'll cover in depth in a later section in this chapter. 
+The server may be in charge of other tasks, which we'll cover in depth in a later section in this chapter.
+
+As a developer using Buttplug for applications, it's rare you'll interact directly with a server via code. Server software, like [Intiface Central](https://intiface.com/central) and Intiface Engine, are maintained and distributed by the Buttplug Core Team. Device/feature additions and bug fixes happen outside of the application developer having to worry about updating their own software.
 
 ### Buttplug Clients
 
@@ -38,11 +40,7 @@ Buttplug Clients are the usable API surface of Buttplug, what developers use to 
 
 This is the part you're most likely going to be building!
 
-Applications put some sort of specific UI/UX in front of a Buttplug Client. This could be:
-
--   [A simple slider to control a toy from a web page](https://playground.buttplug.world)
--   [A 3D game](https://www.youtube.com/watch?v=rAYdo1vDNak)
--   [A typing tutor that makes the toy vibrate more as you type words in correctly.](https://curiousjp.itch.io/caveman-bios-teaches-erotic-typing)
+Applications put some sort of specific UI/UX in front of a Buttplug Client. This could be anything from games to movie players to text/code editor plugins to who knows what. All applications that the Buttplug Core Team are aware of are listed in the [Buttplug Awesome List](https://awesome.buttplug.io).
 
 The ideas here really are endless. All of these will use a Buttplug Client to talk to a Buttplug Server.
 
@@ -52,8 +50,8 @@ There are multiple configurations and possibilities available, depending on the 
 
 Once again trying to limit specifics, here's a couple of examples of how these pieces might go together:
 
--   A developer builds a movie player application that is just one executable, containing both a Buttplug Server and Client. This allows them to use the Client API, which makes accessing the server easy, while also meaning users only have one thing to install and don't have to worry about connecting to outside programs.
--   A developer builds a web app to control sex toys. The web browser does not support a way to access the sex toy hardware. The web app will contain a Buttplug Client that talks over the network to a native Buttplug Server, which has the ability to talk to the hardware directly.
+-   A developer builds a web app to control sex toys. The web browser does not support a way to access the sex toy hardware. The web app will contain a Buttplug Client that talks over the network to a native Buttplug Server like [Intiface Central](https://intiface.com/central), which has the ability to talk to the hardware directly.
+-   A developer builds a movie player application that is just one executable, containing both a Buttplug Server and Client. This allows them to use the Client API, which makes accessing the server easy, while also meaning users only have one thing to install and don't have to worry about connecting to outside programs. However, this means the developer is also responsible for updating their application as the library updates, so it is not recommended.
 
 The plusses and minuses of these different setups will be covered in the Writing Applications section.
 

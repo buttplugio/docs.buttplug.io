@@ -18,7 +18,7 @@ const sidebars = {
     'dev-guide/foreword',
     {
       type: 'category',
-      label: 'Introduction',
+      label: 'Flared Basics',
       items: ['dev-guide/intro/introduction', 
       'dev-guide/intro/how-to-read', 
       'dev-guide/intro/buttplug-ethics', 
@@ -31,11 +31,12 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Project and Library Architecture',
+      label: 'Strategies Against (Buttplug) Architecture',
       items: ['dev-guide/architecture/intro', 
       'dev-guide/architecture/sessions-and-components', 
       'dev-guide/architecture/protocol-in-depth', 
       'dev-guide/architecture/client-in-depth', 
+      'dev-guide/architecture/client-device-in-depth', 
       'dev-guide/architecture/server-in-depth', 
       'dev-guide/architecture/intiface', 
       'dev-guide/architecture/terms'],
