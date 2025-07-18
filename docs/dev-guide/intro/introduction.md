@@ -22,11 +22,13 @@ Any point where the term "Buttplug" is used to refer to the toy type will be use
 
 ## So Does It Just Control Buttplugs?
 
-This is one of the most asked questions around the Buttplug project. The Buttplug project was built to control all sorts of hardware, not just buttplugs. As of this writing, implementations can control:
+This is one of the most asked questions around the Buttplug project. The Buttplug project was built to control all sorts of hardware, not just buttplugs. As of this writing, implementations can control or read data from:
 
 - Gamepads
 - Vibrators (of all sorts, be it rabbit, buttplug, prostate, wand, etc...)
-- Strokers
+- Strokers (single-axis as well as multi-axis)
+- Fucking Machines
+- Pressure sensors
 
 This list will continue to grow over time. For the most up to date version, checkout [IOSTIndex](https://iostindex.com), the most comprehensive list of sex tech devices on the internet. There are filters that will allow you to see which devices are supported by the library.
 
@@ -34,7 +36,7 @@ This list will continue to grow over time. For the most up to date version, chec
 
 Some of the reasons the project is named Buttplug are:
 
-- A buttplug (the toy) is a non-gender-specific sex toy. Everyone has a butt. Butts are inclusive.
+- A buttplug (the toy) is a non-gender-specific sex toy. Most everyone has a butt (though a butthole is another question entirely). Butts are inclusive.
 - Technology and the surrounding culture is far too sterile. Buttplugs, used correctly, are usually not.
 - It seemed funny at the time when the project was starting, even though no thought was put into how it would sound when being mentioned in press articles, grant applications, etc...
     - Upon further consideration and with some history behind it, that has made it even funnier.

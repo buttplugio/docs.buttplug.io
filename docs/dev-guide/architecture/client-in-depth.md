@@ -27,12 +27,6 @@ As a Buttplug developer, you'll usually only have a couple of interactions with 
 
 That's it. After that, outside of very special circumstances that we'll cover in the Winning Ways chapter, you'll rarely deal with your connector again. You set it up, connect with it, then the Client manages it for the life of your Buttplug session.
 
-## Client Devices
+## Client Lifetime
 
-When a Client is notified by the server that a device has connected, it will create a Client Device instance. These instances are accessible by developers, and are how developers can control devices from the client. A Client Device contains:
-
-- the name of the device as present to the client. This may not always be the exact product name of the device, but acts as an identifier for the application user.
-- the capabilities of the device (For instance, can the device vibrate? If so, how many vibration motors does it have? How many levels of power do those motors have? Etc...)
-- an event emitter, for handling device disconnection/reconnection events, as well as emitting any sensor readings the device might receive (accelerometer, pressure, etc... depending on the hardware in question)
-
-Client devices are accessible through the client instance, and will generally live through the lifetime of the device connection. Once a device has disconnected, all calls to a client device will return errors.
+After handling connections, clients mainly exist as a frontend for event emitting and device discovery. Devices can be discovered using something like `StartScanning()` and `StopScanning()` methods. Changes in device connectivity and asynchronous server errors (i.e. errors not caused by commands from the client) will be relayed through whatever event system is provided by the language/runtime currently being used.

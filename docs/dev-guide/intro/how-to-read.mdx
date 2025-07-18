@@ -15,9 +15,9 @@ The Buttplug Developer Guide covers a few different topics.
 
 This guide should be considered **a way** to do things, but not **the (only) way**. The only
 invariant portion of Buttplug is the actual low-level protocol, as laid out by [the Buttplug
-Spec](https://buttplug-spec.docs.buttplug.io). The libraries mentioned in this guide are one try at
-implementing an API on top of that protocol. Other developers are free to implement their own APIs
-as they see fit that use that protocol, and the whole system should still work as a whole.
+Spec](https://buttplug-spec.docs.buttplug.io). The libraries mentioned in this guide implement APIs
+on top of that protocol. Other developers are free to implement their own APIs as they see fit that
+use that protocol, and the system should still work as a whole.
 
 Chapters involving code will have interfaces similar to the one shown here. Changing the language
 choice on any example will change it on all examples in the project, so you can read using whatever
@@ -88,10 +88,11 @@ disrespect in mind, here's a list of what you'll learn from each of the sections
       structures in the libraries, and a guide to how the implementations are built.
     * Glossary of terms that will be used in the application building portion of the system.
 * **Sticking Buttplug In**
-    * If you want to build a game, movie player, control app, or whatever, *AND YOU ALREADY READ THE
-      ARCHITECTURE CHAPTER*, this is the chapter for you.
+    * If you want to start building software with Buttplug, no matter what the type, *AND YOU
+      ALREADY READ THE ARCHITECTURE CHAPTER*, this is the chapter for you.
     * All about the Client side of Buttplug. Useful for those wanting to build applications that
-      will connect to Buttplug Servers. 
+      will connect to Buttplug Servers (which most people will know as Intiface Engine or Intiface
+      Central).
 * **Winning Ways For Your Buttplug Plays**
     * After reading both the architecture and application chapters, this chapter presents different
       recipes for common library scenarios, including:
