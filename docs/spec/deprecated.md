@@ -12,7 +12,7 @@ all messages, even those that have been deprecated.
 ---
 ## DeviceList - Spec V0
 
-**Reason for Deprecation:** Superceded by [DeviceList Version 1](enumeration#devicelist), which
+**Reason for Deprecation:** Superceded by [DeviceList Version 1](#devicelist---spec-v1), which
 provides more information about feature limits of generic messages.
 
 **Description:** Server reply to a client request for a device list.
@@ -66,7 +66,7 @@ sequenceDiagram
 ---
 ## DeviceAdded - Spec V0
 
-**Reason for Deprecation:** Superceded by [DeviceList Version 1](enumeration#devicelist), which
+**Reason for Deprecation:** Superceded by [DeviceList Version 1](device_information#devicelist), which
 provides more information about feature limits of generic messages.
 
 **Introduced In Spec Version:** 0
@@ -108,15 +108,16 @@ sequenceDiagram
 ---
 ## DeviceList - Spec V1
 
-**Reason for Deprecation:** Superceded by [DeviceList Version 3](enumeration#devicelist), which
-provides optional display name and message timing information, as well as simplifies the format of message attributes.
+**Reason for Deprecation:** Superceded by [DeviceList Version 3](device_information.md#devicelist),
+which provides optional display name and message timing information, as well as simplifies the
+format of message attributes.
 
 **Description:** Server reply to a client request for a device list.
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 1 (See [Deprecated
-Messages](deprecated.md#devicelist---version-0) for older versions.)
+**Last Updated In Spec Version:** 1 (See [Deprecated Messages](#devicelist---spec-v0) for older
+versions.)
 
 **Fields:**
 
@@ -126,8 +127,7 @@ Messages](deprecated.md#devicelist---version-0) for older versions.)
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device Messages.
   * _DeviceMessages_ (dictionary): Accepted Device Messages 
     * Keys (string): Type names of Device Messages that the device will accept
-    * Values ([Message
-      Attributes](deprecated.md#message-attributes-for-devicelist-and-deviceadded)):
+    * Values ([Message Attributes](#message-attributes-for-deviceaddeddevicelist---spec-v3)):
       Attributes for the Device Messages.
 
 **Expected Response:**
@@ -174,7 +174,7 @@ sequenceDiagram
 ---
 ## DeviceAdded - Spec V1
 
-**Reason for Deprecation:** Superceded by [DeviceAdded Version 3](deprecated.md#deviceadded), which
+**Reason for Deprecation:** Superceded by [DeviceAdded Version 3](#deviceadded), which
 provides more information about feature limits of generic messages, as well as simplifies the format of message attributes.
 
 **Description:** Sent by the server whenever a device is added to the
@@ -184,8 +184,7 @@ capabilities that do not require specific scanning/discovery sessions.
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version**: 1 (See [Deprecated
-Messages](deprecated.md#deviceadded---version-0) for older versions.)
+**Last Updated In Spec Version**: 1 (See [Deprecated Messages](#deviceadded---spec-v0) for older versions.)
 
 **Fields:**
 
@@ -196,7 +195,7 @@ Messages](deprecated.md#deviceadded---version-0) for older versions.)
 * _DeviceMessages_ (dictionary): Accepted Device Messages 
   * Keys (string): Type names of Device Messages that the device will accept
   * Values ([Message
-    Attributes](deprecated.md#deviceadded)):
+    Attributes](#deviceadded)):
     Attributes for the Device Messages.
 
 **Expected Response:**
@@ -242,8 +241,8 @@ etc...
 **Last Updated In Spec Version**: 2
 
 **Description:** A collection of message attributes. This object is always the child of a Device
-Message type name within a [DeviceList](deprecated.md#devicelist---spec-v1) or
-[DeviceAdded](deprecated.md#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
+Message type name within a [DeviceList](#devicelist---spec-v1) or
+[DeviceAdded](#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
 Messages on all Devices; in these cases the attributes will not be included.
 
 **Attributes:**
@@ -270,8 +269,8 @@ Messages on all Devices; in these cases the attributes will not be included.
 **Last Updated In Spec Version**: 2
 
 **Description:** A collection of message attributes. This object is always the child of a Device
-Message type name within a [DeviceList](deprecated.md#devicelist---spec-v1) or
-[DeviceAdded](deprecated.md#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
+Message type name within a [DeviceList](#devicelist---spec-v1) or
+[DeviceAdded](#deviceadded---spec-v1) message. Not all attributes are relevant for all Device
 Messages on all Devices; in these cases the attributes will not be included.
 
 **Attributes:**
@@ -426,7 +425,7 @@ sequenceDiagram
 ---
 ## SingleMotorVibrateCmd
 
-**Reason for Deprecation:** Superceded by [VibrateCmd](deprecated.md#vibratecmd), which provided
+**Reason for Deprecation:** Superceded by [VibrateCmd](#vibratecmd), which provided
 granular control of an unlimited number of motors. Should most likely still be implemented in
 servers, in order to support older applications, but is not recommended for use in new client
 applications.
@@ -517,7 +516,7 @@ sequenceDiagram
 ---
 ## FleshlightLaunchFW12Cmd
 
-**Reason for Deprecation:** Superceded by [LinearCmd](deprecated.md#linearcmd), which provided an
+**Reason for Deprecation:** Superceded by [LinearCmd](#linearcmd), which provided an
 easier way to reason about movement time and position.
 
 **Description:** Causes a device that supports Fleshlight Launch (Firmware Version 1.2) style
@@ -566,8 +565,8 @@ sequenceDiagram
 ## LovenseCmd
 
 **Reason for Deprecation:** Never implemented in any reference version of the library. Superceded by
-a combination of [ScalarCmd](deprecated.md#scalarcmd), [RotateCmd](deprecated.md#rotatecmd),
-[BatteryCmd](deprecated.md#batterycmd), and the [Raw*Cmd](deprecated.md#rawreadcmd) commands.
+a combination of [ScalarCmd](#scalarcmd), [RotateCmd](#rotatecmd),
+[BatteryCmd](#batterylevelcmd), and the [Raw*Cmd](#rawreadcmd) commands.
 
 **Description:** Causes a device that supports Lovense style commands to run whatever event may be
 related. More information on Lovense commands can be found in STPIHKAL.
@@ -613,8 +612,8 @@ sequenceDiagram
 ---
 ## VorzeA10CycloneCmd
 
-**Reason for Deprecation:** Superceded by a combination of [VibrateCmd](deprecated.md#linearcmd) and
-[RotateCmd](deprecated.md#rotatecmd).
+**Reason for Deprecation:** Superceded by a combination of [VibrateCmd](#linearcmd) and
+[RotateCmd](#rotatecmd).
 
 **Description:** Causes a device that supports Vorze A10 Cyclone style commands to run whatever
 event may be related. More information on Vorze commands can be found in STPIHKAL.
@@ -890,7 +889,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [BatteryLevelReading](deprecated.md#batterylevelreading) message with
+* [BatteryLevelReading](#batterylevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -920,7 +919,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading.
 
 **Description:** Message containing a battery level reading from a
-device, as requested by [BatteryLevelCmd](deprecated.md#batterylevelcmd).
+device, as requested by [BatteryLevelCmd](#batterylevelcmd).
 
 **Introduced In Spec Version:** 2
 
@@ -975,7 +974,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [RSSILevelReading](deprecated.md#rssilevelreading) message with
+* [RSSILevelReading](#rssilevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -1005,7 +1004,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading. Also never implemented in any official reference implementation of Buttplug.
 
 **Description:** Message containing a RSSI level reading from a
-device, as requested by [RSSILevelCmd](deprecated.md#rssilevelcmd).
+device, as requested by [RSSILevelCmd](#rssilevelcmd).
 
 **Introduced In Spec Version:** 2
 
@@ -1050,7 +1049,7 @@ sequenceDiagram
 
 **Description:** Sets the static level for a feature. For instance, the vibration speed of a
 vibrator, the oscillating speed of a fucking machine, etc... The 
-[Message Attributes](deprecated.md#message-attributes-for-deviceaddeddevicelist---spec-v3) for the ScalarCmd message in the
+[Message Attributes](#message-attributes-for-deviceaddeddevicelist---spec-v3) for the ScalarCmd message in the
 [DeviceList](#devicelist---spec-v3)/[DeviceAdded](#deviceadded) message contain
 information on the actuator type and description, number of actuators, level ranges, and more.
 
@@ -1248,7 +1247,7 @@ scanning/discovery sessions.
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version**: 3 (See [Deprecated Messages](deprecated.md) for older versions.)
+**Last Updated In Spec Version**: 3 (See [Deprecated Messages](#deviceadded---spec-v1) for older versions.)
 
 **Fields:**
 
@@ -1367,7 +1366,7 @@ sequenceDiagram
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 3 (See [Deprecated Messages](deprecated.md) for older versions.)
+**Last Updated In Spec Version:** 3 (See [Deprecated Messages](#devicelist---spec-v1) for older versions.)
 
 **Fields:**
 
@@ -1466,7 +1465,7 @@ Messages on all Devices; in these cases the attributes will not be included.
 
 **Introduced In Spec Version:** 1
 
-**Last Updated In Spec Version**: 3 (See [Deprecated Messages](deprecated.md) for older versions.)
+**Last Updated In Spec Version**: 3
 
 **Attributes:**
 

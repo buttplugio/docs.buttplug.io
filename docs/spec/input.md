@@ -8,8 +8,8 @@ Getting data from devices is done via InputCmd. Within this message we encode al
 
 **Description:** Sends a command to receive input of some type. For instance, the battery level of a
 wireless device, pressure readings from a sensor, axes of an accelerometer, current motor positions,
-etc... The features portion of the [DeviceList](enumeration.md#devicelist) or DeviceAdded message
-contains information on the input type and description, ranges, and more.
+etc... The features portion of the [DeviceList](device_information.md#devicelist) message contains
+information on the input type and description, ranges, and more.
 
 Due to the amount of different sensor contexts within toys, the corresponding InputReading message
 provides flexibility to add new input types without having to introduce new messages into the
