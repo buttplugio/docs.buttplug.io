@@ -17,8 +17,8 @@ The client's main functions are:
 
 Connectors are how clients and servers talk to each other. There are two classes of connectors:
 
-- *Embedded Connectors*, which contains the client and its connected server instance. This means that the whole Buttplug system is running in the same process as the application.
 - *Remote Connectors*, which means the client is using some mechanism (TCP, Websockets, IPC, etc...) to talk to a server in another process.
+- *Embedded Connectors*, which contains the client and its connected server instance. This means that the whole Buttplug system is running in the same process as the application.
 
 As a Buttplug developer, you'll usually only have a couple of interactions with connectors.
 
