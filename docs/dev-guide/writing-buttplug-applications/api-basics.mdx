@@ -4,15 +4,16 @@ import CodeBlock from '@theme/CodeBlock';
 
 # API Basics
 
-Client implementations in Buttplug are built to look as similar as possible no matter what language
-you're using. However, there may be instances where language options (i.e. existence of things like
-first-class events) change the API slightly. This section goes over how the client APIs we've
-provided work in a generic manner.
+Assuming you're using a client written by the Buttplug Core Team, client implementations in Buttplug
+are built to look as similar as possible no matter what language you're using. However, there may be
+instances where language options (i.e. existence of things like first-class events) change the API
+slightly. This section goes over how the client APIs we've provided work in a generic manner.
 
 ## Buttplug Session Overview
 
 Let's review what a Buttplug Sessions are made up of. Some of this was covered in depth in the
-architecture section, so this will just be an overview, while also including some example code.
+[architecture section](/docs/dev-guide/architecture/intro), so this will just be an overview, while also
+including some example code.
 
 Buttplug sessions (the connection lifetime between the client and server) consist of the following
 steps.
@@ -24,71 +25,6 @@ steps.
 - Server communicates Device Connection events to Client/Application.
 - Application uses Device Instances to control hardware in Server
 - At some point, Application/Client disconnects from the Server
-
-## Library Initialization
-
-Depending on which programming language and/or package you're using, you may have to run some code
-prior to creating Buttplug instances and running commands.
-
-<Tabs>
-<TabItem value="rust" label="Rust">
-
-If you're using Rust, congratulations, you don't really have much of anything to worry about. Isn't
-using the natively implemented system great?
-
-</TabItem>
-<TabItem value="csharp" label="C#">
-
-If you're using C#, we try to handle most of the initialization for you in our library. This may
-include detecting architectures and loading libraries to make sure that we find the correct library
-for the architecture you're running on. Hopefully this will be something you don't have to worry
-about. If you do run into problems, [file an issue on our FFI
-repo](https://github.com/buttplugio/buttplug-rs-ffi).
-
-</TabItem>
-<TabItem value="js" label="Javascript">
-
-Sorry Javascript/Typescript/Web users, unlike the other languages who don't have much to worry
-about, this section is mostly for you.
-
-While most of our native systems are fairly seamless, loading our WASM in web situations takes a bit
-of extra work.
-
-For those working on the web, here's a full HTML file example of how loading Buttplug for use works:
-
-```html
-<html>
-<head></head>
-<body>
-<script src="[buttplug CDN url here, see buttplug-js README for location/version]"></script>
-<script lang="javascript">
-  // After we've loaded the module above, we'll have a "Buttplug" global we can access 
-  // methods and classes from. We'll use that to initialize the library. This is 
-  // required because of the way we have to load our WASM code into the application. 
-  // You'll need to call buttplugInit(), which returns a promise that will resolve 
-  // when WASM is loaded, at which point you can go ahead and run other Buttplug 
-  // commands.
-  //
-  // We have this call in all of our examples in this guide, to remind users that
-  // this must happen when running the library. If you do not call this, you'll
-  // get errors in your developer console (and exceptions thrown) that will
-  // remind you that you need to do it.
-  Buttplug.buttplugInit().then(() => console.log("Buttplug Loaded"));
-</script>
-</body>
-</html>
-```
-
-If you're using **Webpack** or another web application packing system in node, things can get
-complicated depending on your application setup. Rather than add an example here that may need to
-change often, [I'm just going to refer you to the buttplug-js README about webpack
-setup](https://github.com/buttplugio/buttplug-rs-ffi/tree/master/js#using-buttplug-with-webpack),
-which will have the latest information on how to do this. If you have issues, either  [file an issue
-on our FFI repo](https://github.com/buttplugio/buttplug-rs-ffi) or [contact us via one of the
-support mechanisms (preferably discord)](/docs/dev-guide/intro/getting-help).
-
-</TabItem>
-</Tabs>
 
 ## Client/Server Interaction
 
@@ -197,8 +133,14 @@ import jsErrorsExample from '!!raw-loader!/examples/javascript/errors-example.js
 </TabItem>
 </Tabs>
 
-**NOTE:** You may notice that there's no way to tell exactly what an error is from this message. You
-get a class, but the information itself is encoded in the message, which is not standardized.
-Therefore it's impossible to tell whether a device disconnected, or you just send a connected device
-an incorrect message. This is bad, and [will hopefully be fixed at some point in the
-future](https://github.com/buttplugio/buttplug/issues/70).
+Common errors include:
+* Commands sent to a disconnected device. These can be avoided by monitoring device events.
+* Boundary errors, such as trying to send values outside of the range a device accepts (these can be
+  caught in the client before they are sent to the user)
+
+There are some errors application developers won't see. This includes:
+* Device scanning errors, as these are logged and displayed by the server side (normally Intiface
+  Central or Engine)
+* Device connection issues, as device information will only be sent to the client once it's properly
+  connected.
+

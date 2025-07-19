@@ -56,7 +56,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Advanced Buttpluging',
+      label: 'Winning Ways for Your Buttplug Plays',
       items: ['dev-guide/cookbook/intro',
       {
         type: 'category',
