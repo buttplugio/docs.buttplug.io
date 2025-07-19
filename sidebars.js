@@ -17,6 +17,11 @@ const sidebars = {
     'dev-guide/index',
     'dev-guide/foreword',
     {
+      type: 'doc',
+      label: 'Quick Start',
+      id: "dev-guide/getting-started"
+    },
+    {
       type: 'category',
       label: 'Flared Basics',
       items: ['dev-guide/intro/introduction', 
@@ -25,13 +30,8 @@ const sidebars = {
       'dev-guide/intro/getting-help'],
     },
     {
-      type: 'doc',
-      label: 'Quick Start',
-      id: "dev-guide/getting-started"
-    },
-    {
       type: 'category',
-      label: 'Strategies Against (Buttplug) Architecture',
+      label: 'Strategies Against Buttplug Architecture',
       items: ['dev-guide/architecture/intro', 
       'dev-guide/architecture/sessions-and-components', 
       'dev-guide/architecture/protocol-in-depth', 
@@ -43,7 +43,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Build A Simple Buttplug Application',
+      label: 'Sticking Buttplug In',
       items: ['dev-guide/writing-buttplug-applications/intro', 
       'dev-guide/writing-buttplug-applications/api-basics',
       'dev-guide/writing-buttplug-applications/connectors', 
@@ -72,11 +72,6 @@ const sidebars = {
         items: [
           'dev-guide/cookbook/devices-and-commands/intro',
           'dev-guide/cookbook/devices-and-commands/device-configurations',
-          'dev-guide/cookbook/devices-and-commands/scalar-command',
-          'dev-guide/cookbook/devices-and-commands/linear-command',
-          'dev-guide/cookbook/devices-and-commands/rotate-command',
-          'dev-guide/cookbook/devices-and-commands/sensor-commands',
-          'dev-guide/cookbook/devices-and-commands/raw-commands',
         ]
       },
       {
