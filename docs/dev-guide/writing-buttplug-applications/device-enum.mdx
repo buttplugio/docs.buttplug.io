@@ -4,12 +4,12 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Device Enumeration
 
-Once the client and server are connected, they can start talking to each other about devices.
+Once the client and server are connected, they can start communicating about devices.
 
 ## Scanning
 
-To find out about new devices, Buttplug Client libraries will usually provide 2 functions and an
-event/callback:
+To find out about new devices during a session, Buttplug Client libraries will usually provide 2
+functions and an event/callback:
 
 - StartScanning (Method)
   - Tells the server to start looking for devices via the Device Manager. This will start the
@@ -20,10 +20,14 @@ event/callback:
     dialogs, so calling StartScanning() may open that dialog.
 - StopScanning (Method)
   - Tells the server to stop scanning for devices if it hasn't already.
+
+### ScanningFinished Event (WASM only)
+
+ScanningFinished is now only used for the Typescript WASM Server setup. For Desktop/Mobile apps
+connecting to Intiface Central, you do not need to watch for the ScanningFinished event, as most
+Device Scanners run until StopScanning is called.
+
 - ScanningFinished (Event/Callback)
-  - **Note:** ScanningFinished is now only used for the Typescript Web Client/Server setup. For
-    Desktop/Mobile apps connecting to Intiface Central, you do not need to watch for the
-    ScanningFinished event, as most Device Scanners now run until StopScanning is called.
   - When all device communication managers have finished looking for new devices, this event will
     be fired from the client to let applications know to update their UI (for instance, to change a
     button name from "Stop Scanning" to "Start Scanning"). This event may fire without StopScanning
@@ -47,27 +51,18 @@ currently connected devices that can be used for iteration if needed.
 Both events may be fired at any time during a Buttplug Client/Server session. DeviceAdded can be
 called outside of StartScanning()/StopScanning(), and even right after connect in some instances.
 
-If you are using a remote connector (i.e. connecting an application to Intiface Central), you don't
-actually know the state of the Buttplug Server you're connecting too. The server could already be
-running and have devices connected to it. In this case, the Client will emit DeviceAdded events on
-successful connection. 
+## Already Connected Devices
+
+Servers will normally stay up and running until users stop them, meaning they can have connections
+from several different clients over the session. This means that devices may already be connected to
+servers when you connect.
+
+Most clients will query the server for already connected devices when they finish their handshake,
+after which they will then present them as DeviceAdded() events.
 
 This means you will want to have your event handlers set up **BEFORE** connecting, in order to catch
 these messages. You can also check the Devices storage (usually a public collection on your Client
 instance, like an array or list) after connect to see what devices are there.
-
-:::warning Missing Content On Message Attributes
-
-You're probably curious about how to tell what capabilities a device has. Can it vibrate? Can it
-rotate? If so, how fast?
-
-All that information does exist. But for some reason I never documented it in the dev guide. 
-
-This will be rectified, hopefully soon. However, until then, know that this information most likely
-exists in the MessageAttributes portion of the Device implementation of your chosen Buttplug Client
-library, so start by looking there.
-
-:::
 
 ## Code Example
 
