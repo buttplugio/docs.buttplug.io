@@ -49,6 +49,7 @@ const sidebars = {
       'dev-guide/writing-buttplug-applications/connectors', 
       'dev-guide/writing-buttplug-applications/connecting',
       'dev-guide/writing-buttplug-applications/device-enum',
+      'dev-guide/writing-buttplug-applications/device-info',
       'dev-guide/writing-buttplug-applications/device-control',
       'dev-guide/writing-buttplug-applications/application',
       'dev-guide/writing-buttplug-applications/logging',
