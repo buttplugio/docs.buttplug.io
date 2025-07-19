@@ -8,9 +8,8 @@ Controlling devices is done via OutputCmd. Within this message we encode all pos
 
 **Description:** Sends a command to an output of some type. For instance, the vibration speed of a
 vibrator, the oscillating speed of a non-position-based fucking machine, positions with durations to
-strokers, etc... The features portion of the [DeviceList](enumeration.md#devicelist) or DeviceAdded
-message contains information on the actuator type and description, number of actuators, level
-ranges, and more.
+strokers, etc... The features portion of the [DeviceList](device_information.md#devicelist) message contains information on the actuator type and description, number of actuators,
+level ranges, and more.
 
 Due to the amount of different value contexts within haptics (vibration speed, oscillation speed,
 inflate/constrict pressures, etc), this message provides flexibility to add new acutuation types
