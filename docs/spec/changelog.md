@@ -21,7 +21,7 @@
     does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 2 different types of features: Outputs and Inputs. This allows us to state what a device can do, and then define capabilities within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
   - This change will be seen in the `DeviceAdded`/`DeviceList` messages, as well as in the new
     `OutputCmd`/`InputCmd` commands.
-- Define `FeatureType`, `OutputType`, and `InputType` in message spec and require spec point updates
+- Define `OutputType`, and `InputType` in message spec and require spec point updates
   to add new features
   - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
     let developers know what type of value they were setting, as well as `SensorType` for sensors.
@@ -29,7 +29,7 @@
     reference implementations of the Buttplug server. These values should be defined within the
     message spec to let Client writers know exactly what to expect, and how to handle types they may
     not know (i.e. a client built for message spec v4.1 receives a
-    `FeatureType`/`OutputType`/`InputType` defined in v4.2 should not completely break, but should
+    `OutputType`/`InputType` defined in v4.2 should not completely break, but should
     complain).
 - Remove ability to send multiple commands ("subcommands") in device command messages
   - In past versions of Buttplug, we allowed multiple commands to be sent within a command package.
