@@ -31,8 +31,6 @@ Messages that convey information about devices currently connected to the system
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
       messages like `ValueCmd`, `SensorReadCmd`, etc...
       * This is a repeat of the map key.
-    * _FeatureType_ (string): **Recommended** type for the feature, but _not necessarily the only
-      thing it can do_. For instance, a stroker like the Lovense Solace Pro or Kiiroo Keon would have a feature type of _PositionWithDuration_, but can also handle the _Position_ message. This is useful for programmatically deducing more information about what a feature does.
     * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
       OutputType to information objects.
       * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this field
@@ -85,7 +83,6 @@ sequenceDiagram
           "Features": {
             "0": {
               "FeatureIndex": 0,
-              "FeatureType": "Vibrate",
               "Descriptor": "Clitoral Stimulator",
               "Output": {
                 "Vibrate": {
@@ -95,7 +92,6 @@ sequenceDiagram
             },
             "1": {
               "FeatureIndex": 1,
-              "FeatureType": "Vibrate",
               "Descriptor": "Insertable Stimulator",
               "Output": {
                 "Vibrate": {
@@ -105,7 +101,6 @@ sequenceDiagram
             },
             "2": {
               "FeatureIndex": 2,
-              "FeatureType": "Battery",
               "Descriptor": "Battery",
               "Input": {
                 "Battery": {
@@ -124,7 +119,6 @@ sequenceDiagram
           "Features": {
             "0": {
               "FeatureIndex": 0,
-              "FeatureType": "PositionWithDuration",
               "Descriptor": "Stroker",
               "Output": {
                 "PositionWithDuration": {
@@ -140,7 +134,6 @@ sequenceDiagram
             },
             "1": {
               "FeatureIndex": 1,
-              "FeatureType": "RSSI",
               "Descriptor": "Bluetooth Radio RSSI",
               "Input": {
                 "RSSI": {
