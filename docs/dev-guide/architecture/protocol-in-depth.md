@@ -24,7 +24,7 @@ The Buttplug Protocol is made up of messages. 99.999% of the time, unless you're
 }
 ```
 
-This is an "Ok" message, which the server sends to the client to signify that a message was received and processed successfully. It, and every other Buttplug Protocol Message, has an "Id" field, which is used to give messages context. The Client will choose an Id for a message, then when the server replies to it, it will use the same Id, so the Client knows which message the Server is replying to. As Buttplug deals with hardware that communicates at vastly different speeds, messages may be replied to out of order, so there's nothing saying that a message that's send first will get its reply first.
+This is an "Ok" message, which the server sends to the client to signify that a message was received and processed successfully. It, and every other Buttplug Protocol Message, has an "Id" field, which is used to give messages context. The Client will choose an Id for a message, then when the server replies to it, it will use the same Id, so the Client knows which message the Server is replying to. As Buttplug deals with hardware that communicates at vastly different speeds, messages may be replied to out of order, so there's nothing saying that a message that's sent first will get its reply first.
 
 **All of this is taken care of for you in the Client API**, so you don't really have to worry about making any of this happen yourself. :)
 
