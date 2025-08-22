@@ -54,7 +54,7 @@ There are multiple classes of Message in the protocol, including:
 
 When reading Buttplug bugs or development posts, you may hear that some functionality is in development and "messages will be added in the next version". Each version of the Buttplug Message Spec has a version number, and once that version is set, the only way to change the spec is to increase the version number. This is what allows us to handle backward compatibility, since we know exactly what messages to expect when a client connects to a server (as the client will declare the spec version it's using as part of one of its handshake messages).
 
-Adding new functionality to Buttplug means adding new message, so when Buttplug doesn't do something that developers are looking for, it means we need to add a message to the protocol, and revise the spec version. Once the spec changes, we then modify the Client API and release a new major version of the libraries (spec changes always trigger major version revisions), so that developers can use the new message.
+Adding new functionality to Buttplug means adding a new message, so when Buttplug doesn't do something that developers are looking for, it means we need to add a message to the protocol, and revise the spec version. Once the spec changes, we then modify the Client API and release a new major version of the libraries (spec changes always trigger major version revisions), so that developers can use the new message.
 
 Message additions are a rather complicated process. Message addition procedure is outlined in the Inflating Buttplug section, but for now, just knowing these terms is enough so you can translate what project contributors are talking about when they discuss the spec and new messages.
 
