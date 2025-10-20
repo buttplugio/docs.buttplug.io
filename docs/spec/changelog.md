@@ -1,6 +1,6 @@
 # Spec Changelog
 
-## Version 4 (2025-07-??)
+## Version 4 (2025-10-18)
 
 - Nomenclature change: Standard -> API
   - Gonna stop calling this a standard. it's not. There's nothing to standardize here. No one wants
@@ -39,6 +39,9 @@
     `Index` field of commands with corresponding commands (what would've been subcommands in
     `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's `OutputCmd`/`InputCmd`
     instead.
+- `DeviceInfo` now contains range information about all fields of a feature
+  - In v2/v3, we introduced the idea of `StepCount` to communicate actuator range. For instance, if
+    a device had 20 speeds of vibration, it'd have `StepCount` of 20. Some actuators (like `Rotate` and `Temperature`) can now have negative values, so we now send a definition of the range with the name of the field it represents. Instead of `StepCount: 20`, we send `Value: [-20, 20]`. We have also extended to fields we didn't define limits on before, like the `Duration` portion of `PositionWithDuration` (aka `LinearCmd`), as some devices have upper limits on how slowly they can move.
 - Remove `DeviceAdded` and `DeviceRemoved`
   - We will now just send `DeviceList` when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
@@ -72,6 +75,14 @@
     it to device descriptors.
   - `StopDeviceCmd` will be valid for both actuators (i.e. make a vibrator stop vibrating) and
     sensors (i.e. cause an unsubscribe from a subscribed endpoint)
+- `Rotate` actuators can now possibly take negative values
+  - Instead of having a `clockwise` attribute, devices with bidirectional rotation will have a `value` range of negative to positive, with positive being clockwise, negative being counterclockwise.
+- Added `Temperature`, `Led`, `Spray` actuators
+  - `Temperature` refers to devices with cooling/heating units. This will be communicated as
+    negative/positive values, similar to `Rotate.
+  - `Led` is light levels for devices with controllable lights, most likely used just to turn them
+    off.
+  - `Spray` is for lubrication injection
 
 ### Imaginary Version ~4 Beta 1 (2025-03-??)
 
