@@ -14,7 +14,6 @@ const config = {
   baseUrl: '/',
   onBrokenAnchors: 'warn',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
@@ -40,7 +39,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
         },
-        blog: false,
+        blog: {
+          blogTitle: 'Buttplug.io Dev Blog',
+          blogDescription: 'Mistakes as long reads',
+          postsPerPage: 10,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -49,6 +52,9 @@ const config = {
   ],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn'
+    }
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig:
@@ -70,6 +76,11 @@ const config = {
             position: "left"
           },
           */
+          {
+            to: 'blog',
+            label: 'Blog',
+            position: 'left'
+          },
           {
             type: "doc",
             docId: "dev-guide/index",
