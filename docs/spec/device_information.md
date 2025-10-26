@@ -21,7 +21,7 @@ Messages that convey information about devices currently connected to the system
     Messages.
     * This is a repeat of the map key
   * _DeviceMessageTimingGap_ (unsigned integer): Recommended minimum gap between device
-    commands, in milliseconds, **TO BE ENFORCED ON THE SERVER**. If multiple messages are sent within the timespan defined here, only the latest commands will be sent on the next message trigger. This relieves developers of having to regulate input from users or tune their clients, at the cost of added server complexity. As no one but the Buttplug Core Team writes servers, that means you're getting less work for free here. If this is set to 0, it means there is no minimum update rate (if there is a device updating at after that 1khz in buttplug, please get in touch, I have concerns).
+    commands, in milliseconds, **TO BE ENFORCED ON THE SERVER**. If multiple messages are sent within the timespan defined here, only the latest commands will be sent on the next message trigger. This relieves developers of having to regulate input from users or tune their clients, at the cost of added server complexity. As no one but the Buttplug Core Team writes servers, that means you're getting less work for free here. If this is set to 0, it means there is no minimum update rate (if there is a device updating at 1khz in buttplug, please get in touch, I have concerns).
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
@@ -33,10 +33,18 @@ Messages that convey information about devices currently connected to the system
       * This is a repeat of the map key.
     * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
       OutputType to information objects.
-      * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this field
-        would be something like "Vibrate", "Position", etc...
-        * _StepCount_ (unsigned 32-bit integer): Number of steps usable for this output type. For
-          instance, if a vibrator has 20 steps of speed control, StepCount will be 20. However, if a user has reduced the usable range in their server config, it may be < 20.
+      * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this would be
+        something like _Vibrate_, _Position_, etc... **IMPORTANT**: Fields for this will change based on the key value. See below for which fields are valid per output type.
+        * _Value_ (Signed 32-bit integer range): Range of the value this output type can be set to.
+          It is assumed that once a value is set, it will not be reset until _OutputCmd_ is called
+          again for the same feature. This can be used as a 2-dimensional value, for instance, a rotation feature that has direction may have a range of _[-x, x]_ to denote that it can rotate in 2 different directions.
+          * Valid for Output Types: _Vibrate_, _Rotate_, _Spray_, _Oscillate_, _Constrict_, _Led_, _Temperature_
+        * _Position_ (Unsigned 32-bit integer range): Range of the position setting for output type
+          that use a position value.
+          * Valid for Output Types: _Position_, _PositionWithDuration_
+        * _Duration_ (Unsigned 32-bit integer range, in milliseconds): Range of duration values, in
+          milliseconds, for output types that use time
+          * Valid for Output Types: _PositionWithDuration_
     * _Input_ (Object, may be null): Represents a sensor that may be part of this feature. A map of
       InputType to information objects.
       * \[_InputType_\] (InputType as String): InputType is used as a key here, so this field
@@ -45,7 +53,7 @@ Messages that convey information about devices currently connected to the system
         * _ValueRange_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
           received from the sensor, if known.
     
-:::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and an object fields?
+:::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and object fields?
 
 DeviceIndex and FeatureIndex are how client implementations refer to a device in InputCmd and OutputCmd messages. They are the main identifiers for Buttplug. In most client implementations we've built so far, we end up using Map\<number, object\> types to represent Devices and Features, mapping indexes to the related objects. However, for the objects themselves, it tends be to handy for the object to know its index when forming device control messages.
 
@@ -86,7 +94,7 @@ sequenceDiagram
               "Descriptor": "Clitoral Stimulator",
               "Output": {
                 "Vibrate": {
-                  "StepCount": 20
+                  "Value": [0, 20]
                 }
               }
             },
@@ -95,12 +103,21 @@ sequenceDiagram
               "Descriptor": "Insertable Stimulator",
               "Output": {
                 "Vibrate": {
-                  "StepCount": 20
+                  "Value": [0, 20]
                 }
               }
             },
             "2": {
               "FeatureIndex": 2,
+              "Descriptor": "Rotating Head with Directional Control",
+              "Output": {
+                "Vibrate": {
+                  "Value": [-20, 20]
+                }
+              }
+            },
+            "3": {
+              "FeatureIndex": 3,
               "Descriptor": "Battery",
               "Input": {
                 "Battery": {
@@ -122,7 +139,11 @@ sequenceDiagram
               "Descriptor": "Stroker",
               "Output": {
                 "PositionWithDuration": {
-                  "StepCount": 100
+                  "Position": [0, 100],
+                  "Duration": [0, 100000]
+                },
+                "Position": {
+                  "Position": [0, 100]
                 }
               },
               "Input": {
