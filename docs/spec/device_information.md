@@ -32,7 +32,7 @@ Messages that convey information about devices currently connected to the system
       messages like `ValueCmd`, `SensorReadCmd`, etc...
       * This is a repeat of the map key.
     * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
-      OutputType to information objects.
+      OutputType to information objects. If a feature lists multiple output types, this means that the feature can be controlled through different contexts. For instance, a feature having both _Position_ and _PositionWithDuration_ output types means that the feature can move instantaneously to a goal position, or can move to the goal position over a certain amount of itme.
       * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this would be
         something like _Vibrate_, _Position_, etc... **IMPORTANT**: Fields for this will change based on the key value. See below for which fields are valid per output type.
         * _Value_ (Signed 32-bit integer range): Range of the value this output type can be set to.
@@ -170,3 +170,61 @@ sequenceDiagram
   }
 ]
 ```
+
+## Device Feature Output Types
+
+Device feature output types denote what a device can physically output. They could also be thought of as _actuators_ (but we call them _outputs_ because, you know, buttplug dot io and all).
+
+Unless denoted in the types listed in _DeviceInfo_ or here, it should be assumed that values for output types are arbitrary and have no useful units of measurement conveyed.
+
+### Vibrate
+
+Speeds of a vibrator feature. There are no units given for this output type, as there is no standard for measuring device output within toys. All sex toys currently on the market that Buttplug handles provide a set amount of speed steps that a vibrator can be set to, but the range and output power vary wildly.
+
+### Rotate
+
+Speeds and direction of a rotation feature. Whether this is a single or dual direction rotation is denoted via the range in _DeviceInfo_; _[0, x]_ means the feature can only rotate in a single direction at a speed, _[-x, x]_ means it can rotate clockwise as a speed if positive, counter-clockwise at a speed if negative.
+
+### Oscillate
+
+Speed of an osillating feature. This could be something like a fucking machine, a thrusting dildo, or a stroker without the ability to set positions.
+
+### Led
+
+Light amount of an LED feature on the device. For an LED feature with range [0, x], 0 should be considered off, x is the brightest the LED can get. Devices with multiple LED colors will have one feature per color.
+
+### Temperature
+
+Temperature of a feature that is a heater or cooler. Like rotation, range can be `[-x, x]`, where x < 0 is cooling (assuming the feature has cooling), x > 0 is heating (assuming the feature has heating), and 0 is off.
+
+### Spray
+
+Spray power, for devices like lube shooters. It's expected that this will be a temporary, single spray event. Any time the spray outputcmd is received, it will be considered a request to run a spray event.
+
+### Position
+
+Goal position of a feature, assumed to be a servo that can move basically instantaneously to a goal position. Useful for very fast real time updated in devices that can handle them, such as a wired stroker that can be controlled in real time with exact position updates.
+
+### PositionWithDuration
+
+Goal position of a feature, where it is expected that the device will move from the current position to a goal position over a certain amount of time. This is useful for contexts like video synchronization, where a script will have motion encoded in _(position, duration)_ pairs, like Funscript.
+
+## Device Feature Input Types
+
+Input types are things a device can read. We'd call these _sensors_ normally, but, once again, _buttplug dot i o_.
+
+### Battery
+
+Battery level, assume it's percentage from 0-100%.
+
+### RSSI
+
+Radio connection quality for devices that use radios.
+
+### Button
+
+Button press, [0, 1] for digital, [0, x] for analog.
+
+### Pressure
+
+Pressure sensors, for devices like kegelcizers.
