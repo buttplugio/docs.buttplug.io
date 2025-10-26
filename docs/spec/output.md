@@ -102,7 +102,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value. 
+**Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_. 
 
 **Device Examples**: It's... vibrators. Just vibrators. If you're using this library you are probably familiar with Vibrators. Buttplug's device support is probably 90% vibrators, so this will be used more than any other OutputType. The one thing to note here is that this is mostly assuming Off-axis/Eccentric Rotation Motor (ERM) vibrators. LRA/Voice Coil based vibrating sex toys do exist, but are rare, and can still usually be controlled with this command.
 
@@ -131,7 +131,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a rotator speed to a certain amount. It is assumed we cannot control the direction of the rotation for this feature. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+**Description**: Sets a rotator speed to a certain amount. It is assumed we cannot control the direction of the rotation for this feature. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_.
 
 **Device Examples**: Any RotationWithDirection capable device, Lovense Flexer, several Joyhub devices
 
@@ -160,7 +160,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value. Note that RotationWithDirection features usually support the simpler Rotate command as a fallback.
+**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_. Note that _RotationWithDirection_ features usually support the simpler _Rotate_ command as a fallback.
 
 **Device Examples**: Lovense Nora, Motorbunny Classic, Nexus Revo, Vorze UFO SA, Cyclone SA,
 
@@ -194,7 +194,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the StepCount value.
+**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_.
 
 **Device Examples**: Hismith Fucking Machines, Lovense Fucking Machine, Lovense Gravity, etc...
 
@@ -223,7 +223,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Used for pumps and squeezing devices. Usually sets a constriction to a level, though whether or not that level is held until next setting can vary per device. 0 always denotes full release, otherwise valid levels are between 0 and the StepCount value.
+**Description**: Used for pumps and squeezing devices. Usually sets a constriction to a level, though whether or not that level is held until next setting can vary per device. 0 always denotes full release, otherwise valid levels are between 0 and the _Value_ range in _DeviceInfo_.
 
 **Device Examples**: Lovense Max, Svakom Sam Neo 2
 
@@ -252,7 +252,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets the heat level for a device with a heating element. It will be vanishingly rare that we have information about the exact temperature that we can set the heater to, so this will normally be some number of "heating steps". 0 always denotes turning off the heater, otherwise valid commands are between 0 and the StepCount value.
+**Description**: Sets the heat level for a device with a heating element. It will be vanishingly rare that we have information about the exact temperature that we can set the heater to, so this will normally be some number of "heating steps". 0 always denotes turning off the heater, otherwise valid commands are between 0 and the _Value_ range in _DeviceInfo_.
 
 **Device Examples**: N/A
 
@@ -281,7 +281,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets the brightness value of an LED. If StepCount = 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED, otherwise valid commands are between 0 and the StepCount value. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
+**Description**: Sets the brightness value of an LED. If Value maximum is 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED, otherwise valid commands are between 0 and the _Value_ range in _DeviceInfo_. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
 
 :::tip Why is this Led and not LED?
 
