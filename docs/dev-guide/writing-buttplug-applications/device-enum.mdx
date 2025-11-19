@@ -39,7 +39,7 @@ There are 2 events related to device connections that the client may fire:
       this device, and that the device can take commands.
 - DeviceRemoved (Event/Callback)
     - This event will fire when a device disconnects from the server for some reason. It should
-      contain and instance of the device that disconnected.
+      contain an instance of the device that disconnected.
     
 While the events are handy for updating UI, Client implementations usually also hold a list of
 currently connected devices that can be used for iteration if needed.
