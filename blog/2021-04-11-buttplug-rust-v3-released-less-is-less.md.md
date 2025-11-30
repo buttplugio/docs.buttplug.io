@@ -4,6 +4,8 @@ title: Buttplug Rust v3.0 Released - Less is Less
 
 When I released [Buttplug Rust v1](https://buttplug.io/), I figured I’d be rolling major versions whenever we updated the [Buttplug Protocol](http://buttplug-spec.docs.buttplug.io/). Here we are, at major version 3.0, still running the same protocol, but with more surface API changes. So much for those plans.
 
+<!-- truncate -->
+
 ## Why v3.0?
 
 Since the release of Buttplug Rust v1, I’ve been getting steady pings from game developers asking when the [Buttplug Unity](https://github.com/buttplugio/buttplug-unity) plugin would be updated, in order to support new hardware as well as IL2CPP compilation. I finally got time to start work on this project a couple of weeks ago. Unfortunately it didn’t get off to a great start.
