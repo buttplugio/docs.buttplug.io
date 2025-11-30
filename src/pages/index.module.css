@@ -4,25 +4,50 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+    .heroBanner {
+        padding: 2rem;
+    }
 }
 
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .buttons a {
-  margin: 5px;
+    margin: 5px;
+}
+
+.features {
+    padding: 4rem 0;
+}
+
+.newsSection {
+    padding: 3rem 0;
+}
+
+.resources {
+    padding: 3rem 0;
+}
+
+.hardware {
+    padding: 3rem 0;
+}
+
+@media screen and (max-width: 996px) {
+    .features,
+    .newsSection,
+    .resources,
+    .hardware {
+        padding: 2rem 0;
+    }
 }
