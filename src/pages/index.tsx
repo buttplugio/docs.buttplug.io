@@ -28,19 +28,21 @@ function HomepageHeader() {
           We were vibe coding before it was cool.
         </p>
         <div className={styles.buttons} style={{ marginTop: "2rem" }}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/dev-guide/getting-started"
-          >
-            Quickstart Guide
-          </Link>
-          <Link
-            className="button button--primary button--lg"
-            to="/docs/dev-guide"
-            style={{ marginLeft: "1rem" }}
-          >
-            Developer Guide
-          </Link>
+          <div className="row">
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/dev-guide/getting-started"
+            >
+              Quickstart Guide
+            </Link>
+            <Link
+              className="button button--primary button--lg"
+              to="/docs/dev-guide"
+              style={{ marginLeft: "1rem" }}
+            >
+              Developer Guide
+            </Link>
+          </div>
         </div>
       </div>
     </header>
@@ -57,12 +59,12 @@ function FeaturesSection() {
     {
       title: "🎮 Wide Hardware Support",
       description:
-        "Support for popular brands like Lovense, Kiiroo, The Handy, WeVibe, OSR-2/SR-6, and more.",
+        "Support for over 750 different pieces of hardware, from popular brands like Lovense, Kiiroo, The Handy, WeVibe, OSR-2/SR-6, and more.",
     },
     {
       title: "🔌 Multiple Protocols",
       description:
-        "Support for Bluetooth, USB, HID, and Serial controlled devices.",
+        "Support for Bluetooth, USB, HID, Serial, and Network controlled devices.",
     },
     {
       title: "🌐 Cross-Platform",
