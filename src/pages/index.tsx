@@ -4,9 +4,10 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import logo from "/img/logo.png";
-import squidplug from "/img/squidplug.png";
 import styles from "./index.module.css";
 import { useColorMode } from "@docusaurus/theme-common";
+import ReactMarkdown from "react-markdown";
+import useGlobalData from "@docusaurus/useGlobalData";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -41,6 +42,31 @@ function HomepageHeader() {
             Developer Guide
           </Link>
         </div>
+        <div
+          style={{
+            marginTop: "2rem",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            padding: "1rem",
+            borderRadius: "8px",
+            maxWidth: "600px",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          <p style={{ margin: 0, fontSize: "1.1rem" }}>
+            Not a developer? Looking for Intiface Central or other applications?{" "}
+            <Link
+              to="https://intiface.com"
+              style={{
+                color: "inherit",
+                textDecoration: "underline",
+                fontWeight: "bold",
+              }}
+            >
+              Head over to the Intiface page.
+            </Link>
+          </p>
+        </div>
       </div>
     </header>
   );
@@ -51,12 +77,12 @@ function FeaturesSection() {
     {
       title: "🦀 Built with Rust",
       description:
-        "Implemented in Rust, with bindings for C#, JS, and other languages.",
+        "Implemented in [Rust](https://github.com/buttplugio/buttplug), with bindings for [C#](https://github.com/buttplugio/buttplug-csharp), [JS/TS](https://github.com/buttplugio/buttplug-js), and other languages.",
     },
     {
       title: "🎮 Wide Hardware Support",
       description:
-        "Support for over 750 different pieces of hardware, from popular brands like Lovense, Kiiroo, The Handy, WeVibe, OSR-2/SR-6, and more.",
+        "Support for over 750 different pieces of hardware, from popular brands like [Lovense](https://lovense.buttplug.io), [Kiiroo](https://kiiroo.buttplug.io), [The Handy](https://thehandy.buttplug.io), WeVibe, Satisfyer, OSR-2/SR-6, and more.",
     },
     {
       title: "🔌 Multiple Protocols",
@@ -70,7 +96,8 @@ function FeaturesSection() {
     },
     {
       title: "🎯 Game Engine Plugins",
-      description: "Plugins for Unreal, Unity, Godot, Twine, and more!",
+      description:
+        "Plugins for [Unity](https://github.com/buttplugio/buttplug-unity), Godot, Unreal, [Twine](https://github.com/buttplugio/buttplug-twine), and more!",
     },
     {
       title: "📖 Open Source",
@@ -119,7 +146,7 @@ function FeaturesSection() {
                 }}
               >
                 <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
+                <ReactMarkdown>{feature.description}</ReactMarkdown>
               </div>
             </div>
           ))}
@@ -130,16 +157,10 @@ function FeaturesSection() {
 }
 
 function NewsSection() {
-  const news = [
-    { date: "2024/04/20", title: "Intiface Central v2.5.7 Released" },
-    { date: "2023/11/17", title: "Intiface Central v2.4.5 Released" },
-    { date: "2022/08/29", title: "Buttplug Rust v6 Released" },
-    {
-      date: "2021/01/19",
-      title: "Buttplug Rust v2, C# v1.0.9, JS v1.0.3 Released",
-    },
-    { date: "2020/12/28", title: "Buttplug Rust, C#, JS v1 Released" },
-  ];
+  const globalData = useGlobalData();
+  const blogPluginData =
+    globalData?.["docusaurus-plugin-content-blog"]?.["blog"]["default"];
+  const recentPosts = blogPluginData?.recentPosts?.slice(0, 5) || [];
 
   return (
     <section
@@ -160,17 +181,33 @@ function NewsSection() {
           Latest News
         </h2>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {news.map((item, idx) => (
-              <li
-                key={idx}
-                style={{ marginBottom: "1rem", fontSize: "1.1rem" }}
-              >
-                <strong>{item.date}</strong> - {item.title}
-              </li>
-            ))}
-          </ul>
-        </div>
+          {recentPosts && recentPosts.length > 0 ? (
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {recentPosts.map((post, idx) => (
+                <li
+                  key={idx}
+                  style={{ marginBottom: "1rem", fontSize: "1.1rem" }}
+                >
+                  <strong>
+                    {new Date(post.metadata.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    })}
+                  </strong>{" "}
+                  -{" "}
+                  <Link to={post.metadata.permalink}>
+                    {post.metadata.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p style={{ textAlign: "center", fontStyle: "italic" }}>
+              No blog posts available yet.
+            </p>
+          )}
+        </div>{" "}
       </div>
     </section>
   );
