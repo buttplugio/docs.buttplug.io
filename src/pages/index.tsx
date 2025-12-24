@@ -13,7 +13,7 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <img src={logo} style={{ maxWidth: 300 }} alt="Buttplug Logo" />
+        <img src={logo} className={styles.heroLogo} alt="Buttplug Logo" />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p
           className="hero__subtitle"
@@ -28,21 +28,18 @@ function HomepageHeader() {
           We were vibe coding before it was cool.
         </p>
         <div className={styles.buttons} style={{ marginTop: "2rem" }}>
-          <div className="row">
-            <Link
-              className="button button--secondary button--lg"
-              to="/docs/dev-guide/getting-started"
-            >
-              Quickstart Guide
-            </Link>
-            <Link
-              className="button button--primary button--lg"
-              to="/docs/dev-guide"
-              style={{ marginLeft: "1rem" }}
-            >
-              Developer Guide
-            </Link>
-          </div>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/dev-guide/getting-started"
+          >
+            Quickstart Guide
+          </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/dev-guide"
+          >
+            Developer Guide
+          </Link>
         </div>
       </div>
     </header>
