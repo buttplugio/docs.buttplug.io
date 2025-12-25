@@ -15,7 +15,6 @@ const config = {
   onBrokenAnchors: "warn",
   onBrokenLinks: "warn",
   favicon: "img/favicon.ico",
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   // organizationName: 'Nonpolynomial Labs, LLC', // Usually your GitHub org/user name.
@@ -50,6 +49,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          lastVersion: "current",
+          versions: {
+            current: {
+              label: "spec-v4",
+              path: "spec-v4",
+            },
+          },
         },
         /*
         blog: {
@@ -90,14 +96,14 @@ const config = {
           },
           {
             type: "doc",
-            docId: "dev-guide/v4/index",
-            label: "Dev Guide v4",
+            docId: "dev-guide/index",
+            label: "Dev Guide",
             position: "left",
           },
           {
             type: "doc",
-            docId: "spec/v4/index",
-            label: "Protocol Spec v4",
+            docId: "spec/index",
+            label: "Protocol Spec",
             position: "left",
           },
           {
@@ -105,6 +111,12 @@ const config = {
             docId: "stpihkal/index",
             label: "STPIHKAL (Device Protocols)",
             position: "left",
+          },
+          {
+            type: "docsVersionDropdown",
+            position: "left",
+            //dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
+            //dropdownActiveClassDisabled: true,
           },
           /*
           {
@@ -133,11 +145,11 @@ const config = {
             items: [
               {
                 label: "Buttplug Developer Guide v4",
-                to: "/docs/dev-guide/v4/index",
+                to: "/docs/dev-guide/index",
               },
               {
                 label: "Buttplug Protocol Spec v4",
-                to: "/docs/spec/v4/index",
+                to: "/docs/spec/index",
               },
               {
                 label: "STPIHKAL (Device Protocols)",

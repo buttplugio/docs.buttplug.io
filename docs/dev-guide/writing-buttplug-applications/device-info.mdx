@@ -1,0 +1,131 @@
+# What Do Devices Do?
+
+We now know that devices are connected to the client, but how do we figure out what we can do with
+them? In this section, we'll discover what inputs and ouputs a device has, and how we can use them.
+
+## Example Device
+
+We'll be presenting a fairly standard, simple device here just to get things going. As of this
+writing, buttplug supports something like 750 devices with myriad outputs and inputs. We'll cover
+the full picture of everything the library supports and specific usecases in the [Device Outputs
+portion of the Winning Ways Section](/docs/dev-guide/cookbook/devices-and-commands/intro.md) later,
+once the basics are understood.
+
+The device we'll be discussing here has the following features:
+
+- 2 vibration motors, individually controllable, each with 50 steps of vibration speed.
+- A battery that we can query for how much power it has left
+
+This is vaguely similar to something like a [Lovense Edge](https://lovense.buttplug.io), but form
+factor isn't really an issue here. We just want an example of something we can control.
+
+As an app developer, this is really all you need to know about the device. Buttplug hides most
+information about how things are connected (bluetooth, usb, etc) so you don't have to worry about
+them.
+
+## What even _is_ a Buttplug Device?
+
+Whenever we get a DeviceAdded() event, it'll usually come with some sort of structure representing the 
+device. This will include:
+
+- The _Device Index_
+  - A unique 32-bit unsigned integer that identifies the device to the server. As long as the user
+    does not clear their server configuration, these indexes can be considered to be stable and usable
+    for saving configuration options across sessions of your application.
+- The _Device Name_, in 2 forms
+  - The _canonical_ device name, as set in the Buttplug Device Config
+  - The _user_/_display_ device name, which is a name users can set for a device so they can
+    differentiate it from other devices.
+- A _message gap_ duration, in milliseconds
+  - This refers to the amount of time that the Buttplug Server will put between two messages, so
+    that we don't end up with queued messages. This will be discussed more in the [device control
+    section](./device-control.mdx).
+- A set of _features_
+  - This denotes what a device actually does, we'll spend the rest of this section talking about these.
+
+## Device Features
+
+Devices in Buttplug are made up of features.
+
+Features contain:
+
+- The _Feature Index_
+  - Similar to the _Device Index_. Unique (in the scope of the device) 32-bit unsigned integer that
+    specifies which feature is which. A combination of _Device Index_ and _Feature Index_ are used
+    to write command messages, outlined in the [next section](./device-control.mdx).
+- A feature description
+  - Describes what the feature does, in English. Useful for showing in UI.
+- A _feature type_
+  - This is the main function of the feature, though it may support multiple ways of doing things
+    (i.e. a stroker that can work with positions or can just oscillate between two positions, a
+    motor with an encoder so position can be both set and read, etc...). Feature types are only for
+    getting a general idea of what a feature does, and are not used in commands.
+- _Outputs_
+  - Things that the device does. Vibration, rotation, stroking, etc..., are all _outputs_.
+  - _Output_ information will contain the [_OutputType_](../../spec/output.md#outputtype)s a feature
+    exposes, as well as the amount of _steps_ an output can handle. For instance, with the device
+    example we laid out above, _steps_ would be 50 by default. However, servers like [Intiface
+    Central](../architecture/intiface.md) allow users to set upper limits that may be lower than the
+    maximum a device can handle, so _steps_ may be listed as lower than 50.
+- _Inputs_
+  - Things a device can sense and relay information to us about. Battery levels, RSSI for radio
+    connections, button presses, pressure sensors, are all types of _inputs_.
+  - Like _Outputs_, _Input_ information will contain the
+    [_InputType_](../../spec/input.md#inputtype)s a feature exposes, and will also contain
+    information about the possible values they can return. For instance, batteries will always
+    return a number between 0-100, representing the percentage of power they have left. Other
+    _input_ types, like various pressure sensors, may vary in their output range. 
+
+:::tip Didn't these used to be called Actuators and Sensors?
+
+They did! In prior versions of the library, we had MessageAttributes because each message denoted a
+sort of output type, which was horrible and complicated and very difficult to talk about, much less
+write useful documentation for. Parts of the v3 api moved us to using the _actuator_/_sensor_
+terminology. This was kept through the early parts of v4 api development.
+
+Then I realized that the project is mostly referred to as buttplug dot io these days, thanks to the
+shitpost of a domain I got when I started all this. So why not name them Outputs and Inputs?
+
+Is it less clear? Possibly. Is it both more on brand and hilarious? **ABSOLUTELY.**
+
+Thus, Outputs and Inputs it is.
+
+Will it be any easier to write documentation for? I refer you to the previous point about hilarity,
+which will hopefully hide any issues with documentation complexity from here on out.
+
+:::
+
+Here's a few examples of what a device feature can look like:
+
+- A single vibrator with 20 steps of vibration
+  - This will be a feature with a single Output, of type _Vibrate_, with _steps_ set to 20. Pretty
+    easy.
+- A stroker
+  - This will be a feature with two output types: One that allows us to send the device to a
+    position over the duration of time (_PositionWithDuration_), and another type that allows us to
+    set the speed of oscillation between two points (_Oscillate_)
+- A motor with an encoder
+  - This will be a feature with 1 output type of _PositionWithDuration_, and 1 input type of
+    _Position_ where we can read the current position of the motor at any time for setting up our
+    own control loops.
+  - *Note:* The _Position_ input type is just a handy example for the reason a feature might have
+    both outputs and inputs. It does not actually exist in the library yet. Buttplug does not
+    support any toys that actually tell us their current position, speed, or anything else. Not
+    because we just haven't had time to support them, but because no toys exposing that information
+    exist that we know of. I hate working with sex toys so fucking much. Why am I writing this
+    library.
+
+For our example above, we should expect:
+- A single device, with 3 Features
+  - A feature for the first vibrator, exposing one Output of type _Vibrate_ with 50 _steps_
+  - A feature for the second vibrator, exposing one Output of type _Vibrate_ with 50 _steps_
+  - A feature for the battery, exposing one Input of type _Battery_. The battery type is implicitly
+    assumed to have a range of 0 \<= x \<= 100, so no range information is sent.
+
+## Querying Device Feature Information
+
+We'll start from where we left off in the last section. You've established a connection to a
+Buttplug Server, you've set up your event handlers, and you've just gotten a `DeviceAdded()` event.
+We know there's a new device, but how can we tell what it does?
+
+This code block shows how we can query the device and see what's available.

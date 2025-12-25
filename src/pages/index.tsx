@@ -31,13 +31,13 @@ function HomepageHeader() {
         <div className={styles.buttons} style={{ marginTop: "2rem" }}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/dev-guide/v4/getting-started"
+            to="/docs/dev-guide/getting-started"
           >
             Quickstart Guide
           </Link>
           <Link
             className="button button--primary button--lg"
-            to="/docs/dev-guide/v4/"
+            to="/docs/dev-guide/"
           >
             Developer Guide
           </Link>
@@ -250,7 +250,7 @@ function ResourcesSection() {
               </div>
               <div className="card__body">
                 <p style={{ marginBottom: "0.5rem" }}>
-                  <Link to="/docs/dev-guide/v4/">Developer Guide</Link>
+                  <Link to="/docs/dev-guide/">Developer Guide</Link>
                 </p>
                 <p style={{ marginBottom: "0.5rem" }}>
                   <Link to="/docs/spec">Protocol Specification</Link>
