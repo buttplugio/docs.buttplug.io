@@ -1,6 +1,6 @@
 ---
-description: Buttplug Protocol Specification
-slug: /spec
+description: Buttplug Protocol Specification v4
+slug: /spec/v4/
 ---
 # The Buttplug Intimate Device Control Protocol
 
