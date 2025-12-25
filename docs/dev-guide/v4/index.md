@@ -1,6 +1,6 @@
 ---
-description: Buttplug Developer Guide
-slug: /dev-guide
+description: Buttplug Developer Guide v4
+slug: /dev-guide/v4/
 ---
 
 # Buttplug Developer Guide

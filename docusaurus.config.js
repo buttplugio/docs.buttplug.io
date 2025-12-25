@@ -133,11 +133,11 @@ const config = {
             items: [
               {
                 label: "Buttplug Developer Guide v4",
-                to: "/docs/dev-guide/v4/",
+                to: "/docs/dev-guide/v4/index",
               },
               {
                 label: "Buttplug Protocol Spec v4",
-                to: "/docs/spec/v4/",
+                to: "/docs/spec/v4/index",
               },
               {
                 label: "STPIHKAL (Device Protocols)",

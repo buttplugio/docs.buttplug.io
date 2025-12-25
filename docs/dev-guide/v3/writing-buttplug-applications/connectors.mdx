@@ -1,0 +1,65 @@
+---
+title: Websocket Connectors
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+:::warning Deprecated Documentation
+
+This documentation is for version 3 of the Buttplug Developer Guide. Please refer to the [latest version](/docs/dev-guide/v4/) for the most up-to-date information.
+
+:::
+
+# Websocket Connectors
+
+The first thing to do when writing a Buttplug application is figuring out how to talk to a Buttplug
+Server. For sake of simplicity, we'll cover the most common option in this part of the manual, with
+other solutions covered in the cookbook section.
+
+In the websocket case, you'll allow the user to connect to a Buttplug server they're running on
+their system, outside of your application (this usually means the user will be running [Intiface
+Central](https://intiface.com/central) or [Intiface Engine](https://github.com/intiface-engine)). In
+almost all cases, your app will connect via websockets, most likely provided by the Buttplug Client
+implementation you are using.
+
+For using Websocket servers, you'll need to provide the user a way to pass in the server address,
+then you just create the connector object using that address.
+
+:::tip The Accidental Standard Port of 12345
+
+When Buttplug's first public server came out in 2017, it used port 12345 as a test value. This stuck
+with the system, so now most applications that use Intiface or Buttplug use port 12345 for
+connection by default. Some client applications have gone as far as to hardcore the value, but this
+is not recommended.
+
+This can sometimes be an issue for users running certain software that collides with the port. [We
+have some recommended fixes on our
+forums.](https://discuss.buttplug.io/t/what-to-do-if-intiface-central-shows-socket-collision-errors/32)
+
+:::
+
+<Tabs groupId="examples">
+<TabItem value="rust" label="Rust">
+
+import RustExternalConnectorExample from '!!raw-loader!/examples/rust/src/bin/external_connector.rs';
+
+<CodeBlock language="rust">{RustExternalConnectorExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+import CSharpExternalConnectorExample from '!!raw-loader!/examples/csharp/RemoteConnectorExample/Program.cs';
+
+<CodeBlock language="csharp">{CSharpExternalConnectorExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="js" label="Javascript">
+
+import jsExternalConnectorExample from '!!raw-loader!/examples/javascript/remote-connector-example.js';
+
+<CodeBlock language="js">{jsExternalConnectorExample}</CodeBlock>
+
+</TabItem>
+</Tabs>
