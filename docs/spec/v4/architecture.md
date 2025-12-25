@@ -41,7 +41,7 @@ Buttplug define systems it is used in via a few different structures:
   - If you are writing a Buttplug implementation library and expecting your user to create Buttplug
     Messages themselves, you are _most likely making life more difficult on your users_. If that is
     your goal, then that is fine, but otherwise more guidance on client creation is given in the
-    [Buttplug Developer Guide](/docs/dev-guide).
+    [Buttplug Developer Guide](/docs/dev-guide/v4/).
 
 Note that the use of _Client_ and _Server_ here does not explicitly denote network connection. These
 terms are used as a generic way to denote different communication endpoints. Clients and Servers may both be embedded in the same process, or may talk over methods such as network or some form of IPC.

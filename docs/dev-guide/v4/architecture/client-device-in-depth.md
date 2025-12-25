@@ -16,7 +16,7 @@ Client devices are accessible through the client instance, and will generally li
 
 ## Device Features
 
-Each device is made of one or more features, which define what the device can do. These can be anything from vibration motors, to stroker axes, to battery level reading access. [Output types](/docs/spec/output#outputtype) and [Input types](/docs/spec/input#inputtype) for features are defined in the [Buttplug API Spec](/docs/spec/).
+Each device is made of one or more features, which define what the device can do. These can be anything from vibration motors, to stroker axes, to battery level reading access. [Output types](/docs/spec/v4/output#outputtype) and [Input types](/docs/spec/v4/input#inputtype) for features are defined in the [Buttplug API Spec](/docs/spec/).
 
 Features contain:
 - A basic text description of what they do, for display in UI

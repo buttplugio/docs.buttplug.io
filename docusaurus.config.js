@@ -83,13 +83,6 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          /*
-          {
-            href: '/',
-            label: "Apps & Games",
-            position: "left"
-          },
-          */
           {
             to: "blog",
             label: "Blog",
@@ -97,20 +90,20 @@ const config = {
           },
           {
             type: "doc",
-            docId: "dev-guide/index",
-            label: "Dev Guide",
+            docId: "dev-guide/v4/index",
+            label: "Dev Guide v4",
             position: "left",
           },
           {
             type: "doc",
-            docId: "spec/index",
-            label: "Protocol Spec",
+            docId: "spec/v4/index",
+            label: "Protocol Spec v4",
             position: "left",
           },
           {
             type: "doc",
             docId: "stpihkal/index",
-            label: "Device Protocols",
+            label: "STPIHKAL (Device Protocols)",
             position: "left",
           },
           /*
@@ -139,16 +132,16 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Buttplug Developer Guide",
-                to: "https://docs.buttplug.io/docs/dev-guide/",
+                label: "Buttplug Developer Guide v4",
+                to: "/docs/dev-guide/v4/",
               },
               {
-                label: "Buttplug Protocol Spec",
-                to: "https://docs.buttplug.io/docs/spec/",
+                label: "Buttplug Protocol Spec v4",
+                to: "/docs/spec/v4/",
               },
               {
-                label: "Sex Toy Protocols I Have Known And Loved",
-                to: "https://docs.buttplug.io/docs/stpihkal/",
+                label: "STPIHKAL (Device Protocols)",
+                to: "/docs/stpihkal/",
               },
             ],
           },
@@ -163,11 +156,19 @@ const config = {
                 label: "Discord",
                 href: "https://discord.buttplug.io",
               },
+              {
+                label: "Reddit",
+                href: "https://reddit.com/r/buttplugio",
+              },
             ],
           },
           {
             title: "Social",
             items: [
+              {
+                label: "Bluesky",
+                href: "https://bsky.app/profile/buttplug.io",
+              },
               {
                 label: "Twitter",
                 href: "https://twitter.com/buttplugio",
@@ -176,19 +177,11 @@ const config = {
                 label: "Mastodon",
                 href: "https://buttplug.zone/@buttplugio",
               },
-              {
-                label: "Bluesky",
-                href: "https://bsky.app/profile/buttplug.io",
-              },
             ],
           },
           {
             title: "More",
             items: [
-              {
-                label: "Nonpolynomial Blog",
-                to: "https://nonpolynomial.com/blog",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/buttplugio",
@@ -196,6 +189,10 @@ const config = {
               {
                 label: "Youtube",
                 href: "https://youtube.buttplug.io",
+              },
+              {
+                label: "Tiktok",
+                href: "https://tiktok.com/@buttplugio",
               },
             ],
           },

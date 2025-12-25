@@ -2,7 +2,12 @@
 
 * 2007: _An Idea in a Presentation_
   * In my presentation at the first Arse Elektronika conference in 2007 ([available to watch on
-    youtube](https://www.youtube.com/watch?v=FRLygav4tcs)), I presented the idea of "obfuscated macros" for controlling toys, a user experience strategy to define how users define haptic control for pleasure without a remote user having to figure out what inputs worked and what didn't. This ended up being the basis of some software experiments over the years until 2013, when the first solidified attempt at implementation happened.
+    youtube](https://www.youtube.com/watch?v=FRLygav4tcs)), I presented the idea
+    of "obfuscated macros" for controlling toys, a user experience strategy to
+    define how users define haptic control for pleasure without a remote user
+    having to figure out what inputs worked and what didn't. This ended up being
+    the basis of some software experiments over the years until 2013, when the
+    first solidified attempt at implementation happened.
 * 2013: _Python 2 + greenlet_
   * The first, unreleased implementation of buttplug. [It's even in our repos if you want to check
     it out](https://github.com/buttplugio/buttplug-py-deprecated). This used python 2, greenlet, and
@@ -28,10 +33,14 @@
     mostly because maintaining multiple libraries sucks.
 * 2019: _Intiface Desktop_
   * While libraries were available for developers to use, there was no good central application for
-    applications to connect to. This meant any time Buttplug updated, so did most of the
-    applications that were using it. To fix this, the Intiface Desktop application was created. It
-    was an Electron based app that ran a Vue frontend, and executed the server as a background
-    process. This was distributed to users so that developers could use Buttplug clients without having to worry about needing to update whenever a new Buttplug version came out, because the server that Intiface Desktop supported would integrate all of the newest hardware in a backward compatible way.
+    applications to connect to. This meant any time Buttplug updated, so did
+    most of the applications that were using it. To fix this, the Intiface
+    Desktop application was created. It was an Electron based app that ran a Vue
+    frontend, and executed the server as a background process. This was
+    distributed to users so that developers could use Buttplug clients without
+    having to worry about needing to update whenever a new Buttplug version came
+    out, because the server that Intiface Desktop supported would integrate all
+    of the newest hardware in a backward compatible way.
 * 2019: _Rust, again_
   * The split between C# and Javascript also helped us support as many platforms as possible. Going
     into development on the current Rust implementation in 2019, our platform supports looked like this:
@@ -55,10 +64,20 @@
     progress with the community and technology as it grows.
 * 2020: _Everything moves on top of the FFI_
   * Once the core Rust system was in place, it seemed like it'd be best to move everything to live
-    on top of Rust. This was mostly an effort to reduce core buttplug developer load. Instead of having to worry about implementing messages, websockets, json de/serializers, etc in every language, it could just be done in Rust then everything else could use that. C# was moved on top of FFI, and JS used a WASM implementation.
+    on top of Rust. This was mostly an effort to reduce core buttplug developer
+    load. Instead of having to worry about implementing messages, websockets,
+    json de/serializers, etc in every language, it could just be done in Rust
+    then everything else could use that. C# was moved on top of FFI, and JS used
+    a WASM implementation.
 * 2021: _A Breakthru on Mobile_
   * In 2021, an anonymous github user named [gedgygedgy](https://github.com/gedgygedgy) created an
-    async android runtime and JNI bindings to the bluetooth portions of the android API. This allowed [btleplug](https://github.com/deviceplug/btleplug) (the bluetooth library Buttplug uses) to be used on Android. Gedgygedgy disappeared in August 2021, but left the repos around. Additional work was done by qDot in April 2022 to bring the libraries up to date and integrate them into btleplug, at which point working versions of the Buttplug Library were built for both Android and iOS.
+    async android runtime and JNI bindings to the bluetooth portions of the
+    android API. This allowed [btleplug](https://github.com/deviceplug/btleplug)
+    (the bluetooth library Buttplug uses) to be used on Android. Gedgygedgy
+    disappeared in August 2021, but left the repos around. Additional work was
+    done by qDot in April 2022 to bring the libraries up to date and integrate
+    them into btleplug, at which point working versions of the Buttplug Library
+    were built for both Android and iOS.
 * 2022: _Intiface Central_
   * Due to not staying up to date with the latest web/node frameworks, Intiface Desktop had become
     arduous to maintain, seeing no updates for over a year. Instead of trying to rebuild on
