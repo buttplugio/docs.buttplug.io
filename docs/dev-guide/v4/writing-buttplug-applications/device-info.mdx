@@ -8,7 +8,7 @@ them? In this section, we'll discover what inputs and ouputs a device has, and h
 We'll be presenting a fairly standard, simple device here just to get things going. As of this
 writing, buttplug supports something like 750 devices with myriad outputs and inputs. We'll cover
 the full picture of everything the library supports and specific usecases in the [Device Outputs
-portion of the Winning Ways Section](/docs/dev-guide/cookbook/devices-and-commands/intro.md) later,
+portion of the Winning Ways Section](/docs/dev-guide/v4/cookbook/devices-and-commands/intro.md) later,
 once the basics are understood.
 
 The device we'll be discussing here has the following features:
@@ -62,7 +62,7 @@ Features contain:
     getting a general idea of what a feature does, and are not used in commands.
 - _Outputs_
   - Things that the device does. Vibration, rotation, stroking, etc..., are all _outputs_.
-  - _Output_ information will contain the [_OutputType_](../../spec/output.md#outputtype)s a feature
+  - _Output_ information will contain the [_OutputType_](../../spec/v4/output.md#outputtype)s a feature
     exposes, as well as the amount of _steps_ an output can handle. For instance, with the device
     example we laid out above, _steps_ would be 50 by default. However, servers like [Intiface
     Central](../architecture/intiface.md) allow users to set upper limits that may be lower than the
@@ -71,7 +71,7 @@ Features contain:
   - Things a device can sense and relay information to us about. Battery levels, RSSI for radio
     connections, button presses, pressure sensors, are all types of _inputs_.
   - Like _Outputs_, _Input_ information will contain the
-    [_InputType_](../../spec/input.md#inputtype)s a feature exposes, and will also contain
+    [_InputType_](../../spec/v4/input.md#inputtype)s a feature exposes, and will also contain
     information about the possible values they can return. For instance, batteries will always
     return a number between 0-100, representing the percentage of power they have left. Other
     _input_ types, like various pressure sensors, may vary in their output range. 
