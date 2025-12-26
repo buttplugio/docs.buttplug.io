@@ -27,34 +27,19 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: [
-    // Use custom blog plugin
-    [
-      "./custom-blog-plugin",
-      {
-        id: "blog",
-        routeBasePath: "blog",
-        path: "./blog",
-        blogTitle: "Buttplug.io Dev Blog",
-        blogDescription: "Mistakes as long reads",
-        postsPerPage: 10,
-      },
-    ],
-    "docusaurus-plugin-matomo",
-  ],
   presets: [
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          lastVersion: "current",
+          sidebarPath: "./sidebars.js",
+          path: "docs",
+          // Uncomment this block to slam to v4 when done.
+          lastVersion: "spec-v3",
           versions: {
-            current: {
-              label: "spec-v4",
-              path: "spec-v4",
-            },
+            current: { label: "Spec v4.0" },
+            "spec-v3": { label: "Spec v3.0" },
           },
         },
         /*
@@ -69,6 +54,31 @@ const config = {
         },
       }),
     ],
+  ],
+  plugins: [
+    // Use custom blog plugin
+    [
+      "./custom-blog-plugin",
+      {
+        id: "blog",
+        routeBasePath: "blog",
+        path: "./blog",
+        blogTitle: "Buttplug.io Dev Blog",
+        blogDescription: "Mistakes as long reads",
+        postsPerPage: 10,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "stpihkal",
+        path: "stpihkal",
+        routeBasePath: "docs/stpihkal",
+        sidebarPath: "./sidebarsStpihkal.js",
+        // ... other options
+      },
+    ],
+    "docusaurus-plugin-matomo",
   ],
   markdown: {
     mermaid: true,
@@ -108,7 +118,8 @@ const config = {
           },
           {
             type: "doc",
-            docId: "stpihkal/index",
+            docId: "index",
+            docsPluginId: "stpihkal",
             label: "STPIHKAL (Device Protocols)",
             position: "left",
           },
@@ -126,6 +137,11 @@ const config = {
           },
           */
           {
+            href: "https://intiface.com/",
+            label: "Intiface",
+            position: "right",
+          },
+          {
             href: "https://patreon.com/qdot",
             label: "Patreon",
             position: "right",
@@ -140,23 +156,6 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Buttplug Developer Guide v4",
-                to: "/docs/dev-guide/index",
-              },
-              {
-                label: "Buttplug Protocol Spec v4",
-                to: "/docs/spec/index",
-              },
-              {
-                label: "STPIHKAL (Device Protocols)",
-                to: "/docs/stpihkal/",
-              },
-            ],
-          },
           {
             title: "Community",
             items: [
@@ -195,6 +194,10 @@ const config = {
             title: "More",
             items: [
               {
+                label: "Intiface Applications",
+                href: "https://intiface.com",
+              },
+              {
                 label: "GitHub",
                 href: "https://github.com/buttplugio",
               },
@@ -208,8 +211,25 @@ const config = {
               },
             ],
           },
+          {
+            title: "Friends",
+            items: [
+              {
+                label: "Xtoys",
+                href: "https://xtoys.com",
+              },
+              {
+                label: "Kinky Makers",
+                href: "https://kinkymakers.com",
+              },
+              {
+                label: "TempestVR",
+                href: "https://patreon.com/tempestvr",
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Nonpolynomial. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Nonpolynomial Labs, LLC. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -8,7 +8,6 @@ A Sex Tech Reverse Engineering Love Story.
 
 # License
 
-Copyright Metafetish 2017-2019
+Copyright Nonpolynomial Labs LLC 2017-2025
 
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-

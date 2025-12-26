@@ -1,6 +1,5 @@
 ---
 description: Buttplug Developer Guide v4
-slug: /dev-guide/
 ---
 
 # Buttplug Developer Guide
