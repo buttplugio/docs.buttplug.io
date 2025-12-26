@@ -27,7 +27,7 @@ Messages that convey information about devices currently connected to the system
     to be included in message. Missing value means that no device display name is set, and device
     name should be used.
   * _DeviceFeatures_ (map of indexes to feature objects, with each object having the following fields)
-    * _Description_ (string): Text descriptor for a feature.
+    * _FeatureDescription_ (string): Text descriptor for a feature.
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
       messages like `ValueCmd`, `SensorReadCmd`, etc...
       * This is a repeat of the map key.
@@ -91,7 +91,7 @@ sequenceDiagram
           "Features": {
             "0": {
               "FeatureIndex": 0,
-              "Descriptor": "Clitoral Stimulator",
+              "FeatureDescription": "Clitoral Stimulator",
               "Output": {
                 "Vibrate": {
                   "Value": [0, 20]
@@ -100,7 +100,7 @@ sequenceDiagram
             },
             "1": {
               "FeatureIndex": 1,
-              "Descriptor": "Insertable Stimulator",
+              "FeatureDescription": "Insertable Stimulator",
               "Output": {
                 "Vibrate": {
                   "Value": [0, 20]
@@ -109,7 +109,7 @@ sequenceDiagram
             },
             "2": {
               "FeatureIndex": 2,
-              "Descriptor": "Rotating Head with Directional Control",
+              "FeatureDescription": "Rotating Head with Directional Control",
               "Output": {
                 "Vibrate": {
                   "Value": [-20, 20]
@@ -118,7 +118,7 @@ sequenceDiagram
             },
             "3": {
               "FeatureIndex": 3,
-              "Descriptor": "Battery",
+              "FeatureDescription": "Battery",
               "Input": {
                 "Battery": {
                   "ValueRange": [0, 100],
@@ -136,7 +136,7 @@ sequenceDiagram
           "Features": {
             "0": {
               "FeatureIndex": 0,
-              "Descriptor": "Stroker",
+              "FeatureDescription": "Stroker",
               "Output": {
                 "PositionWithDuration": {
                   "Position": [0, 100],
@@ -153,9 +153,9 @@ sequenceDiagram
                 }
               }
             },
-            "1": {
-              "FeatureIndex": 1,
-              "Descriptor": "Bluetooth Radio RSSI",
+            "2": {
+              "FeatureIndex": 2,
+              "FeatureDescription": "Bluetooth Radio RSSI",
               "Input": {
                 "RSSI": {
                   "ValueRange": [-10, -100],
