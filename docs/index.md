@@ -1,6 +1,4 @@
----
-slug: /
----
+
 
 # Buttplug Development Docs
 
