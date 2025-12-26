@@ -20,11 +20,16 @@ function HomepageHeader() {
           className="hero__subtitle"
           style={{ fontSize: "1.3rem", marginTop: "1rem" }}
         >
-          An open-source standards and software project for controlling intimate
-          hardware, including sex toys, fucking machines, and more.
+          An open-source software library and application ecosystem for
+          controlling intimate hardware, including sex toys, fucking machines,
+          and more.
         </p>
         <p
-          style={{ fontSize: "1.1rem", fontStyle: "italic", marginTop: "1rem" }}
+          style={{
+            fontSize: "1.1rem",
+            fontStyle: "italic",
+            marginTop: "1rem",
+          }}
         >
           We were vibe coding before it was cool.
         </p>

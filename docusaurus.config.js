@@ -137,6 +137,11 @@ const config = {
           },
           */
           {
+            href: "https://awesome.buttplug.io/",
+            label: "Apps & Games List",
+            position: "right",
+          },
+          {
             href: "https://intiface.com/",
             label: "Intiface",
             position: "right",
@@ -196,6 +201,10 @@ const config = {
               {
                 label: "Intiface Applications",
                 href: "https://intiface.com",
+              },
+              {
+                label: "Supported Apps & Games List",
+                href: "https://awesome.buttplug.io",
               },
               {
                 label: "GitHub",
