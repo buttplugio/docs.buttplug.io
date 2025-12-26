@@ -1,6 +1,5 @@
 ---
 description: Buttplug Protocol Specification
-slug: /spec
 ---
 # The Buttplug Intimate Device Control Standard
 
@@ -82,4 +81,3 @@ I ended up with "Internet Buttplug" because everyone has a butt, and buttplug is
 One of the hardest problems in Computer Science is naming things. I just stopped trying to name the thing and selected a name and here we are. Much like the other hard problems in Computer Science, I fully expect this to come back to bite me in the ass at some point.
 
 **Please Note:** Even though this project is called Buttplug, it does not mean you have to put something in your butt to develop with it or use applications that integrate it. We are not saying you shouldn't, as we condone butt stuff as performed in a safe and sane manner, but it's not a requirement, either.
-

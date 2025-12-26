@@ -90,18 +90,19 @@ function FeaturesSection() {
         "Support for Bluetooth, USB, HID, Serial, and Network controlled devices.",
     },
     {
-      title: "🌐 Cross-Platform",
+      title: "❓ Many Support Options",
       description:
-        "Libraries available for Desktop, Mobile, and Web platforms.",
+        "Have a problem? Check with us on [our forums](https://discuss.buttplug.io), [Discord](https://discord.buttplug.io), or [Subreddit](https://www.reddit.com/r/buttplugio/)!",
     },
     {
       title: "🎯 Game Engine Plugins",
       description:
-        "Plugins for [Unity](https://github.com/buttplugio/buttplug-unity), Godot, Unreal, [Twine](https://github.com/buttplugio/buttplug-twine), and more!",
+        "Plugins for building games and apps in [Unity](https://github.com/buttplugio/buttplug-unity), Godot, Unreal, [Twine](https://github.com/buttplugio/buttplug-twine), and more!",
     },
     {
-      title: "📖 Open Source",
-      description: "Open Source with Permissive License (BSD 3-Clause).",
+      title: "📖 Cross-Platform & Open Source",
+      description:
+        "Libraries available for Desktop/Mobile/Web. Open Source with Permissive License (BSD 3-Clause).",
     },
   ];
 
