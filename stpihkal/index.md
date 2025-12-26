@@ -1,6 +1,5 @@
 ---
 description: Sex Toy Protocols I Have Known And Loved
-slug: /stpihkal
 ---
 # Sex Toy Protocols I Have Known And Loved
 
