@@ -388,8 +388,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Buttplug.io Documentation Site`}
-      description="Documentation for the Buttplug.io Intimate Hardware Protocol and Library"
+      title={`Buttplug.io Intimate Hardware Control Library`}
+      description="Homepage and Documentation for the Buttplug.io Intimate Hardware Control Library"
     >
       <HomepageHeader />
       <main>
