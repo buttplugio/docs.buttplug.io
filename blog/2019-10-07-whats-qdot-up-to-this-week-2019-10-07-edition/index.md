@@ -4,7 +4,7 @@ date: 2019-10-07
 ---
 Rust. That's it. Just rust.
 
-### Buttplug
+# Buttplug
 Ok, well, not quite. I did actually take the time to do a couple of other things:
 
 <!--truncate-->

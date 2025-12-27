@@ -4,7 +4,7 @@ date: 2022-11-14
 ---
 SO CLOSE TO DONE
 
-### Intiface Central
+# Intiface Central
 Things are moving right along with Central. At this point, outside of custom devices (which is a tiny niche of our users), Central is either on par or exceeding the features of Intiface Desktop. I'll be releasing v0.0.4 after this email, which I'm probably going to call the last version before v1, unless some sort of massive bug pops up that requires me to release another intermediate version.
 
 <!--truncate-->

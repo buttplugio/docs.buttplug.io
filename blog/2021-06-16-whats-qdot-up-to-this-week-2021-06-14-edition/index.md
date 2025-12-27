@@ -4,14 +4,14 @@ date: 2021-06-16
 ---
 Other than completely losing track of what day it is...
 
-### Buttplug & Intiface Desktop
+# Buttplug & Intiface Desktop
 Intiface Desktop v21 is out, and with it, the first publicly usable release of Buttplug v4! This means that you can now use the Lovense Connect app with Buttplug, though I'm already finding out how many people have their desktops and WiFi on different, inaccessible subnets. \>.\<
 
 <!--truncate-->
 
 Intiface Desktop v22 will be out as soon as this evening, fixing a few major bugs in the Devices panel. Otherwise things seem pretty quiet so far.
 
-### Project Consolidation
+# Project Consolidation
 Boring project management news time!
 
 I've also taken some steps to reduce the amount of repos the project is using, mostly because it's just not worth it to have everything so split up. I just moved the spec repo (which used to be buttplugio/buttplug) into the rust repo, and have now renamed the rust repo to be buttplugio/buttplug. The main buttplug repo now has:
@@ -23,7 +23,7 @@ I've also taken some steps to reduce the amount of repos the project is using, m
 
 So what was 4 repos (3 of which were rarely updated) is now one! Way less work for me. Yay.
 
-### What's Next
+# What's Next
 I'm now back to having a bunch of different directions to work in, all of mostly equal importance. This includes:
 
  - Starting on Intiface Mobile (think Lovense Connect but for Buttplug in general), which includes making an FFI for the device comm managers as well as getting WebRTC connectors going.

@@ -1,7 +1,9 @@
 ---
 title: "Video Prepost Apathetic Handjob Part 1"
 date: 2019-06-23
----Before the world gets to see it! Whether this is a good thing, I don't know.
+---
+
+Before the world gets to see it! Whether this is a good thing, I don't know.
 
 Posted context free because THIS IS WHAT YOU ARE PAYING ME FOR.
 

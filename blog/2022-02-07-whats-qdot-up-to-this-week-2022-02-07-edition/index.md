@@ -4,7 +4,7 @@ date: 2022-02-07
 ---
 A short one because...
 
-### Buttplug
+# Buttplug
 ... Things got difficult.
 
 <!--truncate-->
@@ -17,7 +17,7 @@ Implementing this has turned out to be quite challenging, due to the way we stru
 
 Working on this design and implementation took up pretty much all of the time I had to work on anything last week. I'm pretty confident I'll have a full solution ready this week and can hopefully get on to other things.
 
-### In Other News
+# In Other News
 
  - It's similarly boring to the previous news, but there's a new version of the windows API library we depend on for Bluetooth that should fix a bunch of issues like device disconnect (WE'LL BE ABLE TO DROP DEVICES IN-PROCESS ON WINDOWS FOR THE FIRST TIME EVER) and OS compat. Will probably end up in a new Buttplug v5 this week.
 

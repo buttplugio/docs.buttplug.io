@@ -4,7 +4,7 @@ date: 2025-07-28
 ---
 Exciting new features!
 
-### Buttplug
+# Buttplug
 Work continues on trying to get the next version of Buttplug out to the world! Work is split between two areas of focus right now
 
 <!--truncate-->
@@ -23,12 +23,12 @@ Both of these initiatives are going well, if a bit slowly as I have to stop to f
 
 That said...
 
-### Intiface Central
+# Intiface Central
 Just because I don't have a full release done yet doesn't mean I don't want people trying things! I'm hoping to start posting pre-release alpha builds of Intiface Central v3 in the near future. I still need to add some extra UI to work with our new features, but once that's done I'll throw a desktop (and possibly sideloadable APK?) on our github and will post here about it.
 
 Unfortunately I think we're going to limp into Intiface Central v3 with the current UI mostly intact. I'm hoping to spend the rest of the year concentrating on updating that and adding features once this project is done.
 
-### Everything Else
+# Everything Else
 
 - Someone built [quake3 buttplug](https://github.com/er2off/ioq3-buttplug)
 

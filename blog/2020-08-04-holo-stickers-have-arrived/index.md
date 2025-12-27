@@ -1,7 +1,9 @@
 ---
 title: "Holo Stickers Have Arrived"
 date: 2020-08-04
----They’re so pretty!
+---
+
+They’re so pretty!
 
   
 

@@ -4,7 +4,7 @@ date: 2025-06-16
 ---
 Bringing about a world where buttplug doesn't suck to use...
 
-### Buttplug
+# Buttplug
 Holy shit, after 8 years of writing this stupid library I think I may have finally landed on a message format and API I don't hate, and that I hope others will similarly not hate.
 
 <!--truncate-->
@@ -23,7 +23,7 @@ This will probably all make more sense after I actually write up the new documen
 
 If you're curious how work is going, the to-do list is at [https://github.com/buttplugio/buttplug/issues/565](https://github.com/buttplugio/buttplug/issues/565) . I think I probably still have a few weeks or so of work left before this is in any releasable form, and I may put out a beta of Intiface Central before doing a full release since this changes so much.
 
-### Everything Else
+# Everything Else
 That is actually it for this update. There's been so many huge structural overhauls to the library that getting to where I am now has taken most of the past month, but for once I actually feel like I'm putting out *useful* software, versus software people have to use because it's the only thing that does what it does. We'll just have to see if that holds up when it's out.
 
 Until next time, keep buttpluggin'!

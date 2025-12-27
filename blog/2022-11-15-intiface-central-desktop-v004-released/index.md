@@ -1,7 +1,9 @@
 ---
 title: "Intiface Central Desktop V004 Released"
 date: 2022-11-15
----Ok took me an extra night but
+---
+
+Ok took me an extra night but
 
 [https://github.com/intiface/intiface-central/releases](https://github.com/intiface/intiface-central/releases)
 

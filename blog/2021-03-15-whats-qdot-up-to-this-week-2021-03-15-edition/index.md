@@ -4,7 +4,7 @@ date: 2021-03-15
 ---
 Weird week. Weird fuckin' week.
 
-### Ear Haptics
+# Ear Haptics
 Yeah ok so that whole VRChat thing? It's been givin' me *ideas*.
 
 <!--truncate-->
@@ -46,7 +46,7 @@ I've got 100 controller chips on the way in order to expand this project, as the
 
 (it sucks and needs fixing)
 
-### Everything Else
+# Everything Else
 
  - [https://xtoys.app](https://xtoys.app) is now using Buttplug for some of its protocols! :D
  - I've found out that a lot of people in the audio erotica scene are using syncydink for funscripts + audio. If you're one of them and you have opinions, please comment or get in touch. I'd like to at least think about making life better for y'all.

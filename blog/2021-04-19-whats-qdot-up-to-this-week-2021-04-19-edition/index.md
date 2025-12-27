@@ -4,7 +4,7 @@ date: 2021-04-19
 ---
 Ok maybe if I write these in the morning I'll actually remember to send them out...
 
-### Buttplug Unity
+# Buttplug Unity
 Most of the last two weeks have been spent trying to wedge Buttplug into Unity in a way that will work with IL2CPP. For those not familiar, IL2CPP is a way for Unity to compile games to make them run faster, but it takes a lot of consideration when building libraries to work with it.
 
 <!--truncate-->
@@ -15,7 +15,7 @@ That ended up being Buttplug v3 (which came out last week), then most of this pa
 
 The big outcomes of this will be updates to the FarmD ([https://patreon.com/softscale)](https://patreon.com/softscale)) and ViRoPlayspace ([https://viro.club)](https://viro.club)) games, as well as hopefully being able to discuss starting toy control work with Dominatrix Simulator. The work on the FFI will also hopefully put us in a somewhat better position to look at C/C++ integrations, which gets us moving toward Unreal Engine integrations. Maybe Java bindings too?
 
-### Everything Else
+# Everything Else
 The workload mentioned above has eaten my life, so there's not a ton to say otherwise. Plans for the near future include:
 
  - Hopefully making a youtube video on the OhMiBod Lumen, now the smallest Bluetooth buttplug (the toy type) usable with Buttplug (the library). tl;dr: It's pretty good, but has the same connection issues as all other butt toys currently

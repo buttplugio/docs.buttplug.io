@@ -4,7 +4,7 @@ date: 2020-05-11
 ---
 Dear sweet mother of god
 
-### Media
+# Media
 So Buttplug had a big week in the media last week! We were on Hacker News and r/linux.
 
 <!--truncate-->
@@ -21,7 +21,7 @@ Both threads were *overwhelmingly* positive, which is not really what I expect f
 
 Super positive results overall, and lots of new people on the discord! Yay!
 
-### Buttplug
+# Buttplug
 On the software side, a super busy weekend of getting things running for people who'd really like to start using buttplug-rs. This meant new releases of:
 
  - buttplug-py, with lots of bugfixes
@@ -30,7 +30,7 @@ On the software side, a super busy weekend of getting things running for people 
 
 I've also been working on Serial Port and Lovense Dongle support in buttplug-rs, though those are going a bit slow because buttplug-rs is turning into a big messy pile of code. My plan is to take a small break from those implementations to get some cleanup and documentation efforts going, then return when I don't feel like I'm building a fireplace in the middle of a fire.
 
-### Everything Else
+# Everything Else
 
  - Still wanna make a OSR2+ video or 5 soon
  - May make a Lovense Dongle video because I get SO MANY QUESTIONS

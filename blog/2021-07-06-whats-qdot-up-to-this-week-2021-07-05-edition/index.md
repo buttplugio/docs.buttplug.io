@@ -4,7 +4,7 @@ date: 2021-07-06
 ---
 And suddenly, productivity.
 
-### Buttplug/Intiface Desktop (Now with OSR-2 Support)
+# Buttplug/Intiface Desktop (Now with OSR-2 Support)
 YES IT IS FINALLY HERE.
 
 <!--truncate-->
@@ -29,10 +29,10 @@ The best part about this is that we're now using the User Device Config system, 
 
 It's super exciting to get this kicked off, and I'm looking forward to getting more things implemented for it.
 
-### VibeGoesBrrr Stroker Support
+# VibeGoesBrrr Stroker Support
 A lot of this happened because of the VibeGoesBrrr VRChat plugin, which is my current platform obsession if that wasn't obvious. VGB recently implemented stroker support in a beta branch, and it's working REALLY well for real time VR control! I'll have some demo videos up as soon as I figure out whether I can post them without getting banned from multiple platforms for doing so.
 
-### What's Next
+# What's Next
 I'm hoping to continue with the Intiface Desktop User Config updates, as well as bringing back Device Simulators so devs are no longer required to have actual hardware (though it will certainly help if they do). We've also got someone looking at Android support now, so there may be a native Android Buttplug library soon! We *may* already work on iOS too, but we need a Swift FFI layer to get that tested.
 
 Lots of interesting developments ahead, can't wait to show them to you!

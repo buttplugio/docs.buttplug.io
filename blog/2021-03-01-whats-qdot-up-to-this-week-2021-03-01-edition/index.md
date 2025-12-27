@@ -6,7 +6,7 @@ Not much, honestly. It's been a Extremely Fucking Bad couple of weeks out in rea
 
 <!--truncate-->
 
-### VR
+# VR
 But at least it was a rough couple of weeks with new toys?
 
 
@@ -14,15 +14,15 @@ Got a Valve Index + Full Body Tracking setup, in order to both get more testing 
 
 I am now mildly obsessive about VR Worlds, so expect more content in that direction soon.
 
-### Buttplug
+# Buttplug
 Only real Buttplug development that's happened has been bugfixes. There's a TON of work happening on the btleplug library (which handles bluetooth for Buttplug) thanks to some contributors, so I've updated that, as well as fixing some log messages that were possibly causing crashes in Intiface Desktop. A new Intiface Engine was released yesterday that I'm hoping will make life way better for those afflicted (which now, thanks to the aforementioned VR worlds obsession, includes me :| ).
 
-### **Intiface Tutorial, VaMSync**
+# **Intiface Tutorial, VaMSync**
 After being broken for at *least* 18 months, I've now ported the Intiface Tutorial to buttplug-js v1.x. I still wouldn't exactly call it helpful, but it's something.
 
 I also updated VAMLaunch to become VaMSync, but given that I don't really use or even know how to use VaM, I'm not sure how successful that's been. 
 
-### Everything Else
+# Everything Else
 Here's what's on my TODO list right now:
 
  - **Intiface Desktop updates:** ID 19 is 6 months old now. This needs to happen so badly. Mostly quality of life updates to start but then moving onto larger additions like device management and configuration, simulation, etc.

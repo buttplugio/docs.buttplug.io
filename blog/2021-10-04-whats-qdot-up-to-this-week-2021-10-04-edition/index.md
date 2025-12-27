@@ -4,7 +4,7 @@ date: 2021-10-04
 ---
 Intiface Desktop!
 
-### Intiface Desktop
+# Intiface Desktop
 Intiface Desktop work continues apace. It's looking pretty good now!
 
 <!--truncate-->
@@ -22,7 +22,7 @@ The goal for v41 is to just get everyone on the new platform ASAP, but I've stil
 
 This are mostly nice to haves, that mostly didn't happen because the Electron/Web version of Intiface Desktop was such a godawful nightmare to work on. That said, I feel like any quality of life change here will be pretty massive for most users.
 
-### Buttplug, Buttplug Unity, Youtube, etc...
+# Buttplug, Buttplug Unity, Youtube, etc...
 Most of my time has been spent on Intiface, but there's been some reports of Buttplug bugs that I'm keeping an eye on. Buttplug v5.0.2 will probably be out soon, mostly with btleplug fixes for Linux.
 
 I need to get a new Buttplug Unity build out soon too, it's been a few months and a few things have been fixed by the community, so hopefully we can get a more stable build out.

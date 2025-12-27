@@ -4,7 +4,7 @@ date: 2019-07-22
 ---
 Organization, and even more new projects!
 
-### Buttplug
+# Buttplug
 After realizing that I had no idea what all projects I had in flight right now, and not really having an ability to deal with that plus new job, the past week/weekend have been dealing with trying to get everything logged and organized. It's getting there, slowly. I'm hoping once I have this system in place, I can keep at it and this won't happen again until it happens again.
 
 <!--truncate-->
@@ -22,7 +22,7 @@ Current projects in flight include:
 
 While doing all this organizing I of course had to wander off and work on some new proof of concept.
 
-### Teledildonics
+# Teledildonics
 So now we have teledildonics. Sort of.
 
 *Technically*, teledildonics has been available in Buttplug since almost day one. If you knew how to chain together ports and websockets in the right way, you could have people remotely access your Buttplug Server. It was not easy though, and very few people pulled it off. With the introduction of Intiface Desktop, I managed to break that somewhat too, due to the way self-signed secure certificates work.
@@ -39,7 +39,7 @@ For now, my plan is to make a connector class for these that you can integrate e
 
 I'll be posting more information about that once the project is cleaned up.
 
-### Intiface, Etc...
+# Intiface, Etc...
 Not a lot happening otherwise on Intiface at the moment. Logging quite a few bugs and fixes for Intiface Desktop once I can get to it, as well as starting to think about utilities that could be added, like local device testing (so you can just make sure your devices work while you're in Intiface without connecting to anything else! I cannot believe we've lived without this feature for like 2 years). No complaints about the new Playground so far, but that's because there's been almost nothing in the way of comments about it, period, heh.
 
 That's it for the past, uh, 2 weeks. Until next week, keep buttpluggin'!

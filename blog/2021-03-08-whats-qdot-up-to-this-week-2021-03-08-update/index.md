@@ -1,9 +1,11 @@
 ---
 title: "Whats Qdot Up To This Week 2021 03 08 Update"
 date: 2021-03-08
----VRChat, mostly. I wasn't kidding about the virtual world obsession thing.
+---
 
-### Buttplug
+VRChat, mostly. I wasn't kidding about the virtual world obsession thing.
+
+# Buttplug
 But I also fixed some Buttplug stuff! v2.1.7 just went out the door before I wrote this, fixing some issues with Vorze devices and the Handy for software using older buttplug versions like ScriptPlayer and Syncydink. Also fixed some issues with Kiiroo vibrators. Intiface CLI (aka Intiface Engine) v33 is in CLI now, should release in the next 10 minutes or so.
 
 <!--truncate-->

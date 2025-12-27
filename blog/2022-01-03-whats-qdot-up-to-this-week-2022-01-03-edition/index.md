@@ -4,7 +4,7 @@ date: 2022-01-03
 ---
 Back to the dayjob...
 
-### Buttplug
+# Buttplug
 The Intiface Desktop Alpha last week surfaced some bugs! Mostly that if someone has a Lovense dongle and a Bluetooth dongle connected at the same time, they'd fight each other.
 
 <!--truncate-->
@@ -19,12 +19,12 @@ If you're curious what that release might look like, the relevant kanban board i
 
 [https://github.com/buttplugio/buttplug/projects/1](https://github.com/buttplugio/buttplug/projects/1)
 
-### Intiface Desktop
+# Intiface Desktop
 Lots of work happening on the new Intiface Desktop, thanks to input from everyone here that tried the first few betas! I can't stress enough how much help its been to get feedback early and often. :D
 
 I should have another release out this week, which will most likely be the last closed alpha before I go to public beta. There will be some small changes to UI, but mostly concentrating on filling things in and fixing bugs for the time being.
 
-### Other Stuff
+# Other Stuff
 
  - I've updated the Awesome List: [https://awesome.buttplug.io.](https://awesome.buttplug.io.) This includes adding some FFXIV stuff, as well as moving things with multiple apps/plugins (vrchat, ffxiv, minecraft, etc) into their own sections.
 

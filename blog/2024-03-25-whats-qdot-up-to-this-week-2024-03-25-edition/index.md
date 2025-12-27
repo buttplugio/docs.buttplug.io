@@ -4,7 +4,7 @@ date: 2024-03-25
 ---
 I think I'm gonna be recovering from GDC for at least twice as long as I was there...
 
-### Intiface Central
+# Intiface Central
 Intiface Central v2.5.6 is out as of about 20 minutes ago!
 
 <!--truncate-->
@@ -25,12 +25,12 @@ Next up in Intiface Central:
 
 - More documentation! And possibly a website overhaul!
 
-### Buttplug and Btleplug
+# Buttplug and Btleplug
 Buttplug will require some changes to accommodate the new IC features mentioned above, but more important will be possibly patching a *huge* problem in the Android implementation of our bluetooth support. I've finally managed to get a crash log from someone with a phone that's having problems with Android IC, so I'm hoping to make progress on fixing that soon (we see this crash 100s of times a month and it is actively blocking android users).
 
 Otherwise, I would very much like to get back to the next version of the message spec in Buttplug. This is holding up a lot of fun features in relation to sensors (i.e. being able to play games with your bluetooth kegel hardware, or possibly even [erection sensing hardware](https://github.com/buttplugio/buttplug/pull/617). 
 
-### Everything Else
+# Everything Else
 
 - GDC was great! Met lots of cool people, may have some collaborations coming out of it! We'll see!
 

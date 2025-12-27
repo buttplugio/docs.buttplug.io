@@ -4,7 +4,7 @@ date: 2022-09-19
 ---
 APPS
 
-### Intiface Central
+# Intiface Central
 Well, I am as shocked as anyone else, but Android and iOS apps are up, running, and seem fairly stable?!
 
 <!--truncate-->

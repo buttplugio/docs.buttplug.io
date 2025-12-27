@@ -4,14 +4,14 @@ date: 2019-08-12
 ---
 Writing tweets that should really be blog posts, apparently.
 
-### Intiface/Buttplug/Etc
+# Intiface/Buttplug/Etc
 Nothing to say here. No code written this week. New job is throwing a lot at me right now and I think my brain needed a break, which is why I basically played through the whole of Hollow Knight in the span of a week. Hopefully recovered and back to it soon.
 
 <!--truncate-->
 
 Good news is, I'm learnin' lots about ML, so maybe that knowledge will end up around here soon. Who wants to do linear regression about sex?
 
-### Writing
+# Writing
 I apparently miss blogging, though.
 
 For those of you not following the Buttplug twitter account, here's a quick catch-up.

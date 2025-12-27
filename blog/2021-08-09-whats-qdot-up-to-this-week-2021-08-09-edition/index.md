@@ -4,7 +4,7 @@ date: 2021-08-09
 ---
 A line of yaks stretching as far as the eye can see...
 
-### Buttplug
+# Buttplug
 The slow march toward what is now Buttplug v5.0 continues.
 
 <!--truncate-->
@@ -19,10 +19,10 @@ Thanks to trying to build my own DIY hardware (my head haptics for VR), I've now
 
 These two features, once released and more importantly, properly documented, should make life far easier for people wanting to hook DIY toys into Buttplug. Of course, configuring it all is going to be quite the challenge, which means it's time for more updates to...
 
-### Intiface Desktop
+# Intiface Desktop
 Once Buttplug v5 is landed, I'll be shifting over to more frontend work to expose all of this via Intiface Desktop, as well as starting to build in a documentation system, as the functionality of the program is growing quickly and will be getting quite complex soon. I'm hoping I can keep the program usable for those that just want to quickly hook up their lovense toy while extensible enough for those of us that are building our own thing. That may end up meaning I hire someone for UX soon, because wow I'm bad at this. :)
 
-### Youtube
+# Youtube
 While working on the library I've had my 3D Printer going constantly in the background, in the hopes of kicking off some new youtube videos on the OSR-2, Handy mounting systems, etc soon. So keep an eye out for those!
 
 Anyways, that's it for this week. Until next week, Keep Buttpluggin'!

@@ -1,7 +1,9 @@
 ---
 title: "Whats Qdot Up To This Week 2018 08 17 24 Edition"
 date: 2018-08-26
----Well at least I have a good excuse for the first 2 week gap I've had in these updates, heh.As you are probably aware because I haven't (been allowed to) shut up about it for the past 2 weeks, the 268 teledildonics patent is now expired. So far this has meant LOTS of talking to press. A few examples:
+---
+
+Well at least I have a good excuse for the first 2 week gap I've had in these updates, heh.As you are probably aware because I haven't (been allowed to) shut up about it for the past 2 weeks, the 268 teledildonics patent is now expired. So far this has meant LOTS of talking to press. A few examples:
 
  - [https://www.wired.co.uk/article/teledildonics-hacking-sex-toys](https://www.wired.co.uk/article/teledildonics-hacking-sex-toys)
  - [https://arstechnica.com/tech-policy/2018/08/cybersex-toy-industry-heats-up-as-infamous-teledildonics-patent-climaxes/](https://arstechnica.com/tech-policy/2018/08/cybersex-toy-industry-heats-up-as-infamous-teledildonics-patent-climaxes/)

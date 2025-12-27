@@ -4,14 +4,14 @@ date: 2019-12-03
 ---
 Tuesday is the new Monday.
 
-### Hardware
+# Hardware
 For some reason, shocking seems to be the name of the game at Buttplug HQ lately. I just reversed a Dog Training Collar ([https://twitter.com/buttplugio/status/1200882638086537216)](https://twitter.com/buttplugio/status/1200882638086537216)) and am now working on the Pavlok ([https://twitter.com/buttplugio/status/1202070730638102528)](https://twitter.com/buttplugio/status/1202070730638102528)) as well as some knock-off bluetooth TENS unit for a friend. This is mostly a matter of timing and coincidence, but still, lots of shocky shit on my desk right now, and probably finally getting a shock message in Buttplug soon.
 
 <!--truncate-->
 
 Which brings me to my next topic...
 
-### Buttplug
+# Buttplug
 Now that the Rust client is done, things have slowed down a bit in the land of Buttplug as I try to figure out what all of the next steps I need to take are. I had originally been planning on finishing porting the library (the device protocols and server code) to Rust, then starting to add new messages, but it's feeling like I may need to switch the order of that.
 
 The new messages/capabilities I'm looking at bringing in are:
@@ -25,7 +25,7 @@ The new messages/capabilities I'm looking at bringing in are:
 
 This will be the first time new messages and capabilities have been added to Buttplug in *2 years*. Yes, the past 2 years have mostly been spent futzing with the APIs, adding new hardware protocols, and rearchitecting the whole thing like, twice. So it'll be nice to move forward instead of sideways-with-a-slight-lean-forward.
 
-### Intiface
+# Intiface
 Intiface is still kinda on hold until I get the above stuff done. Hoping it will see more work in January.
 
 I'm probably going to make some quick YouTube videos this week about the shocky shit, as well as finally filming a version of my SLSA talk, so expect updates when those are done.

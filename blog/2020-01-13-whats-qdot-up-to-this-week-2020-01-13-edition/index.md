@@ -4,7 +4,7 @@ date: 2020-01-13
 ---
 Oops I accidentally another library
 
-### BtlePlug
+# BtlePlug
 Yup, you're reading that right. Not Buttplug, BtlePlug. :(
 
 <!--truncate-->

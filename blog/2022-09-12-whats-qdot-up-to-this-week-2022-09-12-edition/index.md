@@ -4,7 +4,7 @@ date: 2022-09-12
 ---
 BLoCs!
 
-### Intiface Central
+# Intiface Central
 The past 2 weeks have been almost purely Intiface Central UX work. This has required me to learn how state management works in flutter, which is Very Much Its Own Thing And Does It In Its Own Special Way. This was a good 4-5 days of reading and trying things until it finally clicked.
 
 <!--truncate-->
@@ -13,7 +13,7 @@ After that, everything came together surprisingly quick. I now have a basic vers
 
 Soooooo, I feel like I can now say we'll see an alpha of Intiface Central in weeks instead of months! This is huge progress. :D
 
-### Everything Else
+# Everything Else
 
  - Having unblocked Buttplug with the v6 release, some of the device developers are working there again. v6.0.1 with more device updates and some bug fixes should be out soon.
 

@@ -4,7 +4,7 @@ date: 2019-10-01
 ---
 Crap when did it become Tuesday.
 
-### Buttplug
+# Buttplug
 Buttplug C# 0.5.1 went out last week with support for the Motorbunny. Buttplug JS will be getting an upgrade pretty soon, also with Motorbunny support as well as a couple of fixes to some rather serious bugs.
 
 <!--truncate-->
@@ -66,7 +66,7 @@ There's also a chance this experiment doesn't work, and we stick with C#/JS/What
 
 May god have mercy on us all.
 
-### Game Haptics Router
+# Game Haptics Router
 I released v4 of the GHR last week, mostly for Motorbunny support. Hearing some initial reports of bugs that I'm going to check on this evening, so possibly expect v5 this week also.
 
 Ok, well, a longer update than usual with less interesting content for those of you that aren't developers, but explaining the Rust work was a lot, and I'm trying to stay transparent here. Hopefully more fun news soon.

@@ -8,7 +8,7 @@ I AM ACTUALLY CAPABLE OF FINISHING THINGS.
 
 <!--truncate-->
 
-### Intiface Tutorial
+# Intiface Tutorial
 The new Intiface tutorial is done!
 
 [https://tutorial.intiface.com/](https://tutorial.intiface.com/)
@@ -17,7 +17,7 @@ This time it's written using vue.js instead of twine, but still has basically th
 
 If you're already using Intiface Desktop, there's not much to see here, but once I start adding new features (Like WebRTC connections and what not), I'll probably be recommending users walk through the tutorial again with the new methods.
 
-### Zendesk Support
+# Zendesk Support
 This is kinda weird for an open source project, but I've started a support account on Zendesk. This allows me to receive trouble tickets whenever people are having problems with Intiface or apps like Playground and Syncydink. Not everyone has a github account or knows how to use github issues, so this seemed like a better match.
 
 Right now, support requests are only implemented in the Intiface tutorial. To see what it looks like, go to the Intiface Tutorial, go past the intro screen, then hit the "Need Help" button.
@@ -28,7 +28,7 @@ One of the nice things that comes with the Zenhub account is a Knowledge Base, a
 
 It's going to take me a while to get this filled out, but I'm hoping it'll serve as the central place to answer questions about the various projects.
 
-### Hardware Support Lists
+# Hardware Support Lists
 blackspherefollower, one of the longest tenured community members and contributors to the project, has put together a nice list of computer controlled sex hardware, including information on devices supported by Buttplug:
 
 [https://iost-index.netlify.com/](https://iost-index.netlify.com/)
@@ -39,14 +39,14 @@ Which seems like it should've been the first question the project answered.
 
 Oops.
 
-### Buttplug
+# Buttplug
 Now that the tutorial is up, I'm gonna try to get back to a round of Buttplug updates (even though I found a TON of Intiface Desktop bugs while building the tutorial). This includes:
 
  - Kiiroo Titan 2.1 Support
  - Finishing up the Buttplug Python Client Library
  - Starting work toward a v1.0 release, including new messages for Battery Levels, RSSI Levels, Raw commands, etc...
 
-### Everything Else
+# Everything Else
 
  - Still doing design work on the Nonpolynomial brand.
  - I'd like to get Playground updated with links to Zendesk Support in case people need it.

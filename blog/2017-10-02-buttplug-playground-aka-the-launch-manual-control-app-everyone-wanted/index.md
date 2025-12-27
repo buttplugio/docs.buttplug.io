@@ -1,7 +1,9 @@
 ---
 title: "Buttplug Playground Aka The Launch Manual Control App Everyone Wanted"
 date: 2017-10-02
----[https://buttplug.world/playground](https://buttplug.world/playground)So far, all of the applications for Buttplug has been about outside media. Movies, games, etc... 
+---
+
+[https://buttplug.world/playground](https://buttplug.world/playground)So far, all of the applications for Buttplug has been about outside media. Movies, games, etc... 
 
 Decided to go more minimal and just make a web app for testing toys and basic "manual" control. It's called Playground.
 

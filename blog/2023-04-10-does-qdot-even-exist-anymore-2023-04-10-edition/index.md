@@ -4,7 +4,7 @@ date: 2023-04-10
 ---
 Oof. Not particularly the past while. Life is getting in the way of Buttplug work. That said...
 
-### Buttplug
+# Buttplug
 I started working on getting user configurations into Intiface Central, and thanks to our convoluted configuration files, it got very difficult very quick.
 
 <!--truncate-->
@@ -15,7 +15,7 @@ I'm moving device configs and user configs to a SQLite setup. This will massivel
 
 Unfortunately it's also a big architecture change, so I'm guessing it'll be a few weeks of work, especially since I'm maybe getting 2-3 hours a week to work on the project right now. I think it'll end up being much better in the long run though.
 
-### Everything Else
+# Everything Else
 
  - I went to GDC. It was ok I guess.
 

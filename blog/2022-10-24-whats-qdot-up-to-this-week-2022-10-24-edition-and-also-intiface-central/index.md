@@ -1,9 +1,11 @@
 ---
 title: "Whats Qdot Up To This Week 2022 10 24 Edition And Also Intiface Central"
 date: 2022-10-24
----Oof.
+---
 
-### Intiface Central
+Oof.
+
+# Intiface Central
 For those that just want the software (that this time should actually work) before reading all of the fun surrounding the software, Intiface Central v0.0.2 is available for Windows/Mac at
 
 <!--truncate-->
@@ -20,7 +22,7 @@ It does mean that any time I update Buttplug I'll also have to release a new ver
 
 I also got Android release builds working finally, so that app will be ready to ship to Google Play once it's a little more tested. We're still looking quite good for releasing Central as a usable replacement for Intiface Desktop within the next month or so, and mobile is just going to be a matter of seeing how difficult it is to get into app stores.
 
-### Everything Else
+# Everything Else
 That is actually pretty much it right now. I'm singularly focused on getting this done, at which point hopefully this newsletter will actually turn more varied and interesting again.
 
 Until next week, keep Buttpluggin'!

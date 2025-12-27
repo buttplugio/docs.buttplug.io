@@ -1,7 +1,9 @@
 ---
 title: "Buttplug Syncydink Preview 1"
 date: 2017-07-17
----Ok so I said I'd have it done by the end of the weekend and I did!I just finished a test of Buttplug (on windows 10) + Syncydink (on iPhone!), and it's working rather well, even over WiFi, and at this point, the UI is ok enough that I think people can try it out.
+---
+
+Ok so I said I'd have it done by the end of the weekend and I did!I just finished a test of Buttplug (on windows 10) + Syncydink (on iPhone!), and it's working rather well, even over WiFi, and at this point, the UI is ok enough that I think people can try it out.
 
 First, some caveats:
 

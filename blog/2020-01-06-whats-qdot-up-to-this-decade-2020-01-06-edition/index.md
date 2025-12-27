@@ -4,7 +4,7 @@ date: 2020-01-06
 ---
 Same thing we do every decade, Pinky. Try to buttplug the world.
 
-### Buttplug
+# Buttplug
 Same shit, different year.
 
 <!--truncate-->
@@ -15,7 +15,7 @@ Other developers on Discord are starting to look at the code, and there may be s
 
 Times continue to be exciting though! Really looking forward to being able to centralize on this across all of our platforms and not have to implement everything multiple times. :D
 
-### Upcoming Travel/Speaking Engagements
+# Upcoming Travel/Speaking Engagements
 For anyone in the Bay Area, I'm part of a sex tech panel at OutInTech San Francisco on February 12th. More info on that soon.
 
 I'll be speaking and mentoring at OOOHack in Chicago in late February: [http://commiserate.life/sthack](http://commiserate.life/sthack)

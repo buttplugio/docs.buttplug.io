@@ -1,7 +1,9 @@
 ---
 title: "Buttplug Update"
 date: 2017-10-11
----Ok, time to make an "I'm not dead" update.I'm not dead.
+---
+
+Ok, time to make an "I'm not dead" update.I'm not dead.
 
 There's lots of work happening on Buttplug right now, but most of it is fairly invisible. I've been spending lots of time learning about how to properly build web app dependencies so developers can start using the same components I used to make Syncydink and Playground. This has taken more time than planned (was a rather complex learning process to get typescript/vue.js/webpack to all play together nicely), but is finally done. The hope here is that people that want to write new webapps for buttplug can do so quickly and easily with these components.
 

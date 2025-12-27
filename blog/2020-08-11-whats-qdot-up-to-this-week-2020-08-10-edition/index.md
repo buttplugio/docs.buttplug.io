@@ -4,12 +4,12 @@ date: 2020-08-11
 ---
 Being a day late, but hey, at least there's
 
-### Stickers
+# Stickers
 Stickers are on their way to quite a few people now! I've got about 50% of the backed up tier rewards sent, and after picking up more envelopes and stamps yesterday the rest should go out this week. Look for mail!
 
 <!--truncate-->
 
-### Buttplug
+# Buttplug
 FFI work has begun!
 
 [https://github.com/buttplugio/buttplug-rs-ffi](https://github.com/buttplugio/buttplug-rs-ffi)

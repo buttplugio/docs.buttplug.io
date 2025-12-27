@@ -24,7 +24,7 @@ One of the original tenets of Buttplug followed my philosophy about sex toy desi
 
 Sometimes though, this gets overrun by me learning things while implementing the library, so we end up with more features than might really be needed, or that I can support. Optimizing the library for Unity brought up a few things that could be removed.
 
-### Removing async-std and ThreadPool Runtimes
+# Removing async-std and ThreadPool Runtimes
 
 Unlike many languages with async capabilities (C#, JS, etc…), Rust’s async execution system is designed in such a way that the language comes without a way to execute tasks. Rather, it depends on outside implementations that can tune to the specific requirements of an application. While this is overall a win for the ecosystem, it can sometimes cause [frustration](https://kevinhoffman.medium.com/rust-async-and-the-terrible-horrible-no-good-very-bad-day-348ebc836274).
 
@@ -42,7 +42,7 @@ After switching Buttplug to Tokio, it became apparent that maintaining 4 runtime
 
 This does not mean that Buttplug isn’t usable with other runtimes now. Outside of the Device Communication Managers (which, granted, are possibly the most important part of the library), most of the library is runtime agnostic, and async-std contains tokio compatibility systems that will allow the library to run using its runtime also. This change mostly reduces the amount of thinking I have to do when updating the library and its direct dependencies. This is open source self care more than anything.
 
-### Removing Secure Sockets for Buttplug Servers
+# Removing Secure Sockets for Buttplug Servers
 
 When Buttplug C# first started in 2017, Chrome allowed for localhost websocket connections via mixed contexts (i.e. https:// website calling through ws:// for localhost websockets). Firefox did not have a feature like this, so we implemented the ability to create self signed certs and load them into the server to run a self signed websocket server for Buttplug. This allowed us to get applications working in Firefox.
 

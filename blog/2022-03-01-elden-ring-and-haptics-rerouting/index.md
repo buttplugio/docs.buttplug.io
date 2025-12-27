@@ -1,7 +1,9 @@
 ---
 title: "Elden Ring And Haptics Rerouting"
 date: 2022-03-01
----The weekly update would consist of one project this week, so I'll just post the project itself.
+---
+
+The weekly update would consist of one project this week, so I'll just post the project itself.
 
  I managed to reroute Elden Ring rumble to sex toys. This involved using USBPcap, which is a pretty wildly unsafe way to do things, but it did the job.
 

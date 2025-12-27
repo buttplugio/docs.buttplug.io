@@ -4,7 +4,7 @@ date: 2019-12-23
 ---
 Holy shit. Rust Bluetooth works.
 
-### Buttplug
+# Buttplug
 Ok well I said back in like, October/November that it was gonna be spec and Rust updates for a while, and I apparently meant it.
 
 <!--truncate-->

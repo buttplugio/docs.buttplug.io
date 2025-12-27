@@ -4,7 +4,7 @@ date: 2021-08-16
 ---
 The pre-release slog continues...
 
-### Buttplug
+# Buttplug
 There's nothing worse than changing a surface API, because that means a major version revision, which means then you just start piling in ALL of the changes that might hit surface APIs, and sudden you've got a katamari release on your hands.
 
 <!--truncate-->

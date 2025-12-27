@@ -1,7 +1,9 @@
 ---
 title: "Buttplug Js Aka We Now Support Mac Linux Android Chromeos"
 date: 2017-08-20
----As of yesterday, I managed to get the javascript web technologies version of the Buttplug Server done. This is now integrated into Syncydink:[https://buttplug.world/syncydink](https://buttplug.world/syncydink)
+---
+
+As of yesterday, I managed to get the javascript web technologies version of the Buttplug Server done. This is now integrated into Syncydink:[https://buttplug.world/syncydink](https://buttplug.world/syncydink)
 
 If you go to the site now in Chrome (and yes this requires chrome, for WebBluetooth, and you will need to use https), then go to the Buttplug tab and click on "connect local", the "Start scanning" button now triggers a search for devices.
 
@@ -19,7 +21,7 @@ Yes, there's a problem with Linux and the Launch (and apparently the Lovense Hus
 
 Also, this list doesn't have Gamepads in it for any platform, because gamepad vibration on web browsers is an extremely new thing, implemented as part of the Gamepad Extensions spec for WebVR. While rumble is implemented for VR controllers, it has yet to be extended to gamepads in any browser that I am aware of. Either way, we'll still try to support touch rumble with this soon.
 
-### Next Steps
+# Next Steps
 Here's our plans for the next while if not more:
 
 - Add more toy coverage to buttplug-js and buttplug-csharp
@@ -56,7 +58,7 @@ I'm still dedicated to a Rust client/server pair because damnit I want to write 
 
 Now that buttplug-js is technically runnable from a browser, depending on your platform, we're hoping to build some tutorials on glitch.com. This will allow people to quickly and easily remix on top of the buttplug-js node module to make their own webapps.
 
-### Closing
+# Closing
 Thanks again to everyone who has stuck with me through this somewhat quiet development period. I'm really hoping that we're going to have more to show that the base software is usable.
 
 As always, if you have any questions, feel free to contact me via the comments here, or on twitter at [https://twitter.com/qdot,](https://twitter.com/qdot,) or by email at kyle@machul.is.

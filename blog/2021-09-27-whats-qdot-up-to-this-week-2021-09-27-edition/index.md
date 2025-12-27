@@ -4,7 +4,7 @@ date: 2021-09-27
 ---
 Rewrites!
 
-### Intiface Desktop
+# Intiface Desktop
 After a couple of weeks of having problems with coding blocks (writers block except for programming), I seem to be back to vague levels of productivity. This mostly means re-implementing Intiface Desktop in Rust and egui.
 
 <!--truncate-->
@@ -13,7 +13,7 @@ So far, everything is going quite well. The resulting binary will be < 10MB (ins
 
 Once things are to that point, I'll be posting installers here for everyone to check out.
 
-### Youtube
+# Youtube
 Took a bit of a break from trying to do weekly Youtube this week since I've been busy on code, but expect more videos soon.
 
 That's it for now. Pretty singularly focused on making Desktop something I don't hate working on, so not much otherwise to talk about. My Valve Index is going in for RMA this week, which will probably multiply my productivity since I won't be able to get in VRChat. :)

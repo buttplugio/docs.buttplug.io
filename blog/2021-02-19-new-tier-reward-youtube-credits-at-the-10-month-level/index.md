@@ -1,7 +1,9 @@
 ---
 title: "New Tier Reward Youtube Credits At The 10 Month Level"
 date: 2021-02-19
----Interested in having your name posted in my youtube videos?
+---
+
+Interested in having your name posted in my youtube videos?
 
 Then sign up or bump up to the $10/month or higher level!
 

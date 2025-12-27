@@ -4,7 +4,7 @@ date: 2025-06-23
 ---
 Updates two weeks in a row! A christmas miracle!
 
-### Buttplug
+# Buttplug
 omfg I think I'm actually on the home stretch of v4.
 
 <!--truncate-->
@@ -17,10 +17,10 @@ Goal right now is to minimize any more major changes going into the library. Thi
 
 At least I hope I am.
 
-### Intiface
+# Intiface
 Not a lot has been happening on the Intiface front as I've been so busy with the base library, but plan is still to concentrate on Central once the new spec and library versions are done. I'll probably release Intiface v3 with the same UI/features at Intiface v2.x, then start slowly upgrading UI/UX and adding features through the v3 line, with v4 being a huge UI overhaul to make things simpler up front (as I keep hearing that Central provides way too many features to people who really want to do 1-2 things).
 
-### Everything Else
+# Everything Else
 That's pretty much it for now actually. Thanks to the surprising amount of new patrons in the past week!
 
 Until next time (maybe... next week even?!), keep buttpluggin'!

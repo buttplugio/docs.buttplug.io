@@ -4,7 +4,7 @@ date: 2020-04-14
 ---
 Coming at you a day late because...
 
-### Buttplug
+# Buttplug
 I just released buttplug-rs v0.2.1 (v0.2.0 was missing an updated README so I had to do a quick point release after)!
 
 <!--truncate-->
@@ -22,7 +22,7 @@ If you're curious about what's coming up soon, I've created a feature tracking b
 
 [https://github.com/orgs/buttplugio/projects/1](https://github.com/orgs/buttplugio/projects/1)
 
-### Teledildonics Livestream
+# Teledildonics Livestream
 I'm hoping to finish up the Teledildonics Livestream with Part 4 sometime later this week. It'll be an overview of the 1:1 teledildonics system I built on Glitch, which is available on glitch and github now:
 
 [https://glitch.com/edit/](https://glitch.com/edit/)#!/qdot-simple-teledildonics-app

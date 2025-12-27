@@ -1,7 +1,9 @@
 ---
 title: "Qdot On Techovertea Podcast Youtube"
 date: 2025-01-31
----I'm on Brodie Robertson's TechOverTea Podcast/Youtube this week!
+---
+
+I'm on Brodie Robertson's TechOverTea Podcast/Youtube this week!
 
 [https://www.youtube.com/watch?v=Lq-k6abTucY](https://www.youtube.com/watch?v=Lq-k6abTucY)
 

@@ -4,21 +4,21 @@ date: 2020-07-06
 ---
 Being my own social media intern.
 
-### Animal Crossing New Horizons / CGHR
+# Animal Crossing New Horizons / CGHR
 Most of last week was spent tracking the media spread of the Animal Crossing/CGHR project. It managed to hit Vice, DailyDot, Kotaku, AVClub, and a ton of European, South American, and Chinese outlets too. Still seeing posts here and there today, but it's mostly died down now. Overall, reaction was neutral. Lots of confusion, lots of misreporting about how the system worked, but Youtube traffic bumped 100% over the past 2 weeks, got about a 10% follower increase on Twitter, and Buttplug website traffic is up 2-4x. I expect all of those numbers to fall off pretty quick.
 
 <!--truncate-->
 
 Luckily I also had a 4 day weekend, which means I'm finally rested up enough to start coding again on...
 
-### Buttplug
+# Buttplug
 I hadn't touched buttplug-rs in about 2.5-3 weeks, and last I'd left it there were about 200 compile errors 'cause I was ripping out and replacing the error system.
 
 Good news is, that's all done, and the error system is now far more usable in terms of typing. Before this, there were just 5 types of errors and some string descriptors for those, which were impossible to really catch and do much with. We now have many, many error types, meaning that we're now on the other end of the spectrum where you can drill down to the type of error thrown but figuring out whether it's useful is difficult. I'm going to continue ironing this out, but it's still better than it was.
 
 My hope is to now get back to a combination of hardware implementations (serial ports, lovense dongle, etc), protocols (basically everything still missing from C#), and tests. Next "fun" project outside of that will probably be looking at the FFI layers so we can start running C# on top of rust.
 
-### Everything Else
+# Everything Else
 We're quickly approaching the point where I'm going to have to switch off and work on other non-buttplug libraries for a bit. This includes:
 
  - btleplug, which needs both async APIs and lots of cleanup on windows/mac, but the first job is really just making sure we get device disconnects on windows

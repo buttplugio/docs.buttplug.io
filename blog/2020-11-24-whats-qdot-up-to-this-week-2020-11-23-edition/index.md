@@ -10,7 +10,7 @@ I'm playing a lot of No Man's Sky, unexpectedly. I guess I find inventory shuffl
 
 But also, there's...
 
-### Buttplug Developer Guide
+# Buttplug Developer Guide
 Still working on the developer guide! I've gone ahead and started editing the actual published site at
 
 [https://buttplug-developer-guide.docs.buttplug.io](https://buttplug-developer-guide.docs.buttplug.io)
@@ -23,7 +23,7 @@ If you use Buttplug C# with Nuget, you'll see the 1.0.0 branch in development if
 
 [https://github.com/buttplugio/buttplug-rs-ffi](https://github.com/buttplugio/buttplug-rs-ffi)
 
-### Other Apps
+# Other Apps
 There's some really interesting new apps that are coming out lately. They don't have anything to do with Buttplug specifically, but I like supporting other people who are building toy control apps, so:
 
  - Xtoys - [https://xtoys.app](https://xtoys.app) - Really neat control web/mobile interface with all sorts of add-ons for remote control (using WebRTC!), sound reaction, web integration, etc. Not open source, but free and fun to play with! Also supports estim and hismith machines!

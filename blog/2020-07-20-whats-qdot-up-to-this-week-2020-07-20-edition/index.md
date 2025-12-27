@@ -4,7 +4,7 @@ date: 2020-07-20
 ---
 Learning that begging for patrons WORKS! My twitter shall now be insufferable!
 
-### New Patrons
+# New Patrons
 As an experiment over the weekend (and since stickers are on the way so I don't feel quite so guilty about advertising), I decided to be slightly more aggressive on Patreon advertising on twitter. And it worked!
 
 <!--truncate-->
@@ -15,7 +15,7 @@ Remember, everyone that donates also gets a special role on our discord server! 
 
 If you join and aren't promoted, lemme know and I'll get it fixed.
 
-### Buttplug
+# Buttplug
 Anyways, back to updates on library implementations!
 
 Having finished the error work on Buttplug, I started back on the Serial Port device work I was doing in April. This ended up sidetracking me yet again over into Lovense Dongle handling (there's a version of the dongle that basically looks like a USB serial port), which is one of the biggest reasons people end up not using Buttplug. The dongle sucks, but Lovense pushes it so hard that a TON of people have it.
@@ -32,7 +32,7 @@ Once these are done (next couple of weeks maybe?), I'm hoping buttplug-rs will b
 
 But if you're wondering how this is important to you...
 
-### Intiface Desktop
+# Intiface Desktop
 I'm also starting to work on updating Intiface Desktop for the first time in *14 months* (engines and config files have updated since then, this is the app itself). This is unfortunately making me realize that Electron wasn't the best idea for this, as I'd planned to update more often but kinda got stuck on buttplug-rs. However, for people to start using the new buttplug-rs engine, I'm going to have to add some new features to allow engine selection and downloading.
 
 I imagine this is going to be a complete mess, as Electron, Vue, Vuetify, and pretty much all the other libraries the project depends on have had 14 months to change, but we'll see where things end up.

@@ -4,7 +4,7 @@ date: 2023-04-17
 ---
 Oops more platform support?
 
-### Intiface Central
+# Intiface Central
 Having dragged my feet on it for a whole 2 months, I finally removed background device scanning (it'll be coming back in the future, but requesting the permission requires jumping through a ton of hoops on the play store) from the Android build of Intiface Central and released it to the Play Store this weekend.
 
 <!--truncate-->
@@ -17,10 +17,10 @@ And sure enough, Intiface Central works on the Quest 2! Sideloading the APK via 
 
 So that's fun. I'm still figuring out how we're gonna handle distributing this, but if anyone wants the APK, just let me know here or ping me on discord.
 
-### Buttplug
+# Buttplug
 Not a ton to say on Buttplug otherwise. I got the SQLite project a decent bit of the ways along just to realize that it was solving a different problem than the one I was having. I've put that project on the back burner for a bit while I return to concentrating on user device configuration in Intiface Central, which I can hopefully mostly do with our current setup for now.
 
-### Everything Else
+# Everything Else
 Not a lot to say otherwise right now. Got a lot of interesting development happening around the discord, so hopefully more to announce soon!
 
 Until next week, Keep Buttpluggin'!

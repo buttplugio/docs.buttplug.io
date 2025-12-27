@@ -1,7 +1,9 @@
 ---
 title: "Buttplug V10b2 And Intiface Central V3b2 Released"
 date: 2025-10-19
----The time has come!
+---
+
+The time has come!
 
 Or, well, I finally got sick of saying "one more thing then I'll release" and just decided to fucking release everything, lol.
 
@@ -9,7 +11,7 @@ Or, well, I finally got sick of saying "one more thing then I'll release" and ju
 
 For the past 3 or so years, y'all have been listening to me ramble about the next version of the Buttplug Spec, how long it's been in development, etc... I honestly wasn't sure it was gonna make it out this year, but over the past couple of weeks things have come together enough that I felt ok starting beta releases, so here we are.
 
-### Buttplug
+# Buttplug
 The buttplug changelog is pretty massive:
 
 - v4 Spec implementation! A simplified spec, with expanded capabilities and extra future-proofing (I hope)
@@ -22,14 +24,14 @@ The buttplug changelog is pretty massive:
 
 Everything is now on the main branch at [https://github.com/buttplugio/buttplug](https://github.com/buttplugio/buttplug)
 
-### Intiface Central
+# Intiface Central
 Intiface Central looks almost exactly the same, but has Buttplug v10 under it now! There's also been quite a few bugfixes, mostly for quality of life issues.
 
 And then there's the built-in REST API! This will *hopefully* make it easier to make quick one-off apps and test ideas without having to use a full client implementation.
 
 Pre-releases are available at [https://github.com/intiface/intiface-central/releases](https://github.com/intiface/intiface-central/releases) - v3b2 is up already, though the builds are not signed and it's just desktop for now. v3 builds also have a "Use pre-release" option so you can track beta updates.
 
-### What's Missing
+# What's Missing
 At this point, I'm pretty sure we're feature complete on the Buttplug side. I'll be updating and changing Intiface Central while we test both of these though.
 
 - Documentation. There is **almost no accurate documentation currently**. I'd updated the spec and some of the dev docs at some point in the past, but I need to sweep through and update everything again. Due to this, I'm not really announcing this release much yet.
@@ -38,7 +40,7 @@ At this point, I'm pretty sure we're feature complete on the Buttplug side. I'll
 
 - Client implementations. Rust has an implementation, but so far none of the other languages are implemented. This is considered part of testing.
 
-### What's Next
+# What's Next
 The plans as they currently are:
 
 - Documentation, documentation, documentation

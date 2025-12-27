@@ -1,7 +1,9 @@
 ---
 title: "Intiface V13 Released Mac Linux Support Returns"
 date: 2019-04-20
----After much wailing and gnashing of teeth, I got Mac/Linux support back into Intiface. MacOS seems to work fine, Linux takes a little extra work (see the README: [https://github.com/intiface/intiface-desktop](https://github.com/intiface/intiface-desktop)#linux-issues).
+---
+
+After much wailing and gnashing of teeth, I got Mac/Linux support back into Intiface. MacOS seems to work fine, Linux takes a little extra work (see the README: [https://github.com/intiface/intiface-desktop](https://github.com/intiface/intiface-desktop)#linux-issues).
 
 Releases for all platforms can be downloaded at
 

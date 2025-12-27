@@ -4,7 +4,7 @@ date: 2021-05-31
 ---
 Welp, at least I managed another May update before the month was over...
 
-### Intiface Desktop
+# Intiface Desktop
 After getting the Lovense Connect code into Buttplug and releasing v4 of the library in the first couple of days of May, a whole bunch of fuck all has happened since. I got absolutely crushed with some non-Buttplug work that meant I had no energy to work on things for most of the month. Luckily, due to the long weekend in the US, I've gotten a tiny bit of time to recover.
 
 <!--truncate-->
@@ -18,7 +18,7 @@ First order of business right now is updating Intiface Desktop to work with Butt
 
 Most of this work was finished today, all I need to do now is make a tutorial video of all the new features, then v21 will be out sometime this week.
 
-### Buttplug
+# Buttplug
 After that, I've got a ton of cleanup and merge work to do around Buttplug. This includes:
 
  - Consolidating repos, yet again. I'm going to collapse the buttplug-rs repo to just be buttplug, with the device config, spec, etc all in a single monorepo.
@@ -28,7 +28,7 @@ After that, I've got a ton of cleanup and merge work to do around Buttplug. This
  - Trying to get async HID support in, in order to bring back RealTouch support as well as bring in things like the Nintendo Joycon.
  - And after all that, hoping to finally consider WebRTC work for mobile/remote connections.
 
-### Other Stuff
+# Other Stuff
 Lots of work happening with 3rd parties now!
 
  - FarmD ([https://patreon.com/softscale)](https://patreon.com/softscale)) have released a new public version of their VR dragon fucking game, with Buttplug support

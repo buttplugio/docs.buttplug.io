@@ -16,7 +16,7 @@ Anyways, onto the libraries!
 
 The Kiiroo and Lovense libraries have been getting the most love lately, but I'm slowly working my way through documenting as much as possible now before writing any more code.
 
-### Miiyoo
+# Miiyoo
 Repos for the [Kiiroo](http://www.kiiroo.com/) line of toys, including the [Onyx](http://www.kiiroo.com/onyx), [Pearl](http://www.kiiroo.com/pearl), and upcoming [Launch](http://fleshlight.com/launch) toys.
 
  - Documentation of Kiiroo's devices, bluetooth protocol, and REST API   for their "desktop platform" software is   at   [http://metafetish.github.io/miiyoo-docs](http://metafetish.github.io/miiyoo-docs),   repo   at   [http://github.com/metafetish/miiyoo-docs](http://github.com/metafetish/miiyoo-docs).
@@ -24,7 +24,7 @@ Repos for the [Kiiroo](http://www.kiiroo.com/) line of toys, including the [Onyx
 
   
 
-### Lovesense
+# Lovesense
 Repos for the [Lovense](http://www.lovense.com/) line of toys, including the Max, Nora, Hush, and Lush. 
 
  - Documentation of Lovense's devices and bluetooth protocols are   at   [http://metafetish.github.com/lovesense-docs](http://metafetish.github.com/lovesense-docs)
@@ -32,7 +32,7 @@ Repos for the [Lovense](http://www.lovense.com/) line of toys, including the Max
 
   
 
-### KHole
+# KHole
 Repos for the [Minna KGoal](https://www.minnalife.com/products/kgoal) bluetooth kegel exerciser
 
  - Python proof of concept at [http://github.com/metafetish/kgoal-py](http://github.com/metafetish/kgoal-py)
@@ -40,24 +40,24 @@ Repos for the [Minna KGoal](https://www.minnalife.com/products/kgoal) bluetooth 
 
   
 
-### Wejibe
+# Wejibe
 Repos for the [Wevibe](https://www.wevibe.com/) line of products.
 
  - Very basic documentation   at   [http://github.com/metafetish/wejibe-py](http://github.com/metafetish/wejibe-py)
 
   
 
-### Buttshock (Estim Reverse Engineering)
+# Buttshock (Estim Reverse Engineering)
 Repos for reverse engineering the [Erostek ET-312/ET-232](http://erostek.com/), [Estim Systems 2B](https://www.e-stimsystems.com/index.php?main_page=product_info&cPath=1&products_id=71), etc...
 
  - There's so many repos for this now that I'm just going to point to   the   [buttplug.io hardware page for the ET-312](https://buttplug.io/hardware/erostek-et312/). 
 
   
 
-### The Past
+# The Past
 The above toys are things that are still in production. We've still got repos for the Real Touch, Rez Trancevibe, VStroker, and Virtual Hole.
 
-### The Future
+# The Future
 I'm hoping to flesh out the above projects more. Getting documentation for everything, even the out-of-production toys, is the highest priority. After that, coding the usual set of python/javascript/rust libraries for toys still in production. 
 
 Python is usually just because I work fastest in that, so it's good for proof of concept. Now that WebBluetooth is defaulted on in Google Chrome on OS X, I'm trying to make javascript libraries that work either via node/[noble](https://github.com/sandeepmistry/noble) or WebBluetooth, where I can. Rust libraries are how we'll provide access from C, as well as integrate things into the actual Buttplug software.

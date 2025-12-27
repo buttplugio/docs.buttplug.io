@@ -4,7 +4,7 @@ date: 2023-06-26
 ---
 Still bein' a nurse...
 
-### Buttplug
+# Buttplug
 Looks like Buttplug Protocol v4 gonna be happening a lot sooner than I expected!
 
 <!--truncate-->
@@ -17,7 +17,7 @@ So I gotta fix that. It's not a huge deal, but fixing that plus some issues with
 
 Not sure how long the new v4 design will take, hopefully weeks rather than months. Once that's done, I've got a lot of documentation updates to do, then hopefully buttplug as a library will be stable and quiet for a while and I can work on other things around it.
 
-### Everything Else
+# Everything Else
 
  - Life is still busy with the medical stuff I outlined in the last update, so in general things are very, very slow right now. But the community is doing things like...
  - [BUTTPLUG VALLEY, A STARDEW VALLEY BUTTPLUG MOD](https://github.com/DryIcedTea/Buttplug-Valley). Yes there is now a stardew valley mod for vibrators! 

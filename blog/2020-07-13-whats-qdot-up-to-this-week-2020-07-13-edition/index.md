@@ -4,7 +4,7 @@ date: 2020-07-13
 ---
 Gloriously boring shit!
 
-### Stickers
+# Stickers
 But first, merch!
 
 <!--truncate-->
@@ -13,10 +13,10 @@ Those of you that signed up at the >= $3 level in the past, uh, 7 or so months m
 
 Maybe those handwritten letters will happen someday too. Only 3 years behind on that one. >.>
 
-### Branding
+# Branding
 There's gonna be more new Buttplug logos soon, and I'm hoping to do the full announcement and switch over this week. Expect more previews soon. Then it's on to Intiface! :D
 
-### Buttplug
+# Buttplug
 In tech news, buttplug-rs is making some great progress!
 
 Back in April, I was working on serial port access for the OSR2, Lovense Dongle, etc. Things felt weird and just generally "not quite right" while adding those features, so I decided to take a break and do a little bit of cleanup.

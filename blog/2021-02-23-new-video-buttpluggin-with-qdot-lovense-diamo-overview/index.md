@@ -1,7 +1,9 @@
 ---
 title: "New Video Buttpluggin With Qdot Lovense Diamo Overview"
 date: 2021-02-23
----Everything you ever wanted to know about Lovense's new bluetooth controllable cockring.
+---
+
+Everything you ever wanted to know about Lovense's new bluetooth controllable cockring.
 
 Including silly sound tests.
 

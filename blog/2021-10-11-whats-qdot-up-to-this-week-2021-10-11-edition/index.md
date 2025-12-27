@@ -4,7 +4,7 @@ date: 2021-10-11
 ---
 New features! Finally!
 
-### Buttplug
+# Buttplug
 Thanks to getting bored with bringing the new Rust Intiface Desktop to parity with the JS Desktop app, I decided to play around with building some small new features that required changes all the way back to Buttplug.
 
 <!--truncate-->
@@ -18,7 +18,7 @@ I'm also starting work on trying to design some better messages for Buttplug, as
  - [https://github.com/buttplugio/buttplug/discussions/359](https://github.com/buttplugio/buttplug/discussions/359)
  - [https://github.com/buttplugio/buttplug/discussions/371](https://github.com/buttplugio/buttplug/discussions/371)
 
-### Intiface Desktop
+# Intiface Desktop
 All I can say on the new ID at the moment is that work is continuing. I'm now working on bringing device configuration and testing in, which will get us back to parity with the old system, and make the new version ready for Beta. The aforementioned naming/allow/deny UI will hopefully be folded into this.
 
 That's it for now. Until next week, Keep Buttpluggin'!

@@ -4,7 +4,7 @@ date: 2020-06-08
 ---
 It's possible to feel like you're living in the future even when time has lost all meaning, I guess.
 
-### Buttplug
+# Buttplug
 Thanks to the obsessive refactoring and cleanup work I've been doing over the past couple of weeks, this weekend I got to a point where I could try one of the big goals of the rust rewrite of Buttplug: compiling to WASM.
 
 <!--truncate-->
@@ -31,7 +31,7 @@ For developers, debugging this will be a little more difficult since the code is
 
 Still though, the dream of having a single Buttplug implementation is one step closer. I thought buttplug-wasm was still a couple of months away at least, so this is super exciting.
 
-### **Game Haptics Router**
+# **Game Haptics Router**
 Got a couple of pieces of GHR news!
 
 ROCKET LEAGUE WORKS AGAIN! I don't know how, but it does! For some reason, only in windowed mode, but still! This doesn't even require a GHR upgrade. It seems to just work.

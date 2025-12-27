@@ -4,7 +4,7 @@ date: 2019-09-16
 ---
 More than usual, less than I want.
 
-### Buttplug
+# Buttplug
 Managed to get buttplug-py 0.1.0 out the door. With that and the tutorial being done, I'm hoping to get back to low level protocol development. This will including adding new features to the base system, like:
 
 <!--truncate-->
@@ -25,13 +25,13 @@ For hardware, here's what we've got coming up:
  - The Handy (more about this later in this update)
  - Motorbunny
 
-### Intiface
+# Intiface
 Not a lot happening here at the moment, though I'm considering adding a file hosting mechanism to Intiface Desktop, so that it's easier to access movies/haptic files on desktop from phones or standalone VR Headsets. This would make Syncydink much more useful. Might chuck that together as a weekend project or something.
 
-### Games
+# Games
 I'm in talks with a few more game developers, hopefully looking at more game integration soon! Will actually announce which games these are once things are solidified. 
 
-### Hardware
+# Hardware
 I don't usually advertise hardware, but The Handy is back on sale after being off the market for 5 months, and at a new $149 price point.
 
 [https://thehandy.com](https://thehandy.com)

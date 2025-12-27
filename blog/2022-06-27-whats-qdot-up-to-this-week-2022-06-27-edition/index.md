@@ -4,7 +4,7 @@ date: 2022-06-27
 ---
 ALL HAIL SCALARCMD
 
-### Buttplug
+# Buttplug
 Buttplug development is back on track! After one last overhaul of part of the configuration system (for those keeping count, that's the 8th time I've had to do a major refactor on it this year. But this'll be the last one. Really. Maybe. I think), I've finally moved to adding new messages to the Buttplug protocol.
 
 <!--truncate-->
@@ -15,7 +15,7 @@ The work to integrate this throughout the library is happening now. Once that's 
 
 Once I have something to Beta, I'll let everyone on patreon know. :)
 
-### Intiface Desktop/Mobile
+# Intiface Desktop/Mobile
 I've started working on some of the new Flutter code for Intiface Desktop/Mobile. Due to the amount of new features coming in Buttplug v6, it'll need to ship with a new version of Intiface, and while the Rust version was coming along, the Mobile part is just too good to pass up, so Flutter it is.
 
 That's it for now. Until next week, Keep Buttpluggin'!

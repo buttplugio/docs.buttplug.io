@@ -1,7 +1,9 @@
 ---
 title: "Early Access Kiiroo Keon Unboxing And Analysis"
 date: 2020-11-18
----New video, released for patrons a day early!
+---
+
+New video, released for patrons a day early!
 
 Watch me yammer for like 20 minutes about the Kiiroo Keon.
 

@@ -4,7 +4,7 @@ date: 2025-07-07
 ---
 Edging ever closer to the v4 release...
 
-### Buttplug
+# Buttplug
 Buttplug Spec v4 and library v10 is... mostly feature complete! I think! Maybe!
 
 <!--truncate-->
@@ -23,12 +23,12 @@ If you're curious about what's left, the tracking bug is being kept up to date:
 
 I'd like to get the Buttplug v10/Intiface Central v3 release done before the end of July, but it kind of depends on how much I continue to change things, and documentation/testing I can get done.
 
-### Intiface Central
+# Intiface Central
 Intiface Central is now building against the new spec, and seems to be working pretty well. I'm trying to figure out what prerelease builds will look like, but I'm hoping to have a build for people to try up soon. This will be an important step in making sure the new version is ready to release, since pretty much every part of the library code got touched at some point over the past 2-3 years of development.
 
 Probably the most interesting thing here outside of all of the underlying changes (which will make things hopefully more robust for users, but probably won't be noticable) is that I'm still hoping to release an HTTP REST API built into Central, for easy access to toy control. No more being required to use websockets! (Though I will still recommend that :| )
 
-### Everything Else
+# Everything Else
 
 - A lot of people making Keyboard/Mouse pickup software now! We've got [VibeMapper](https://github.com/LivingTh1ng/VibeMapper), [Lewd Input Viewer](https://github.com/Namaztak/lewd_input_viewer/), and at least one other in the works!
 

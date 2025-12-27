@@ -1,7 +1,9 @@
 ---
 title: "This Is The Buttplug That Never Ends It Just Goes On And On My Friiiiends"
 date: 2017-06-19
----We're now 8 weeks out from the first commit in the buttplug-csharp repo. Someday we'll get to a release. Someday. Since the last update:
+---
+
+We're now 8 weeks out from the first commit in the buttplug-csharp repo. Someday we'll get to a release. Someday. Since the last update:
 
 - We now have 2 developers working on Buttplug, soon to be 3!
 

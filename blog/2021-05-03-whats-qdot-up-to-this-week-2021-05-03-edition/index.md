@@ -4,7 +4,7 @@ date: 2021-05-03
 ---
 Just rethinking large portions of the project. Again. :|
 
-### Buttplug and Lovense Connect
+# Buttplug and Lovense Connect
 So it turns out I was not aware of exactly how "Lovense Connect" works.
 
 <!--truncate-->
@@ -22,10 +22,10 @@ The problem now is that this splits Buttplug into being both local control and p
 
 I'm going to be writing up a series of blog posts on this, as well as the future of Buttplug, over on the Nonpolynomial Blog ([https://nonpolynomial.com/blog).](https://nonpolynomial.com/blog).) I'll post here when those are up.
 
-### Other Buttplug News
+# Other Buttplug News
 I've also been doing a lot of work to make Buttplug more extensible. We've been getting more and more DIY builders in our Discord, but I hadn't added a way to add protocols to Buttplug without having to modify and recompile the whole library yet. I've simplified that and made adding both protocols and device communication managers easier, so the system is fairly flexible now. This means that people can either build code for their own hardware, or else add hardware support I've been avoiding. Of course, it could use some documentation...
 
-### Everything Else
+# Everything Else
 
  - So documentation is going to be my goal for this month, alongside the aforementioned design work around figuring out online services, and...
  - Updating Intiface Desktop! Intiface Desktop needs documentation VERY badly, as well as UI updates to deal with selecting comm managers (so you can turn off the Lovense Connect stuff if you won't use it). Hoping I can line all of this work up.

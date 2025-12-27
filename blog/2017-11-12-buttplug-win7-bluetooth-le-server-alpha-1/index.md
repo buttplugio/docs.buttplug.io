@@ -1,7 +1,9 @@
 ---
 title: "Buttplug Win7 Bluetooth Le Server Alpha 1"
 date: 2017-11-12
----Here we go.[https://ci.appveyor.com/api/buildjobs/3lohva12t662uun2/artifacts/ButtplugNodeServer-1.0.9.7z](https://ci.appveyor.com/api/buildjobs/3lohva12t662uun2/artifacts/ButtplugNodeServer-1.0.9.7z)
+---
+
+Here we go.[https://ci.appveyor.com/api/buildjobs/3lohva12t662uun2/artifacts/ButtplugNodeServer-1.0.9.7z](https://ci.appveyor.com/api/buildjobs/3lohva12t662uun2/artifacts/ButtplugNodeServer-1.0.9.7z)
 
 Please do not pass this URL around. This is not meant for general public consumption yet.
 

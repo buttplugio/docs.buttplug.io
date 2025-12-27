@@ -10,7 +10,7 @@ Did you know proxemics is a thing? I didn't until like, yesterday. So I've got a
 
 Anyways.
 
-### Buttplug
+# Buttplug
 The Rust version of Buttplug is almost possibly maybe usable sorta. The client can make things vibrate, but is still missing important functionality like "Being able to disconnect from the server", which is something people probably want to do.
 
 There's documentation up now too: 
@@ -19,7 +19,7 @@ There's documentation up now too: 
 
 Probably gonna be a pretty quiet week on development since I'm in Irvine for most of the week.
 
-### Hardware
+# Hardware
 I have a Lelo F1s now, and other project members are getting them soon, so expect support there.
 
 Also, while it's not my project, the IoST Index site now has its own domain that you can pass to people who want to marvel at exactly how much hardware is out there:

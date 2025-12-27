@@ -4,7 +4,7 @@ date: 2024-09-09
 ---
 Too much stuff!
 
-### Buttplug/Intiface Central
+# Buttplug/Intiface Central
 Finally got a new version of buttplug-rs and Intiface Central released! This implements the beginnings of our new v4 message spec, though it's only visible internally in the library right now. I've shipped it as part of the current Intiface Central so we can get people testing it though.
 
 <!--truncate-->
@@ -13,7 +13,7 @@ Which is why I had to quickly release an Intiface Central v2.6.2, because we fou
 
 Anyways, now that Central/Buttplug are basically stable, work now turns to adding new messages to v4 and trying to get those stabilized via testing with some of our trusted developers. More on that as it happens!
 
-### Twitch
+# Twitch
 In the mean time, I've also started a twitch channel!
 
 [https://twitch.tv/buttplugio](https://twitch.tv/buttplugio)
@@ -34,7 +34,7 @@ Please let me know if you've got topics you'd like to see on stream! I'll probab
 
 - Building out device visualizers on stream since I can't really show real hardware
 
-### Everything Else
+# Everything Else
 
 - I built a Peglin mod! You can check it out here: [https://thunderstore.io/c/peglin/p/nonpolynomial/Pegginglin/](https://thunderstore.io/c/peglin/p/nonpolynomial/Pegginglin/)
 

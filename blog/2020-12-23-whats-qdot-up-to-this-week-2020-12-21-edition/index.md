@@ -4,7 +4,7 @@ date: 2020-12-23
 ---
 DAMNIT V1 WILL HAPPEN. SOON.
 
-### Buttplug
+# Buttplug
 So close. So damn close.
 
 <!--truncate-->
@@ -19,7 +19,7 @@ There's going to be tons of bugs to fix and new features to add once v1 is done,
 
 I'm off from my dayjob from Christmas thru NYE, so I'll have a week to figure out what's next.
 
-### Everything Else
+# Everything Else
 Soon after v1 drops, outside of figuring out what's next, I'd like to:
 
  - Updating the website for the first time in many many months.

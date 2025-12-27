@@ -1,7 +1,9 @@
 ---
 title: "Intiface Mobile More Likely Than You Or I Think"
 date: 2019-06-29
----Earlier this weekend, someone submitted a pull request to Buttplug C# to add Xamarin support for Bluetooth. Xamarin is basically a way to run C# code on phones (versus having to write Java for Android and Swift/ObjC for iPhone). 
+---
+
+Earlier this weekend, someone submitted a pull request to Buttplug C# to add Xamarin support for Bluetooth. Xamarin is basically a way to run C# code on phones (versus having to write Java for Android and Swift/ObjC for iPhone). 
 
 While the core (non-device handling parts) of Buttplug run on pretty much all platforms, Bluetooth has been what's blocking us from running on phones and actually being useful. I'd originally planned on trying to make a Buttplug JS mobile application (via either reactNative or NativeScript) 'cause I'd heard Bad Things about Xamarin, but since someone was just handing me the code, I figured "why not" and build the included demo app for Android and iOS.
 

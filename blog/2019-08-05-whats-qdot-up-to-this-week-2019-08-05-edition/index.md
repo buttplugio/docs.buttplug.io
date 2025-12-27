@@ -8,7 +8,7 @@ Except Syncydink. Again.
 
 <!--truncate-->
 
-### Buttplug / Intiface / Web Components
+# Buttplug / Intiface / Web Components
 Most of the work over the past couple of weeks has been finishing up the device configuration work I started earlier this year.
 
 To make a short story long:
@@ -25,7 +25,7 @@ This means that, if companies add new toys that use a protocol we've already imp
 
 I've made releases of Buttplug C#/JS, Intiface Desktop, and the Vue Components (updated Buttplug Playground too) that all incorporate this. Syncydink still needs to be brought up to the new Vue Component, so that'll still take a bit. Soon tho. I hope.
 
-### What's Next
+# What's Next
 
  - Still need to finish the Intiface Tutorial
  - Titan 1.1 owners are yelling at me for support (gotta figure out protocol changes)

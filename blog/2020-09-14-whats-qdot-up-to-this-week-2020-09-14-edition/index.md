@@ -4,7 +4,7 @@ date: 2020-09-14
 ---
 Trying to figure out what's next!
 
-### Intiface/Intiface Rust CLI/Buttplug
+# Intiface/Intiface Rust CLI/Buttplug
 For those of you that have joined since like, May 2019: Welcome to the normal development cycle!
 
 <!--truncate-->
@@ -17,7 +17,7 @@ As I sent a quick note about last week, I finally brought Intiface Desktop up to
 
 Along the way, I also fixed some bugs in Intiface CLI RS and buttplug-rs, so the hope is that things will be fairly stable for the next week or two.
 
-### What's Next?
+# What's Next?
 The image attached to this post is an exercise I do every so often when starting a new phase of a project. I'll sit down with a piece of paper and a pen, and write down everything I can think of that I still want/need to do that's been sitting in my head. No reference to bug databases, project logs, etc, just want to see what all I've been holding as important. Afterwards, I'll take that list and compare it to what's in the issues sections of repos, kanban boards, etc.
 
 In this case, I ended up with... a lot. This doesn't even cover missing toy protocol implementations, which I specifically left out because it's not really a project level thing. I'm gonna be working through turning all of these ideas into bigger epics this week, then comparing against what's in the system otherwise.

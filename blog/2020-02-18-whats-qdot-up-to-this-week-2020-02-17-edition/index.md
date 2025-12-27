@@ -4,7 +4,7 @@ date: 2020-02-18
 ---
 Yesterday was a US Holiday so this update is happening a day late. :)
 
-### Buttplug
+# Buttplug
 Releases! So many releases!
 
 <!--truncate-->
@@ -22,7 +22,7 @@ Next plans include:
  - Adding v2 spec to buttplug-rs (battery! rssi! patterns!)
  - Lots of documentation for everything
 
-### Travel and Conferences
+# Travel and Conferences
 I'll be in Chicago next week for OOOHack ([http://commiserate.life/sthack),](http://commiserate.life/sthack),) then I'll be at GDC in SF March 18-20, and will be speaking at 3pm on the 20th.
 
 That's it for this week. Until next week, Keep Buttpluggin'!

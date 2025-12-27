@@ -4,7 +4,7 @@ date: 2022-06-07
 ---
 Been a while since I've dropped off updates for a whole ass month.
 
-### Buttplug
+# Buttplug
 So it turns out if you rush the development of a thing to get it done then sit on it for 2+ years, it takes a while to clean it up. In this case, months.
 
 <!--truncate-->
@@ -19,7 +19,7 @@ Which will hopefully mean LevelCmd and lots more device support.
 
 There's a bunch of Quality of Life things this fixes too, like most protocol implementations being like, 30 lines of code now, but it's QoL for me and like, 1-2 other people. :)
 
-### Intiface Desktop and Mobile
+# Intiface Desktop and Mobile
 This is where shit gets weird. In the last update, I mentioned that I was looking at building Intiface Mobile, probably using native APIs.
 
 [Then this comment on btleplug happened](https://github.com/deviceplug/btleplug/issues/8#issuecomment-1132878595).
@@ -30,7 +30,7 @@ Using this as a template, I may be able to have Desktop and Mobile all run under
 
 I'm researching this in the background while finishing up Buttplug v6, but would really like to have some sort of mobile solution for toy connections ASAP, because the discord gets more and more desktop bluetooth support requests daily, and I'm not sure how much longer we can keep up.
 
-### Not Buttplug
+# Not Buttplug
 With all of that happening, what am I currently working on?
 
 Eye tracking. >.>

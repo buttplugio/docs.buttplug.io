@@ -8,7 +8,7 @@ Not really sure I *want* talk to about what I'm up to because it's kind of embar
 
 <!--truncate-->
 
-### Buttplug
+# Buttplug
 I'd been planning on working on documentation in Buttplug for most of May. At the end of April, I was tackling serial port dev, but it was getting mired in eccentricities which were taking longer than I expected to resolve, so midway thru May I did actually switch over to documenting code.
 
 *Then the trouble began.*
@@ -30,7 +30,7 @@ Unfortunately, cleanup is not all that much fun to talk about, but my hope is th
 
 Having the code documented will also hopefully make it more usable for others, and quicker to fix for me, because untangling whatever I was thinking last October when I first put this together was... different than my understanding now.
 
-### Nonpolynomial
+# Nonpolynomial
 Nonpolynomial, the startup I founded that backs Buttplug, Intiface, and some other projects, is getting some branding! I've been working with a design studio on this since last August, and the new company identity is almost ready for preview! I'll also be setting up a company blog there so I can stop just making twitter threads constantly. :|
 
 So, that's unfortunately it. Not a ton of sex toy talk this week, more meta stuff. Looking forward to getting out of the cleanup/documentation weeds and back to more fun (or at least flashy) stuff soon.

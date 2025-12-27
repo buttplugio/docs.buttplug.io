@@ -1,9 +1,11 @@
 ---
 title: "Whats Qdot Up To This Week 2020 12 28 V1 Launch Edition"
 date: 2020-12-28
----LAUNCHING V1. WOOOOOOOOOOOOO.
+---
 
-### Buttplug
+LAUNCHING V1. WOOOOOOOOOOOOO.
+
+# Buttplug
 I LAUNCHED V1.
 
 <!--truncate-->
@@ -36,7 +38,7 @@ The rest of the week is going to be continued cleanup, as well as starting work 
 
 Ideally I could finish all of this (minus documentation) in the next couple of days, but that's a pretty long list now that I've typed it out, so, uh, we'll see.
 
-### What's Next That's Not Maintenance
+# What's Next That's Not Maintenance
 Here's some possible upcoming projects:
 
  - OSR2 Support, finally.

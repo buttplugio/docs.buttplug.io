@@ -8,7 +8,7 @@ I seem to have recovered from my coding burnout, while simultaneously getting VR
 
 <!--truncate-->
 
-### Buttplug
+# Buttplug
 Finally released Buttplug v5.1! This has important features like:
 
  - Lovense Gush/Hyphy, Satisfyer support built in, along with extended support for Svakom, ManNuo, LoveDistance and Kiiroo toys
@@ -22,10 +22,10 @@ I've also finally updated the C# and Javascript/WASM libraries to work with the 
 
 This was a pretty big release, and I'm hoping it's the last one before v6.0, which will have new messages in it, allowing us to support things like some fucking machines and the Lovense Max Air Bladder (finally). Expect work on that to begin after I finish up the alpha for the new Intiface Desktop.
 
-### Intiface Desktop
+# Intiface Desktop
 Work on the new Intiface Desktop (written in Rust instead of Electron) continues, and is mostly ready to ship as an alpha version to patrons! It'll be extremely rough around the edges to start, and I'll be making a lot of UI changes before it gets to public beta, but I'm definitely excited to get it out to people to start playing with! There won't be a lot of new functionality up from that will be interesting for users, but the system itself should be far more stable, and will allow users to report crashes and other errors far more easily than me trying to ask questions over discord.
 
-### Other Stuff
+# Other Stuff
 
  - I still have 3 videos waiting to finish editing >.> Coding has been top priority for now, but hoping to get to video content soon.
  - I'm now working with devs from [Nudica](https://nudi.ca/blog/) and [Heat](http://patreon.com/heatgame) for Buttplug integration into their games!

@@ -1,7 +1,9 @@
 ---
 title: "What Would You Like Me To Be Working On"
 date: 2020-04-21
----It's been a while since I've asked this and I'm curious whether my plans line up with what others are looking for from my work.
+---
+
+It's been a while since I've asked this and I'm curious whether my plans line up with what others are looking for from my work.
 
 I'm running this poll over on twitter right now too ([https://twitter.com/buttplugio/status/1252769543560196096](https://twitter.com/buttplugio/status/1252769543560196096)), but since y'all give me money I might actually listen to the results here. :)
 

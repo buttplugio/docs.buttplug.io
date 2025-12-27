@@ -1,9 +1,11 @@
 ---
 title: "Buttplug Unity Is A Thing Whats Qdot Up To This Week 2020 06 15 Edition"
 date: 2020-06-15
----AN ACTUAL PATREON PERK: I HAVEN'T ANNOUNCED THIS ANYWHERE (BUT DISCORD) YET
+---
 
-### Buttplug Unity
+AN ACTUAL PATREON PERK: I HAVEN'T ANNOUNCED THIS ANYWHERE (BUT DISCORD) YET
+
+# Buttplug Unity
 I've had people prodding me for Buttplug support in Unity pretty much since Buttplug began. Of course, when Buttplug began, Unity didn't really support .Net Framework 4 yet, and packaging for it wasn't something I was familiar with.
 
 <!--truncate-->
@@ -18,7 +20,7 @@ If you've got questions, please hop on the #unity channel on discord, happy to h
 
 Exciting times ahead!
 
-### Buttplug Rust
+# Buttplug Rust
 Ok back to talking about stuff only I care about.
 
 Buttplug Rust continues to get the rough edges sanded off of it. This week I made it possible for mere mortals to add new protocols (It was using a macro setup that was WAY too complex for what was needed), add the new all new shiny Raw Protocol (so you can just fling byte arrays at endpoints and do things like reflashing firmware. I'm sure I won't regret this :| ), fixed some huge bugs in order of operations for protocols, and continued on general cleanup.
