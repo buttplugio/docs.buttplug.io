@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 12 20 Edition
+date: 2021-12-20
+---
 So damn close...
 
 ### Buttplug

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 03 25 Edition
+date: 2019-03-25
+---
 Survived Pittsburgh. Now back at home and trying to make body adjust back to my normal timezone.
 
 ### Stickers!

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 02 25 Edition
+date: 2019-02-25
+---
 Being sick for at least half of it. :(
 
 But, that doesn't mean work isn't happening!

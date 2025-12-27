@@ -1,3 +1,7 @@
+---
+title: New Version Of Buttplug Playground Is Live
+date: 2018-05-03
+---
 [https://buttplug.world/playground](https://buttplug.world/playground)Finally finished overhauling Playground with Typescript 2.8, Vuetify, Webpack 4, etc... It's now much cleaner codewise, though also 75% larger somehow (probably due to some issues with Vuetify that I'm still waiting on resolutions for).
 
 For new patrons out there: Playground is the our web-based minimal testing/control application. It allows you to connect to vibrating/rotating/stroking devices and set controls for them. It doesn't do much, but it's super handy if you don't need to do much. :)

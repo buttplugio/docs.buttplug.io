@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 07 08 Edition
+date: 2019-07-08
+---
 Dear god why do people keep coming to me with interesting projects when I have so much boring work to do!
 
 ### Buttplug

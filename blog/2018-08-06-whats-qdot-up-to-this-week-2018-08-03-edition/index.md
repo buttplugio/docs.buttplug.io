@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 08 03 Edition
+date: 2018-08-06
+---
 When it rains, it pours.Even though no one may really notice. >.>
 
 I spent all of Friday evening and most of Saturday completely rewriting our C# Client interface. The current version didn't really mesh with the Client code in our Javascript library, and I wanted similar architectures between the two so that I could write one set of documentation for both APIs. We're now much closer to that possibility.

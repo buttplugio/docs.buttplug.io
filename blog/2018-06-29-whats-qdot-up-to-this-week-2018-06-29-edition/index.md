@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 06 29 Edition
+date: 2018-06-29
+---
 Javascript, javascript, and more javascript. Well, ok, it's actually all Typescript. But you get the idea.buttplug-js has been lagging behind our C# libraries for a while, so I spent the first chunk of this week bringing it up to date, and buttplug-js v0.8.0 is out now. We now have Lovense device queries working everywhere, which is a massive help for the new versions of firmware constantly being released. Also fixed quite a few bugs.
 
 Once that was finished, it was time to go update the rest of the apps that depend on it. I've updated our Twine and Tutorial apps, so they run on the new version. Buttplug Playground also got an update, and now supports per-feature control, meaning if you have a piece of hardware with multiple features (like the Lovense Edge, Max, Nora, or Mysteryvibe Crescendo), you can now control motors/rotators/etc individually).

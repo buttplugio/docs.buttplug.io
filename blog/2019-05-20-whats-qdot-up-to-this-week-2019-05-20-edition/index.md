@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 05 20 Edition
+date: 2019-05-20
+---
 I'm jobless! Now working on Buttplug/Intiface full time! For a whole week! Then I have another job!
 
 Unfortunately, it turns out I may be a little obsessed with game modding now.

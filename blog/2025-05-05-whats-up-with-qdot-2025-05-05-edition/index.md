@@ -1,3 +1,7 @@
+---
+title: Whats Up With Qdot 2025 05 05 Edition
+date: 2025-05-05
+---
 What once was a weekly newsletter is quickly turning bi-annual heh.
 
 ### Intiface Central

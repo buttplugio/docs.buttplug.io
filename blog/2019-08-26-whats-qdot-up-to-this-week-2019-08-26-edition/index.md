@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 08 26 Edition
+date: 2019-08-26
+---
 PENS.
 
 SO MANY PENS.

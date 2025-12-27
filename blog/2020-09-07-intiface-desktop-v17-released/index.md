@@ -1,3 +1,7 @@
+---
+title: Intiface Desktop V17 Released
+date: 2020-09-07
+---
 [https://intiface.com/desktop](https://intiface.com/desktop)
 
 And with that, a year of work hits its first release point.

@@ -1,3 +1,7 @@
+---
+title: Syncydink Vr Works On Android Chrome
+date: 2017-08-21
+---
 I've just updated the Syncydink tutorial, because thanks to some nudging from a new patreon on here, I just finished some fixes and we now work on Android Chrome with VR and no extra software/apps required![https://metafetish.club/t/tutorial-syncydink-v20170821/82](https://metafetish.club/t/tutorial-syncydink-v20170821/82)
 
 Basic steps:

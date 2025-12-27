@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 06 24 Edition
+date: 2019-06-24
+---
 So remember when I was all "Wow I can still code during new job! I can't believe I haven't hit a wall yet!"
 
 Guess who hit the wall.

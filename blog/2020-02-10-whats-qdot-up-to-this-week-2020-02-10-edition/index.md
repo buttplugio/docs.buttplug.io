@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 02 10 Edition
+date: 2020-02-10
+---
 AND WE'RE BACK
 
 ### Buttplug

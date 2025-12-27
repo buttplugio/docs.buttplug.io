@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2023 04 17 Edition
+date: 2023-04-17
+---
 Oops more platform support?
 
 ### Intiface Central

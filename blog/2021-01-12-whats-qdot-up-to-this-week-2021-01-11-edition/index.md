@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 01 11 Edition
+date: 2021-01-12
+---
 Fuuuuuuuuuuck.
 
 ### Buttplug

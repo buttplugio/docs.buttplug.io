@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 03 23 Quarantine Edition
+date: 2020-03-23
+---
 Not leavin' the house. That's what.
 
 ### Buttpluggin' With qDot

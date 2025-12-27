@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 07 06 Edition
+date: 2018-07-08
+---
 A couple of days late, but I'll blame that on the Steam sale selling me Metal Gear Solid 5 for cheap and getting me addicted to it. Sure.*attaches fulton extraction device to buttplugs*
 
 Anyways, busy week around Buttplug Labs before that! Finally got the new version of Syncydink out after 7 months of quiet. I'm now working on doing rolling releases of it with smaller features, since that overhaul took so long.

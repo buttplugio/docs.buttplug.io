@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 10 26 Edition
+date: 2018-10-29
+---
 Being an old man that yells at clouds, mostly.For some reason I decided to go all "IT'S TIME FOR SOME GAME THEORY" on twitter this weekend which ended up as 2 threads about machine learning and blowjobs on twitter:
 
 [https://twitter.com/qDot/status/1055865846726152192](https://twitter.com/qDot/status/1055865846726152192)

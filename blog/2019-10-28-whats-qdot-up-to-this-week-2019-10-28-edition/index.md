@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 10 28 Edition
+date: 2019-10-28
+---
 Enjoying having electricity again!
 
 My power went out as part of the California wildfire outages that've been all over the new. We were out for just under 48 hours.

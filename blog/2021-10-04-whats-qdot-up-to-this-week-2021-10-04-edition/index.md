@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 10 04 Edition
+date: 2021-10-04
+---
 Intiface Desktop!
 
 ### Intiface Desktop

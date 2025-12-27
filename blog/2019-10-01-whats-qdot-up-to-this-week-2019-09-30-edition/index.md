@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 09 30 Edition
+date: 2019-10-01
+---
 Crap when did it become Tuesday.
 
 ### Buttplug

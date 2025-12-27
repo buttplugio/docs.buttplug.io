@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 09 14 Edition
+date: 2020-09-14
+---
 Trying to figure out what's next!
 
 ### Intiface/Intiface Rust CLI/Buttplug

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 03 30 Isolation Edition
+date: 2020-03-30
+---
 Well this first header is not something I would've expected to be writing last week.
 
 ### Buttplug Teledildonics

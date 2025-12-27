@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 02 21 Edition
+date: 2022-02-21
+---
 Same as it ever was...
 
 ### Buttplug

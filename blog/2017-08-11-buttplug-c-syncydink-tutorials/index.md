@@ -1,3 +1,7 @@
+---
+title: Buttplug C Syncydink Tutorials
+date: 2017-08-11
+---
 I've written up some quick tutorials to give an overview of what's currently available in Buttplug C# 0.1.0 and Syncydink.Buttplug C# 0.1.0:
 
 [https://metafetish.club/t/buttplug-c-0-1-0-tutorial/80](https://metafetish.club/t/buttplug-c-0-1-0-tutorial/80)

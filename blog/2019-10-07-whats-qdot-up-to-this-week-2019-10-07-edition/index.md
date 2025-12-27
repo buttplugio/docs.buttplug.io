@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 10 07 Edition
+date: 2019-10-07
+---
 Rust. That's it. Just rust.
 
 ### Buttplug

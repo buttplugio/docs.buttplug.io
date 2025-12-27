@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week A Lot 2023 09 11 Edition
+date: 2023-09-11
+---
 Ok well I guess I'm back on the development wagon.
 
 ### Buttplug Teledildonics

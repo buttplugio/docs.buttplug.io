@@ -1,3 +1,7 @@
+---
+title: Intiface Desktop Rust Egui Alpha 3
+date: 2021-12-27
+---
 No alpha survives first contact with users.
 
 New version is attached.

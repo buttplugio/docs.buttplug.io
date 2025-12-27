@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 07 13 Edition
+date: 2020-07-13
+---
 Gloriously boring shit!
 
 ### Stickers

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 08 10 Edition
+date: 2018-08-12
+---
 It's been a week of me being angry at me from a year ago, mostly.Work on cleaning the Buttplug C# codebase continues. I'm currently trying to get all of the changes I've made over the past week finished enough to merge the code and figure out what all there is to do after this. This is hindered by me constantly running into something I did in the early months of the project and having to sit there for a while going "What was I thinking?".
 
 The nice part of this is that I now have an updated perspective on the state of ALL of the code in Buttplug, which will hopefully mean I can write coherent documentation about it once I finish this overhaul. One of the major goals of this C# work is to make it so I can write one document for developers that has both C# and Typescript/Javascript in it, and that's pretty close to possible now.

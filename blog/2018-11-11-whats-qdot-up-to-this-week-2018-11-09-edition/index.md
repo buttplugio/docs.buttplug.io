@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 11 09 Edition
+date: 2018-11-11
+---
 Well, after releasing Buttplug C# 0.3.0, someone found a bug, so I released 0.3.1 this week! Yay releases that take less than 5 months!I'm also talking to the author of ScriptPlayer about starting to port it to Buttplug C# 0.3 at some point. This would remove the Websocket requirement (as we now have other, more direct ways to connect. If you're wondering, it's IPC over Named Pipes), making connection much easier.
 
 We've also identified a Bluetooth chipset that none of our software seems to work with. Qualcomm Atheros Bluetooth (usually built into motherboards on laptops) doesn't seem to work with Buttplug *at all*. I'm not sure what's up, but I've been doing a lot of support on that lately.

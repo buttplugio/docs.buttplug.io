@@ -1,9 +1,7 @@
 ---
 title: Sex Toy Reverse Engineering Update
 date: 2023-03-15
----
-
-A public patreon update, just to give everyone an idea of the kind of work that patreon dollars fun! (Well and also because this is a [metafetish.com ](http://metafetish.com) post anyways)Most of the reverse engineering happening now is in preparation for getting v0.1 of [Buttplug](http://buttplug.io/) out the door. What that release will actually look like is anyone's guess, but the more toys we have documented and reversed, the better. I'll usually be covering reverse engineering and software development work over on [the Buttplug.io blog](http://buttplug.io/blog) and leaving this blog for featuring news, business, and other people's projects (with buttplug update posts every so often), but I'm taking this opportunity to update both places since I haven't written anything about my own work in a while.
+---A public patreon update, just to give everyone an idea of the kind of work that patreon dollars fun! (Well and also because this is a [metafetish.com ](http://metafetish.com) post anyways)Most of the reverse engineering happening now is in preparation for getting v0.1 of [Buttplug](http://buttplug.io/) out the door. What that release will actually look like is anyone's guess, but the more toys we have documented and reversed, the better. I'll usually be covering reverse engineering and software development work over on [the Buttplug.io blog](http://buttplug.io/blog) and leaving this blog for featuring news, business, and other people's projects (with buttplug update posts every so often), but I'm taking this opportunity to update both places since I haven't written anything about my own work in a while.
 
 First off, all of our documentation and code repos are still at
 

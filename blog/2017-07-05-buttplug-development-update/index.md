@@ -1,3 +1,7 @@
+---
+title: Buttplug Development Update
+date: 2017-07-05
+---
 Funny how a month can fly by without noticing. I just made a quick update on metafetish about the current state of the buttplug repos, after realizing I didn't post anything at all during June. [https://www.metafetish.com/2017/07/05/metafetish-dev-log--week-of-20170703/](https://www.metafetish.com/2017/07/05/metafetish-dev-log--week-of-20170703/)
 
 Now for the more in-depth version:

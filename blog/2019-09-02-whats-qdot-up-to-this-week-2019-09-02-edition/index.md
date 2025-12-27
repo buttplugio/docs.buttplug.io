@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 09 02 Edition
+date: 2019-09-02
+---
 OMFG.
 
 I AM ACTUALLY CAPABLE OF FINISHING THINGS.

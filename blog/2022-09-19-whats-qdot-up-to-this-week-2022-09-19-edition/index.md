@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 09 19 Edition
+date: 2022-09-19
+---
 APPS
 
 ### Intiface Central

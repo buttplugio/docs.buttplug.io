@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 12 21 Edition
+date: 2020-12-23
+---
 DAMNIT V1 WILL HAPPEN. SOON.
 
 ### Buttplug

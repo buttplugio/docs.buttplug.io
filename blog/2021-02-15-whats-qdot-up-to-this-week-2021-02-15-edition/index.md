@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 02 15 Edition
+date: 2021-02-15
+---
 Being mad at The Handy?
 
 ### Buttplug

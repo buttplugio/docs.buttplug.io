@@ -1,9 +1,7 @@
 ---
 title: Coming Soon - An Application I Have Yet to Name But That Involves the Buttplug
 date: 2017-04-30
----
-
-Last week, after 4+ years of trying to figure out some completely cross platform solution before even starting to build my sex toy server application, I decided to just do a quick implementation in C#, which should at least cover Windows 10 Creators Update (possibly earlier versions if you don't mind losing BLE device support), and possibly iOS and Android if Xamarin works out.Turns out, this ended up being a pretty good idea, because I now have a basic system working that can communicate via json over websockets, to control the Fleshlight Launch, as well as gamepad rumble. I'm now working on getting a simple CLI and GUI together for it, as well as some documentation and tests, and I'm hoping to make a v0.0.1 release this week.
+---Last week, after 4+ years of trying to figure out some completely cross platform solution before even starting to build my sex toy server application, I decided to just do a quick implementation in C#, which should at least cover Windows 10 Creators Update (possibly earlier versions if you don't mind losing BLE device support), and possibly iOS and Android if Xamarin works out.Turns out, this ended up being a pretty good idea, because I now have a basic system working that can communicate via json over websockets, to control the Fleshlight Launch, as well as gamepad rumble. I'm now working on getting a simple CLI and GUI together for it, as well as some documentation and tests, and I'm hoping to make a v0.0.1 release this week.
 
 <!--truncate-->
 

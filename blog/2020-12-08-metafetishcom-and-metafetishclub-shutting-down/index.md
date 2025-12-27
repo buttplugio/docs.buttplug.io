@@ -1,3 +1,7 @@
+---
+title: Metafetishcom And Metafetishclub Shutting Down
+date: 2020-12-08
+---
 In my continuing goal of trying to maintain less zombie brands, I'm finally shutting down the Metafetish brand to focus on Buttplug/Intiface.
 
 For metafetish.com, this doesn't mean much. Blog hasn't been updated in years, and I'm getting a new blog for Nonpolynomial that I'll be doing long form posts too. I also just have no interest to be a general sex toy blogger anymore. I've kinda got a different perspective than when I started Slashdong/Metafetish, and my needs have changed with that. The blog itself will stay up on the domain in perpetuity (don't wanna link rot it), though with the static engine it used, it's also up and indexed on internet archive until whenever.

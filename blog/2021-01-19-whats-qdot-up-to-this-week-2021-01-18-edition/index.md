@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 01 18 Edition
+date: 2021-01-19
+---
 Buttplug v2!
 
 ### Buttplug

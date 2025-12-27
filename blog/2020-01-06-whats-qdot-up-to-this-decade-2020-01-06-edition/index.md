@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Decade 2020 01 06 Edition
+date: 2020-01-06
+---
 Same thing we do every decade, Pinky. Try to buttplug the world.
 
 ### Buttplug

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 09 21 Edition
+date: 2020-09-21
+---
 All the things!
 
 ### Stickers

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 05 26 Edition
+date: 2020-05-26
+---
 Coming in a day late because yesterday was a US holiday.
 
 Not really sure I *want* talk to about what I'm up to because it's kind of embarrassing but...

@@ -1,3 +1,7 @@
+---
+title: Intiface Desktop Rust Egui Alpha 2
+date: 2021-12-27
+---
 That was quick.
 
 New version attached to this message.

@@ -1,3 +1,7 @@
+---
+title: December Buttplug Update
+date: 2017-12-26
+---
 Thanks to the holidays I've been rather quiet, but that doesn't mean work isn't happening!However, that also doesn't mean the work is very interesting to anyone but core developers, either. :)
 
 As of last week, we've mostly finished up the new v1 implementation of the Buttplug Protocol Spec. This adds a couple of really important things:

@@ -1,3 +1,7 @@
+---
+title: Does Qdot Even Exist Anymore 2023 04 10 Edition
+date: 2023-04-10
+---
 Oof. Not particularly the past while. Life is getting in the way of Buttplug work. That said...
 
 ### Buttplug

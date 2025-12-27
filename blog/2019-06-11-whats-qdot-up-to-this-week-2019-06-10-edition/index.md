@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 06 10 Edition
+date: 2019-06-11
+---
 Somehow still managing to work on shit!
 
 New job is definitely busy, but I'm still managing to keep up on Buttplug/Intiface dev around it, which I'm pretty happy about. I figured I'd get nothing done over here in the first month or two, but things seem to be chugging along nicely.

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 05 06 Edition
+date: 2019-05-07
+---
 Getting a new job!
 
 And thus, fuck-all happened on the project this week, codewise, because engineering interviews are the fucking worst.

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 11 23 Edition
+date: 2020-11-24
+---
 I'm on vacation all week! Which means...
 
 I'm playing a lot of No Man's Sky, unexpectedly. I guess I find inventory shuffling fun?

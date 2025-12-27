@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 11 04 Edition
+date: 2019-11-04
+---
 Scrambling to finish my SLSA presentation on hidden haptics spaces in online games (aka using the GHR in online games) that I have to give on Friday!
 
 Did you know proxemics is a thing? I didn't until like, yesterday. So I've got a lot of reading to do now. :|

@@ -1,3 +1,7 @@
+---
+title: Buttplug Js Aka We Now Support Mac Linux Android Chromeos
+date: 2017-08-20
+---
 As of yesterday, I managed to get the javascript web technologies version of the Buttplug Server done. This is now integrated into Syncydink:[https://buttplug.world/syncydink](https://buttplug.world/syncydink)
 
 If you go to the site now in Chrome (and yes this requires chrome, for WebBluetooth, and you will need to use https), then go to the Buttplug tab and click on "connect local", the "Start scanning" button now triggers a search for devices.

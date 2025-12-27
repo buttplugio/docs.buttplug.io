@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 11 23 Edition
+date: 2018-11-25
+---
 Surviving. Barely.SLSA in Toronto went great. It was my first humanities conferences and I only barely embarrassed myself like, 3 or 4 times, max. I'll be doing a youtube version soon, not that the information will be new to anyone here.
 
 Since I got back, I've mostly been back to patching software. Both Buttplug C# and JS got point releases this week to fix yet another schema issue that new versions of JSON schema parsers seem to be picking up now. Yay more strictness, boo having it wrong in the first place.

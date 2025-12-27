@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 07 26 Edition
+date: 2021-07-26
+---
 Too god damn much bluetooth.
 
 ### BTLEPlug

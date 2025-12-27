@@ -1,3 +1,7 @@
+---
+title: New Episode Of Buttplugin With Qdot Buttplug Software Alpha Demo
+date: 2017-06-03
+---
 Episode 1 production time: 3 weeksEpisode 2 production time: 2 hours
 
 After getting support for translating Kiiroo commands to Gamepads, figured I'd finally post a demo of what the current state of Buttplug looks like. The good news is, I've also had a couple of outside testers who've managed to get it working with both gamepads and the Fleshlight Launch! This is starting to look like it may be releasable. :D

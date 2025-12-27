@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 02 08 Edition
+date: 2021-02-09
+---
 Figuring out what it is I do other than library work...
 
 ### Buttplug

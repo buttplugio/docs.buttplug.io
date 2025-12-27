@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 06 29 Edition
+date: 2020-06-30
+---
 Day late but HEY YOU GOT EXCLUSIVE CONTENT so I'll call it a fair trade.
 
 ### Intiface Console Game Haptics Router

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 10 24 Edition And Also Intiface Central
+date: 2022-10-24
+---
 Oof.
 
 ### Intiface Central

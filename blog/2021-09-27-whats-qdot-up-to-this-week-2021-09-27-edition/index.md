@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 09 27 Edition
+date: 2021-09-27
+---
 Rewrites!
 
 ### Intiface Desktop

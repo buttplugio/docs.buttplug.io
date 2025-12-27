@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 08 10 Edition
+date: 2020-08-11
+---
 Being a day late, but hey, at least there's
 
 ### Stickers

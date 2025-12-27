@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 06 08 Edition
+date: 2018-06-08
+---
 Ok, gonna try a new thing. Weekly updates! Just so you have some idea what's going on, since you're like, you know, paying me.These will probably get posted on Wednesdays from here on out.
 
 **This Week: **Unfortunately the update this week is gonna be super boring, because it's one of those super boring tasks weeks. Almost all of my time has been spent shuffling our hosting, so the end of this post is going to be about one of the topics nobody voted for in that last poll. :)

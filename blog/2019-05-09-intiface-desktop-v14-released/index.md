@@ -1,3 +1,7 @@
+---
+title: Intiface Desktop V14 Released
+date: 2019-05-09
+---
 Managed to break through my coding block a bit to get the new version of Intiface Desktop out.
 
 [https://github.com/intiface/intiface-desktop/releases/tag/v14.0.0](https://github.com/intiface/intiface-desktop/releases/tag/v14.0.0)

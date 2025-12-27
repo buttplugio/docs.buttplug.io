@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 02 04 Edition
+date: 2019-02-04
+---
 BUTT SABER
 
 So someone popped up in the discord yesterday and was all "Hey could you make the Game Vibration Router work with Beat Saber" and I was like "I'll take look" and well that blew the past 24 hours pretty nicely.

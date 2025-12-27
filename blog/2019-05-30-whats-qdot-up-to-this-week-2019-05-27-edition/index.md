@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 05 27 Edition
+date: 2019-05-30
+---
 Well, I'm definitely not jobless anymore.
 
 More just energyless now.

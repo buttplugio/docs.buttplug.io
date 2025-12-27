@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 07 05 Edition
+date: 2021-07-06
+---
 And suddenly, productivity.
 
 ### Buttplug/Intiface Desktop (Now with OSR-2 Support)

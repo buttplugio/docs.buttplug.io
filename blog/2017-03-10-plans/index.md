@@ -1,9 +1,7 @@
 ---
 title: Plans for the future
 date: 2017-03-10
----
-
-So maybe you're wondering why I started a patreon now, well after that bandwagon has already set down the highway at full speed? Like I said in the campaign description, there's a lot of toys coming out now. I really want to reverse engineer all of them so I can continue my plans for world domination via genital manipulation robots. However, it's getting kinda spendy to keep buying stuff myself. For instance, I dropped $600 on the ET-312 last year, and while we've gotten a HUGE amount of reversing milage out of that (more on that in a later post), that was still super spendy. 
+---So maybe you're wondering why I started a patreon now, well after that bandwagon has already set down the highway at full speed? Like I said in the campaign description, there's a lot of toys coming out now. I really want to reverse engineer all of them so I can continue my plans for world domination via genital manipulation robots. However, it's getting kinda spendy to keep buying stuff myself. For instance, I dropped $600 on the ET-312 last year, and while we've gotten a HUGE amount of reversing milage out of that (more on that in a later post), that was still super spendy. 
 
 <!--truncate-->
 

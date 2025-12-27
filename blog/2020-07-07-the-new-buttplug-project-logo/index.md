@@ -1,3 +1,7 @@
+---
+title: The New Buttplug Project Logo
+date: 2020-07-07
+---
 Say hello to the new Buttplug project logo!
 
 Complete with our domain name which I'm sure we'll never get kicked off of or lose registration on. >.>

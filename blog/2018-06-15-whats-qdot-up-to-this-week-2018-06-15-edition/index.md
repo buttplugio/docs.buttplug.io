@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 06 15 Edition
+date: 2018-06-15
+---
 Dear god, if I never talk about web browsers again it will be too soon.Too bad that's my dayjob. >.>
 
 Was at a dayjob meetup all week, so not much got done in terms of development on Buttplug. I mentioned this might be happening in the update last week, so no real surprises there.

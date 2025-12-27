@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 11 21 Edition
+date: 2021-11-22
+---
 More than last week! (An admittedly low bar.)
 
 ### Buttplug / Intiface Desktop

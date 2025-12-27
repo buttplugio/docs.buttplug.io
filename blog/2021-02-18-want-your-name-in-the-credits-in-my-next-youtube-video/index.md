@@ -1,3 +1,7 @@
+---
+title: Want Your Name In The Credits In My Next Youtube Video
+date: 2021-02-18
+---
 Hello, special people in my >= $10 tiers!
 
 I'm going to be adding a new perk to all of these tiers, the ability to get your name at the end of my youtube videos for as long as you're a patron at these levels!

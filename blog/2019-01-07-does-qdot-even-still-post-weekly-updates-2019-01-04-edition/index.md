@@ -1,3 +1,7 @@
+---
+title: Does Qdot Even Still Post Weekly Updates 2019 01 04 Edition
+date: 2019-01-07
+---
 Ostensibly, yes.
 
 The holiday break was surprisingly productive. I got a good bit of the "how to write a buttplug application" section of the Developer Guide written, did a few livestreams, posted an old presentation I did on youtube, and started cleaning up the MK312 repo to make it more accessible for people who want to build the board.

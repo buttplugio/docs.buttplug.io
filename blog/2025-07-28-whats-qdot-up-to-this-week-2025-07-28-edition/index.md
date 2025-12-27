@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2025 07 28 Edition
+date: 2025-07-28
+---
 Exciting new features!
 
 ### Buttplug

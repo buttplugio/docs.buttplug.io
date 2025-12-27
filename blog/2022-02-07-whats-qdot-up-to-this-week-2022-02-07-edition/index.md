@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 02 07 Edition
+date: 2022-02-07
+---
 A short one because...
 
 ### Buttplug

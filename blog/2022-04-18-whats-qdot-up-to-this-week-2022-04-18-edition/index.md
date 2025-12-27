@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 04 18 Edition
+date: 2022-04-18
+---
 Being very tired.
 
 **Personal News**

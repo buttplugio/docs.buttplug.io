@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2023 11 06 Edition
+date: 2023-11-06
+---
 So much for that Quiet End Of The Year wish.
 
 ### Life

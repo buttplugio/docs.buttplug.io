@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 07 17 Edition
+date: 2022-07-18
+---
 Oh so that's what Dart looks like
 
 ### Intiface Central

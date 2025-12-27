@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2023 11 27 Edition
+date: 2023-11-27
+---
 Scrubbing away technical debt
 
 ### Buttplug and Intiface Engine

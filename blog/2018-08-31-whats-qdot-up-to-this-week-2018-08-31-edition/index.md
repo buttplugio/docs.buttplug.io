@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 08 31 Edition
+date: 2018-08-31
+---
 An update! On time!If you guessed that I don't have much to say, congratulations, you're right! 
 
 This week has been more about fighting infrastructure than I would've liked. There's been some lingering breakage in how some of the Buttplug code is tested, and that ended up needing to be fixed and taking a non-trivial amount of time.

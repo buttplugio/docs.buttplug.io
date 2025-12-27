@@ -1,3 +1,7 @@
+---
+title: Coming Soon Diamo Modding Video
+date: 2021-10-25
+---
 Oh yeah, forgot to put this in the weekly update:
 
 I bought a second Lovense Diamo. Plan is to see if there's a way to cut the upper loop and use heatshrink to make the device more usable for those that find it too small, or that may want to use it with a chastity cage or something.

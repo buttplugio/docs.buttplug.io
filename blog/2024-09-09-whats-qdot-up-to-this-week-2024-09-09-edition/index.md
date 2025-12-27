@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2024 09 09 Edition
+date: 2024-09-09
+---
 Too much stuff!
 
 ### Buttplug/Intiface Central

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 08 01 Edition
+date: 2022-08-01
+---
 DONE! SORTA!
 
 ### Buttplug

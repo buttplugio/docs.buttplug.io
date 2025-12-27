@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 04 01 Edition
+date: 2019-04-01
+---
 Another week of Buttpluggin' updates!
 
 ### Stickers

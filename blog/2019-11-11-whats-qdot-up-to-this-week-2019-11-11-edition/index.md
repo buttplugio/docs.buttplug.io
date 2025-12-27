@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 11 11 Edition
+date: 2019-11-11
+---
 Recovering.
 
 ### SLSA

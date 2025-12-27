@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 11 09 Edition
+date: 2020-11-10
+---
 Ugh. Combination of health issues and dayjob really slowing things down, but...
 
 ### Buttplug

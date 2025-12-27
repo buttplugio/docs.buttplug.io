@@ -1,3 +1,7 @@
+---
+title: Intiface V11 Win10 Only Released
+date: 2019-04-10
+---
 [https://github.com/intiface/intiface-desktop/releases/tag/v11.0.0](https://github.com/intiface/intiface-desktop/releases/tag/v11.0.0)
 
 Ok so you may have noticed that last night I made a "Intiface v7 Released" post and it's 22 hours later and we're already to v11.

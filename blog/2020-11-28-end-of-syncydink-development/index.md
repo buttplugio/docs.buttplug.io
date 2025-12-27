@@ -1,3 +1,7 @@
+---
+title: End Of Syncydink Development
+date: 2020-11-28
+---
 Heads up in case anyone wants to jump ship before the subscription charge date (Dec 1).
 
 I'm dropping development of Syncydink, which is more to say I'm just going to admit defeat and not promise updates anymore. I'm going to archive the repo but leave it up just in case other people want to fork it. It might get updated in the future, but it won't be by me.

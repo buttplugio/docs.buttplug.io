@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 12 13 Edition
+date: 2021-12-13
+---
 AND WE'RE BACK.
 
 I seem to have recovered from my coding burnout, while simultaneously getting VR burnout. So now I'm writing a bunch of code but barely using VR.

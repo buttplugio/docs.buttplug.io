@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 01 13 Edition
+date: 2020-01-13
+---
 Oops I accidentally another library
 
 ### BtlePlug

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 05 11 Edition
+date: 2020-05-11
+---
 Dear sweet mother of god
 
 ### Media

@@ -1,3 +1,7 @@
+---
+title: Where The Hell Is Qdot 2022 12 19 Edition
+date: 2022-12-19
+---
 Oops.
 
 ### Life

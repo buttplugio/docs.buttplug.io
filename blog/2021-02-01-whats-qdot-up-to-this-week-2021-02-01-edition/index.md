@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 02 01 Edition
+date: 2021-02-01
+---
 Staring at polls.
 
 ### The Patreon Poll Results

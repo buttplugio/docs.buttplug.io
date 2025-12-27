@@ -1,3 +1,7 @@
+---
+title: Intiface Game Haptics Router In Model Content
+date: 2019-07-26
+---
 It's no longer just me using the GHR in videos!
 
 A model I've been working with for a while, Riley Nicks, recently posted a clip of her using the GHR with Bayonetta! AFAIK this is the first time Buttplug/Intiface has been used in content.

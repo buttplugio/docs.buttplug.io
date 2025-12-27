@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 05 04 Edition
+date: 2020-05-04
+---
 3D Printing all the things!
 
 ### New Hardware

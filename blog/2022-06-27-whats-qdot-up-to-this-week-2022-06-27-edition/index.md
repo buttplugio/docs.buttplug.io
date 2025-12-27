@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2022 06 27 Edition
+date: 2022-06-27
+---
 ALL HAIL SCALARCMD
 
 ### Buttplug

@@ -1,3 +1,7 @@
+---
+title: Buttplug C 010 Released
+date: 2017-08-08
+---
 Finally gave up polishing. Ship it.[https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.0](https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.0)
 
 This will most likely be the only place I announce this release, as I'm now going to be spending the next while building documentation and tutorials around it. Otherwise no one will have a clue how this is supposed to work.

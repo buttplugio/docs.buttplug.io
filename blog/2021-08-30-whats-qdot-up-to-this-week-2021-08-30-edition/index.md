@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2021 08 30 Edition
+date: 2021-08-30
+---
 Releases!
 
 ### Buttplug

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2020 10 12 Edition
+date: 2020-10-12
+---
 First newsletter in 3 weeks!
 
 I swear I have a good excuse!

@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2019 07 22 Edition
+date: 2019-07-22
+---
 Organization, and even more new projects!
 
 ### Buttplug

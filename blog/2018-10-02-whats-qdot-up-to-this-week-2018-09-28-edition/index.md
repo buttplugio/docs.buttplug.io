@@ -1,3 +1,7 @@
+---
+title: Whats Qdot Up To This Week 2018 09 28 Edition
+date: 2018-10-02
+---
 Well I've got one hell of a code katamari going on here.Buttplug C# 0.3.0 continues to trudge slowly toward release, gaining more features and fixes all the time. Last week was mostly spend hammering the Serial Port support into a better state, so we can support something other than the Erostek ET-312B. This will include:
 
 - EStim System 2b

@@ -1,3 +1,7 @@
+---
+title: Buttplug C 020 And Buttplug Js 050 Released
+date: 2018-01-22
+---
 Fucking. Finally.It's been 4 months since the last release of the C# applications and library, which is just way the fuck too long for a small project like this. I'm really hoping we'll speed up iteration on that side, because I've released... wow. 12 versions of the JS library in that time.
 
 If you upgrade the C# applications (WebSocket server, Game Vibration Router, etc...), chances are you're probably not going to notice much in the way of changes. While there's some new hardware support (ET-312, Youcups, etc...), most of the changes in these releases are deep in our libraries, around how we communicate let applications communicate with devices. Since you're giving me money, I figure you may be interested in some details, so here you go:
