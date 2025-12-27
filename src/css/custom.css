@@ -29,3 +29,16 @@
     --ifm-link-color: #929ba9;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Center footer with 3 columns */
+.footer__links {
+    justify-content: center !important;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 996px) {
+    .footer__links {
+        max-width: 100%;
+    }
+}

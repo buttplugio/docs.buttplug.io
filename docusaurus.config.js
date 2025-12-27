@@ -66,6 +66,7 @@ const config = {
         blogTitle: "Buttplug.io Dev Blog",
         blogDescription: "Mistakes as long reads",
         postsPerPage: 10,
+        blogSidebarCount: "ALL",
       },
     ],
     [
