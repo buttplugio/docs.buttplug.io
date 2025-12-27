@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2018 06 15 Edition
+title: "What's qDot Up To This Week? (2018-06-15 Edition)"
 date: 2018-06-15
 ---
 Dear god, if I never talk about web browsers again it will be too soon.Too bad that's my dayjob. >.>

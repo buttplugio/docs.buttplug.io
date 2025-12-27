@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 10 28 Edition
+title: "What's qDot Up To This Week? (2019-10-28 Edition)"
 date: 2019-10-28
 ---
 Enjoying having electricity again!

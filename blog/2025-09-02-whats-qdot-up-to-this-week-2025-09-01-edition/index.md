@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2025 09 01 Edition
+title: "What's qDot Up To This Week? (2025-09-01 Edition)"
 date: 2025-09-02
 ---
 Maybe I'll win the powerball so I can work on this fulltime...

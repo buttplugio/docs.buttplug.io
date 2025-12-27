@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2024 03 25 Edition
+title: "What's qDot Up To This Week? (2024-03-25 Edition)"
 date: 2024-03-25
 ---
 I think I'm gonna be recovering from GDC for at least twice as long as I was there...

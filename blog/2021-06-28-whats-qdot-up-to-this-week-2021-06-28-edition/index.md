@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 06 28 Edition
+title: "What's qDot Up To This Week? (2021-06-28 Edition)"
 date: 2021-06-28
 ---
 A boring but somewhat productive week in the Buttplug world...

@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week 2022 08 151 Edition
+title: "Whats Qdot Up To This Week 2022 08 151 Edition"
 date: 2022-08-17
----
-Paying for my sins!
+---Paying for my sins!
 
 ### Buttplug
 Well, Buttplug v6 is (mostly) feature complete, which meant it was time to test things, and, um.

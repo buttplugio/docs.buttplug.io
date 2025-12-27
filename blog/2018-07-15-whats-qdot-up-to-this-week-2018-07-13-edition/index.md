@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2018 07 13 Edition
+title: "What's qDot Up To This Week? (2018-07-13 Edition)"
 date: 2018-07-15
 ---
 A rather quiet week due to some personal stuff getting in the way, but still got some work done!Youtube Embeds are still in beta on Syncydink. The goal here is to provide scripts alongside Buttpluggin' With qDot videos, so when my toys vibrate in videos, yours can too! This means I've gotta build recording features into our apps, but that shouldn't be too much of a problem.

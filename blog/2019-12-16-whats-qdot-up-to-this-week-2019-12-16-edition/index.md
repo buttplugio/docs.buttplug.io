@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 12 16 Edition
+title: "What's qDot Up To This Week? (2019-12-16 Edition)"
 date: 2019-12-16
 ---
 A continuous stream of questionable choices.

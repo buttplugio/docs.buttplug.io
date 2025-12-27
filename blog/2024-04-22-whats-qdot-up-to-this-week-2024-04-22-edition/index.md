@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2024 04 22 Edition
+title: "What's qDot Up To This Week? (2024-04-22 Edition)"
 date: 2024-04-22
 ---
 Starting to think I've built a complicated platform...

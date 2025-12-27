@@ -1,8 +1,7 @@
 ---
-title: Buttplug Scriptplayer Updates
+title: "Buttplug Scriptplayer Updates"
 date: 2017-07-24
----
-First off, there's now a new version of ScriptPlayer up, with more expansive Buttplug support. [https://github.com/FredTungsten/ScriptPlayer/releases](https://github.com/FredTungsten/ScriptPlayer/releases)
+---First off, there's now a new version of ScriptPlayer up, with more expansive Buttplug support. [https://github.com/FredTungsten/ScriptPlayer/releases](https://github.com/FredTungsten/ScriptPlayer/releases)
 
 SyncyDink is coming along nicely. We're still trailing behind ScriptPlayer on features, though we do support many more platforms. Syncydink now has support for the Launch and all toys that support Vibration (at this point, Lovense, Vibratissimo, XBox Gamepads). The latest working version of SyncyDink is always at
 

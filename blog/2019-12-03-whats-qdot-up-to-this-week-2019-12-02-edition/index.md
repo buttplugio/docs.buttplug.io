@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 12 02 Edition
+title: "What's qDot Up To This Week? (2019-12-02 Edition)"
 date: 2019-12-03
 ---
 Tuesday is the new Monday.

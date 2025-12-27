@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 02 11 Edition
+title: "What's qDot Up To This Week? (2019-02-11 Edition)"
 date: 2019-02-11
 ---
 I wish I had another Butt Saber to talk about here but nope, we're back to library updates.

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 03 04 Edition
+title: "What's qDot Up To This Week? (2019-03-04 Edition)"
 date: 2019-03-06
 ---
 AHHHH I LEAVE FOR CMU IN 2 WEEKS AHHHHHHHHHHH

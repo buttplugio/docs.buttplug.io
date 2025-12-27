@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 11 23 Edition
+title: "What's qDot Up To This Week? (2020-11-23 Edition)"
 date: 2020-11-24
 ---
 I'm on vacation all week! Which means...

@@ -1,8 +1,7 @@
 ---
-title: Buttplug Python 002
+title: "Buttplug Python 002"
 date: 2019-09-05
----
-[https://pypi.org/project/buttplug/](https://pypi.org/project/buttplug/)
+---[https://pypi.org/project/buttplug/](https://pypi.org/project/buttplug/)
 
 I just posted the most minimal implementation possible of a buttplug client to PyPi, meaning the buttplug-py package now actually at least does something.
 

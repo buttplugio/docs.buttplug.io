@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 03 02 Edition
+title: "What's qDot Up To This Week? (2020-03-02 Edition)"
 date: 2020-03-03
 ---
 Watching all of my speaking gigs disappear.

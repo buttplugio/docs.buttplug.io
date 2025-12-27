@@ -1,8 +1,7 @@
 ---
-title: Buttplug C 030 Released
+title: "Buttplug C 030 Released"
 date: 2018-11-03
----
-You ever see someone do something dumb and be all "oh yeah I'd never do that thing" then you totally do that thing?I did that thing.
+---You ever see someone do something dumb and be all "oh yeah I'd never do that thing" then you totally do that thing?I did that thing.
 
 Buttplug C# 0.3.0 has been 5 months in the making. For what is basically a one-person project now (I'm working on the core alone at this point, after realizing most of the design for this is in my head and I'm not real great at writing that design down yet so it's hard to ask for help), that is kinda ridiculous. It's been a massive overhaul that could've maybe been done in smaller chunks, but there comes that problem of "what if someone uses it in the middle and I break them with the constant changes". Going silent for 5 months isn't super helpful either though.
 

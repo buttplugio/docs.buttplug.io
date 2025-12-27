@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2025 06 23 Edition
+title: "What's qDot Up To This Week? (2025-06-23 Edition)"
 date: 2025-06-23
 ---
 Updates two weeks in a row! A christmas miracle!

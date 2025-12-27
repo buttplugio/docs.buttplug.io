@@ -1,8 +1,7 @@
 ---
-title: New Youtube Video Modifying The Lovense Diamo For Size And Comfort
+title: "New Youtube Video Modifying The Lovense Diamo For Size And Comfort"
 date: 2021-12-23
----
-Ever wonder what your patreon dollars go toward?
+---Ever wonder what your patreon dollars go toward?
 
 Watch me cut apart a $100 sex toy and find out!
 

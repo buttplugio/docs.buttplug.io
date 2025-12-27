@@ -1,8 +1,7 @@
 ---
-title: The End Of Fleshlight Launch Firmware Bricking
+title: "The End Of Fleshlight Launch Firmware Bricking"
 date: 2017-09-11
----
-Took a bit of a diversion from buttplug/syncydink over the past few days.Having finally gotten sick of reading all of the reports of people having their Fleshlight Launch bricked by firmware updates, I spent the weekend writing my own firmware loader. I now have a node.js/typescript based loader that can load Launch firmware (and as soon as I get one, Pearl 2 firmware) from desktops. I'll be porting this to work in Chrome, so that we can hopefully fix firmware loading from Android, which is usually where problems crop up.
+---Took a bit of a diversion from buttplug/syncydink over the past few days.Having finally gotten sick of reading all of the reports of people having their Fleshlight Launch bricked by firmware updates, I spent the weekend writing my own firmware loader. I now have a node.js/typescript based loader that can load Launch firmware (and as soon as I get one, Pearl 2 firmware) from desktops. I'll be porting this to work in Chrome, so that we can hopefully fix firmware loading from Android, which is usually where problems crop up.
 
 I'll be writing a full blog post about the internals of firmware loading, but that may be a bit. Some fun facts I learned along the way:
 

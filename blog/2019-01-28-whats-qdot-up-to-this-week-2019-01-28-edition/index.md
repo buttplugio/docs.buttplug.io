@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 01 28 Edition
+title: "What's qDot Up To This Week? (2019-01-28 Edition)"
 date: 2019-01-28
 ---
 Ok yeah Monday works out much better for newsletters. Less panicking about what I'll get done on the weekend after writing it, more panicking about what I got done on the weekend not being worth writing about.

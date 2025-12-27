@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 03 15 Edition
+title: "What's qDot Up To This Week? (2021-03-15 Edition)"
 date: 2021-03-15
 ---
 Weird week. Weird fuckin' week.

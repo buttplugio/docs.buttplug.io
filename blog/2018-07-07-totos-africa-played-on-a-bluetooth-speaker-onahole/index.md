@@ -1,8 +1,7 @@
 ---
-title: Totos Africa Played On A Bluetooth Speaker Onahole
+title: "Totos Africa Played On A Bluetooth Speaker Onahole"
 date: 2018-07-07
----
-Your patreon dollars, hard at work.My bluetooth speaker onahole arrived.
+---Your patreon dollars, hard at work.My bluetooth speaker onahole arrived.
 
 Full review video coming soon.
 

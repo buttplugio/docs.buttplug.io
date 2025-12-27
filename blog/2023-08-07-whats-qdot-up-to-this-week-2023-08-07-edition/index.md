@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2023 08 07 Edition
+title: "What's qDot Up To This Week? (2023-08-07 Edition)"
 date: 2023-08-07
 ---
 Life can really just stop it at any point now.

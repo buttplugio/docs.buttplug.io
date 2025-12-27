@@ -1,8 +1,7 @@
 ---
-title: Intiface Desktop Rust Egui Alpha 1
+title: "Intiface Desktop Rust Egui Alpha 1"
 date: 2021-12-27
----
-In lieu of a weekly update, here's what y'all actually pay me for: A chance to be the first to test my extremely alpha software! Isn't paying to be my QA fun? :3
+---In lieu of a weekly update, here's what y'all actually pay me for: A chance to be the first to test my extremely alpha software! Isn't paying to be my QA fun? :3
 
 ### What To Expect
 If you're going to try this out, know that my main goal here is "stay out of the way". The old intiface was HORRIBLE at that, now I'm trying to minimize what users have to do normally so they can just boot up and go.

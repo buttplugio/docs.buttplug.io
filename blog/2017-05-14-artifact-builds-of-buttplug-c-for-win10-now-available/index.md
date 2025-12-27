@@ -1,7 +1,8 @@
 ---
-title: Artifact Builds of Buttplug C# for Win10 Now Available
+title: "Artifact Builds of Buttplug C# for Win10 Now Available"
 date: 2017-05-14
----I have set up the Appveyor CI to output ButtplugGUI installers on every build I make now.  If you go to[https://ci.appveyor.com/project/qdot/buttplug-csharp](https://ci.appveyor.com/project/qdot/buttplug-csharp)
+---
+I have set up the Appveyor CI to output ButtplugGUI installers on every build I make now.  If you go to[https://ci.appveyor.com/project/qdot/buttplug-csharp](https://ci.appveyor.com/project/qdot/buttplug-csharp)
 
 and click on one of the build configurations, then click on the "Artifacts", you can download installers from each build.
 

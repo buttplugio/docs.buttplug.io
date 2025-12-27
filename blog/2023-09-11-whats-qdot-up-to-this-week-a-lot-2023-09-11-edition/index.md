@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week A Lot 2023 09 11 Edition
+title: "Whats Qdot Up To This Week A Lot 2023 09 11 Edition"
 date: 2023-09-11
----
-Ok well I guess I'm back on the development wagon.
+---Ok well I guess I'm back on the development wagon.
 
 ### Buttplug Teledildonics
 I've been feeling like developing again lately (and not only because I finished Baldur's Gate 3), so I decided to try to make headway on some fun projects instead of just diving back into the library specifics.

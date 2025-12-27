@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2022 11 14 Edition
+title: "What's qDot Up To This Week? (2022-11-14 Edition)"
 date: 2022-11-14
 ---
 SO CLOSE TO DONE

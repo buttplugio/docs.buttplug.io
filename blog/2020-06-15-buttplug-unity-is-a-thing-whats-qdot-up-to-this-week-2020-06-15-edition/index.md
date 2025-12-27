@@ -1,8 +1,7 @@
 ---
-title: Buttplug Unity Is A Thing Whats Qdot Up To This Week 2020 06 15 Edition
+title: "Buttplug Unity Is A Thing Whats Qdot Up To This Week 2020 06 15 Edition"
 date: 2020-06-15
----
-AN ACTUAL PATREON PERK: I HAVEN'T ANNOUNCED THIS ANYWHERE (BUT DISCORD) YET
+---AN ACTUAL PATREON PERK: I HAVEN'T ANNOUNCED THIS ANYWHERE (BUT DISCORD) YET
 
 ### Buttplug Unity
 I've had people prodding me for Buttplug support in Unity pretty much since Buttplug began. Of course, when Buttplug began, Unity didn't really support .Net Framework 4 yet, and packaging for it wasn't something I was familiar with.

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 04 20 Edition
+title: "What's qDot Up To This Week? (2020-04-20 Edition)"
 date: 2020-04-20
 ---
 Well, I just had a weed mint, so I guess celebrating the holiday?

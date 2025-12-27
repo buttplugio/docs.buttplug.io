@@ -1,7 +1,8 @@
 ---
-title: Well That Didn't Take Long!
+title: "Well That Didn't Take Long!"
 date: 2017-03-20
----The problem with most sex toys is that no one is really trying to hide protocols these days, so once I get the hardware, this takes maybe half an hour.Vorze was no different.
+---
+The problem with most sex toys is that no one is really trying to hide protocols these days, so once I get the hardware, this takes maybe half an hour.Vorze was no different.
 
 I've created the documentation repo at
 

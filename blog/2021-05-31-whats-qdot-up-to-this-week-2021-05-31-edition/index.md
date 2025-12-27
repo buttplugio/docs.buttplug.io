@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 05 31 Edition
+title: "What's qDot Up To This Week? (2021-05-31 Edition)"
 date: 2021-05-31
 ---
 Welp, at least I managed another May update before the month was over...

@@ -1,7 +1,8 @@
 ---
-title: The Yak Factory
+title: "The Yak Factory"
 date: 2017-03-26
----New blog post going up on buttplug.io tomorrow, but you get to read it first!--
+---
+New blog post going up on buttplug.io tomorrow, but you get to read it first!--
 
 When writing software for hobby projects, there's a tendency to go "Oh, I want to learn [thing]" and add that to the stack of things required to build the project. So far, buttplug has been no exception.
 

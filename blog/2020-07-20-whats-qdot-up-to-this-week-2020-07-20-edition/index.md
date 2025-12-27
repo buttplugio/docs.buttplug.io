@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 07 20 Edition
+title: "What's qDot Up To This Week? (2020-07-20 Edition)"
 date: 2020-07-20
 ---
 Learning that begging for patrons WORKS! My twitter shall now be insufferable!

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 05 26 Edition
+title: "What's qDot Up To This Week? (2020-05-26 Edition)"
 date: 2020-05-26
 ---
 Coming in a day late because yesterday was a US holiday.

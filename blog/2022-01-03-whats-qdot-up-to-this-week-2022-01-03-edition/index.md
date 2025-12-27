@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2022 01 03 Edition
+title: "What's qDot Up To This Week? (2022-01-03 Edition)"
 date: 2022-01-03
 ---
 Back to the dayjob...

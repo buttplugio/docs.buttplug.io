@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2024 05 06 Edition
+title: "What's qDot Up To This Week? (2024-05-06 Edition)"
 date: 2024-05-06
 ---
 Short weekly update 'cause I'm working on stuff, but:

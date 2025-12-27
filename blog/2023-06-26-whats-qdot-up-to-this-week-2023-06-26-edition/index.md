@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2023 06 26 Edition
+title: "What's qDot Up To This Week? (2023-06-26 Edition)"
 date: 2023-06-26
 ---
 Still bein' a nurse...

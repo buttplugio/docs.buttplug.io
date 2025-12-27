@@ -1,7 +1,6 @@
 ---
-title: The End Of The 268 Teledildonics Patent
+title: "The End Of The 268 Teledildonics Patent"
 date: 2018-08-16
----
-I took a break from being productive on Buttplug to write a long, rambling blog post about the expiration of the 268 Teledildonics patent, which happens in about 7 minutes from now.I make bad choices sometimes.
+---I took a break from being productive on Buttplug to write a long, rambling blog post about the expiration of the 268 Teledildonics patent, which happens in about 7 minutes from now.I make bad choices sometimes.
 
 <!--truncate-->

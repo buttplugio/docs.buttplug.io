@@ -1,5 +1,5 @@
 ---
-title: Still Alive Hoping To Resume Updates Next Week
+title: "Still Alive, Hoping to Resume Updates Next Week"
 date: 2021-05-19
 ---
 Just realized I've missed Monday updates for a couple of weeks. I'm currently in some crunch time on a couple of projects, meaning the rest of my schedule has either shifted or just stopped being a thing. Hoping that'll be over this week and I can get back to regular updates next week.

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2023 08 28 Edition
+title: "What's qDot Up To This Week? (2023-08-28 Edition)"
 date: 2023-08-28
 ---
 ## Intiface Central

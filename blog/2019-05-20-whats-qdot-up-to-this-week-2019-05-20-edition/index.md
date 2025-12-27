@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 05 20 Edition
+title: "What's qDot Up To This Week? (2019-05-20 Edition)"
 date: 2019-05-20
 ---
 I'm jobless! Now working on Buttplug/Intiface full time! For a whole week! Then I have another job!

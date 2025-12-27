@@ -1,8 +1,7 @@
 ---
-title: Project Updates And April Qa
+title: "Project Updates And April Qa"
 date: 2018-04-02
----
-Welp, we've now reached me being on patreon for a whole year! Thanks to everyone for sticking with me so far.Trying to get back in the swing of doing monthly Q&A's, so if you've got questions, lemme know!
+---Welp, we've now reached me being on patreon for a whole year! Thanks to everyone for sticking with me so far.Trying to get back in the swing of doing monthly Q&A's, so if you've got questions, lemme know!
 
 However, since most questions have usually been "What are your plans for [piece of software you made that you haven't touched in a while]?", I'll give updates on all of those first.
 

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 08 12 Edition
+title: "What's qDot Up To This Week? (2019-08-12 Edition)"
 date: 2019-08-12
 ---
 Writing tweets that should really be blog posts, apparently.

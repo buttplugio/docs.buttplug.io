@@ -1,8 +1,7 @@
 ---
-title: Buttplug Development Updates
+title: "Buttplug Development Updates"
 date: 2017-11-21
----
-It's been a little quiet around here lately, so I figured I'd share what's going on in development.- ET-312 Estim serial protocol support is now in the C# client. This allows users with ET-312 boxes to scale intensity based on input.
+---It's been a little quiet around here lately, so I figured I'd share what's going on in development.- ET-312 Estim serial protocol support is now in the C# client. This allows users with ET-312 boxes to scale intensity based on input.
 
 - .NET Standard conversion of the C# project is finished. This is a fancy way of saying we're getting closer to being able to use C# for mobile apps on Android/iOS. Our goal there is to have a Websocket Server App for phones, which will solve even more platform issues (we hope).
 

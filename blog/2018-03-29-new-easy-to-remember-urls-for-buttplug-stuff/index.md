@@ -1,8 +1,7 @@
 ---
-title: New Easy To Remember Urls For Buttplug Stuff
+title: "New Easy To Remember Urls For Buttplug Stuff"
 date: 2018-03-29
----
-Finally spent some time learning to make subdomain redirects in AWS, so now we have:Discord: [https://discord.buttplug.io](https://discord.buttplug.io)
+---Finally spent some time learning to make subdomain redirects in AWS, so now we have:Discord: [https://discord.buttplug.io](https://discord.buttplug.io)
 
 Youtube Channel: [https://youtube.buttplug.io](https://youtube.buttplug.io)
 

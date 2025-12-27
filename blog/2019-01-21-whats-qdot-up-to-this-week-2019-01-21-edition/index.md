@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 01 21 Edition
+title: "What's qDot Up To This Week? (2019-01-21 Edition)"
 date: 2019-01-21
 ---
 New year, new post day because I do most of my work on weekends so doing updates on Mondays seems a little better.

@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week 2020 03 30 Isolation Edition
+title: "Whats Qdot Up To This Week 2020 03 30 Isolation Edition"
 date: 2020-03-30
----
-Well this first header is not something I would've expected to be writing last week.
+---Well this first header is not something I would've expected to be writing last week.
 
 ### Buttplug Teledildonics
 So, as you have probably been aware from my incessant posting about it, I'm doing a Iivestream series on how to build a simple teledildonics service. The first 3 parts are done and up on youtube, here's the playlist link:

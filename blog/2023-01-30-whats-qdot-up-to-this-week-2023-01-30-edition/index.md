@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2023 01 30 Edition
+title: "What's qDot Up To This Week? (2023-01-30 Edition)"
 date: 2023-01-30
 ---
 First newsletter of the year! At the end of the first month of the year. >.>

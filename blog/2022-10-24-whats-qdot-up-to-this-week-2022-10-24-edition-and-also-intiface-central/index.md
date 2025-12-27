@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week 2022 10 24 Edition And Also Intiface Central
+title: "Whats Qdot Up To This Week 2022 10 24 Edition And Also Intiface Central"
 date: 2022-10-24
----
-Oof.
+---Oof.
 
 ### Intiface Central
 For those that just want the software (that this time should actually work) before reading all of the fun surrounding the software, Intiface Central v0.0.2 is available for Windows/Mac at

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 08 05 Edition
+title: "What's qDot Up To This Week? (2019-08-05 Edition)"
 date: 2019-08-05
 ---
 You get a release, and you get a release, and everybody gets a release!

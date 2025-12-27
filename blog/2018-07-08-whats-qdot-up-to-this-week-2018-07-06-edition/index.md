@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2018 07 06 Edition
+title: "What's qDot Up To This Week? (2018-07-06 Edition)"
 date: 2018-07-08
 ---
 A couple of days late, but I'll blame that on the Steam sale selling me Metal Gear Solid 5 for cheap and getting me addicted to it. Sure.*attaches fulton extraction device to buttplugs*

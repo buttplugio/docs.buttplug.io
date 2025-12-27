@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2018 06 29 Edition
+title: "What's qDot Up To This Week? (2018-06-29 Edition)"
 date: 2018-06-29
 ---
 Javascript, javascript, and more javascript. Well, ok, it's actually all Typescript. But you get the idea.buttplug-js has been lagging behind our C# libraries for a while, so I spent the first chunk of this week bringing it up to date, and buttplug-js v0.8.0 is out now. We now have Lovense device queries working everywhere, which is a massive help for the new versions of firmware constantly being released. Also fixed quite a few bugs.

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 01 17 Edition
+title: "What's qDot Up To This Week? (2021-01-17 Edition)"
 date: 2022-01-17
 ---
 One more featuring myself to death...

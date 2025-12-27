@@ -1,8 +1,7 @@
 ---
-title: Buttplug V10b2 And Intiface Central V3b2 Released
+title: "Buttplug V10b2 And Intiface Central V3b2 Released"
 date: 2025-10-19
----
-The time has come!
+---The time has come!
 
 Or, well, I finally got sick of saying "one more thing then I'll release" and just decided to fucking release everything, lol.
 

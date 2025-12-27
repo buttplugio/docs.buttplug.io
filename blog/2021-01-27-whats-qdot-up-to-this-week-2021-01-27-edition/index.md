@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 01 27 Edition
+title: "What's qDot Up To This Week? (2021-01-27 Edition)"
 date: 2021-01-27
 ---
 Tests!

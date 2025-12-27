@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 08 31 Edition
+title: "What's qDot Up To This Week? (2020-08-31 Edition)"
 date: 2020-08-31
 ---
 A surprisingly busy week!

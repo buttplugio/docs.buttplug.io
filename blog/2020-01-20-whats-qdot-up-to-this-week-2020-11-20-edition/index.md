@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 11 20 Edition
+title: "What's qDot Up To This Week? (2020-11-20 Edition)"
 date: 2020-01-20
 ---
 AGH IT'S DONE IT'S FINALLY DONE

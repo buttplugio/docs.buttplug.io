@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 05 06 Edition
+title: "What's qDot Up To This Week? (2019-05-06 Edition)"
 date: 2019-05-07
 ---
 Getting a new job!

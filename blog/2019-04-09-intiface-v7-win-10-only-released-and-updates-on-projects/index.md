@@ -1,8 +1,7 @@
 ---
-title: Intiface V7 Win 10 Only Released And Updates On Projects
+title: "Intiface V7 Win 10 Only Released And Updates On Projects"
 date: 2019-04-09
----
-The newest version of Intiface for Windows 10 is now ready to download at
+---The newest version of Intiface for Windows 10 is now ready to download at
 
 [https://github.com/intiface/intiface-desktop/releases/tag/v7.0.0](https://github.com/intiface/intiface-desktop/releases/tag/v7.0.0)
 

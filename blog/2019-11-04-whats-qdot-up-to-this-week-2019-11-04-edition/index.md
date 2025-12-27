@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 11 04 Edition
+title: "What's qDot Up To This Week? (2019-11-04 Edition)"
 date: 2019-11-04
 ---
 Scrambling to finish my SLSA presentation on hidden haptics spaces in online games (aka using the GHR in online games) that I have to give on Friday!

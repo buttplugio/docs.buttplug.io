@@ -1,8 +1,7 @@
 ---
-title: Yiffspot Teledildonics Via Buttplug
+title: "Yiffspot Teledildonics Via Buttplug"
 date: 2018-03-17
----
-If nothing else, you're paying me for these post titles, right? :)Well, this is definitely not how I planned on spending the past couple of weeks, but here we are.
+---If nothing else, you're paying me for these post titles, right? :)Well, this is definitely not how I planned on spending the past couple of weeks, but here we are.
 
 A few weeks ago, I got pinged on a twitter thread about NSFW github repos. In the same thread, this repo came up: [https://github.com/kisuka/yiffspot](https://github.com/kisuka/yiffspot)
 

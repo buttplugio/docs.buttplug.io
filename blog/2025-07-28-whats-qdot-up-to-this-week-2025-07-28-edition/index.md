@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2025 07 28 Edition
+title: "What's qDot Up To This Week? (2025-07-28 Edition)"
 date: 2025-07-28
 ---
 Exciting new features!

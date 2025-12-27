@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 06 14 Edition
+title: "What's qDot Up To This Week? (2021-06-14 Edition)"
 date: 2021-06-16
 ---
 Other than completely losing track of what day it is...

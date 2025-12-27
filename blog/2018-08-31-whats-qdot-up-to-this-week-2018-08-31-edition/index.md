@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2018 08 31 Edition
+title: "What's qDot Up To This Week? (2018-08-31 Edition)"
 date: 2018-08-31
 ---
 An update! On time!If you guessed that I don't have much to say, congratulations, you're right! 

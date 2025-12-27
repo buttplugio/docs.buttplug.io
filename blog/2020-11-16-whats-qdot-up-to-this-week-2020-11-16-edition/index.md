@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 11 16 Edition
+title: "What's qDot Up To This Week? (2020-11-16 Edition)"
 date: 2020-11-16
 ---
 Preparing for a whole week off! And otherwise doing some out of the ordinary stuff.

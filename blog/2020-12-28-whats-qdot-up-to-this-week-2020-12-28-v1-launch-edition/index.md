@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week 2020 12 28 V1 Launch Edition
+title: "Whats Qdot Up To This Week 2020 12 28 V1 Launch Edition"
 date: 2020-12-28
----
-LAUNCHING V1. WOOOOOOOOOOOOO.
+---LAUNCHING V1. WOOOOOOOOOOOOO.
 
 ### Buttplug
 I LAUNCHED V1.

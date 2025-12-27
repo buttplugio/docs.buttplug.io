@@ -1,8 +1,7 @@
 ---
-title: Wheres Qdot 2023 06 05 Edition
+title: "Wheres Qdot 2023 06 05 Edition"
 date: 2023-06-05
----
-Ok, short one for this week because it's been ~7 weeks since the last update, but there's good reason for that.
+---Ok, short one for this week because it's been ~7 weeks since the last update, but there's good reason for that.
 
 My partner was in the hospital for an extended amount of time and had major surgery, meaning I haven't really had a ton of time to write much here or elsewhere. Luckily we're back home now, but I'm still spinning back up on having a life that does not revolve around the hospital again.
 

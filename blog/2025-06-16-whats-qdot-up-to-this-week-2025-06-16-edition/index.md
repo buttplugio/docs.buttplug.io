@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2025 06 16 Edition
+title: "What's qDot Up To This Week? (2025-06-16 Edition)"
 date: 2025-06-16
 ---
 Bringing about a world where buttplug doesn't suck to use...

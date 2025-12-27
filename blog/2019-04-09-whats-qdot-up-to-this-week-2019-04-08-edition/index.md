@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2019 04 08 Edition
+title: "What's qDot Up To This Week? (2019-04-08 Edition)"
 date: 2019-04-09
 ---
 Ok, well, I'm a day late this time, but I have a good excuse because...

@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2025 12 01 Edition
+title: "What's qDot Up To This Week? (2025-12-01 Edition)"
 date: 2025-12-01
 ---
 omfg buttplug spec v4 might be out before the end of the year

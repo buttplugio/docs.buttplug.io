@@ -1,8 +1,7 @@
 ---
-title: Whats Qdot Up To This Week 2020 03 23 Quarantine Edition
+title: "Whats Qdot Up To This Week 2020 03 23 Quarantine Edition"
 date: 2020-03-23
----
-Not leavin' the house. That's what.
+---Not leavin' the house. That's what.
 
 ### Buttpluggin' With qDot
 My original plan was to hunker down and work on buttplug-rs in order to get it done enough to replace C#/JS in intiface desktop.

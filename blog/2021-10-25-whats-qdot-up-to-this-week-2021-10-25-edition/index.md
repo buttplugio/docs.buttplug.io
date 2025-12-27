@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 10 25 Edition
+title: "What's qDot Up To This Week? (2021-10-25 Edition)"
 date: 2021-10-25
 ---
 It's ADHD time, apparently...

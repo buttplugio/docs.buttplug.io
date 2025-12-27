@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 07 26 Edition
+title: "What's qDot Up To This Week? (2021-07-26 Edition)"
 date: 2021-07-26
 ---
 Too god damn much bluetooth.

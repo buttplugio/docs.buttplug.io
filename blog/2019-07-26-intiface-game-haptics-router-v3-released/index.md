@@ -1,8 +1,7 @@
 ---
-title: Intiface Game Haptics Router V3 Released
+title: "Intiface Game Haptics Router V3 Released"
 date: 2019-07-26
----
-[https://github.com/intiface/intiface-game-haptics-router/releases](https://github.com/intiface/intiface-game-haptics-router/releases) 
+---[https://github.com/intiface/intiface-game-haptics-router/releases](https://github.com/intiface/intiface-game-haptics-router/releases) 
 
 In yet another pivot to a random product (for reasons that will be shown in the next post), I've just upgraded the Game Haptics Router to v3. This puts it back at feature parity with the Game Vibration Router, meaning:
 

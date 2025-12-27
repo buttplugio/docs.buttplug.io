@@ -1,5 +1,5 @@
 ---
-title: Does Qdot Even Exist Anymore 2024 02 12 Edition
+title: "Does qDot Even Exist Anymore? (2024-02-12 Edition)"
 date: 2024-02-12
 ---
 Sorta?

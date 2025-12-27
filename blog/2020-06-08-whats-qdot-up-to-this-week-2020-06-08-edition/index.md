@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 06 08 Edition
+title: "What's qDot Up To This Week? (2020-06-08 Edition)"
 date: 2020-06-08
 ---
 It's possible to feel like you're living in the future even when time has lost all meaning, I guess.

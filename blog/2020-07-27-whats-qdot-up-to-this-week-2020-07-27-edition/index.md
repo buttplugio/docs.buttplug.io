@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 07 27 Edition
+title: "What's qDot Up To This Week? (2020-07-27 Edition)"
 date: 2020-07-27
 ---
 SO MUCH STUFF OMFG

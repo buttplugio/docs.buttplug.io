@@ -1,8 +1,7 @@
 ---
-title: Github Sponsors Patreon And The Basically Same Future
+title: "Github Sponsors Patreon And The Basically Same Future"
 date: 2019-10-12
----
-tl;dr: I'm now using 2 funding platforms, but there will be no fundamental changes due to this. Unless you want the gritty details of what it's like to be a creator with multiple patron streams, you can skip this post. :)
+---tl;dr: I'm now using 2 funding platforms, but there will be no fundamental changes due to this. Unless you want the gritty details of what it's like to be a creator with multiple patron streams, you can skip this post. :)
 
 For anyone that follows me on twitter, you may've noticed that I was accepted to the Github Sponsors program. Github Sponsors is basically Patreon with a bit more of a development/corporate/open source focus.
 

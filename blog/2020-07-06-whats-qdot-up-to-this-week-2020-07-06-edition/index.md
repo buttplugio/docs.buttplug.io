@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2020 07 06 Edition
+title: "What's qDot Up To This Week? (2020-07-06 Edition)"
 date: 2020-07-06
 ---
 Being my own social media intern.

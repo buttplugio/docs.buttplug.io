@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2024 10 21 Edition
+title: "What's qDot Up To This Week? (2024-10-21 Edition)"
 date: 2024-10-21
 ---
 Unemployment! Unless you count my own company, too bad that doesn't pay very well.

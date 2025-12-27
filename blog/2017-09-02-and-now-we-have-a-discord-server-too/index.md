@@ -1,8 +1,7 @@
 ---
-title: And Now We Have A Discord Server Too
+title: "And Now We Have A Discord Server Too"
 date: 2017-09-02
----
-Yes ok I may have a slight chat protocol hoarding problem.Invite Link: [https://discord.gg/BGNjpbf](https://discord.gg/BGNjpbf)
+---Yes ok I may have a slight chat protocol hoarding problem.Invite Link: [https://discord.gg/BGNjpbf](https://discord.gg/BGNjpbf)
 
 For Patrons: If you join the discord and would like to have the special Patron role, just message me and I'll get that set up.
 

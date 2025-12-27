@@ -1,5 +1,5 @@
 ---
-title: Whats Qdot Up To This Week 2021 10 11 Edition
+title: "What's qDot Up To This Week? (2021-10-11 Edition)"
 date: 2021-10-11
 ---
 New features! Finally!
