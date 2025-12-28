@@ -29,9 +29,9 @@ device feature, with the input types denoting which of those methods may be allo
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
 * _FeatureIndex_ (unsigned int): Index of actuator
-* _InputType_ (InputType): The type of input we expect to receive from this feature. Battery, RSSI,
+* _Type_ (InputType): The type of input we expect to receive from this feature. Battery, RSSI,
   etc...
-* _InputCommandType_ (InputCommandType): One of 3 values: `Read`, `Subscribe`, `Unsubscribe`. Which
+* _Command_ (InputCommandType): One of 3 values: `Read`, `Subscribe`, `Unsubscribe`. Which
   of these types are available to a feature is transmitted as part of the DeviceAdded/DeviceList info.
 
 **Expected Response:**
@@ -70,17 +70,17 @@ sequenceDiagram
       "Id": 1,
       "DeviceIndex": 0,
       "FeatureIndex": 1,
-      "InputType": "Battery",
-      "InputCommandType": "Read"
+      "Type": "Battery",
+      "Command": "Read"
     }
   },
   {
-    "OutputCmd": {
+    "InputCmd": {
       "Id": 2,
       "DeviceIndex": 1,
       "FeatureIndex": 0,
-      "InputType": "Pressure",
-      "InputCommandType": "Subscribe"
+      "Type": "Pressure",
+      "Command": "Subscribe"
     }
   }
 ]
@@ -101,7 +101,7 @@ sequenceDiagram
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
 * _FeatureIndex_ (unsigned int): Index of actuator
-* _InputData_ (InputData): Data from the sensor, including InputType and the corresponding format. See InputType table below for more information on expected data types.
+* _Reading_ (InputData): Data from the sensor, including InputType and the corresponding format. See InputType table below for more information on expected data types.
 
 **Expected Response:**
 
@@ -135,9 +135,9 @@ sequenceDiagram
       "Id": 1,
       "DeviceIndex": 0,
       "FeatureIndex": 1,
-      "InputData": {
+      "Reading": {
         "Battery": {
-          "Level": 50
+          "Value": 50
         }
       }
     }
@@ -147,9 +147,9 @@ sequenceDiagram
       "Id": 0,
       "DeviceIndex": 1,
       "FeatureIndex": 0,
-      "InputData": {
+      "Reading": {
         "Pressure": {
-          "Level": 200
+          "Value": 200
         }
       }
     }
@@ -184,7 +184,7 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
 **Device Examples**: Anything with a battery we can read. A fair amount of bluetooth devices support this, as do XBox controllers.
 
 **Fields**
-- Level
+- Value
   - **Type**: Unsigned 8-bit integer
   - **Description**: Percentage, will always be 0-100.
 
@@ -195,9 +195,9 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
       "Id": 1,
       "DeviceIndex": 0,
       "FeatureIndex": 1,
-      "InputData": {
+      "Reading": {
         "Battery": {
-          "Level": 50
+          "Value": 50
         }
       }
     }
@@ -213,7 +213,7 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
 **Device Examples**: This is a feature of Bluetooth, rather than devices. Should technically work for any bluetooth device.
 
 **Fields**
-- Level
+- Value
   - **Type**: Signed 8-bit integer
   - **Description**: Always a negative, usually somewhere between -10 and -100
 
@@ -224,9 +224,9 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
       "Id": 1,
       "DeviceIndex": 0,
       "FeatureIndex": 1,
-      "InputData": {
+      "Reading": {
         "RSSI": {
-          "Level": -53
+          "Value": -53
         }
       }
     }
@@ -242,7 +242,7 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
 **Device Examples**: Usually a kegel sensor, like a Kgoal Boost, perifit, Edge-o-matic, etc... Units will differ greatly between devices and will require per-application calibration. See dev guide for more info.
 
 **Fields**
-- Level
+- Value
   - **Type**: Unsigned 32-bit integer
   - **Description**: Pressure level of the sensor. We don't have a standard unit for this, so it
     will vary from product to product. See dev guide for more info.
@@ -254,9 +254,9 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
       "Id": 0,
       "DeviceIndex": 0,
       "FeatureIndex": 1,
-      "Pressure": {
+      "Reading": {
         "Pressure": {
-          "Level": 1252
+          "Value": 1252
         }
       }
     }
@@ -272,7 +272,7 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
 **Device Examples**: Any device that has buttons we can read. For instance, the Kiiroo Keon has readable buttons. This is NOT MEANT TO BE USED FOR ANYTHING ACCESSIBLE VIA HID, please use HID libraries for that. Please don't route your gamepad through buttplug unless your gamepad also goes on/in genetalia or butts.
 
 **Fields**
-- Level
+- Value
   - **Type**: Unsigned 8-bit integer
   - **Description**: 1 for down, 0 for up
 
@@ -283,9 +283,9 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
       "Id": 0,
       "DeviceIndex": 0,
       "FeatureIndex": 4,
-      "InputData": {
+      "Reading": {
         "Button": {
-          "Level": 1
+          "Value": 1
         }
       }
     }
