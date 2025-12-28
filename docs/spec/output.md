@@ -350,7 +350,7 @@ Because a LOT of programming languages hate multiple capital letters next to eac
 **Device Examples**: Various axes of the OSR-2/SR-6/SR-1 systems, including the stroker as well as twist/pressure cap/etc mechanisms, other strokers like the Kiiroo Keon, Lovense Solace Pro, or The Handy.
 
 **Fields**
-- Position
+- Value
   - **Type**: Unsigned 32-bit integer
   - **Description**: Position to move to over \[duration\] time, valid settings are within 0 < x < StepCount 
 - Duration
@@ -366,7 +366,7 @@ Because a LOT of programming languages hate multiple capital letters next to eac
       "FeatureIndex": 0,
       "Command": {
         "PositionWithDuration": {
-          "Position": 85,
+          "Value": 85,
           "Duration": 15
         }
       }
