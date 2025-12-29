@@ -49,8 +49,8 @@ Messages that convey information about devices currently connected to the system
       InputType to information objects.
       * \[_InputType_\] (InputType as String): InputType is used as a key here, so this field
         would be something like "Battery", "Pressure", etc...
-        * _InputCommandType_ (array of strings): Some combination of "Read" and/or "Subscribe".
-        * _ValueRange_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
+        * _Command_ (array of string: \["Read", "Subscribe", "Unsubscribe"\]): Some combination of "Read" and/or "Subscribe".
+        * _Value_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
           received from the sensor, if known.
     
 :::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and object fields?
@@ -121,8 +121,8 @@ sequenceDiagram
               "FeatureDescription": "Battery",
               "Input": {
                 "Battery": {
-                  "ValueRange": [0, 100],
-                  "InputCommandType": ["Read"]
+                  "Value": [0, 100],
+                  "Command": ["Read"]
                 }
               }
             }
@@ -148,8 +148,8 @@ sequenceDiagram
               },
               "Input": {
                 "Position": {
-                  "ValueRange": [0, 100],
-                  "InputCommandType": ["Read", "Subscribe"]
+                  "Value": [0, 100],
+                  "Command": ["Read", "Subscribe"]
                 }
               }
             },
@@ -158,8 +158,8 @@ sequenceDiagram
               "FeatureDescription": "Bluetooth Radio RSSI",
               "Input": {
                 "RSSI": {
-                  "ValueRange": [-10, -100],
-                  "InputCommandType": ["Read"]
+                  "Value": [-10, -100],
+                  "Command": ["Read"]
                 }
               }
             }
