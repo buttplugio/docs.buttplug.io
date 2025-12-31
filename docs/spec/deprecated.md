@@ -1814,3 +1814,100 @@ sequenceDiagram
 ]
 ```
 
+---
+## StopDeviceCmd Version - Spec v0
+
+**Reason for Deprecation:** Stop commands refined to have optional Inputs/Outputs specifiers in v4.
+
+**Description:** Client request to have the server stop a device from whatever
+actions it may be taking. This message should be supported by all devices, and
+the server should know how to stop any device it supports.
+
+**Introduced In Spec Version:** 0
+
+**Last Updated In Spec Version:** 0
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _DeviceIndex_ (unsigned int): Index of device to stop.
+* _Inputs_ (boolean, optional, default true): If true, unsubscribe all subscribed inputs.
+* _Outputs_ (boolean, optional, default true): If true, stop all outputs.
+
+**Expected Response:**
+
+* Ok message with matching Id on successful request.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: StopDeviceCmd Id=1
+    Server->>-Client: Ok Id=1
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "StopDeviceCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "Inputs": true,
+      "Outputs": true
+    }
+  }
+]
+```
+---
+## StopAllDevices - Spec v0
+
+**Reason for Deprecation:** Stop commands refined to have optional Inputs/Outputs specifiers in v4.
+
+**Description:** Sent by the client to tell the server to stop all devices. Can
+be used for emergency situations, on client shutdown for cleanup, etc… While
+this is considered a Device Message, since it pertains to all currently
+connected devices, it does not specify a device index (and does not end with
+'Cmd'). While it is polite to do so, the client is not _required_ to send
+StopAllDevices on disconnect. The server will normally stop devices on
+disconnect no matter what.
+
+**Introduced In Spec Version:** 0
+
+**Last Updated In Spec Version:** 4
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+* _Inputs_ (boolean, optional, default true): If true, unsubscribe all subscribed inputs.
+* _Outputs_ (boolean, optional, default true): If true, stop all outputs.
+
+**Expected Response:**
+
+* Ok message with matching Id on successful request.
+* Error message on value or message error.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: StopAllDevices Id=1
+    Server->>-Client: Ok Id=1
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "StopAllDevices": {
+      "Id": 1,
+      "Inputs": true,
+      "Outputs": true
+    }
+  }
+]
+```
+---
