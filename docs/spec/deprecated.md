@@ -1817,7 +1817,7 @@ sequenceDiagram
 ---
 ## StopDeviceCmd Version - Spec v0
 
-**Reason for Deprecation:** Stop commands refined to have optional Inputs/Outputs specifiers in v4.
+**Reason for Deprecation:** Replaced with StopCmd in v4
 
 **Description:** Client request to have the server stop a device from whatever
 actions it may be taking. This message should be supported by all devices, and
@@ -1825,7 +1825,7 @@ the server should know how to stop any device it supports.
 
 **Introduced In Spec Version:** 0
 
-**Last Updated In Spec Version:** 0
+**Last Updated In Spec Version:** 4
 
 **Fields:**
 
@@ -1864,7 +1864,7 @@ sequenceDiagram
 ---
 ## StopAllDevices - Spec v0
 
-**Reason for Deprecation:** Stop commands refined to have optional Inputs/Outputs specifiers in v4.
+**Reason for Deprecation:** Replaced with StopCmd in v4
 
 **Description:** Sent by the client to tell the server to stop all devices. Can
 be used for emergency situations, on client shutdown for cleanup, etc… While
