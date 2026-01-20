@@ -32,19 +32,16 @@ Messages that convey information about devices currently connected to the system
       messages like `ValueCmd`, `SensorReadCmd`, etc...
       * This is a repeat of the map key.
     * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
-      OutputType to information objects. If a feature lists multiple output types, this means that the feature can be controlled through different contexts. For instance, a feature having both _Position_ and _PositionWithDuration_ output types means that the feature can move instantaneously to a goal position, or can move to the goal position over a certain amount of itme.
+      OutputType to information objects. If a feature lists multiple output types, this means that the feature can be controlled through different contexts. For instance, a feature having both _Position_ and _HwPositionWithDuration_ output types means that the feature can move instantaneously to a goal position, or can move to the goal position over a certain amount of itme.
       * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this would be
         something like _Vibrate_, _Position_, etc... [Valid types are listed in the OutputCmd page](./output) **IMPORTANT**: Fields for this will change based on the key value. See below for which fields are valid per output type.
         * _Value_ (Signed 32-bit integer range): Range of the value this output type can be set to.
           It is assumed that once a value is set, it will not be reset until _OutputCmd_ is called
           again for the same feature. This can be used as a 2-dimensional value, for instance, a rotation feature that has direction may have a range of _[-x, x]_ to denote that it can rotate in 2 different directions.
-          * Valid for Output Types: _Vibrate_, _Rotate_, _Spray_, _Oscillate_, _Constrict_, _Led_, _Temperature_
-        * _Position_ (Unsigned 32-bit integer range): Range of the position setting for output type
-          that use a position value.
-          * Valid for Output Types: _Position_, _PositionWithDuration_
+          * Valid for Output Types: All
         * _Duration_ (Unsigned 32-bit integer range, in milliseconds): Range of duration values, in
           milliseconds, for output types that use time
-          * Valid for Output Types: _PositionWithDuration_
+          * Valid for Output Types: _HwPositionWithDuration_
     * _Input_ (Object, may be null): Represents a sensor that may be part of this feature. A map of
       InputType to information objects.
       * \[_InputType_\] (InputType as String): InputType is used as a key here, so this field
@@ -138,7 +135,7 @@ sequenceDiagram
               "FeatureIndex": 0,
               "FeatureDescription": "Stroker",
               "Output": {
-                "PositionWithDuration": {
+                "HwPositionWithDuration": {
                   "Position": [0, 100],
                   "Duration": [0, 100000]
                 },

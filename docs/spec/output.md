@@ -82,7 +82,7 @@ sequenceDiagram
       "DeviceIndex": 1,
       "FeatureIndex": 0,
       "Command": {
-        "HWPositionWithDuration": {
+        "HwPositionWithDuration": {
           "Value": 91,
           "Duration": 150
         }
@@ -341,11 +341,11 @@ Because a LOT of programming languages hate multiple capital letters next to eac
   }]
 ```
 
-### HWPositionWithDuration
+### HwPositionWithDuration
 
 **Introduced In Spec Version:** 4
 
-**Description**: Command device to move in a linear ramp to a goal position over time. There is no _Stop_ handling for position with duration movement, as it is expected to move to its end and stop, usually within a few seconds. The HW prefix denotes that, in almost all cases, processing of this command is handled by the hardware itself, and Buttplug has little-to-no say in the control loop involved in moving the device outside of sending the command to do so.
+**Description**: Command device to move in a linear ramp to a goal position over time. There is no _Stop_ handling for position with duration movement, as it is expected to move to its end and stop, usually within a few seconds. The "Hw" (meaning "hardware") prefix denotes that, in almost all cases, processing of this command is handled by the hardware itself, and Buttplug has little-to-no say in the control loop involved in moving the device outside of sending the command to do so.
 
 **Device Examples**: Various axes of the OSR-2/SR-6/SR-1 systems, including the stroker as well as twist/pressure cap/etc mechanisms, other strokers like the Kiiroo Keon, Lovense Solace Pro, or The Handy.
 
@@ -365,7 +365,7 @@ Because a LOT of programming languages hate multiple capital letters next to eac
       "DeviceIndex": 0,
       "FeatureIndex": 0,
       "Command": {
-        "HWPositionWithDuration": {
+        "HwPositionWithDuration": {
           "Value": 85,
           "Duration": 15
         }
