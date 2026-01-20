@@ -3,6 +3,8 @@
  * and scoped locally.
  */
 
+/* ==================== Hero Banner ==================== */
+
 .heroBanner {
     padding: 4rem 0;
     text-align: center;
@@ -22,10 +24,20 @@
     font-size: clamp(1.8rem, 5vw, 3.5rem);
 }
 
-@media screen and (max-width: 996px) {
-    .heroBanner {
-        padding: 2rem;
-    }
+.heroSubtitle {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.heroTagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 1rem;
+    opacity: 0.9;
 }
 
 .buttons {
@@ -33,34 +45,346 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 2rem;
     margin-bottom: 10px;
+    gap: 0.5rem;
 }
 
 .buttons a {
     margin: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.infoBox {
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.infoBox:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.infoBox p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.infoBox a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.infoBox a:hover {
+    opacity: 0.8;
+}
+
+/* ==================== Section Common ==================== */
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ifm-heading-color);
+}
+
+/* ==================== Features Section ==================== */
 
 .features {
     padding: 4rem 0;
+    background-image: url('/img/squidplug.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative;
 }
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--ifm-background-color);
+    opacity: 0.87;
+    z-index: 0;
+}
+
+.featuresContainer {
+    position: relative;
+    z-index: 1;
+}
+
+.featureGrid {
+    margin-bottom: 2rem;
+}
+
+.featureCard {
+    padding: 1.5rem;
+    background-color: var(--ifm-background-surface-color, #ffffff);
+    border-radius: 12px;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.featureCard h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.featureCard p {
+    margin-bottom: 0;
+    color: var(--ifm-color-emphasis-700);
+}
+
+/* ==================== News Section ==================== */
 
 .newsSection {
     padding: 3rem 0;
+    background-color: var(--ifm-color-emphasis-100);
 }
+
+.newsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.newsItem {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--ifm-background-surface-color, #ffffff);
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsItem:hover {
+    border-left-color: var(--ifm-color-primary);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.newsDate {
+    font-weight: 600;
+    color: var(--ifm-color-emphasis-600);
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.newsTitle {
+    font-size: 1.1rem;
+}
+
+.newsTitle a {
+    color: var(--ifm-heading-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.newsTitle a:hover {
+    color: var(--ifm-color-primary);
+}
+
+.newsEmpty {
+    text-align: center;
+    font-style: italic;
+    color: var(--ifm-color-emphasis-600);
+}
+
+/* ==================== Resources Section ==================== */
 
 .resources {
     padding: 3rem 0;
+    background: linear-gradient(180deg, var(--ifm-background-color) 0%, var(--ifm-color-emphasis-100) 100%);
 }
+
+.resourceCard {
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--ifm-background-surface-color, #ffffff);
+}
+
+.resourceCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.resourceCardHeader {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    background-color: var(--ifm-color-emphasis-100);
+}
+
+.resourceCardHeader h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.resourceCardBody {
+    padding: 1.25rem;
+}
+
+.resourceLink {
+    margin-bottom: 0.5rem;
+}
+
+.resourceLink:last-child {
+    margin-bottom: 0;
+}
+
+.mediaLink {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.mediaLink:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================== Hardware Section ==================== */
 
 .hardware {
     padding: 3rem 0;
+    background-color: var(--ifm-color-emphasis-100);
 }
 
+.hardwareSubtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.hardwareSubtitle a {
+    color: var(--ifm-color-primary);
+}
+
+.brandGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.brandChip {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    background-color: var(--ifm-background-surface-color, #ffffff);
+    border-radius: 8px;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.brandChip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--ifm-color-primary-light);
+}
+
+.hardwareNote {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--ifm-color-emphasis-600);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================== Responsive Styles ==================== */
+
 @media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 2rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
     .features,
     .newsSection,
     .resources,
     .hardware {
         padding: 2rem 0;
     }
+
+    .newsItem {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .brandGrid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .featureCard {
+        padding: 1.25rem;
+    }
+}
+
+/* ==================== Dark Mode Adjustments ==================== */
+
+[data-theme='dark'] .featureCard {
+    background-color: var(--ifm-color-emphasis-100);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .newsItem {
+    background-color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .resourceCard {
+    background-color: var(--ifm-color-emphasis-100);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .resourceCardHeader {
+    background-color: var(--ifm-color-emphasis-200);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .brandChip {
+    background-color: var(--ifm-color-emphasis-200);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .infoBox {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
 }

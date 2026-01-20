@@ -5,7 +5,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import logo from "/img/logo.png";
 import styles from "./index.module.css";
-import { useColorMode } from "@docusaurus/theme-common";
 import ReactMarkdown from "react-markdown";
 import useGlobalData from "@docusaurus/useGlobalData";
 
@@ -16,24 +15,15 @@ function HomepageHeader() {
       <div className="container">
         <img src={logo} className={styles.heroLogo} alt="Buttplug Logo" />
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p
-          className="hero__subtitle"
-          style={{ fontSize: "1.3rem", marginTop: "1rem" }}
-        >
+        <p className={clsx("hero__subtitle", styles.heroSubtitle)}>
           An open-source software library and application ecosystem for
           controlling intimate hardware, including sex toys, fucking machines,
           and more.
         </p>
-        <p
-          style={{
-            fontSize: "1.1rem",
-            fontStyle: "italic",
-            marginTop: "1rem",
-          }}
-        >
+        <p className={styles.heroTagline}>
           We were vibe coding before it was cool.
         </p>
-        <div className={styles.buttons} style={{ marginTop: "2rem" }}>
+        <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/dev-guide/getting-started"
@@ -47,27 +37,10 @@ function HomepageHeader() {
             Developer Guide
           </Link>
         </div>
-        <div
-          style={{
-            marginTop: "2rem",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-            padding: "1rem",
-            borderRadius: "8px",
-            maxWidth: "600px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          <p style={{ margin: 0, fontSize: "1.1rem" }}>
+        <div className={styles.infoBox}>
+          <p>
             Not a developer? Looking for Intiface Central or other applications?{" "}
-            <Link
-              to="https://intiface.com"
-              style={{
-                color: "inherit",
-                textDecoration: "underline",
-                fontWeight: "bold",
-              }}
-            >
+            <Link to="https://intiface.com">
               Head over to the Intiface page.
             </Link>
           </p>
@@ -111,46 +84,14 @@ function FeaturesSection() {
     },
   ];
 
-  const { isDarkTheme } = useColorMode();
-  let color = isDarkTheme ? "rgba(0,0,0,0.9)" : "rgba(255,255,255,0.9)";
   return (
-    <section
-      className={styles.features}
-      style={{
-        backgroundImage: "url(/img/squidplug.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "contain",
-        backgroundColor: color,
-        backgroundBlendMode: "overlay",
-        position: "relative",
-      }}
-    >
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "3rem",
-            fontSize: "2.5rem",
-          }}
-        >
-          Features
-        </h2>
+    <section className={styles.features}>
+      <div className={clsx("container", styles.featuresContainer)}>
+        <h2 className={styles.sectionTitle}>Features</h2>
         <div className="row">
           {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="col col--4"
-              style={{ marginBottom: "2rem" }}
-            >
-              <div
-                className="text--center"
-                style={{
-                  padding: "1rem",
-                  backgroundColor: "rgba(128,128,128,0.4)",
-                  borderRadius: "10px",
-                }}
-              >
+            <div key={idx} className={clsx("col col--4", styles.featureGrid)}>
+              <div className={clsx("text--center", styles.featureCard)}>
                 <h3>{feature.title}</h3>
                 <ReactMarkdown>{feature.description}</ReactMarkdown>
               </div>
@@ -169,51 +110,33 @@ function NewsSection() {
   const recentPosts = blogPluginData?.recentPosts?.slice(0, 5) || [];
 
   return (
-    <section
-      className={styles.newsSection}
-      style={{
-        backgroundColor: "var(--ifm-color-emphasis-100)",
-        padding: "3rem 0",
-      }}
-    >
+    <section className={styles.newsSection}>
       <div className="container">
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "2rem",
-            fontSize: "2.5rem",
-          }}
-        >
-          Latest News
-        </h2>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <h2 className={styles.sectionTitle}>Latest News</h2>
+        <div className={styles.newsContainer}>
           {recentPosts && recentPosts.length > 0 ? (
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <ul className={styles.newsList}>
               {recentPosts.map((post, idx) => (
-                <li
-                  key={idx}
-                  style={{ marginBottom: "1rem", fontSize: "1.1rem" }}
-                >
-                  <strong>
+                <li key={idx} className={styles.newsItem}>
+                  <span className={styles.newsDate}>
                     {new Date(post.metadata.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "2-digit",
                       day: "2-digit",
                     })}
-                  </strong>{" "}
-                  -{" "}
-                  <Link to={post.metadata.permalink}>
-                    {post.metadata.title}
-                  </Link>
+                  </span>
+                  <span className={styles.newsTitle}>
+                    <Link to={post.metadata.permalink}>
+                      {post.metadata.title}
+                    </Link>
+                  </span>
                 </li>
               ))}
             </ul>
           ) : (
-            <p style={{ textAlign: "center", fontStyle: "italic" }}>
-              No blog posts available yet.
-            </p>
+            <p className={styles.newsEmpty}>No blog posts available yet.</p>
           )}
-        </div>{" "}
+        </div>
       </div>
     </section>
   );
@@ -221,24 +144,16 @@ function NewsSection() {
 
 function ResourcesSection() {
   return (
-    <section className={styles.resources} style={{ padding: "3rem 0" }}>
+    <section className={styles.resources}>
       <div className="container">
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "2rem",
-            fontSize: "2.5rem",
-          }}
-        >
-          Resources
-        </h2>
+        <h2 className={styles.sectionTitle}>Resources</h2>
         <div className="row">
           <div className="col col--4">
-            <div className="card" style={{ height: "100%" }}>
-              <div className="card__header">
+            <div className={styles.resourceCard}>
+              <div className={styles.resourceCardHeader}>
                 <h3>📱 Hardware Support</h3>
               </div>
-              <div className="card__body">
+              <div className={styles.resourceCardBody}>
                 <p>Want to know if your toy/hardware is supported?</p>
                 <Link
                   to="https://iostindex.com"
@@ -250,35 +165,35 @@ function ResourcesSection() {
             </div>
           </div>
           <div className="col col--4">
-            <div className="card" style={{ height: "100%" }}>
-              <div className="card__header">
+            <div className={styles.resourceCard}>
+              <div className={styles.resourceCardHeader}>
                 <h3>📚 Documentation</h3>
               </div>
-              <div className="card__body">
-                <p style={{ marginBottom: "0.5rem" }}>
+              <div className={styles.resourceCardBody}>
+                <p className={styles.resourceLink}>
                   <Link to="/docs/dev-guide/">Developer Guide</Link>
                 </p>
-                <p style={{ marginBottom: "0.5rem" }}>
+                <p className={styles.resourceLink}>
                   <Link to="/docs/spec">Protocol Specification</Link>
                 </p>
-                <p>
+                <p className={styles.resourceLink}>
                   <Link to="/docs/stpihkal">Sex Toy Protocols (STPIHKAL)</Link>
                 </p>
               </div>
             </div>
           </div>
           <div className="col col--4">
-            <div className="card" style={{ height: "100%" }}>
-              <div className="card__header">
+            <div className={styles.resourceCard}>
+              <div className={styles.resourceCardHeader}>
                 <h3>🎬 In the Media</h3>
               </div>
-              <div className="card__body">
-                <p style={{ marginBottom: "0.5rem", fontSize: "0.9rem" }}>
+              <div className={styles.resourceCardBody}>
+                <p className={styles.mediaLink}>
                   <Link to="https://www.rollingstone.com/culture/culture-features/teledildonics-covid-19-sex-toys-967440/">
                     Rolling Stone: Teledildonics and COVID-19
                   </Link>
                 </p>
-                <p style={{ marginBottom: "0.5rem", fontSize: "0.9rem" }}>
+                <p className={styles.mediaLink}>
                   <Link to="https://www.vice.com/en/article/here-s-why-we-need-more-open-source-software-for-buttplugs/">
                     Vice Motherboard: Open Source Software For Buttplugs
                   </Link>
@@ -314,67 +229,25 @@ function SupportedHardwareSection() {
   ];
 
   return (
-    <section
-      className={styles.hardware}
-      style={{
-        backgroundColor: "var(--ifm-color-emphasis-100)",
-        padding: "3rem 0",
-      }}
-    >
+    <section className={styles.hardware}>
       <div className="container">
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "1rem",
-            fontSize: "2.5rem",
-          }}
-        >
-          Supported Hardware Brands
-        </h2>
-        <p
-          style={{
-            textAlign: "center",
-            marginBottom: "2rem",
-            fontStyle: "italic",
-          }}
-        >
+        <h2 className={styles.sectionTitle}>Supported Hardware Brands</h2>
+        <p className={styles.hardwareSubtitle}>
           See <Link to="https://iostindex.com">iostindex.com</Link> for a
           complete list
         </p>
         <div className="row">
           <div className="col col--8 col--offset-2">
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "1rem",
-              }}
-            >
+            <div className={styles.brandGrid}>
               {brands.map((brand, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    padding: "0.5rem",
-                    textAlign: "center",
-                    backgroundColor: "var(--ifm-color-emphasis-200)",
-                    borderRadius: "8px",
-                  }}
-                >
+                <div key={idx} className={styles.brandChip}>
                   {brand}
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <p
-          style={{
-            textAlign: "center",
-            marginTop: "2rem",
-            fontSize: "0.9rem",
-            fontStyle: "italic",
-            color: "var(--ifm-color-emphasis-700)",
-          }}
-        >
+        <p className={styles.hardwareNote}>
           Note: Due to different features and requirements in operating systems
           and programming languages, not all hardware may be supported in all
           Buttplug implementations.
