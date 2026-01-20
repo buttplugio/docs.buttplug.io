@@ -42,3 +42,160 @@
         max-width: 100%;
     }
 }
+
+/* ==================== Blog Modernization ==================== */
+
+/* Blog CSS Variables */
+:root {
+    --blog-card-background: rgba(0, 0, 0, 0.02);
+    --blog-card-border: rgba(0, 0, 0, 0.08);
+    --blog-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --blog-card-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --blog-card-radius: 8px;
+    --blog-accent-color: var(--ifm-color-primary);
+    --blog-sidebar-year-bg: rgba(0, 0, 0, 0.03);
+    --blog-sidebar-year-border: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] {
+    --blog-card-background: rgba(255, 255, 255, 0.02);
+    --blog-card-border: rgba(255, 255, 255, 0.08);
+    --blog-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --blog-card-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --blog-sidebar-year-bg: rgba(255, 255, 255, 0.03);
+    --blog-sidebar-year-border: rgba(255, 255, 255, 0.06);
+}
+
+/* Blog List Page - Card Styling for Posts */
+.blog-list-page article {
+    background-color: var(--blog-card-background);
+    border: 1px solid var(--blog-card-border);
+    border-left: 3px solid var(--blog-accent-color);
+    border-radius: var(--blog-card-radius);
+    box-shadow: var(--blog-card-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.blog-list-page article:hover {
+    box-shadow: var(--blog-card-shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Post Title Enhancements */
+.blog-list-page article header h2 a {
+    transition: color 0.2s ease;
+}
+
+.blog-list-page article header h2 a:hover {
+    color: var(--blog-accent-color);
+}
+
+/* Individual Post Page - Title Underline */
+.blog-post-page article header h1 {
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-page article header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--blog-accent-color);
+    border-radius: 2px;
+}
+
+/* First Paragraph Emphasis */
+.blog-post-page article .markdown > p:first-of-type {
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+/* Sidebar Year Groups */
+.blog-wrapper aside .menu__list-item-collapsible {
+    background-color: var(--blog-sidebar-year-bg);
+    border: 1px solid var(--blog-sidebar-year-border);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.blog-wrapper aside .menu__list-item-collapsible:hover {
+    background-color: var(--blog-sidebar-year-border);
+}
+
+.blog-wrapper aside .menu__link {
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.blog-wrapper aside .menu__link:hover {
+    color: var(--blog-accent-color);
+    padding-left: 0.75rem;
+}
+
+/* Read More Links */
+.blog-list-page article footer .read-more a {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--blog-card-border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.blog-list-page article footer .read-more a:hover {
+    background-color: var(--blog-accent-color);
+    border-color: var(--blog-accent-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Pagination Nav */
+.blog-post-page nav.pagination-nav {
+    margin-top: 2rem;
+}
+
+.blog-post-page nav.pagination-nav .pagination-nav__link {
+    background-color: var(--blog-card-background);
+    border: 1px solid var(--blog-card-border);
+    border-radius: var(--blog-card-radius);
+    box-shadow: var(--blog-card-shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-post-page nav.pagination-nav .pagination-nav__link:hover {
+    box-shadow: var(--blog-card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--blog-accent-color);
+}
+
+/* Blog Tags */
+.blog-list-page article footer .tag {
+    transition: background-color 0.2s ease;
+}
+
+.blog-list-page article footer .tag:hover {
+    background-color: var(--blog-accent-color);
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 996px) {
+    .blog-list-page article {
+        padding: 1rem;
+        border-left-width: 2px;
+    }
+
+    .blog-post-page article header h1::after {
+        width: 40px;
+    }
+
+    .blog-wrapper aside .menu__link:hover {
+        padding-left: 0.5rem;
+    }
+}
