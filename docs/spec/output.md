@@ -83,7 +83,7 @@ sequenceDiagram
       "FeatureIndex": 0,
       "Command": {
         "PositionWithDuration": {
-          "Position": 91,
+          "Value": 91,
           "Duration": 150
         }
       }
