@@ -137,7 +137,8 @@
 
 .featureCard {
     padding: 1.5rem;
-    background-color: var(--ifm-background-surface-color, #ffffff);
+    background-color: var(--ifm-background-surface-color, #ffffff);    
+    opacity: 0.93;
     border-radius: 12px;
     border: 1px solid var(--ifm-color-emphasis-200);
     height: 100%;
