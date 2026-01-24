@@ -23,7 +23,7 @@
     [OutputCmd](output.md#outputcmd)/[InputCmd](input.md#inputcmd) commands.
 - Define [OutputType](output.md#outputtype) and [InputType](input.md#inputtype) in message spec and require spec point updates
   to add new features
-  - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
+  - As part of the introduction of [ScalarCmd](deprecated.md#scalarcmd) in spec v3, we introduced an `ActuatorType` value, to
     let developers know what type of value they were setting, as well as `SensorType` for sensors.
     The values of `ActuatorType`/`SensorType` were never set in the message spec, only in the
     reference implementations of the Buttplug server. These values should be defined within the
@@ -33,23 +33,23 @@
     complain).
 - Remove ability to send multiple commands ("subcommands") in device command messages
   - In past versions of Buttplug, we allowed multiple commands to be sent within a command package.
-    For instance, if a device had multiple vibrators, a single v3 `ScalarCmd` could contain commands for both of these devices. Creating a usable API to form these messages was damn near impossible, and just ended up in implementation complexity on the server side that was never really exposed to developers well. From v4 on, command packets take one command for one output, and the server can handle that as it will.
+    For instance, if a device had multiple vibrators, a single v3 [ScalarCmd](deprecated.md#scalarcmd) could contain commands for both of these devices. Creating a usable API to form these messages was damn near impossible, and just ended up in implementation complexity on the server side that was never really exposed to developers well. From v4 on, command packets take one command for one output, and the server can handle that as it will.
 - Add `FeatureIndex` to commands
   - As we now refer to features instead of message attribute array positions, we're updating the
     `Index` field of commands with corresponding commands (what would've been subcommands in
-    `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's [OutputCmd](output.md#outputcmd)/[InputCmd](input.md#inputcmd)
+    [ScalarCmd](deprecated.md#scalarcmd)/[RotateCmd](deprecated.md#rotatecmd)/[LinearCmd](deprecated.md#linearcmd) in v3) to take `FeatureIndex` in v4's [OutputCmd](output.md#outputcmd)/[InputCmd](input.md#inputcmd)
     instead.
 - [DeviceList](device_information.md#devicelist) now contains range information about all fields of a feature
   - In v2/v3, we introduced the idea of `StepCount` to communicate actuator range. For instance, if
-    a device had 20 speeds of vibration, it'd have `StepCount` of 20. Some actuators (like [Rotate](output.md#rotate) and [Temperature](output.md#temperature)) can now have negative values, so we now send a definition of the range with the name of the field it represents. Instead of `StepCount: 20`, we send `Value: [-20, 20]`. We have also extended to fields we didn't define limits on before, like the `Duration` portion of [HwPositionWithDuration](output.md#hwpositionwithduration) (aka `LinearCmd`), as some devices have upper limits on how slowly they can move.
-- Remove `DeviceAdded` and `DeviceRemoved`
+    a device had 20 speeds of vibration, it'd have `StepCount` of 20. Some actuators (like [Rotate](output.md#rotate) and [Temperature](output.md#temperature)) can now have negative values, so we now send a definition of the range with the name of the field it represents. Instead of `StepCount: 20`, we send `Value: [-20, 20]`. We have also extended to fields we didn't define limits on before, like the `Duration` portion of [HwPositionWithDuration](output.md#hwpositionwithduration) (aka [LinearCmd](deprecated.md#linearcmd)), as some devices have upper limits on how slowly they can move.
+- Remove [DeviceAdded](deprecated.md#deviceadded) and [DeviceRemoved](deprecated.md#deviceremoved)
   - We will now just send [DeviceList](device_information.md#devicelist) when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
 - Remove `Raw*Cmd`
-  - `RawReadCmd`/`RawWriteCmd`/`Raw[Un]Subscribe` were introduced in the v2 spec to aid development,
+  - [RawReadCmd](deprecated.md#rawreadcmd)/[RawWriteCmd](deprecated.md#rawwritecmd)/[RawSubscribeCmd](deprecated.md#rawsubscribecmd)/[RawUnsubscribeCmd](deprecated.md#rawunsubscribecmd) were introduced in the v2 spec to aid development,
     allowing developers to bypass the protocol system in Buttplug and directly write byte buffers to
     devices. This was a bad idea, as Buttplug is built to be a protocol translation system, and this routed around the main point of the library. It ended up being about 2000 extra lines of code around the library to support, with almost no use, and the possibility of users turning it on and exposing their devices to bricking.
-- Remove `ScalarCmd`/`RotateCmd`/`LinearCmd`, replace with [OutputCmd](output.md#outputcmd) and [OutputType](output.md#outputtype) variations
+- Remove [ScalarCmd](deprecated.md#scalarcmd)/[RotateCmd](deprecated.md#rotatecmd)/[LinearCmd](deprecated.md#linearcmd), replace with [OutputCmd](output.md#outputcmd) and [OutputType](output.md#outputtype) variations
   - We have flipped the context of device command messages. Instead of stating intention by action,
     we now simply state that we are addressing the output of a device, and give more context with
     the message. This allows us to only update possible field values within a message versus having
@@ -74,7 +74,7 @@
   - Allows clients to explicitly signal intent to disconnect from the server, which triggers device
     cleanup and subscription removal. Useful for stateless transports (like UDP) where there is no
     inherent connection state, and for explicit shutdown rather than relying on ping timeout.
-- `StopAllDevices` and `StopDeviceCmd` now [StopCmd](stop.md#stopcmd) with optional fields.
+- [StopAllDevices](deprecated.md#stopalldevices---spec-v0) and [StopDeviceCmd](deprecated.md#stopdevicecmd-version---spec-v0) now [StopCmd](stop.md#stopcmd) with optional fields.
   - Simplifies stopping to work at multiple levels, by taking optional device and features IDs.
 - [StopCmd](stop.md#stopcmd) no longer sent as a possible message on a device description
   - We now let developers assume all devices can take [StopCmd](stop.md#stopcmd), so there is no need to attach
@@ -82,7 +82,7 @@
   - [StopCmd](stop.md#stopcmd) will be valid for both actuators (i.e. make a vibrator stop vibrating) and
     sensors (i.e. cause an unsubscribe from a subscribed endpoint). It also has Inputs and Outputs modifiers for the client/device level.
 - Added [Position](output.md#position) and [HwPositionWithDuration](output.md#hwpositionwithduration) OutputTypes
-  - These replace `LinearCmd` functionality from previous spec versions.
+  - These replace [LinearCmd](deprecated.md#linearcmd) functionality from previous spec versions.
   - [Position](output.md#position) commands a device to move to a position as quickly as possible (servoing).
   - [HwPositionWithDuration](output.md#hwpositionwithduration) commands a device to move to a position over a specified duration
     (the "Hw" prefix indicates this is handled by device hardware, not Buttplug).
