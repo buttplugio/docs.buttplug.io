@@ -201,6 +201,15 @@ While sensor input has been in Buttplug since the v2 spec in one way or another,
 
 **Device Examples**: Anything with a battery we can read. A fair amount of bluetooth devices support this, as do XBox controllers.
 
+:::tip No Charging State
+
+The Battery input type reports only the current charge level, not whether the device is currently
+charging. This is intentional: devices with rechargeable batteries are assumed to be non-functional
+while charging for safety reasons. If a device is connected and reporting battery level, it is
+assumed to be running on battery power.
+
+:::
+
 **Fields**
 - Value
   - **Type**: Unsigned 8-bit integer
