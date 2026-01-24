@@ -230,7 +230,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
-  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+  - **Description**: Constriction level, valid settings are within 0 < x < StepCount 
 
 **Example**:
 ```json
@@ -259,7 +259,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
-  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+  - **Description**: Heat level, valid settings are within 0 < x < StepCount 
 
 **Example**:
 ```json
