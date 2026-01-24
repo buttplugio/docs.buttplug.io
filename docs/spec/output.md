@@ -257,6 +257,35 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
   }]
 ```
 
+### Spray
+
+**Introduced In Spec Version:** 4
+
+**Description**: Controls spray/ejaculation mechanisms on devices that support this feature. 0 always denotes off/no spray, otherwise valid levels are between 0 and the _Value_ range in _DeviceInfo_. For the moment, this is expected to be an instanteous command; value is in relation to power, not timing.
+
+**Device Examples**: Hismith Lube Injector, Joyhub toys with squirting mechanisms, Bluetooth-Capable Glade Plugins
+
+**Fields**
+- Value
+  - **Type**: Unsigned 32-bit integer
+  - **Description**: Spray intensity, valid settings are within 0 < x < StepCount
+
+**Example**:
+```json
+  [{
+    "OutputCmd": {
+      "Id": 1,
+      "DeviceIndex": 0,
+      "FeatureIndex": 0,
+      "Command": {
+        "Spray": {
+          "Value": 5
+        }
+      }
+    }
+  }]
+```
+
 ### Heater
 
 **Introduced In Spec Version:** 4
