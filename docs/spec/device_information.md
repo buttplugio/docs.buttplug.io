@@ -20,8 +20,7 @@ Messages that convey information about devices currently connected to the system
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device
     Messages.
     * This is a repeat of the map key
-  * _DeviceMessageTimingGap_ (unsigned integer): Recommended minimum gap between device
-    commands, in milliseconds, **TO BE ENFORCED ON THE SERVER**. If multiple messages are sent within the timespan defined here, only the latest commands will be sent on the next message trigger. This relieves developers of having to regulate input from users or tune their clients, at the cost of added server complexity. As no one but the Buttplug Core Team writes servers, that means you're getting less work for free here. If this is set to 0, it means there is no minimum update rate (if there is a device updating at 1khz in buttplug, please get in touch, I have concerns).
+  * _DeviceMessageTimingGap_ (unsigned integer): Minimum gap between device commands, in milliseconds, **enforced by the server in Spec V4+**. If multiple messages are sent within the timespan defined here, the server drops earlier messages and only sends the latest command on the next trigger (a debug-level warning is logged, but no error is returned). This prevents issues with device communication busses with the possibility of buffer backup (like BLE), where devices would stop responding or update with significant delays (e.g., 30+ seconds) when commands were sent faster than the Bluetooth ConnectionInterval allowed. This relieves developers of having to regulate input from users or tune their clients. If this is set to 0, it means there is no minimum update rate.
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
