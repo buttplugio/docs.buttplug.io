@@ -42,6 +42,14 @@ device feature, with the input types denoting which of those methods may be allo
   * Ok message with matching Id on successful request
 * Error message on value/message/device error.
 
+:::tip Subscription Lifecycle
+
+- **Unlimited concurrent subscriptions**: A client may have any number of active subscriptions across different devices and features
+- **Duplicate subscriptions are ignored**: If a client sends a Subscribe command for a feature it is already subscribed to, the request is acknowledged with Ok but no additional subscription is created
+- **All subscriptions stop on disconnect**: When a client disconnects (gracefully or otherwise), all of its active subscriptions are automatically cleaned up by the server
+
+:::
+
 **Flow Diagram:**
 
 ```mermaid
