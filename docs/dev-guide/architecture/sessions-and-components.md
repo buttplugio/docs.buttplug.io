@@ -16,6 +16,67 @@ That's it! This is all Buttplug does. Connects to some devices, controls them, a
 
 As simple as that sounds, it takes a lot of management under the covers, which is what we'll be talking about for the next few sections. We'll also introduce components to fill out what's responsible for these step descriptions.
 
+## Session States
+
+A Buttplug session moves through several states during its lifetime. While client implementations may represent these differently (or not expose them directly), understanding the underlying states helps when debugging connection issues.
+
+| State | Description |
+|-------|-------------|
+| **Disconnected** | Initial state. No connection to server exists. |
+| **Connecting** | Connection initiated, handshake in progress. |
+| **Connected** | Handshake complete. Ready for device operations. |
+| **Disconnected** | Session ended (graceful disconnect, error, or timeout). |
+
+Some implementations may also distinguish:
+
+| State | Description |
+|-------|-------------|
+| **PingedOut** | Server disconnected the client due to missed ping deadline. |
+
+Once a session reaches a disconnected state (for any reason), it generally cannot be resumed. You'll need to create a new connection to continue.
+
+## Connection Handshake
+
+When a client connects to a server, they exchange information to establish the session. This handshake is typically handled automatically by client libraries, but understanding it helps when troubleshooting.
+
+### Handshake Steps
+
+1. **Transport Connection**
+   - Client establishes low-level connection (WebSocket, IPC, etc.)
+   - At this point, no Buttplug messages have been exchanged yet
+
+2. **RequestServerInfo**
+   - Client sends [RequestServerInfo](/docs/spec/identification#requestserverinfo) with:
+     - `ClientName`: Your application's identifier (shown in server logs/UI)
+     - `ProtocolVersionMajor` / `ProtocolVersionMinor`: Protocol version the client supports
+
+3. **ServerInfo Response**
+   - Server replies with [ServerInfo](/docs/spec/identification#serverinfo) containing:
+     - `ServerName`: Server identifier
+     - `ProtocolVersionMajor` / `ProtocolVersionMinor`: Protocol version the server will use
+     - `MaxPingTime`: Milliseconds between required pings (0 = no ping required)
+
+4. **Ping Timer (if enabled)**
+   - If `MaxPingTime` > 0, client must send [Ping](/docs/spec/status#ping) messages within that interval
+   - Missing a ping deadline causes the server to disconnect and stop all devices
+
+5. **Device List**
+   - Client typically requests the current device list via [RequestDeviceList](/docs/spec/device_information#devicelist)
+   - Server responds with any already-connected devices
+   - Client is now ready for normal operation
+
+### Version Negotiation
+
+The client and server negotiate which protocol version to use:
+
+- Client sends the version it supports
+- Server responds with the version it will use (may be lower for compatibility)
+- If the server's maximum major version is *lower* than what the client requests, the handshake fails
+
+This allows older clients to work with newer servers (the server downgrades to match), but a newer client cannot connect to an older server that doesn't support its requested version.
+
+In practice, the server is assumed to be either Intiface Engine or Intiface Central, so a client being newer than the server implies that the user usually needs a new version of one of these applications.
+
 ## Components
 
 Systems that use Buttplug will generally work with the following 3 components.
