@@ -52,6 +52,15 @@ As of v4, we move to 1 command per message. This will now require extra logic in
 * Ok message with matching Id on successful request.
 * Error message on value/message/device error.
 
+:::tip Device Disconnect During Command
+
+If a device disconnects while a command is being processed, the server will return an Error message.
+The exact error depends on the connection system the device uses (Bluetooth, USB, etc.), but will
+typically be an ERROR_DEVICE with a message indicating the disconnect. Clients should handle this
+gracefully and update their device state based on the subsequent DeviceList update from the server.
+
+:::
+
 **Flow Diagram:**
 
 ```mermaid
