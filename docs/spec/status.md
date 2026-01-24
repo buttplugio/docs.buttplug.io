@@ -55,12 +55,21 @@ or processing error on the server.
 * _Id_ (unsigned int): The Id of the client message that this reply is in response to, assuming the
   Id could be parsed. Id will be 0 if message could not be parsed (due to issues like invalid JSON).
 * _ErrorMessage_ (string): Message describing the error that happened on the server.
-* _ErrorCode_ (int): Integer describing the error. Can be used in programs to react accordingly.
+* _ErrorCode_ (int): Integer describing the error.
   * 0: ERROR\_UNKNOWN - An unknown error occurred.
   * 1: ERROR\_INIT - Handshake did not succeed.
   * 2: ERROR\_PING - A ping was not sent in the expected time.
   * 3: ERROR\_MSG - A message parsing or permission error occurred.
   * 4: ERROR\_DEVICE - A command sent to a device returned an error.
+
+:::tip Error Codes Are For Logging, Not Recovery
+
+Most Buttplug errors are unrecoverable at the protocol level. Error codes are primarily intended for
+logging and user notification, not for programmatic recovery. For example, ERROR\_DEVICE may
+indicate a device disconnected, a command was invalid, or the device itself returned an error - all
+of which typically denote an issue with the client or application, or require user intervention, rather than automatic retry logic.
+
+:::
 
 **Expected Response:**
 
