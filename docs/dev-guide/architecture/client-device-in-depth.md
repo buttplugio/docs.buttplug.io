@@ -48,4 +48,145 @@ Controlling a device is usually a matter of controlling its features. How this h
 
 There will be similar commands for other OutputTypes, like _oscillate()_, _position\_with\_duration()_, etc... Depending on language capabilities, there may also be a generic way to put together commands, useful for building complex programmatic structures for control.
 
-Inputs can be either read a single time, or subscribed to, which will provide an ongoing stream of events until they are unsubscribed. As an example, Battery values are usually read once (as batteries don't usually drain fast enough to need a stream of updates), while pressure and button sensors will be subscribed to and send events as available.
+## Value Systems
+
+At the message level, device features accept commands only in raw steps. Client libraries typically support break these values out into two different types.
+
+:::tip Objectivity and Pseudocode Ahead
+
+We haven't gotten into examples yet, so all code in this section is just random pseudocode to give you an idea of how things *might* work in the implementation you're using. There's no telling whether the author of the client library you're using actually does things this way, it's just how we as the buttplug core dev team write our clients.
+
+:::
+
+### Percentage-Based Values (Recommended)
+
+Values between 0.0 and 1.0 that are automatically scaled to the device's capabilities:
+
+```
+device.vibrate.percent(0.5)  // 50% power - works on any device
+```
+
+This is the recommended approach for most applications because:
+- It works consistently across all devices regardless of their step counts
+- It's ideal for normalized input values
+- The client library handles the conversion to actual device steps
+
+### Step-Based Values
+
+Raw integer values within the device's StepCount range:
+
+```
+device.vibrate.steps(10)  // Exactly step 10, regardless of max steps (errors if over max)
+```
+
+Use step-based values when:
+- You need precise control over exact device behavior
+- You're working with device-specific patterns or sequences
+- You want to ensure consistent behavior across sessions
+
+### Checking Device Capabilities
+
+Before sending commands, you can query what a device supports:
+
+```
+// Check if device has vibration. This may be an enum value in your impl.
+if (device.hasOutput("Vibrate")) {
+    // Get the value range for the first vibration feature
+    range = device.features[0].outputs["Vibrate"].valueRange  // e.g., [0, 20]
+}
+```
+
+The value range tells you the valid step values. A range of `[0, 20]` means steps 0 through 20 are valid (21 total levels including off).
+
+## Command Patterns
+
+Client libraries typically provide multiple ways to control devices:
+
+### All-Features Commands
+
+Set all features of a given type to the same value:
+
+```
+device.vibrate.percent(0.5)      // All vibration motors at 50%
+device.oscillate.percent(0.8)    // All oscillation features at 80%
+```
+
+### Per-Feature Commands
+
+Control individual features when a device has multiple motors/axes:
+
+```
+device.features[0].vibrate.percent(0.8)  // First motor at 80%
+device.features[1].vibrate.percent(0.3)  // Second motor at 30%
+```
+
+### Output Types
+
+Different output types exist for different device capabilities:
+
+| OutputType | Use Case | Example Devices |
+|------------|----------|-----------------|
+| Vibrate | Vibration motors | Most toys |
+| Oscillate | Speed-controlled movement | Fucking machines |
+| Position | Instant position change | Strokers (servo mode) |
+| HwPositionWithDuration | Timed position movement | Strokers, linear actuators |
+| Rotate / RotationWithDirection | Rotating mechanisms | Rotating toys |
+| Constrict | Pumps and squeezing | Air pumps |
+| Temperature | Heating/cooling | Warming toys |
+
+See the [Output Types in the Spec](/docs/spec/output#outputtype) for the complete list and details.
+
+## Sensor Input and Subscriptions
+
+Devices may have input features for reading sensor data. There are two patterns for accessing this data:
+
+### Single Reads
+
+For data that changes slowly, use a one-time read:
+
+```
+level = await device.battery()  // Returns 0-100 percentage
+rssi = await device.rssi()      // Returns signal strength (negative dBm)
+```
+
+Battery and RSSI are the most common single-read inputs. They don't change fast enough to warrant continuous streaming.
+
+### Subscriptions
+
+For continuous data like pressure sensors or buttons, subscribe to receive events:
+
+```
+// Subscribe to pressure sensor updates
+device.feature[0].pressure.subscribe((reading) => {
+    console.log("Pressure:", reading.value)
+})
+
+// Later, when done:
+device.feature[0].pressure.unsubscribe()
+```
+
+Subscription events fire whenever the sensor value changes, which may be many times per second for active sensors.
+
+### Subscription Lifecycle
+
+- **Subscriptions persist** until explicitly unsubscribed or the connection ends
+- **Duplicate subscriptions are ignored** - subscribing twice doesn't create two streams
+- **Auto-cleanup on disconnect** - all subscriptions are automatically cleaned up when the client disconnects
+- **No subscription limit** - you can have any number of concurrent subscriptions across devices
+
+### Input Types
+
+| InputType | Description | Typical Use |
+|-----------|-------------|-------------|
+| Battery | Charge level (0-100%) | Single read |
+| RSSI | Bluetooth signal strength | Single read |
+| Pressure | Squeeze/kegel sensors | Subscription |
+| Button | Physical device buttons | Subscription |
+
+See the [Input Types in the Spec](/docs/spec/input#inputtype) for the complete list.
+
+:::warning Sensor Values Are Not Standardized
+
+Sensor readings (especially pressure) are **not in standardized units**. A pressure reading of "200" on one device has no relation to "200" on another device. If your application requires meaningful values (like actual pressure in kPa), you must implement per-device calibration at the application level.
+
+:::
