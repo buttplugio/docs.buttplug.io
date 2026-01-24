@@ -85,7 +85,8 @@ sequenceDiagram
         "0": {
           "DeviceName": "Test Vibrator",
           "DeviceIndex": 0,
-          "Features": {
+          "DeviceMessageTimingGap": 0,
+          "DeviceFeatures": {
             "0": {
               "FeatureIndex": 0,
               "FeatureDescription": "Clitoral Stimulator",
@@ -118,7 +119,7 @@ sequenceDiagram
               "FeatureDescription": "Battery",
               "Input": {
                 "Battery": {
-                  "Value": [0, 100],
+                  "Value": [[0, 100]],
                   "Command": ["Read"]
                 }
               }
@@ -130,22 +131,22 @@ sequenceDiagram
           "DeviceIndex": 1,
           "DeviceMessageTimingGap": 100,
           "DeviceDisplayName": "User set name",
-          "Features": {
+          "DeviceFeatures": {
             "0": {
               "FeatureIndex": 0,
               "FeatureDescription": "Stroker",
               "Output": {
                 "HwPositionWithDuration": {
-                  "Position": [0, 100],
+                  "Value": [0, 100],
                   "Duration": [0, 100000]
                 },
                 "Position": {
-                  "Position": [0, 100]
+                  "Value": [0, 100]
                 }
               },
               "Input": {
                 "Position": {
-                  "Value": [0, 100],
+                  "Value": [[0, 100]],
                   "Command": ["Read", "Subscribe"]
                 }
               }
@@ -155,7 +156,7 @@ sequenceDiagram
               "FeatureDescription": "Bluetooth Radio RSSI",
               "Input": {
                 "RSSI": {
-                  "Value": [-10, -100],
+                  "Value": [[-10, -100]],
                   "Command": ["Read"]
                 }
               }

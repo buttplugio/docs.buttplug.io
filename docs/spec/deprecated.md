@@ -1831,8 +1831,6 @@ the server should know how to stop any device it supports.
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device to stop.
-* _Inputs_ (boolean, optional, default true): If true, unsubscribe all subscribed inputs.
-* _Outputs_ (boolean, optional, default true): If true, stop all outputs.
 
 **Expected Response:**
 
@@ -1854,9 +1852,7 @@ sequenceDiagram
   {
     "StopDeviceCmd": {
       "Id": 1,
-      "DeviceIndex": 0,
-      "Inputs": true,
-      "Outputs": true
+      "DeviceIndex": 0
     }
   }
 ]
@@ -1881,8 +1877,6 @@ disconnect no matter what.
 **Fields:**
 
 * _Id_ (unsigned int): Message Id
-* _Inputs_ (boolean, optional, default true): If true, unsubscribe all subscribed inputs.
-* _Outputs_ (boolean, optional, default true): If true, stop all outputs.
 
 **Expected Response:**
 
@@ -1903,9 +1897,7 @@ sequenceDiagram
 [
   {
     "StopAllDevices": {
-      "Id": 1,
-      "Inputs": true,
-      "Outputs": true
+      "Id": 1
     }
   }
 ]
