@@ -1,6 +1,6 @@
 # Spec Changelog
 
-## Version 4 (2025-10-18)
+## Version 4 (2026-01-24)
 
 - Nomenclature change: Standard -> API
   - Gonna stop calling this a standard. it's not. There's nothing to standardize here. No one wants
@@ -13,23 +13,23 @@
     Not a particularly good way to standardize anything. The rest of this changelog will bear out
     that fact in excrusiating detail.
   - Also, we're 8 years into this project now and not a single person has tried building a server
-    themselves. Which is good, because doing so requires a level of mental instability that would make quality of life questionable for anyone who tried. The ecosystem exists on top of us, but it is not us. I don't think it's ever going to be, and that's fine. 
+    themselves. Which is good, because doing so requires a level of mental instability that would make quality of life questionable for anyone who tried. The ecosystem exists on top of us, but it is not us. I don't think it's ever going to be, and that's fine.
   - From here on out, this will now just be referred to as the Buttplug Protocol Spec.
 - Change from Message Attributes to Device Features
   - In message specs v0-3, we'd enumerated devices in terms of the messages they could receive. This
     had multiple problems, including index collisions, difficult figuring out what a device actually
     does, and building coherent APIs to form messages. In v4, we switch to a Device Feature system, which presents devices as sets of 2 different types of features: Outputs and Inputs. This allows us to state what a device can do, and then define capabilities within each feature. This solves the issue with index collisions (as we now use feature indexes instead of just message enumeration array indexes), and makes it easier for developers using buttplug to create UI representing the capabilities of a connected device.
-  - This change will be seen in the `DeviceAdded`/`DeviceList` messages, as well as in the new
-    `OutputCmd`/`InputCmd` commands.
-- Define `OutputType`, and `InputType` in message spec and require spec point updates
+  - This change will be seen in the [DeviceList](device_information.md#devicelist) message, as well as in the new
+    [OutputCmd](output.md#outputcmd)/[InputCmd](input.md#inputcmd) commands.
+- Define [OutputType](output.md#outputtype) and [InputType](input.md#inputtype) in message spec and require spec point updates
   to add new features
   - As part of the introduction of `ScalarCmd` in spec v3, we introduced an `ActuatorType` value, to
     let developers know what type of value they were setting, as well as `SensorType` for sensors.
     The values of `ActuatorType`/`SensorType` were never set in the message spec, only in the
     reference implementations of the Buttplug server. These values should be defined within the
     message spec to let Client writers know exactly what to expect, and how to handle types they may
-    not know (i.e. a client built for message spec v4.1 receives a
-    `OutputType`/`InputType` defined in v4.2 should not completely break, but should
+    not know (i.e. a client built for message spec v4.1 receives an
+    [OutputType](output.md#outputtype)/[InputType](input.md#inputtype) defined in v4.2 should not completely break, but should
     complain).
 - Remove ability to send multiple commands ("subcommands") in device command messages
   - In past versions of Buttplug, we allowed multiple commands to be sent within a command package.
@@ -37,92 +37,66 @@
 - Add `FeatureIndex` to commands
   - As we now refer to features instead of message attribute array positions, we're updating the
     `Index` field of commands with corresponding commands (what would've been subcommands in
-    `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's `OutputCmd`/`InputCmd`
+    `ScalarCmd`/`RotateCmd`/`LinearCmd` in v3) to take `FeatureIndex` in v4's [OutputCmd](output.md#outputcmd)/[InputCmd](input.md#inputcmd)
     instead.
-- `DeviceInfo` now contains range information about all fields of a feature
+- [DeviceList](device_information.md#devicelist) now contains range information about all fields of a feature
   - In v2/v3, we introduced the idea of `StepCount` to communicate actuator range. For instance, if
-    a device had 20 speeds of vibration, it'd have `StepCount` of 20. Some actuators (like `Rotate` and `Temperature`) can now have negative values, so we now send a definition of the range with the name of the field it represents. Instead of `StepCount: 20`, we send `Value: [-20, 20]`. We have also extended to fields we didn't define limits on before, like the `Duration` portion of `PositionWithDuration` (aka `LinearCmd`), as some devices have upper limits on how slowly they can move.
+    a device had 20 speeds of vibration, it'd have `StepCount` of 20. Some actuators (like [Rotate](output.md#rotate) and [Temperature](output.md#temperature)) can now have negative values, so we now send a definition of the range with the name of the field it represents. Instead of `StepCount: 20`, we send `Value: [-20, 20]`. We have also extended to fields we didn't define limits on before, like the `Duration` portion of [HwPositionWithDuration](output.md#hwpositionwithduration) (aka `LinearCmd`), as some devices have upper limits on how slowly they can move.
 - Remove `DeviceAdded` and `DeviceRemoved`
-  - We will now just send `DeviceList` when a client connects (post handshake), and on any device
+  - We will now just send [DeviceList](device_information.md#devicelist) when a client connects (post handshake), and on any device
     connection changes. It will be up to the client to implement logic to handle additions/deletions from the device list, but this allows us to simplify protocol implementations.
 - Remove `Raw*Cmd`
   - `RawReadCmd`/`RawWriteCmd`/`Raw[Un]Subscribe` were introduced in the v2 spec to aid development,
     allowing developers to bypass the protocol system in Buttplug and directly write byte buffers to
     devices. This was a bad idea, as Buttplug is built to be a protocol translation system, and this routed around the main point of the library. It ended up being about 2000 extra lines of code around the library to support, with almost no use, and the possibility of users turning it on and exposing their devices to bricking.
-- Remove `ScalarCmd`/`RotateCmd`/`LinearCmd`, replace with `OutputCmd` and `OutputType` variations
+- Remove `ScalarCmd`/`RotateCmd`/`LinearCmd`, replace with [OutputCmd](output.md#outputcmd) and [OutputType](output.md#outputtype) variations
   - We have flipped the context of device command messages. Instead of stating intention by action,
     we now simply state that we are addressing the output of a device, and give more context with
     the message. This allows us to only update possible field values within a message versus having
     to add new messages any time we want to address a new context.
   - In ELI5 terms: If a new device comes out that moves or does something in a new way, we don't
     have to do a major revision to the message spec to add support.
-- Remove `Sensor*Cmd`, replace with `InputCmd` and `InputCommand` variations
+- Remove `Sensor*Cmd`, replace with [InputCmd](input.md#inputcmd) and [InputType](input.md#inputtype) variations
   - Due to index collision issues, `Sensor*Cmd` was never really directly supported or used in
-    Buttplug outside of getting Battery values. These issues have now been fixed, and the same context flip as `OutputCmd` has been applied to provide us with `InputCmd`.
-  - Why are they named `OutputCmd` and `InputCmd` instead of following the nomenclature of v3 and
+    Buttplug outside of getting Battery values. These issues have now been fixed, and the same context flip as [OutputCmd](output.md#outputcmd) has been applied to provide us with [InputCmd](input.md#inputcmd).
+  - Why are they named [OutputCmd](output.md#outputcmd) and [InputCmd](input.md#inputcmd) instead of following the nomenclature of v3 and
     using `ActuatorCmd` and `SensorCmd`? Because our domain is buttplug.io and now we have io commands. You can never say we do not commit to the bit fully on this project.
 - Change device commands to use integers instead of floats for control values
   - When Buttplug started we decided to use floats instead of integers for command values. This
-    meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.    
+    meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.
 - Rename `MessageVersion` to `ProtocolVersionMajor` and add `ProtocolVersionMinor` in
-  `RequestServerInfo`/`ServerInfo` messages.
+  [RequestServerInfo](identification.md#requestserverinfo)/[ServerInfo](identification.md#serverinfo) messages.
   - This allows us to add features to message versions without having to bump major versions every
     time.
   - Servers return `ProtocolVersionMajor` and `ProtocolVersionMinor` for connections on >= v4, just
     `MessageMajorVersion` for < v4
-- `StopDeviceCmd` no longer sent as a possible message on a device description
-  - We now let developers assume all devices can take `StopDeviceCmd`, so there is no need to attach
+- Add [Disconnect](identification.md#disconnect) message for graceful client disconnection
+  - Allows clients to explicitly signal intent to disconnect from the server, which triggers device
+    cleanup and subscription removal. Useful for stateless transports (like UDP) where there is no
+    inherent connection state, and for explicit shutdown rather than relying on ping timeout.
+- `StopAllDevices` and `StopDeviceCmd` now [StopCmd](stop.md#stopcmd) with optional fields.
+  - Simplifies stopping to work at multiple levels, by taking optional device and features IDs.
+- [StopCmd](stop.md#stopcmd) no longer sent as a possible message on a device description
+  - We now let developers assume all devices can take [StopCmd](stop.md#stopcmd), so there is no need to attach
     it to device descriptors.
-  - `StopDeviceCmd` will be valid for both actuators (i.e. make a vibrator stop vibrating) and
-    sensors (i.e. cause an unsubscribe from a subscribed endpoint)
-- `Rotate` actuators can now possibly take negative values
+  - [StopCmd](stop.md#stopcmd) will be valid for both actuators (i.e. make a vibrator stop vibrating) and
+    sensors (i.e. cause an unsubscribe from a subscribed endpoint). It also has Inputs and Outputs modifiers for the client/device level.
+- Added [Position](output.md#position) and [HwPositionWithDuration](output.md#hwpositionwithduration) OutputTypes
+  - These replace `LinearCmd` functionality from previous spec versions.
+  - [Position](output.md#position) commands a device to move to a position as quickly as possible (servoing).
+  - [HwPositionWithDuration](output.md#hwpositionwithduration) commands a device to move to a position over a specified duration
+    (the "Hw" prefix indicates this is handled by device hardware, not Buttplug).
+- Added [RotationWithDirection](output.md#rotationwithdirection) OutputType
+  - Provides bidirectional rotation control with an explicit `Clockwise` boolean field.
+  - Devices supporting [RotationWithDirection](output.md#rotationwithdirection) also support the simpler [Rotate](output.md#rotate) command as a fallback.
+- [Rotate](output.md#rotate) actuators can now possibly take negative values
   - Instead of having a `clockwise` attribute, devices with bidirectional rotation will have a `value` range of negative to positive, with positive being clockwise, negative being counterclockwise.
-- Added `Temperature`, `Led`, `Spray` actuators
-  - `Temperature` refers to devices with cooling/heating units. This will be communicated as
-    negative/positive values, similar to `Rotate.
-  - `Led` is light levels for devices with controllable lights, most likely used just to turn them
+- Added [Temperature](output.md#temperature), [Led](output.md#led-encoded-as-led), [Spray](output.md#spray) OutputTypes
+  - [Temperature](output.md#temperature) refers to devices with cooling/heating units. This will be communicated as
+    negative/positive values, similar to [Rotate](output.md#rotate).
+  - [Led](output.md#led-encoded-as-led) is light levels for devices with controllable lights, most likely used just to turn them
     off.
-  - `Spray` is for lubrication injection
-
-### Imaginary Version ~4 Beta 1 (2025-03-??)
-
-THEN IT HAPPENED AGAIN.
-
-- Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
-  - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
-    `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
-- Renamed `Sensor*` fields to `Feature*` in `Sensor*Cmd` Messages
-  - Aligns with new feature system
-- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
-  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
-    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.  
-
-### Imaginary Version ~4 Beta 0 (2024-09-??)
-
-This version never actually existed. I'm just leaving it here to show how things change if I let the project sit for months at a time.
-
-- Rename `LinearCmd` to `GoalWithDurationCmd` _(Ed. Note: This is still a maybe)_
-  - Much like the move to `ScalarCmd` in v3, `LinearCmd` is now being generalized to "movement
-    toward a goal value with a duration". Added to the definition will be a curve type for the
-    movement, though at the moment the only supported curve will be of "Linear" type (later versions
-    may include different curves or the ability to define a curve function over time). For now, this
-    means we can handle both stroker style movement as well as things like angular rotation in TCode
-    v3, denoting the movement type via feature types.
-- Rename `ScalarCmd` to `StaticCmd` _(Ed. Note: I'm not sure about this name yet :| )_
-  - `ScalarCmd` is being renamed to `StaticCmd` to denote that sending the command is expected to
-    set a value and leave it set until another `StaticCmd` or `StopDeviceCmd` call is sent.
-    `ScalarCmd` didn't properly relay this meaning.
-- Remove `RotateCmd`, use `StaticCmd`
-  - See note on last bullet for more info.
-- Remove `ActuatorType` from `StaticCmd` _(Ed Note: This is still a maybe)_
-  - This was initially added as a safety check on `ScalarCmd`, to make sure that the developer was
-    actually triggering the type of actuator they meant to be. However, as clients usually (or at
-    least should) hide this detail from end users, it's not useful to anyone but client developers.
-- Change `StaticCmd` to take signed double instead of unsigned double
-  - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
-    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 \<= x \<= 1 value,
-    letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
-    condense methods.
+  - [Spray](output.md#spray) is for lubrication injection.
 
 ## Version 3 Patch 3 (2022-12-30)
 
@@ -275,3 +249,51 @@ This version never actually existed. I'm just leaving it here to show how things
   - VorzeA10CycloneCmd
   - StopDeviceCmd
   - StopAllDevices
+
+---
+
+## Development History
+
+The following sections document intermediate design ideas that were explored during the development
+of V4. These versions never shipped but are preserved here to show how the spec evolved. They may
+be useful for understanding the rationale behind certain V4 decisions.
+
+### Imaginary Version ~4 Beta 1 (2025-03-??)
+
+THEN IT HAPPENED AGAIN.
+
+- Rename `LinearCmd` and `RotateCmd` to `ValueWithParameterCmd`
+  - Linear and Rotate were both messages that could be described in an "x with y" way, i.e.
+    `RotationWithDirection`, `PositionWithDuration`, etc... This condensing and renaming of commands will hopefully make this idea easier to convey while giving us the extensibility of using ActuatorTypes (and therefore not having to add new messages whenever we want to update).
+- Renamed `Sensor*` fields to `Feature*` in `Sensor*Cmd` Messages
+  - Aligns with new feature system
+- Add `EventCmd` _(Ed. Note: or maybe BangCmd, not sure yet)_
+  - We're seeing devices that require a one-off command to cause an event to happen. For instance,
+    the Hismith lubrication injector, lube injectors for the SR-6/OSR-2, etc... We needed a command that denote that an event will happen, but will not be continuously happening, like StaticCmd.
+
+### Imaginary Version ~4 Beta 0 (2024-09-??)
+
+This version never actually existed. I'm just leaving it here to show how things change if I let the project sit for months at a time.
+
+- Rename `LinearCmd` to `GoalWithDurationCmd` _(Ed. Note: This is still a maybe)_
+  - Much like the move to `ScalarCmd` in v3, `LinearCmd` is now being generalized to "movement
+    toward a goal value with a duration". Added to the definition will be a curve type for the
+    movement, though at the moment the only supported curve will be of "Linear" type (later versions
+    may include different curves or the ability to define a curve function over time). For now, this
+    means we can handle both stroker style movement as well as things like angular rotation in TCode
+    v3, denoting the movement type via feature types.
+- Rename `ScalarCmd` to `StaticCmd` _(Ed. Note: I'm not sure about this name yet :| )_
+  - `ScalarCmd` is being renamed to `StaticCmd` to denote that sending the command is expected to
+    set a value and leave it set until another `StaticCmd` or `StopDeviceCmd` call is sent.
+    `ScalarCmd` didn't properly relay this meaning.
+- Remove `RotateCmd`, use `StaticCmd`
+  - See note on last bullet for more info.
+- Remove `ActuatorType` from `StaticCmd` _(Ed Note: This is still a maybe)_
+  - This was initially added as a safety check on `ScalarCmd`, to make sure that the developer was
+    actually triggering the type of actuator they meant to be. However, as clients usually (or at
+    least should) hide this detail from end users, it's not useful to anyone but client developers.
+- Change `StaticCmd` to take signed double instead of unsigned double
+  - The unsigned value given to v3 `ScalarCmd` made it difficult to define messages that might
+    actually be 2d instead of 1d (i.e. embedding rotation direction with a -1 \<= x \<= 1 value,
+    letting us remove `RotateCmd`). Change `StaticCmd` in v4 to take signed values, so we can
+    condense methods.
