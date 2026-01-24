@@ -7,6 +7,15 @@ Messages that convey information about devices currently connected to the system
 
 **Description:** Server reply to a client request for a device list, or sent as an event when a device is connected or disconnected.
 
+:::tip Detecting Device Changes
+
+In Spec V4, the `DeviceAdded` and `DeviceRemoved` messages were removed in favor of always sending
+the complete `DeviceList`. Clients are expected to maintain their own copy of the device list and
+diff against incoming `DeviceList` messages to detect which devices were added or removed. This
+simplifies the protocol while giving clients full flexibility in how they track device state changes.
+
+:::
+
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version:** 4 (See [Deprecated Messages](deprecated.md) for older versions.)
