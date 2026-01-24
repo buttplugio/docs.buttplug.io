@@ -1,6 +1,6 @@
-# Handshake Messages
+# Connection Messages
 
-Messages used in the client/server handshake procedure.
+Messages used for client/server connection lifecycle, including handshake and disconnection.
 
 ---
 ## RequestServerInfo
@@ -91,6 +91,51 @@ sequenceDiagram
       "MaxPingTime": 100,
       "ProtocolVersionMajor": 4,
       "ProtocolVersionMinor": 0
+    }
+  }
+]
+```
+---
+## Disconnect
+
+**Description:** Sent by the client to request a graceful disconnection from the server. Upon
+receiving this message, the server should stop all devices, clean up any subscriptions, and close
+the connection.
+
+While WebSocket and other stateful transports handle disconnection at the transport level, this
+message is useful for stateless transports (such as UDP) where there is no inherent connection
+state. It also allows clients to explicitly signal intent to disconnect rather than relying on
+the ping timeout mechanism.
+
+**Introduced In Spec Version:** 4
+
+**Last Updated In Spec Version:** 4
+
+**Fields:**
+
+* _Id_ (unsigned int): Message Id
+
+**Expected Response:**
+
+* Ok message with matching Id, followed by server closing the connection.
+* The server may close the connection without sending Ok if the transport supports it.
+
+**Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    Client->>+Server: Disconnect Id=1
+    Server->>-Client: Ok Id=1
+    Server->>Client: [Connection Closed]
+```
+
+**Serialization Example:**
+
+```json
+[
+  {
+    "Disconnect": {
+      "Id": 1
     }
   }
 ]
