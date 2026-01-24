@@ -48,7 +48,16 @@ Messages that convey information about devices currently connected to the system
         * _Command_ (array of string: \["Read", "Subscribe", "Unsubscribe"\]): Some combination of "Read" and/or "Subscribe".
         * _Value_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
           received from the sensor, if known.
-    
+
+:::tip Range Semantics
+
+All ranges in Buttplug (for both Output and Input values) are:
+- **Inclusive on both ends**: A range of `[0, 20]` means values 0 through 20 are all valid
+- **Contiguous from the API user's perspective**: All integer values within the range are valid; there are no gaps or discrete steps exposed at the protocol level
+- **Linearly interpolated**: The protocol assumes uniform distribution across the range (though actual device hardware behavior may vary)
+
+:::
+
 :::tip Why are the DeviceIndex and FeatureIndex repeated as map keys and object fields?
 
 DeviceIndex and FeatureIndex are how client implementations refer to a device in InputCmd and OutputCmd messages. They are the main identifiers for Buttplug. In most client implementations we've built so far, we end up using Map\<number, object\> types to represent Devices and Features, mapping indexes to the related objects. However, for the objects themselves, it tends be to handy for the object to know its index when forming device control messages.
