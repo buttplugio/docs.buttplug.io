@@ -61,6 +61,27 @@ Now, the not so simple case.
 
 Let's add Device C, a stroker. To use Device C with the same application as Device A and Device B, the generic vibration speed command has to be translated into some facsimile that is valid for a stroker. While this is most likely not tractable for a global solution, the goal of Buttplug is to make explorations of ideas like this accessible and easy to play with.
 
+:::warning Hardware Limitations
+
+The devices Buttplug supports are consumer-grade products with limited capabilities. The protocol
+cannot provide certain features because the underlying hardware simply does not support them:
+
+- **No timestamps**: At this time of this writing, no supported device reports when sensor readings
+  were captured or when commands complete. Motion synchronization and latency compensation must be
+  handled at the either the library or application level. We shield our users where we can, but it's rough out there.
+- **No firmware version**: Most devices do not expose their firmware version over their
+  communication protocols.
+- **No pairing state**: Pairing is handled at the OS/transport level, not by Buttplug.
+- **No connection quality metrics**: Beyond RSSI (where available), devices do not report connection
+  quality, packet loss, or latency statistics.
+- **No charging state**: See the Battery input type documentation for details.
+
+These limitations reflect the reality of the hardware ecosystem, not design oversights in the protocol.
+
+After all, these *are* cheap sex toys made by companies that may not even have engineering departments.
+
+:::
+
 ## Comparisons to Existing Software
 
 It's somewhat difficult to point to a real world counterpart for the Buttplug Protocol. While brands like [xtoys](http://xtoys.app) and [FeelMe](http://feelme.com) have created systems for controlling different devices, neither of those is open source, so it's hard to point at them as examples.
