@@ -64,11 +64,11 @@
 - Change device commands to use integers instead of floats for control values
   - When Buttplug started we decided to use floats instead of integers for command values. This
     meant that clients had to calculate steps to a value between 0.0-1.0. However, this was also usually exposed to application developers in this way, meaning they had to consider the step difference amounts in order to make device actuators actually do something different (i.e. if a device had 5 steps, the application dev would have to know to round between values of x * 0.2). Moving to integers that are limited by the amount of available steps on a device makes life easier for everyone, as well as optimizing our line protocol as it's one less float to try to translate.    
-- Rename `MessageVersion` to `ProtocolMajorVersion` and add `ProtocolMinorVersion` in
+- Rename `MessageVersion` to `ProtocolVersionMajor` and add `ProtocolVersionMinor` in
   `RequestServerInfo`/`ServerInfo` messages.
   - This allows us to add features to message versions without having to bump major versions every
     time.
-  - Servers return `ProtocolMajorVersion` and `ProtocolMinorVersion` for connections on >= v4, just
+  - Servers return `ProtocolVersionMajor` and `ProtocolVersionMinor` for connections on >= v4, just
     `MessageMajorVersion` for < v4
 - `StopDeviceCmd` no longer sent as a possible message on a device description
   - We now let developers assume all devices can take `StopDeviceCmd`, so there is no need to attach
