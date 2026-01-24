@@ -10,9 +10,47 @@ Buttplug Servers themselves don't actually do all that much, as most of the comp
 
 When a client connects to the server, the server handles the handshake. This is where the Client and Server trade identifiers and message spec versions to make sure they'll be able to talk to each other. If any of the information exchanged doesn't match what's expected, the server disconnects.
 
-If the handshake is successful, depending on configuration values the server may then start up a ping manager. The Ping Manager is an optional internal safety mechanism that requires the client to send a ping message to the server at certain intervals to denote the client is still functioning. If the client misses a ping, the server disconnects and stops all devices from whatever function they may be running at the time. This is covered in the Winning Ways chapter.
+If the handshake is successful, depending on configuration values the server may then start up a ping manager, which is covered in detail below.
 
 Finally, the server is basically the front door to the rest of the hardware handling system. It receives all messages, and either routes them to its device managers (if they're device related messages) or responds to them itself. The Server rarely has a surface API, and usually just exposes a "ProcessMessage" type method that sends/receives Buttplug Protocol Messages.
+
+## Ping Manager
+
+The Ping Manager is an optional mechanism that can help detect unresponsive clients in certain scenarios.
+
+### How It Works
+
+1. During handshake, the server announces `MaxPingTime` in the [ServerInfo](/docs/spec/identification#serverinfo) message (e.g., 20000 for 20 seconds)
+2. If `MaxPingTime` > 0, the client must send [Ping](/docs/spec/status#ping) messages within that interval
+3. The server resets its timer each time it receives a Ping
+4. If the timer expires without a Ping, the server:
+   - Disconnects the client
+   - Stops all devices immediately
+   - Cleans up all sensor subscriptions
+
+### When It's Useful
+
+For **stateful transports** like WebSocket or TCP, the ping system is often redundant. If a client crashes, the transport layer detects the connection drop and notifies the server, which then stops devices automatically. The connection state itself provides crash detection.
+
+For **stateless transports** (or scenarios where transport-level detection isn't reliable), the ping system provides an application-level heartbeat. If the client stops sending pings, the server knows something is wrong even without a transport disconnect signal.
+
+The ping system may also help in edge cases like:
+- Client process frozen but network connection still open
+- Mobile apps suspended by the OS without closing connections
+- Network issues that don't immediately trigger transport-level disconnects
+
+### When It's Enabled
+
+- **Intiface Central**: Ping is enabled by default (configurable in settings)
+- **Embedded servers**: Typically disabled since the client and server share a process
+
+### Client Implementation
+
+Reference client libraries handle ping automatically in a background thread or task. You typically don't need to manually send pings - the library does it for you. If you're building your own client implementation, you'll need to implement ping handling when `MaxPingTime` > 0.
+
+### When MaxPingTime is 0
+
+If the server sends `MaxPingTime: 0`, ping monitoring is disabled. The client can still send Ping messages (the server will respond with Ok), but no timeout enforcement occurs. This is common for embedded server configurations or testing scenarios.
 
 ## The Device Manager
 
