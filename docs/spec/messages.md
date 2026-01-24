@@ -27,6 +27,14 @@ handle matching message pairs without the need for the Id. In remote situations,
 network connections, it is expected that the client will establish a sane usage of the Id field to
 orchestrate messaging.
 
+:::warning Message Ordering Is Not Guaranteed
+
+The Buttplug protocol does not guarantee message ordering. Client-generated message IDs are used for
+matching requests to responses, not for ensuring execution order. If a client sends multiple
+commands in quick succession, the server will process them in the order received, meaning there could be inconsistencies due to network traffic, etc... As Buttplug is built to be run locally, clients can mostly assume ordering, but some exceptional cases, messages may be not executed in the order they were sent.
+
+:::
+
 ## Message Flow
 
 There are two types of message flows.
