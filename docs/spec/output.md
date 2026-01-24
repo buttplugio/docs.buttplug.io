@@ -286,18 +286,18 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
   }]
 ```
 
-### Heater
+### Temperature
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets the heat level for a device with a heating element. It will be vanishingly rare that we have information about the exact temperature that we can set the heater to, so this will normally be some number of "heating steps". 0 always denotes turning off the heater, otherwise valid commands are between 0 and the _Value_ range in _DeviceInfo_.
+**Description**: Controls temperature for devices with heating or cooling elements. The value range is signed to support both heating (positive values) and cooling (negative values), with 0 denoting neutral/off. It will be vanishingly rare that we have information about the exact temperature a device can reach, so this will normally be some number of "temperature steps" rather than degrees (see [note on sensor units](./input#sensor-units-are-not-standardized)). Valid commands are within the _Value_ range in _DeviceInfo_, which may be `[-x, x]` for devices supporting both heating and cooling, or `[0, x]` for heating-only devices.
 
 **Device Examples**: N/A
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Heat level, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Temperature level. 0 is neutral/off, positive values indicate heating, negative values indicate cooling. Valid settings are within the range specified in DeviceInfo.
 
 **Example**:
 ```json
@@ -307,7 +307,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
       "DeviceIndex": 0,
       "FeatureIndex": 0,
       "Command": {
-        "Heater": {
+        "Temperature": {
           "Value": 2
         }
       }
