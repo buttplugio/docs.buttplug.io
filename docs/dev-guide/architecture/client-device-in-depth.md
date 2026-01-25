@@ -16,7 +16,7 @@ Client devices are accessible through the client instance, and will generally li
 
 ## Device Features
 
-Each device is made of one or more features, which define what the device can do. These can be anything from vibration motors, to stroker axes, to battery level reading access. [Output types](/docs/spec/output#outputtype) and [Input types](/docs/spec/input#inputtype) for features are defined in the [Buttplug API Spec](/docs/spec/).
+Each device is made of one or more features, which define what the device can do. These can be anything from vibration motors, to stroker axes, to battery level reading access. [Output types](../../spec/output#outputtype) and [Input types](../../spec/input#inputtype) for features are defined in the [Buttplug API Spec](../../spec/).
 
 Features contain:
 - A basic text description of what they do, for display in UI
@@ -134,7 +134,7 @@ Different output types exist for different device capabilities:
 | Constrict | Pumps and squeezing | Air pumps |
 | Temperature | Heating/cooling | Warming toys |
 
-See the [Output Types in the Spec](/docs/spec/output#outputtype) for the complete list and details.
+See the [Output Types in the Spec](../../spec/output#outputtype) for the complete list and details.
 
 ## Sensor Input and Subscriptions
 
@@ -183,7 +183,7 @@ Subscription events fire whenever the sensor value changes, which may be many ti
 | Pressure | Squeeze/kegel sensors | Subscription |
 | Button | Physical device buttons | Subscription |
 
-See the [Input Types in the Spec](/docs/spec/input#inputtype) for the complete list.
+See the [Input Types in the Spec](../../spec/input#inputtype) for the complete list.
 
 :::warning Sensor Values Are Not Standardized
 

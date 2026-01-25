@@ -61,7 +61,7 @@ When a client connects to a server, they exchange information to establish the s
    - Missing a ping deadline causes the server to disconnect and stop all devices
 
 5. **Device List**
-   - Client typically requests the current device list via [RequestDeviceList](/docs/spec/device_information#devicelist)
+   - Client typically requests the current device list via [RequestDeviceList](../../spec/device_information#devicelist)
    - Server responds with any already-connected devices
    - Client is now ready for normal operation
 

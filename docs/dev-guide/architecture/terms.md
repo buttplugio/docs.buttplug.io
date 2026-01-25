@@ -31,7 +31,7 @@ Just in case you don't want to go digging through the architecture section again
 * **InputType**
   * Categories of sensor data that can be read from device features. Examples include Battery
     (charge level), RSSI (signal strength), Pressure (squeeze sensors), and Button (physical buttons).
-    See the [Input Types](/docs/spec/input#inputtype) in the spec for the complete list.
+    See the [Input Types](../../spec/input#inputtype) in the spec for the complete list.
 * **Intiface Central**
   * GUI interface to configure and start a Buttplug server, distributed by the same team that
     makes Buttplug. This is what most users of Buttplug will have on their system for your
@@ -45,7 +45,7 @@ Just in case you don't want to go digging through the architecture section again
 * **OutputType**
   * Categories of actions that can be sent to device features. Examples include Vibrate, Rotate,
     Oscillate, Position, and Temperature. Each output type may have different parameters (e.g.,
-    Position includes duration). See the [Output Types](/docs/spec/output#outputtype) in the spec
+    Position includes duration). See the [Output Types](../../spec/output#outputtype) in the spec
     for the complete list.
 * **Ping Manager**
   * An optional server safety mechanism that requires clients to send periodic ping messages. If

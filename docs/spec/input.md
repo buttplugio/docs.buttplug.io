@@ -20,7 +20,9 @@ In practice, InputCmd is meants to be exposed to developers via crafted APIs, i.
 battery()/rssi()/subscribe(\[type\]) etc functions available on a data structure that represents a
 device feature, with the input types denoting which of those methods may be allowed.
 
-:::warning Sensor Units Are Not Standardized
+### Sensor Units Are Not Standardized {#sensor-units-are-not-standardized}
+
+:::warning
 
 Hardware manufacturers do not provide standardized units for sensor readings. The Buttplug protocol
 cannot define measurement units (such as kPa for pressure, or specific temperature scales) because

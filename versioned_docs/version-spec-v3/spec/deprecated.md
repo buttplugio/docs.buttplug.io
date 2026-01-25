@@ -116,7 +116,7 @@ provides optional display name and message timing information, as well as simpli
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version:** 1 (See [Deprecated
-Messages](deprecated.md#devicelist-version-0) for older versions.)
+Messages](#devicelist---spec-v0) for older versions.)
 
 **Fields:**
 
@@ -185,7 +185,7 @@ capabilities that do not require specific scanning/discovery sessions.
 **Introduced In Spec Version:** 0
 
 **Last Updated In Spec Version**: 1 (See [Deprecated
-Messages](deprecated.md#deviceadded-version-0) for older versions.)
+Messages](#deviceadded---spec-v0) for older versions.)
 
 **Fields:**
 
@@ -567,7 +567,7 @@ sequenceDiagram
 
 **Reason for Deprecation:** Never implemented in any reference version of the library. Superceded by
 a combination of [VibrateCmd](generic.md#linearcmd), [RotateCmd](generic.md#rotatecmd),
-[BatteryCmd](generic.md#batterycmd), and the [Raw*Cmd](raw.md) commands.
+[BatteryCmd](#batterylevelcmd), and the [Raw*Cmd](raw.md) commands.
 
 **Description:** Causes a device that supports Lovense style commands to run whatever event may be
 related. More information on Lovense commands can be found in STPIHKAL.
@@ -820,7 +820,7 @@ sequenceDiagram
 
 **Description:** Causes a device that supports vibration to run specific vibration motors at a
 certain speeds. Devices with multiple vibrator features may take multiple values. The
-[FeatureCount](enumeration.md#messageattributes) attribute for the message in the
+[FeatureCount](enumeration.md#message-attributes-for-devicelist-and-deviceadded) attribute for the message in the
 [DeviceList](enumeration.md#devicelist)/[DeviceAdded](enumeration.md#deviceadded) message will
 contain that information.
 
@@ -890,7 +890,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [BatteryLevelReading](sensors#batterylevelreading) message with
+* [BatteryLevelReading](#batterylevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -920,7 +920,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading.
 
 **Description:** Message containing a battery level reading from a
-device, as requested by [BatteryLevelCmd](sensors#batterylevelcmd).
+device, as requested by [BatteryLevelCmd](#batterylevelcmd).
 
 **Introduced In Spec Version:** 2
 
@@ -975,7 +975,7 @@ sequenceDiagram
 
 **Expected Response:**
 
-* [RSSILevelReading](sensors#rssilevelreading) message with
+* [RSSILevelReading](#rssilevelreading) message with
   matching Id on successful request.
 * Error message on value or message error.
 
@@ -1005,7 +1005,7 @@ sequenceDiagram
 **Reason for Deprecation:** Superceded by SensorReading. Also never implemented in any official reference implementation of Buttplug.
 
 **Description:** Message containing a RSSI level reading from a
-device, as requested by [RSSILevelCmd](sensors#rssilevelcmd).
+device, as requested by [RSSILevelCmd](#rssilevelcmd).
 
 **Introduced In Spec Version:** 2
 

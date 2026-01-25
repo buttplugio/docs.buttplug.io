@@ -29,7 +29,7 @@ Activation can happen via:
 - Passing the `--allowraw` option to [Intiface Engine](https://github.com/intiface/intiface-engine/)
 - Turning on the "Allow Raw Messages" option in [Intiface Central](http://intiface.com/central)
 - Assigning the `raw` protocol to a device in the [Device Configuration
-  File](../inflating-buttplug/devices/device-configuration-file). This is the only way to access raw commands without setting the raw options in the server.
+  File](../../inflating-buttplug/devices/device-configuration-file). This is the only way to access raw commands without setting the raw options in the server.
 
 ## Identifying Devices
 
@@ -48,7 +48,7 @@ support enumerations) with [their canonical definition in the Rust
 library](https://github.com/buttplugio/buttplug/blob/master/buttplug/src/core/message/endpoint.rs#L32). Each
 FFI library will have some version of this enumeration in order to form Raw messages.
 
-To find out what endpoints are assigned to devices, you can check out the [device configuration file](../inflating-buttplug/devices/device-configuration-file).
+To find out what endpoints are assigned to devices, you can check out the [device configuration file](../../inflating-buttplug/devices/device-configuration-file).
 
 ## Raw Read/Write
 
