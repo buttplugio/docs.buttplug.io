@@ -28,6 +28,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 # Create examples directory structure
 mkdir -p "$EXAMPLES_DIR/rust"
 mkdir -p "$EXAMPLES_DIR/javascript"
+mkdir -p "$EXAMPLES_DIR/typescript"
 mkdir -p "$EXAMPLES_DIR/csharp"
 mkdir -p "$EXAMPLES_DIR/dart"
 
@@ -90,17 +91,16 @@ sync_rust() {
     done
 }
 
-# Sync JavaScript examples (placeholder for when they exist)
-sync_javascript() {
+# Sync TypeScript examples from buttplug-js
+sync_typescript() {
     local src_dir="$CLIENT_REPOS_DIR/buttplug-js/examples"
-    local dest_dir="$EXAMPLES_DIR/javascript"
+    local dest_dir="$EXAMPLES_DIR/typescript"
 
     if [[ ! -d "$src_dir" ]]; then
-        log_warn "JavaScript examples not found at $src_dir (not yet created in upstream)"
+        log_warn "TypeScript examples not found at $src_dir (not yet created in upstream)"
 
-        # Write a placeholder manifest
         cat > "$dest_dir/SYNC_MANIFEST.md" << EOF
-# Synced Examples - JavaScript
+# Synced Examples - TypeScript
 
 No examples directory exists in buttplug-js yet.
 
@@ -109,11 +109,48 @@ EOF
         return
     fi
 
-    log_info "Syncing JavaScript examples from $src_dir"
-    write_manifest "javascript"
+    log_info "Syncing TypeScript examples from $src_dir"
 
-    # Add git info and copy files when they exist
-    # (implementation similar to Rust)
+    write_manifest "TypeScript"
+
+    # Get git info from source repo
+    local git_sha=""
+    if [[ -d "$CLIENT_REPOS_DIR/buttplug-js/.git" ]]; then
+        git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-js" && git rev-parse --short HEAD)
+        echo "- Repository: buttplug-js (TypeScript)" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: examples/" >> "$dest_dir/SYNC_MANIFEST.md"
+    fi
+
+    echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"
+
+    # Copy TypeScript files
+    for file in "$src_dir"/*.ts; do
+        if [[ -f "$file" ]]; then
+            local basename=$(basename "$file")
+            cp "$file" "$dest_dir/"
+            echo "- \`$basename\`" >> "$dest_dir/SYNC_MANIFEST.md"
+            log_info "  Copied $basename"
+        fi
+    done
+}
+
+# Sync JavaScript examples (placeholder - we now use TypeScript)
+sync_javascript() {
+    local dest_dir="$EXAMPLES_DIR/javascript"
+
+    # JavaScript examples are now superseded by TypeScript examples
+    # Keep stub files for backwards compatibility with docs that reference them
+    cat > "$dest_dir/SYNC_MANIFEST.md" << EOF
+# JavaScript Examples
+
+JavaScript examples have been superseded by TypeScript examples.
+See the \`typescript/\` directory for the current examples.
+
+The TypeScript examples can be run directly with ts-node and also serve
+as a reference for JavaScript usage (the API is the same).
+EOF
+    log_info "JavaScript examples placeholder updated (see typescript/ for real examples)"
 }
 
 # Sync C# examples (placeholder for when they exist)
@@ -167,6 +204,7 @@ log_info "Client repos directory: $CLIENT_REPOS_DIR"
 echo ""
 
 sync_rust
+sync_typescript
 sync_javascript
 sync_csharp
 sync_dart
