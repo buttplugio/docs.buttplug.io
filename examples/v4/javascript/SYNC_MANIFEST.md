@@ -1,5 +1,7 @@
-# Synced Examples - JavaScript
+# JavaScript Examples
 
-No examples directory exists in buttplug-js yet.
+JavaScript examples have been superseded by TypeScript examples.
+See the `typescript/` directory for the current examples.
 
-When examples are added to `buttplug-js/examples/`, run this script to sync them.
+The TypeScript examples can be run directly with ts-node and also serve
+as a reference for JavaScript usage (the API is the same).

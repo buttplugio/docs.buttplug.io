@@ -1,5 +1,8 @@
-# Synced Examples - C#
+# Synced Examples - csharp
 
-No examples directory exists in buttplug-csharp yet.
+These examples are synced from the upstream client library.
+**Do not edit directly** - changes will be overwritten on next sync.
 
-When examples are added to `buttplug-csharp/examples/`, run this script to sync them.
+Last synced: 2026-01-25 06:25:06 UTC
+
+## Source
