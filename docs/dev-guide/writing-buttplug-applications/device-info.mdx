@@ -1,3 +1,7 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
 # What Do Devices Do?
 
 We now know that devices are connected to the client, but how do we figure out what we can do with
@@ -129,3 +133,27 @@ Buttplug Server, you've set up your event handlers, and you've just gotten a `De
 We know there's a new device, but how can we tell what it does?
 
 This code block shows how we can query the device and see what's available.
+
+<Tabs groupId="examples">
+<TabItem value="rust" label="Rust">
+
+import RustDeviceInfoExample from '!!raw-loader!/examples/v4/rust/device_info.rs';
+
+<CodeBlock language="rust">{RustDeviceInfoExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+import CSharpDeviceInfoExample from '!!raw-loader!/examples/v4/csharp/DeviceInfoExample/Program.cs';
+
+<CodeBlock language="csharp">{CSharpDeviceInfoExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="js" label="Javascript">
+
+import jsDeviceInfoExample from '!!raw-loader!/examples/v4/javascript/device-info-example.js';
+
+<CodeBlock language="js">{jsDeviceInfoExample}</CodeBlock>
+
+</TabItem>
+</Tabs>
