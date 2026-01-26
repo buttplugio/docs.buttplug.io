@@ -174,7 +174,7 @@ EOF
     done
 }
 
-# Sync C# examples (placeholder for when they exist)
+# Sync C# examples
 sync_csharp() {
     local src_dir="$CLIENT_REPOS_DIR/buttplug-csharp/examples"
     local dest_dir="$EXAMPLES_DIR/csharp"
@@ -194,6 +194,29 @@ EOF
 
     log_info "Syncing C# examples from $src_dir"
     write_manifest "csharp"
+
+    local git_sha=""
+    if [[ -d "$CLIENT_REPOS_DIR/buttplug-csharp/.git" ]]; then
+        git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-csharp" && git rev-parse --short HEAD)
+        echo "- Repository: buttplug-csharp (C#)" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: examples/" >> "$dest_dir/SYNC_MANIFEST.md"
+    fi
+
+    echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"
+
+    # C# examples are in subdirectories (e.g., ConnectionExample/Program.cs)
+    # Copy entire directory structure
+    for example_dir in "$src_dir"/*Example; do
+        if [[ -d "$example_dir" ]]; then
+            local basename=$(basename "$example_dir")
+            # Remove old copy if exists
+            rm -rf "$dest_dir/$basename"
+            cp -r "$example_dir" "$dest_dir/"
+            echo "- \`$basename/\`" >> "$dest_dir/SYNC_MANIFEST.md"
+            log_info "  Copied $basename/"
+        fi
+    done
 }
 
 # Sync Dart examples (placeholder for when they exist)
