@@ -31,6 +31,7 @@ mkdir -p "$EXAMPLES_DIR/javascript"
 mkdir -p "$EXAMPLES_DIR/typescript"
 mkdir -p "$EXAMPLES_DIR/csharp"
 mkdir -p "$EXAMPLES_DIR/dart"
+mkdir -p "$EXAMPLES_DIR/python"
 
 # Write a manifest header
 write_manifest() {
@@ -197,6 +198,44 @@ EOF
     write_manifest "dart"
 }
 
+# Sync Python examples
+sync_python() {
+    local src_dir="$CLIENT_REPOS_DIR/buttplug-py/examples"
+    local dest_dir="$EXAMPLES_DIR/python"
+
+    if [[ ! -d "$src_dir" ]]; then
+        log_warn "Python examples not found at $src_dir"
+        cat > "$dest_dir/SYNC_MANIFEST.md" << EOF
+# Synced Examples - Python
+
+No examples directory exists in buttplug-py yet.
+EOF
+        return
+    fi
+
+    log_info "Syncing Python examples from $src_dir"
+    write_manifest "python"
+
+    local git_sha=""
+    if [[ -d "$CLIENT_REPOS_DIR/buttplug-py/.git" ]]; then
+        git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-py" && git rev-parse --short HEAD)
+        echo "- Repository: buttplug-py (Python)" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: examples/" >> "$dest_dir/SYNC_MANIFEST.md"
+    fi
+
+    echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"
+
+    for file in "$src_dir"/*.py; do
+        if [[ -f "$file" ]]; then
+            local basename=$(basename "$file")
+            cp "$file" "$dest_dir/"
+            echo "- \`$basename\`" >> "$dest_dir/SYNC_MANIFEST.md"
+            log_info "  Copied $basename"
+        fi
+    done
+}
+
 # Main
 log_info "Starting example sync..."
 log_info "Docs root: $DOCS_ROOT"
@@ -208,6 +247,7 @@ sync_typescript
 sync_javascript
 sync_csharp
 sync_dart
+sync_python
 
 echo ""
 log_info "Sync complete! Examples are in $EXAMPLES_DIR"
