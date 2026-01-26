@@ -15,11 +15,42 @@ While most interaction will Buttplug will usually be more complicated or context
 
 
 <Tabs groupId="examples">
+<TabItem value="rust" label="Rust">
+
+import RustApplicationExample from '!!raw-loader!/examples/v4/rust/application.rs';
+
+<CodeBlock language="rust">{RustApplicationExample}</CodeBlock>
+
+</TabItem>
 <TabItem value="csharp" label="C#">
 
 import CSharpApplicationExample from '!!raw-loader!/examples/v4/csharp/ApplicationExample/Program.cs';
 
 <CodeBlock language="csharp">{CSharpApplicationExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="js" label="Javascript (Web)">
+
+{/* NOTE: These are browser examples. Include Buttplug via CDN in your HTML:
+    <script src="https://cdn.jsdelivr.net/npm/buttplug@4.0.0/dist/web/buttplug.min.js"></script> */}
+
+import jsApplicationExample from '!!raw-loader!/examples/v4/javascript/application-example.js';
+
+<CodeBlock language="js">{jsApplicationExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="ts" label="TypeScript">
+
+import tsApplicationExample from '!!raw-loader!/examples/v4/typescript/application-example.ts';
+
+<CodeBlock language="typescript">{tsApplicationExample}</CodeBlock>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+import PythonApplicationExample from '!!raw-loader!/examples/v4/python/application.py';
+
+<CodeBlock language="python">{PythonApplicationExample}</CodeBlock>
 
 </TabItem>
 </Tabs>
