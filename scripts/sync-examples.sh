@@ -136,22 +136,42 @@ EOF
     done
 }
 
-# Sync JavaScript examples (placeholder - we now use TypeScript)
+# Sync JavaScript web examples
 sync_javascript() {
+    local src_dir="$CLIENT_REPOS_DIR/buttplug-js/js/examples/web"
     local dest_dir="$EXAMPLES_DIR/javascript"
 
-    # JavaScript examples are now superseded by TypeScript examples
-    # Keep stub files for backwards compatibility with docs that reference them
-    cat > "$dest_dir/SYNC_MANIFEST.md" << EOF
-# JavaScript Examples
+    if [[ ! -d "$src_dir" ]]; then
+        log_warn "JavaScript web examples not found at $src_dir"
+        cat > "$dest_dir/SYNC_MANIFEST.md" << EOF
+# Synced Examples - JavaScript (Web)
 
-JavaScript examples have been superseded by TypeScript examples.
-See the \`typescript/\` directory for the current examples.
-
-The TypeScript examples can be run directly with ts-node and also serve
-as a reference for JavaScript usage (the API is the same).
+No web examples directory exists in buttplug-js yet.
 EOF
-    log_info "JavaScript examples placeholder updated (see typescript/ for real examples)"
+        return
+    fi
+
+    log_info "Syncing JavaScript web examples from $src_dir"
+    write_manifest "javascript"
+
+    local git_sha=""
+    if [[ -d "$CLIENT_REPOS_DIR/buttplug-js/.git" ]]; then
+        git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-js" && git rev-parse --short HEAD)
+        echo "- Repository: buttplug-js (JavaScript/TypeScript)" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: js/examples/web/" >> "$dest_dir/SYNC_MANIFEST.md"
+    fi
+
+    echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"
+
+    for file in "$src_dir"/*.js; do
+        if [[ -f "$file" ]]; then
+            local basename=$(basename "$file")
+            cp "$file" "$dest_dir/"
+            echo "- \`$basename\`" >> "$dest_dir/SYNC_MANIFEST.md"
+            log_info "  Copied $basename"
+        fi
+    done
 }
 
 # Sync C# examples (placeholder for when they exist)
