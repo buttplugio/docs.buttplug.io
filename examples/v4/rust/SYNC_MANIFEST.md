@@ -3,11 +3,11 @@
 These examples are synced from the upstream client library.
 **Do not edit directly** - changes will be overwritten on next sync.
 
-Last synced: 2026-01-26 05:42:41 UTC
+Last synced: 2026-01-31 22:13:11 UTC
 
 ## Source
 - Repository: buttplug (Rust)
-- Commit: a7610986
+- Commit: b57119e3
 - Path: examples/src/bin/
 
 ## Files

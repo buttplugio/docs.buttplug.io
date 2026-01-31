@@ -3,11 +3,11 @@
 These examples are synced from the upstream client library.
 **Do not edit directly** - changes will be overwritten on next sync.
 
-Last synced: 2026-01-26 05:42:41 UTC
+Last synced: 2026-01-31 22:13:11 UTC
 
 ## Source
 - Repository: buttplug-js (TypeScript)
-- Commit: 3af7678
+- Commit: a2a95b8
 - Path: js/examples/node/
 
 ## Files

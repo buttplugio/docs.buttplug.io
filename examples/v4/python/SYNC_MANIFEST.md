@@ -3,11 +3,11 @@
 These examples are synced from the upstream client library.
 **Do not edit directly** - changes will be overwritten on next sync.
 
-Last synced: 2026-01-26 05:42:41 UTC
+Last synced: 2026-01-31 22:13:11 UTC
 
 ## Source
 - Repository: buttplug-py (Python)
-- Commit: 7e6fe77
+- Commit: 6436234
 - Path: examples/
 
 ## Files
