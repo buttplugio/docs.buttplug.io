@@ -75,7 +75,7 @@ The client and server negotiate which protocol version to use:
 
 This allows older clients to work with newer servers (the server downgrades to match), but a newer client cannot connect to an older server that doesn't support its requested version.
 
-In practice, the server is assumed to be either Intiface Engine or Intiface Central, so a client being newer than the server implies that the user usually needs a new version of one of these applications.
+In practice, the server is assumed to be either [Intiface Engine](https://github.com/buttplugio/buttplug/crates/intiface-engine) or [Intiface Central](https://intiface.com), so a client being newer than the server implies that the user usually needs a new version of one of these applications.
 
 ## Components
 
@@ -91,7 +91,7 @@ A Buttplug Server is the piece that manages communication with hardware. This is
 
 The server may be in charge of other tasks, which we'll cover in depth in a later section in this chapter.
 
-As a developer using Buttplug for applications, it's rare you'll interact directly with a server via code. Server software, like [Intiface Central](https://intiface.com/central) and Intiface Engine, are maintained and distributed by the Buttplug Core Team. Device/feature additions and bug fixes happen outside of the application developer having to worry about updating their own software.
+As a developer using Buttplug for applications, it's rare you'll interact directly with a server via code. You'll usually use a Buttplug Client library that does that for you. Server software, like [Intiface Central](https://intiface.com/central) and Intiface Engine, are maintained and distributed by the Buttplug Core Team. This allows device/feature additions and bug fixes to happen without application developers having to worry about updating their own software.
 
 ### Buttplug Clients
 

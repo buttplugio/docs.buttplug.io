@@ -38,15 +38,18 @@ This is, unfortunately, one of the hardest parts of dealing with the type of har
 
 Controlling a device is usually a matter of controlling its features. How this happens will differ between different client implementations, but will usually take one or more of the following forms, with the example being a device with 2 vibration motors:
 
-- The top level _Device_ will have some sort of `vibrate()` command. If this is used, all features
-  that support the Vibrate OutputType will be set to this value.
-  - There may be two variations of this command, one that takes a value between 0 and the number of
-    steps defined in the feature, as well as one that takes a floating point value between 0.0 and 1.0, which will automatically scale to the range of steps allowed by the feature.
-- Each feature will also have some sort of `vibrate()` command (as well as the floating point
-  variation), which will allow setting the value for just that feature. This allows developers to
-  only control one of the two available motors, setting them to different speeds.
+- The top level _Device_ will have some sort of `run_output()` command, which takes an output type
+  and a value to set it to. If this is used, all features that support the Vibrate OutputType will
+  be set to this value.
+  - There may be two variations of the arguments this command takes, one that takes a value between
+    0 and the number of steps defined in the feature, as well as one that takes a floating point
+    value between 0.0 and 1.0, which will automatically scale to the range of steps allowed by the
+    feature.
+- Each feature will also have some sort of `run_output()` command, which will allow setting the
+  value for just that feature. This allows developers to only control one of the two available
+  motors, setting them to different speeds.
 
-There will be similar commands for other OutputTypes, like _oscillate()_, _position\_with\_duration()_, etc... Depending on language capabilities, there may also be a generic way to put together commands, useful for building complex programmatic structures for control.
+Depending on language capabilities, there may also be a generic way to put together commands, useful for building complex programmatic structures for control.
 
 ## Value Systems
 
@@ -129,7 +132,7 @@ Different output types exist for different device capabilities:
 | Vibrate | Vibration motors | Most toys |
 | Oscillate | Speed-controlled movement | Fucking machines |
 | Position | Instant position change | Strokers (servo mode) |
-| HwPositionWithDuration | Timed position movement | Strokers, linear actuators |
+| HwPositionWithDuration | Hardware regulated timed position movement | Strokers, linear actuators |
 | Rotate / RotationWithDirection | Rotating mechanisms | Rotating toys |
 | Constrict | Pumps and squeezing | Air pumps |
 | Temperature | Heating/cooling | Warming toys |

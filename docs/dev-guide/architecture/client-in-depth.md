@@ -52,6 +52,14 @@ In protocol V4, the server sends the complete device list on any change. Client 
 
 Note that ScanningFinished does **not** mean no devices were found. Scanning may complete successfully with or without discovering devices. Some connection types (like Bluetooth) may continue finding devices after the initial scan completes.
 
+:::tip Scanning Finished is Weird
+
+The problem with ScanningFinished is that it's really only used in a couple of situations. Buttplug will happily scan forever, but also runs in contexts where that's not possible. For instance, when scanning for Bluetooth in a WASM context, there's a time limit on scanning, and scans are *required* to be kicked off by the user via UI interaction.
+
+For 99% of use cases, ScanningFinished can be ignored. Just present capabilities to call StartScanning/StopScanning to users, or even just tell them to use Intiface Central's devices tab for making sure devices are connected.
+
+:::
+
 ### Connection Events
 
 | Event | When It Fires |

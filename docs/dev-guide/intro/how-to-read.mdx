@@ -15,7 +15,7 @@ The Buttplug Developer Guide covers a few different topics.
 
 This guide should be considered **a way** to do things, but not **the (only) way**. The only
 invariant portion of Buttplug is the actual low-level protocol, as laid out by [the Buttplug
-Spec](https://buttplug-spec.docs.buttplug.io). The libraries mentioned in this guide implement APIs
+Spec](../../spec). The libraries mentioned in this guide implement APIs
 on top of that protocol. Other developers are free to implement their own APIs as they see fit that
 use that protocol, and the system should still work as a whole.
 
@@ -44,13 +44,32 @@ var a = 1 + 2;
 <TabItem value="js" label="Javascript">
 
 ```js
-// For most of the examples in this guide, Javascript and Typescript will look mostly the
-// same (we don't use Typescript specific features in our WASM implementation), therefore we only
-// include javascript examples. Typescript typings files are distributed with the library, so you
-// should still get type completions in your IDE.
+// We use javascript for browser/web examples. We don't include the surrounding index/css to handle 
+// UI, so it'll just be the included code file.
 
 // This is some Javascript
 let a = 1 + 2;
+```
+
+</TabItem>
+<TabItem value="ts" label="Typescript">
+
+```js
+// For most of the examples in this guide, Javascript and Typescript will look mostly the
+// same, but we give typescript examples as our node/cli examples. Typescript typings files are 
+// distributed with the library, so you should still get type completions in your IDE.
+
+// This is some Typescript
+let a = 1 + 2;
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+# This is some Python
+
+a = 1 + 2
 ```
 
 </TabItem>
@@ -114,11 +133,11 @@ disrespect in mind, here's a list of what you'll learn from each of the sections
 
 Outside of this guide, there are a couple of other documents that may be handy to Buttplug Developers
 
-* [Buttplug Protocol Spec](https://buttplug-spec.docs.buttplug.io)
+* [Buttplug Protocol Spec](../../spec)
     * The specification for the core of Buttplug, laying out how different parts of the system
       should communicate. This allows other developers to build their own version of the library if
       they so choose. This will be covered more in the architecture section.
-* [Sex Toy Protocols I Have Known And Loved (STPIHKAL)](https://stpihkal.docs.buttplug.io)
+* [Sex Toy Protocols I Have Known And Loved (STPIHKAL)](../../../stpihkal)
     * An encyclopedia of different computer controlled sex toy and intimate device communication
       protocols. If you want to bypass Buttplug completely and just build your own interface,
       STPIHKAL gives you the low level information you'll need to control toys.

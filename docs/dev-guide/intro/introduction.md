@@ -29,8 +29,9 @@ This is one of the most asked questions around the Buttplug project. The Buttplu
 - Strokers (single-axis as well as multi-axis)
 - Fucking Machines
 - Pressure sensors
+- The list is actually longer than this and changes constantly but I don't want to update it every time we add something so it's just like, a lot of stuff, ok?
 
-This list will continue to grow over time. For the most up to date version, checkout [IOSTIndex](https://iostindex.com), the most comprehensive list of sex tech devices on the internet. There are filters that will allow you to see which devices are supported by the library.
+For the most up to date version, checkout [IOSTIndex](https://iostindex.com), the most comprehensive list of sex tech devices on the internet. There are filters that will allow you to see which devices are supported by the library.
 
 ## Why is the project called Buttplug?
 
@@ -39,6 +40,6 @@ Some of the reasons the project is named Buttplug are:
 - A buttplug (the toy) is a non-gender-specific sex toy. Most everyone has a butt (though a butthole is another question entirely). Butts are inclusive.
 - Technology and the surrounding culture is far too sterile. Buttplugs, used correctly, are usually not.
 - It seemed funny at the time when the project was starting, even though no thought was put into how it would sound when being mentioned in press articles, grant applications, etc...
-    - Upon further consideration and with some history behind it, that has made it even funnier.
+  - Upon further consideration and with some history behind it, that has made it even funnier.
 
 This list will also continue to grow over time, as I try and convince myself this was a good branding choice.

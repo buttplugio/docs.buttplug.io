@@ -2,7 +2,7 @@
 
 ![Buttplug Server Architecture Diagram](/img/dev-guide/architecture/server.png)
 
-As a developer using the Buttplug library for applications, your access to Buttplug Servers is limited to some setup methods. Otherwise, most of your interaction with a server will be via the Client API. It's still good to know a bit about what the inside of the server looks like though, if only so you can understand [what's being complained about on twitter](https://twitter.com/buttplugio).
+As a developer using the Buttplug library for applications, your access to Buttplug Servers is limited to some setup methods. Otherwise, most of your interaction with a server will be via the Client API. It's still good to know a bit about what the inside of the server looks like though, if only so you can understand [what's being complained about on social media](../intro/getting-help.md).
 
 ## Server and Connections
 
@@ -28,7 +28,7 @@ The Ping Manager is an optional mechanism that can help detect unresponsive clie
    - Stops all devices immediately
    - Cleans up all sensor subscriptions
 
-### When It's Useful
+:::tip When Is Ping Useful?
 
 For **stateful transports** like WebSocket or TCP, the ping system is often redundant. If a client crashes, the transport layer detects the connection drop and notifies the server, which then stops devices automatically. The connection state itself provides crash detection.
 
@@ -39,16 +39,15 @@ The ping system may also help in edge cases like:
 - Mobile apps suspended by the OS without closing connections
 - Network issues that don't immediately trigger transport-level disconnects
 
-### When It's Enabled
+**Ping is disabled by default across Buttplug Core Team maintained server applications like Intiface Central and Intiface Engine.** Since we've defaulted to Websocket control for the past 8 years, we had the functionality for basically free. The system continues to exist in the library to leave room for extensibility.
 
-- **Intiface Central**: Ping is enabled by default (configurable in settings)
-- **Embedded servers**: Typically disabled since the client and server share a process
+:::
 
 ### Client Implementation
 
 Reference client libraries handle ping automatically in a background thread or task. You typically don't need to manually send pings - the library does it for you. If you're building your own client implementation, you'll need to implement ping handling when `MaxPingTime` > 0.
 
-### When MaxPingTime is 0
+### When MaxPingTime is 0 in ServerInfo
 
 If the server sends `MaxPingTime: 0`, ping monitoring is disabled. The client can still send Ping messages (the server will respond with Ok), but no timeout enforcement occurs. This is common for embedded server configurations or testing scenarios.
 
@@ -68,7 +67,7 @@ A DCM is responsible for making sure its subsystem is usable (for instance, that
 
 DCMs need to know what devices to look for. They use the Device Configuration Manager to do this. Device Configuration Managers map device identifiers (Bluetooth names, USB VID/PID pairs, etc) to metadata like device names, proprietary protocols, etc... 
 
-If you're interested in what this data looks like, the latest version is kept as JSON at [https://intiface-engine-device-config.intiface.com/](https://intiface-engine-device-config.intiface.com/).
+If you're interested in what this data looks like, the latest version is kept as JSON at [https://intiface-engine-device-config.intiface.com/buttplug-device-config-v4.json](https://intiface-engine-device-config.intiface.com/buttplug-device-config-v4.json).
 
 Whenever a DCM finds a device, it pulls the identifying data and sends it through the Device Configuration Manager to see if there is matching metadata. If matching metadata exists, the information is returned to the DCM, and the DCM continues with making a connection with the device, returning a Buttplug Device, which consists of an Implementation and a Protocol.
 

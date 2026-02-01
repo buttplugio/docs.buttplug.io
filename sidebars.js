@@ -57,7 +57,6 @@ const sidebars = {
         "dev-guide/writing-buttplug-applications/device-info",
         "dev-guide/writing-buttplug-applications/device-control",
         "dev-guide/writing-buttplug-applications/application",
-        "dev-guide/writing-buttplug-applications/logging",
       ],
     },
     {
@@ -91,6 +90,7 @@ const sidebars = {
             "dev-guide/cookbook/games/modding",
           ],
         },
+        "dev-guide/cookbook/logging",
         "dev-guide/cookbook/privacy-models",
       ],
     },
@@ -116,12 +116,7 @@ const sidebars = {
       type: "category",
       label: "Appendices",
       items: ["dev-guide/appendices/history-of-buttplug"],
-    },
-    {
-      type: "doc",
-      label: "v3 Dev Guide (Deprecated)",
-      id: "dev-guide/index",
-    },
+    }
   ],
   specSidebar: [
     "spec/index",
@@ -136,11 +131,6 @@ const sidebars = {
     "spec/output",
     "spec/input",
     "spec/deprecated",
-    {
-      type: "doc",
-      label: "v3 Spec (Deprecated)",
-      id: "spec/index",
-    },
   ],
 };
 
