@@ -177,7 +177,7 @@ function ResourcesSection() {
                   <Link to="/docs/spec">Protocol Specification</Link>
                 </p>
                 <p className={styles.resourceLink}>
-                  <Link to="/docs/stpihkal">Sex Toy Protocols (STPIHKAL)</Link>
+                  <Link to="/stpihkal">Sex Toy Protocols (STPIHKAL)</Link>
                 </p>
               </div>
             </div>

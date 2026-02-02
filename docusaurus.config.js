@@ -36,7 +36,7 @@ const config = {
           sidebarPath: "./sidebars.js",
           path: "docs",
           // Uncomment this block to slam to v4 when done.
-          lastVersion: "spec-v3",
+          lastVersion: "current",
           versions: {
             current: { label: "Spec v4.0" },
             "spec-v3": { label: "Spec v3.0" },
@@ -74,9 +74,21 @@ const config = {
       {
         id: "stpihkal",
         path: "stpihkal",
-        routeBasePath: "docs/stpihkal",
+        routeBasePath: "stpihkal",
         sidebarPath: "./sidebarsStpihkal.js",
         // ... other options
+      },
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        createRedirects(existingPath) {
+          // Redirect old /docs/stpihkal/... paths to /stpihkal/...
+          if (existingPath.startsWith("/stpihkal")) {
+            return ["/docs" + existingPath];
+          }
+          return undefined;
+        },
       },
     ],
     "docusaurus-plugin-matomo",
