@@ -186,7 +186,7 @@ const config = {
                 href: "https://discord.buttplug.io",
               },
               {
-                label: "Reddit",
+                label: "Reddit (r/buttplugio)",
                 href: "https://reddit.com/r/buttplugio",
               },
             ],
