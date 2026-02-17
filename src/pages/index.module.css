@@ -446,6 +446,10 @@
     .featureCard {
         padding: 1.25rem;
     }
+
+    .resourceCard {
+        margin-bottom: 1rem;
+    }
 }
 
 /* ==================== Dark Mode Adjustments ==================== */
