@@ -447,7 +447,7 @@
         padding: 1.25rem;
     }
 
-    .resourceCard {
+    .resources :global(.col) {
         margin-bottom: 1rem;
     }
 }
