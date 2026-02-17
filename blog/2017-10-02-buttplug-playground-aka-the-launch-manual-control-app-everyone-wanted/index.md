@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Playground Aka The Launch Manual Control App Everyone Wanted"
 date: 2017-10-02
+authors: [qdot]
 ---
 
 [https://buttplug.world/playground](https://buttplug.world/playground)So far, all of the applications for Buttplug has been about outside media. Movies, games, etc... 

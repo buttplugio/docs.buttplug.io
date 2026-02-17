@@ -1,6 +1,7 @@
 ---
 title: "Sticker Update"
 date: 2020-07-17
+authors: [qdot]
 ---
 
 THEY'RE FINALLY ORDERED. I'm getting stickers of the new logo, the rust logo, and since they were on special this week, some hologram stickers of the logo too!

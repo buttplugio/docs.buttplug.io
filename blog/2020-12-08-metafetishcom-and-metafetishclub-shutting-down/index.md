@@ -1,6 +1,7 @@
 ---
 title: "Metafetishcom And Metafetishclub Shutting Down"
 date: 2020-12-08
+authors: [qdot]
 ---
 
 In my continuing goal of trying to maintain less zombie brands, I'm finally shutting down the Metafetish brand to focus on Buttplug/Intiface.

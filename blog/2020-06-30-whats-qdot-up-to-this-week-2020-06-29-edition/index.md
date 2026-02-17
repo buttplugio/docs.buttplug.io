@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-06-29 Edition)"
 date: 2020-06-30
+authors: [qdot]
 ---
 Day late but HEY YOU GOT EXCLUSIVE CONTENT so I'll call it a fair trade.
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2024-03-25 Edition)"
 date: 2024-03-25
+authors: [qdot]
 ---
 I think I'm gonna be recovering from GDC for at least twice as long as I was there...
 

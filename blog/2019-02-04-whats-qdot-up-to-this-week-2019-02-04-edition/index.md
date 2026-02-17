@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-02-04 Edition)"
 date: 2019-02-04
+authors: [qdot]
 ---
 BUTT SABER
 

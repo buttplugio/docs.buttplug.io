@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2024-09-09 Edition)"
 date: 2024-09-09
+authors: [qdot]
 ---
 Too much stuff!
 

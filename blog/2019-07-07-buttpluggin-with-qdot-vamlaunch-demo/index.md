@@ -1,6 +1,7 @@
 ---
 title: "Buttpluggin With Qdot Vamlaunch Demo"
 date: 2019-07-07
+authors: [qdot]
 ---
 
 I've been getting requests to get hardware support into VirtAMate ([https://patreon.com/meshvr)](https://patreon.com/meshvr)) for a long time, but it's a complicated program with a lot going on, so I've never really gotten a foothold to figure out how to do that.

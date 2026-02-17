@@ -1,6 +1,7 @@
 ---
 title: "Where the Fuck is qDot? (2022-06-06 Edition)"
 date: 2022-06-07
+authors: [qdot]
 ---
 Been a while since I've dropped off updates for a whole ass month.
 

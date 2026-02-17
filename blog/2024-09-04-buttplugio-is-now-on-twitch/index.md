@@ -1,6 +1,7 @@
 ---
 title: "Buttplugio Is Now On Twitch"
 date: 2024-09-04
+authors: [qdot]
 ---
 
 In an effort to get over my procrastination about making more videos, I'm going to see if I can go the route of "streaming then cutting it down for video content for youtube then also clipping that into tiny bits for tiktok" because that is just how the game is apparently played these days.

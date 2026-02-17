@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-04-19 Edition)"
 date: 2021-04-19
+authors: [qdot]
 ---
 Ok maybe if I write these in the morning I'll actually remember to send them out...
 

@@ -1,6 +1,7 @@
 ---
 title: "The Shit I Do For You People Win7 Launch Control Demo"
 date: 2017-10-29
+authors: [qdot]
 ---
 
 There ya go. Proof of concept demo using the Launch with Win 7 on a laptop. No VM, no tricks, this is just normal ol' Windows 7 on a normal ol' laptop.I'm using the same Plugable dongle I recommend for Win 10 users. It just requires some different drivers to be installed.

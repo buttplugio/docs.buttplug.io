@@ -1,6 +1,7 @@
 ---
 title: "Syncydink Beta"
 date: 2018-06-30
+authors: [qdot]
 ---
 
 [https://beta.syncydink.buttplug.world](https://beta.syncydink.buttplug.world)Here's the URL for the beta of the upgraded Syncydink. Outside of the widget set changes, the biggest change right now is to Video Modes. 

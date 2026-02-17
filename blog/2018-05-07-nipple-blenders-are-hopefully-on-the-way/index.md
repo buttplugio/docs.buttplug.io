@@ -1,6 +1,7 @@
 ---
 title: "Nipple Blenders Are Hopefully On The Way"
 date: 2018-05-07
+authors: [qdot]
 ---
 
 Since you're all paying me, here's a bit of pre-release info, and also some information about what the money gets used for.!!!!! I FINALLY FOUND A PLACE TO ORDER A VORZE UFO SA !!!!

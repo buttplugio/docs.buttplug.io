@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Android App Yes Really"
 date: 2018-04-22
+authors: [qdot]
 ---
 
 I'm as shocked as you are. Someone just showed up to our discord server, mentioned trying to build an android app, and then all of the sudden it was ready to use and they're working on a VR movie player app too.[https://github.com/metafetish/buttplug-android/releases](https://github.com/metafetish/buttplug-android/releases)

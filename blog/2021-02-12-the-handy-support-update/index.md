@@ -1,6 +1,7 @@
 ---
 title: "The Handy Support Update"
 date: 2021-02-12
+authors: [qdot]
 ---
 
 Yaaay, finally get to give patrons some early news before everyone else gets it! :)

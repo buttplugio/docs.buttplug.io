@@ -1,6 +1,7 @@
 ---
 title: "Whats Qdot Up To This Week 2021 03 08 Update"
 date: 2021-03-08
+authors: [qdot]
 ---
 
 VRChat, mostly. I wasn't kidding about the virtual world obsession thing.

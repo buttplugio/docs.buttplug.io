@@ -1,6 +1,7 @@
 ---
 title: "End Of Syncydink Development"
 date: 2020-11-28
+authors: [qdot]
 ---
 
 Heads up in case anyone wants to jump ship before the subscription charge date (Dec 1).

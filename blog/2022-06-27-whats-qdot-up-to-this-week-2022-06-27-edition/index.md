@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-06-27 Edition)"
 date: 2022-06-27
+authors: [qdot]
 ---
 ALL HAIL SCALARCMD
 

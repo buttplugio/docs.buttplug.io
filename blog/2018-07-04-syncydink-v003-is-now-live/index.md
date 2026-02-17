@@ -1,6 +1,7 @@
 ---
 title: "Syncydink V003 Is Now Live"
 date: 2018-07-04
+authors: [qdot]
 ---
 
 May god have mercy on us all.Syncydink v0.0.3 is now live, making it the first major update of Syncydink since December 2017. There's still not much in the way of new features, as most of this was cleanup and package updates, but development should be much simpler from now on since the mess that was Video Modes is gone.

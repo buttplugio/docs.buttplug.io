@@ -1,6 +1,7 @@
 ---
 title: "Support For New Lovense Hush Toys"
 date: 2017-09-04
+authors: [qdot]
 ---
 
 Just a heads up since Lovense Hush toys seem to be pretty popular.We had a user show up on the Discord today reporting a Hush toy that would not connect to the Windows Buttplug App Suite. They had direct ordered it and received it sometime last week (last week of August 2017). 

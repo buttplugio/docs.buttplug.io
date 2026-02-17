@@ -1,6 +1,7 @@
 ---
 title: "And Now We Have A Discord Server Too"
 date: 2017-09-02
+authors: [qdot]
 ---
 
 Yes ok I may have a slight chat protocol hoarding problem.Invite Link: [https://discord.gg/BGNjpbf](https://discord.gg/BGNjpbf)

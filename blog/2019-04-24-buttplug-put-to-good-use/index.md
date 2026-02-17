@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Put To Good Use"
 date: 2019-04-24
+authors: [qdot]
 ---
 
 This is what happens when I get bored. Connected a bluetooth bouncy ball to Buttplug.

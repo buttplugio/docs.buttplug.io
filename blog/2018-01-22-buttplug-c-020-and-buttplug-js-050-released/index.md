@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C 020 And Buttplug Js 050 Released"
 date: 2018-01-22
+authors: [qdot]
 ---
 
 Fucking. Finally.It's been 4 months since the last release of the C# applications and library, which is just way the fuck too long for a small project like this. I'm really hoping we'll speed up iteration on that side, because I've released... wow. 12 versions of the JS library in that time.

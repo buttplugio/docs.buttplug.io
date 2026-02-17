@@ -1,6 +1,7 @@
 ---
 title: "The New Buttplug Project Logo"
 date: 2020-07-07
+authors: [qdot]
 ---
 
 Say hello to the new Buttplug project logo!

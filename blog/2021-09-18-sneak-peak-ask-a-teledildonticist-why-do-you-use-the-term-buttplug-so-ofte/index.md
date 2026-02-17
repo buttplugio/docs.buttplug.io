@@ -1,6 +1,7 @@
 ---
 title: "Sneak Peak Ask A Teledildonticist Why Do You Use The Term Buttplug So Ofte"
 date: 2021-09-18
+authors: [qdot]
 ---
 
 Hey look, a patron perk!

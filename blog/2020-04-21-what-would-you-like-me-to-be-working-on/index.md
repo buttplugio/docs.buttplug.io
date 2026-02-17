@@ -1,6 +1,7 @@
 ---
 title: "What Would You Like Me To Be Working On"
 date: 2020-04-21
+authors: [qdot]
 ---
 
 It's been a while since I've asked this and I'm curious whether my plans line up with what others are looking for from my work.

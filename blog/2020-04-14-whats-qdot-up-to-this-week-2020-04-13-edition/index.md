@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-04-13 Edition)"
 date: 2020-04-14
+authors: [qdot]
 ---
 Coming at you a day late because...
 

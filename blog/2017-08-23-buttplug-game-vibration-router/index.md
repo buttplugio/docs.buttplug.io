@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Game Vibration Router"
 date: 2017-08-23
+authors: [qdot]
 ---
 
 A couple of weekends ago, I got the stupid idea of "Hey. Rez Infinite came out. Wouldn't it be funny if I could make it work with the original USB Rez Trancevibrator?"48 hours and a lot of education about DLL Hooking later, it was done. We now have a way to control sex toys via Gamepad vibration command on Windows, with no modifications required to the game in question. This works with any game that supports XInput (XBox Compatible) gamepads, and I'll be extending it to work with vibration commands to Oculus/Vive controllers soon. Also, this currently only works with toys that vibrate, as that's all I've had time to implement. This certainly can work with the Launch, Vorze, and other toys, I just need to sit down and figure out the translation algorithms to do so. 

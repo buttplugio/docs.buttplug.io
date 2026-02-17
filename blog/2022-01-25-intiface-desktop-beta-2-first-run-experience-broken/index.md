@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Beta 2 First Run Experience Broken"
 date: 2022-01-25
+authors: [qdot]
 ---
 
 Welp so much for that.

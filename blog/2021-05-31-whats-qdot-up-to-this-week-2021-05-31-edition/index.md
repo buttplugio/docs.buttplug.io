@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-05-31 Edition)"
 date: 2021-05-31
+authors: [qdot]
 ---
 Welp, at least I managed another May update before the month was over...
 

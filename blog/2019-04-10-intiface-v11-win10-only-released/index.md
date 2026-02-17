@@ -1,6 +1,7 @@
 ---
 title: "Intiface V11 Win10 Only Released"
 date: 2019-04-10
+authors: [qdot]
 ---
 
 [https://github.com/intiface/intiface-desktop/releases/tag/v11.0.0](https://github.com/intiface/intiface-desktop/releases/tag/v11.0.0)

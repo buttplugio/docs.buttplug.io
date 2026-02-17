@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Rust v3.0 Released - Less is Less"
 date: 2021-04-11
+authors: [qdot]
 ---
 When I released [Buttplug Rust v1](https://buttplug.io/), I figured I’d be rolling major versions whenever we updated the [Buttplug Protocol](http://buttplug-spec.docs.buttplug.io/). Here we are, at major version 3.0, still running the same protocol, but with more surface API changes. So much for those plans.
 

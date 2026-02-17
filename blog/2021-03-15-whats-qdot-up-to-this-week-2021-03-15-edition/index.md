@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-03-15 Edition)"
 date: 2021-03-15
+authors: [qdot]
 ---
 Weird week. Weird fuckin' week.
 

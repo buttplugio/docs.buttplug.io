@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-09-07 Edition)"
 date: 2018-09-10
+authors: [qdot]
 ---
 Being in pain, mostly. But in a good way. But not in THAT good way.When I started working on Buttplug in earnest back in April 2017,  I kinda figured that I'd get a little obsessed with working on it and maybe go slightly off my workout schedule.
 

@@ -1,6 +1,7 @@
 ---
 title: "Automated Motion Analysis Research"
 date: 2018-06-19
+authors: [qdot]
 ---
 
 Fun new toy showed up today, as there are lots of computer vision papers and tools coming out of a big CV conference this week![https://github.com/MagicLeapResearch/SuperPointPretrainedNetwork](https://github.com/MagicLeapResearch/SuperPointPretrainedNetwork)

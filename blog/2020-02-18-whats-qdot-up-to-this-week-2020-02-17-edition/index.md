@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-02-17 Edition)"
 date: 2020-02-18
+authors: [qdot]
 ---
 Yesterday was a US Holiday so this update is happening a day late. :)
 

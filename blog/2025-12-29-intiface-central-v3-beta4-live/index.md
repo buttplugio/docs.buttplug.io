@@ -1,5 +1,6 @@
 ---
 title: Intiface Central v3 Beta 4 Live
+authors: [qdot]
 ---
 
 Small update that still means a breaking change!

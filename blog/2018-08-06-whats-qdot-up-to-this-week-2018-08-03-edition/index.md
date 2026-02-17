@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-08-03 Edition)"
 date: 2018-08-06
+authors: [qdot]
 ---
 When it rains, it pours.Even though no one may really notice. >.>
 

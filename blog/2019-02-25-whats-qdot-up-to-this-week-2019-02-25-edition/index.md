@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-02-25 Edition)"
 date: 2019-02-25
+authors: [qdot]
 ---
 Being sick for at least half of it. :(
 

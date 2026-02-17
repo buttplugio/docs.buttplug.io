@@ -1,6 +1,7 @@
 ---
 title: "Intiface Game Haptics Router V3 Released"
 date: 2019-07-26
+authors: [qdot]
 ---
 
 [https://github.com/intiface/intiface-game-haptics-router/releases](https://github.com/intiface/intiface-game-haptics-router/releases) 

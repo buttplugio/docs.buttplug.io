@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-08-10 Edition)"
 date: 2020-08-11
+authors: [qdot]
 ---
 Being a day late, but hey, at least there's
 

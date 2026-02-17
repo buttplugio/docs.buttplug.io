@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C 023 Released"
 date: 2018-05-24
+authors: [qdot]
 ---
 
 [https://github.com/metafetish/buttplug-csharp/releases/tag/0.2.3](https://github.com/metafetish/buttplug-csharp/releases/tag/0.2.3</a><br><br>Big)  

@@ -1,6 +1,7 @@
 ---
 title: "Teledildonics 101 Part 1 Intro To Teledildonics"
 date: 2020-03-20
+authors: [qdot]
 ---
 
 Ok, well, somehow I managed to do a livestream and forgot to notify the people paying me to let them know when I do things. Sorry about that. :(

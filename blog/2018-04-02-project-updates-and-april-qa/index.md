@@ -1,6 +1,7 @@
 ---
 title: "Project Updates And April Qa"
 date: 2018-04-02
+authors: [qdot]
 ---
 
 Welp, we've now reached me being on patreon for a whole year! Thanks to everyone for sticking with me so far.Trying to get back in the swing of doing monthly Q&A's, so if you've got questions, lemme know!

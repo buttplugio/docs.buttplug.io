@@ -1,6 +1,7 @@
 ---
 title: "Sneak Preview Buttpluggin With Qdot Console Ghr And Animal Crossing"
 date: 2020-06-28
+authors: [qdot]
 ---
 
 See, sometimes being a patron pays off!

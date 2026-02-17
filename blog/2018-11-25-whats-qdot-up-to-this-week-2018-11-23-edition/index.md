@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-11-23 Edition)"
 date: 2018-11-25
+authors: [qdot]
 ---
 Surviving. Barely.SLSA in Toronto went great. It was my first humanities conferences and I only barely embarrassed myself like, 3 or 4 times, max. I'll be doing a youtube version soon, not that the information will be new to anyone here.
 

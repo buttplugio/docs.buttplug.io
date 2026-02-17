@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2023-11-27 Edition)"
 date: 2023-11-27
+authors: [qdot]
 ---
 Scrubbing away technical debt
 

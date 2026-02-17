@@ -1,6 +1,7 @@
 ---
 title: "Teledildonics 101 Part 3 Going Live In 5 Minutes"
 date: 2020-03-26
+authors: [qdot]
 ---
 
 Come watch me code badly on stream!

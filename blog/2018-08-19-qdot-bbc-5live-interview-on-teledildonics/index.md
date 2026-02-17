@@ -1,6 +1,7 @@
 ---
 title: "Qdot Bbc 5live Interview On Teledildonics"
 date: 2018-08-19
+authors: [qdot]
 ---
 
 I did a quick interview with BBC 5Live. At 3:45am UK time, heh. Luckily it was 7:45pm for me. Above link is my recording of it, please don't redistribute. Actual BBC archive is at [https://www.bbc.co.uk/programmes/b0bfxpfy,](https://www.bbc.co.uk/programmes/b0bfxpfy,) I'm 2:43:00 in.  

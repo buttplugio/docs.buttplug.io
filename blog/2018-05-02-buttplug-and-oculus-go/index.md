@@ -1,6 +1,7 @@
 ---
 title: "Buttplug And Oculus Go"
 date: 2018-05-02
+authors: [qdot]
 ---
 
 I picked up an Oculus Go yesterday, and will be spending the next while testing it with Buttplug. The Go runs android, and has a built in browser based on Blink/Chrome. While it ostensibly supports WebBluetooth (our Playground and Syncydink apps have the "Connect Local" feature enabled, which means bluetooth is present), the browser currently crashes on device scan. I'm hoping that will be fixed in the future, as having this supported in the browser would be fantastic for building quick control apps without having to get things into stores.

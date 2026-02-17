@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-08-03 Edition)"
 date: 2020-08-03
+authors: [qdot]
 ---
 Making up excuses because I haven't shipped any
 

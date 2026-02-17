@@ -1,6 +1,7 @@
 ---
 title: "Intiface Central Desktop V004 Released"
 date: 2022-11-15
+authors: [qdot]
 ---
 
 Ok took me an extra night but

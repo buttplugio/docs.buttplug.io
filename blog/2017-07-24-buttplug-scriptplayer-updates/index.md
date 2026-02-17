@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Scriptplayer Updates"
 date: 2017-07-24
+authors: [qdot]
 ---
 
 First off, there's now a new version of ScriptPlayer up, with more expansive Buttplug support. [https://github.com/FredTungsten/ScriptPlayer/releases](https://github.com/FredTungsten/ScriptPlayer/releases)

@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Tutorial Beta Now Live Buttplug Js V060 Released"
 date: 2018-02-05
+authors: [qdot]
 ---
 
 [https://metafetish.github.io/buttplug-tutorial](https://metafetish.github.io/buttplug-tutorial)Been spending the last few weeks putting this together. It's a Twine (interactive fiction engine) based tutorial for getting people up and running with the basics of the Buttplug App Suite. Probably not going to be much new for patrons here, but if you have feedback, do let me know. I'm hoping to use it as our main guide for both the Buttplug App Suite (which will be changing names at some point in the nearish future I hope) as well as things like Syncydink, and maybe even outside apps like ScriptPlayer if the authors are interested.

@@ -1,6 +1,7 @@
 ---
 title: "What's Up With qDot? (2025-05-05 Edition)"
 date: 2025-05-05
+authors: [qdot]
 ---
 What once was a weekly newsletter is quickly turning bi-annual heh.
 

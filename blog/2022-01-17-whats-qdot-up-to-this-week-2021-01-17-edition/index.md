@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-01-17 Edition)"
 date: 2022-01-17
+authors: [qdot]
 ---
 One more featuring myself to death...
 

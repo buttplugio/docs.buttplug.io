@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Js Aka We Now Support Mac Linux Android Chromeos"
 date: 2017-08-20
+authors: [qdot]
 ---
 
 As of yesterday, I managed to get the javascript web technologies version of the Buttplug Server done. This is now integrated into Syncydink:[https://buttplug.world/syncydink](https://buttplug.world/syncydink)

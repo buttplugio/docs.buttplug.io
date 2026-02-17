@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-05-03 Edition)"
 date: 2021-05-03
+authors: [qdot]
 ---
 Just rethinking large portions of the project. Again. :|
 

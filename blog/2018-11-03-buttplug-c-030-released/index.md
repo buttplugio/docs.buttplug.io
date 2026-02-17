@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C 030 Released"
 date: 2018-11-03
+authors: [qdot]
 ---
 
 You ever see someone do something dumb and be all "oh yeah I'd never do that thing" then you totally do that thing?I did that thing.

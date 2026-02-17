@@ -1,6 +1,7 @@
 ---
 title: "New Buttplug Website In Beta"
 date: 2018-04-02
+authors: [qdot]
 ---
 
 [https://io.buttplug.world](https://io.buttplug.world)After spending most of GDC going "Yeah I make some sex toy software but don't look at the website it sucks", I'm trying to fix that.

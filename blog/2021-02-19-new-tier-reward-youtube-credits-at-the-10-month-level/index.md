@@ -1,6 +1,7 @@
 ---
 title: "New Tier Reward Youtube Credits At The 10 Month Level"
 date: 2021-02-19
+authors: [qdot]
 ---
 
 Interested in having your name posted in my youtube videos?

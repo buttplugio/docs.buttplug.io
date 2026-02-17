@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-07-05 Edition)"
 date: 2021-07-06
+authors: [qdot]
 ---
 And suddenly, productivity.
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-06-08 Edition)"
 date: 2018-06-08
+authors: [qdot]
 ---
 Ok, gonna try a new thing. Weekly updates! Just so you have some idea what's going on, since you're like, you know, paying me.These will probably get posted on Wednesdays from here on out.
 

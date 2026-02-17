@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2024-10-21 Edition)"
 date: 2024-10-21
+authors: [qdot]
 ---
 Unemployment! Unless you count my own company, too bad that doesn't pay very well.
 

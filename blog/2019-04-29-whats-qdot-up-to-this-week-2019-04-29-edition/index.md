@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-04-29 Edition)"
 date: 2019-04-29
+authors: [qdot]
 ---
 Been a while since I've given a weekly update, mostly because I've been giving piecemeal project updates, so, without further ado...
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-07-13 Edition)"
 date: 2020-07-13
+authors: [qdot]
 ---
 Gloriously boring shit!
 

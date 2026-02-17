@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-11-14 Edition)"
 date: 2022-11-14
+authors: [qdot]
 ---
 SO CLOSE TO DONE
 

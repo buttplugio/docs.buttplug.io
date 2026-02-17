@@ -1,6 +1,7 @@
 ---
 title: "Whats Qdot Up To This Week 2022 08 151 Edition"
 date: 2022-08-17
+authors: [qdot]
 ---
 
 Paying for my sins!

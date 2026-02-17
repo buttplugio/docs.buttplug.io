@@ -1,6 +1,7 @@
 ---
 title: "Early Access Kiiroo Keon Unboxing And Analysis"
 date: 2020-11-18
+authors: [qdot]
 ---
 
 New video, released for patrons a day early!

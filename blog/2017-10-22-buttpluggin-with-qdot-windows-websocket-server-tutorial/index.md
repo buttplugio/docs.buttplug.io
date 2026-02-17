@@ -1,6 +1,7 @@
 ---
 title: "Buttpluggin With Qdot Windows Websocket Server Tutorial"
 date: 2017-10-22
+authors: [qdot]
 ---
 
 SEE I TOLD YOU I'D GET BACK TO MAKING VIDEOS.Even if they are pretty spectacularly boring.

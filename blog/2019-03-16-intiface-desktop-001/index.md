@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop 001"
 date: 2019-03-16
+authors: [qdot]
 ---
 
 Welp. Here we go:

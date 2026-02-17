@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-08-01 Edition)"
 date: 2022-08-01
+authors: [qdot]
 ---
 DONE! SORTA!
 

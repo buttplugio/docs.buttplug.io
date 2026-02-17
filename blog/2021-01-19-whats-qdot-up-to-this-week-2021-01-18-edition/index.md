@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-01-18 Edition)"
 date: 2021-01-19
+authors: [qdot]
 ---
 Buttplug v2!
 

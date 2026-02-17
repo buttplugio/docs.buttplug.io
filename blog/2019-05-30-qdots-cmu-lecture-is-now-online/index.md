@@ -1,6 +1,7 @@
 ---
 title: "Qdots Cmu Lecture Is Now Online"
 date: 2019-05-30
+authors: [qdot]
 ---
 
 My artist lecture as part of my March 2019 residency at Carnegie Mellon University is now online (and captioned)! 

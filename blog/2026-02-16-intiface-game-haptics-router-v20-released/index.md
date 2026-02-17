@@ -1,6 +1,7 @@
 ---
 title: "Intiface Game Haptics Router v20 Released!"
 date: 2026-02-16
+authors: [qdot]
 ---
 
 [Intiface Game Haptics Router v20 is live!](https://github.com/intiface/intiface-game-haptics-router/releases/tag/v20)

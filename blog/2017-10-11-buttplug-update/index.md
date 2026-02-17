@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Update"
 date: 2017-10-11
+authors: [qdot]
 ---
 
 Ok, time to make an "I'm not dead" update.I'm not dead.

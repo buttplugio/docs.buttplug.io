@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Beta 2"
 date: 2022-01-25
+authors: [qdot]
 ---
 
 Intiface Desktop Rust/egui Beta 2 is out!

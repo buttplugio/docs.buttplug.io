@@ -1,6 +1,7 @@
 ---
 title: "Coming Soon Diamo Modding Video"
 date: 2021-10-25
+authors: [qdot]
 ---
 
 Oh yeah, forgot to put this in the weekly update:

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-10-25 Edition)"
 date: 2021-10-25
+authors: [qdot]
 ---
 It's ADHD time, apparently...
 

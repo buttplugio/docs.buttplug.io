@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-05-04 Edition)"
 date: 2020-05-04
+authors: [qdot]
 ---
 3D Printing all the things!
 

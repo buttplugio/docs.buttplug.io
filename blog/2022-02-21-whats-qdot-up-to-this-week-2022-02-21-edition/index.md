@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-02-21 Edition)"
 date: 2022-02-21
+authors: [qdot]
 ---
 Same as it ever was...
 

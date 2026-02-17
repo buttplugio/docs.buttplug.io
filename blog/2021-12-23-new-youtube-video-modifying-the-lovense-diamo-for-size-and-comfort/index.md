@@ -1,6 +1,7 @@
 ---
 title: "New Youtube Video Modifying The Lovense Diamo For Size And Comfort"
 date: 2021-12-23
+authors: [qdot]
 ---
 
 Ever wonder what your patreon dollars go toward?

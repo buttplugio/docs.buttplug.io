@@ -1,6 +1,7 @@
 ---
 title: "Nippleblenders Have Arrived"
 date: 2018-05-14
+authors: [qdot]
 ---
 
 AAAAAHHHHHH I FINALLY HAVE A VORZE UFO SA  

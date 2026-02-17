@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-09-16 Edition)"
 date: 2019-09-16
+authors: [qdot]
 ---
 More than usual, less than I want.
 

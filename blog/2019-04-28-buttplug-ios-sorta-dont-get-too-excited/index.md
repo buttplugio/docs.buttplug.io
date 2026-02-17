@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Ios Sorta Dont Get Too Excited"
 date: 2019-04-28
+authors: [qdot]
 ---
 
 Someone poked me on twitter about trying Buttplug using an iOS app that polyfills WebBluetooth:

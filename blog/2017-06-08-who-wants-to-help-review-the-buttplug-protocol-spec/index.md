@@ -1,6 +1,7 @@
 ---
 title: "Who Wants To Help Review The Buttplug Protocol Spec"
 date: 2017-06-08
+authors: [qdot]
 ---
 
 [https://metafetish.club/t/buttplug-standard-document-review-thread/31](https://metafetish.club/t/buttplug-standard-document-review-thread/31)I just finished writing the first draft of the Buttplug Protocol Spec. This is the message board thread for the refinement conversation. 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-08-26 Edition)"
 date: 2019-08-26
+authors: [qdot]
 ---
 PENS.
 

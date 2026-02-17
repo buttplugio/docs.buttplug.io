@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-03-14 Edition)"
 date: 2022-03-14
+authors: [qdot]
 ---
 Our long national nightmare is... well, not exactly *over*, but...
 

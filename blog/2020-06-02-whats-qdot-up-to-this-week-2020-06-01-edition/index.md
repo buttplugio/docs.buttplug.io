@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-06-01 Edition)"
 date: 2020-06-02
+authors: [qdot]
 ---
 A day late but with a good excuse. (and fair warning: the Buttplug Section will be EXTREMELY engineering heavy but there's a couple of things after it)
 

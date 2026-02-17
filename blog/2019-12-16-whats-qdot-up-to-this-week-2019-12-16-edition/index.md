@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-12-16 Edition)"
 date: 2019-12-16
+authors: [qdot]
 ---
 A continuous stream of questionable choices.
 

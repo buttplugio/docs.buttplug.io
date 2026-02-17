@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C Syncydink Tutorials"
 date: 2017-08-11
+authors: [qdot]
 ---
 
 I've written up some quick tutorials to give an overview of what's currently available in Buttplug C# 0.1.0 and Syncydink.Buttplug C# 0.1.0:

@@ -1,6 +1,7 @@
 ---
 title: "Intiface Game Haptics Router In Model Content"
 date: 2019-07-26
+authors: [qdot]
 ---
 
 It's no longer just me using the GHR in videos!

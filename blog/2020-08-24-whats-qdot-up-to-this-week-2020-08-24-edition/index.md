@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-08-24 Edition)"
 date: 2020-08-24
+authors: [qdot]
 ---
 Missing a week of updates, but for good reason I guess?
 

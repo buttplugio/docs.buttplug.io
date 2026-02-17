@@ -1,6 +1,7 @@
 ---
 title: "New Patreon Perk Qdot Reviews Sex Tech Porn"
 date: 2019-10-17
+authors: [qdot]
 ---
 
 Earlier this week, someone sent me some furry porn that involved the use of VR (as in the character in the picture was using VR. This is surprisingly difficult to state for some reason.).

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-06-10 Edition)"
 date: 2019-06-11
+authors: [qdot]
 ---
 Somehow still managing to work on shit!
 

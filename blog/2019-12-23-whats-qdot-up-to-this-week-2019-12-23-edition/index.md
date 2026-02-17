@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-12-23 Edition)"
 date: 2019-12-23
+authors: [qdot]
 ---
 Holy shit. Rust Bluetooth works.
 

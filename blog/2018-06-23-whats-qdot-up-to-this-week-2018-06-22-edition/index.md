@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-06-22 Edition)"
 date: 2018-06-23
+authors: [qdot]
 ---
 Ok, guess we're sticking to Fridays for weekly updates. Or maybe Saturdays, as is the case now.First off... If you ever wonder what I'm doing with your money, well, the image in this post is a good indicator. I get a lot of questions on [our discord](https://discord.buttplug.io) about cheap toys that work with Buttplug, which is why we have support for things like the [Youcups Warrior 2](https://www.aliexpress.com/item/YouCups-new-Warrior-II-APP-interaction-electric-male-masturbator-Vibrating-oral-Sex-products-adult-sex-toys/32833568062.html) and [Pipijing Whale](https://www.aliexpress.com/item/Electro-shock-8-speed-vibration-Smart-Kegel-Exercise-remote-control-silicone-egg-G-spot-ben-wa/32850060447.html). People want something to play with, but may not be able to shell out for a Lovense, much less a Launch or ET-312. I try to keep a list of < $50 toys from Alibaba that may take a couple of months to arrive and be less-than-body-safe, but will at least provide *something* for people to work with.
 

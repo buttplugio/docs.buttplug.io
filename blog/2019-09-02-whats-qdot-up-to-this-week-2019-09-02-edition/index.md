@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-09-02 Edition)"
 date: 2019-09-02
+authors: [qdot]
 ---
 OMFG.
 

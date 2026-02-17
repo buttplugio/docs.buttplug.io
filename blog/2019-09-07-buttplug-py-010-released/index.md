@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Py 010 Released"
 date: 2019-09-07
+authors: [qdot]
 ---
 
 [https://pypi.org/project/buttplug](https://pypi.org/project/buttplug)

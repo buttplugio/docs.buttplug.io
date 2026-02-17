@@ -1,6 +1,7 @@
 ---
 title: "Buttplug V6 Its Like Firefox V4 For Your Butt"
 date: 2022-08-29
+authors: [qdot]
 ---
 
 Ugh. Ok. v6.0.0 is as done as it's gonna get.

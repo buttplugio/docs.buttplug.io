@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-05-26 Edition)"
 date: 2020-05-26
+authors: [qdot]
 ---
 Coming in a day late because yesterday was a US holiday.
 

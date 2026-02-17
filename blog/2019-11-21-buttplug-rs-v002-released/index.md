@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Rs V002 Released"
 date: 2019-11-21
+authors: [qdot]
 ---
 
 Buttplug Rust is actually kinda sorta maybe a thing now!

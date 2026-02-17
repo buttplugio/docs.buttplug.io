@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Rust Egui Alpha 2"
 date: 2021-12-27
+authors: [qdot]
 ---
 
 That was quick.

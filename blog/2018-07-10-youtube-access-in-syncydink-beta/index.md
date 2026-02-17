@@ -1,6 +1,7 @@
 ---
 title: "Youtube Access In Syncydink Beta"
 date: 2018-07-10
+authors: [qdot]
 ---
 
 [https://beta.syncydink.buttplug.world/](https://beta.syncydink.buttplug.world/)Below the file entry on the syncydink side panel, there is now a place to paste in youtube urls. If you paste in a URL and hit enter (I need to fix up that UI), it'll now load a youtube video directly into syncydink. 

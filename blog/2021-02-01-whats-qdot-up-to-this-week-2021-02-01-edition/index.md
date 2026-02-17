@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-02-01 Edition)"
 date: 2021-02-01
+authors: [qdot]
 ---
 Staring at polls.
 

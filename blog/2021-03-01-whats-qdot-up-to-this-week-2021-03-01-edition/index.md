@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-03-01 Edition)"
 date: 2021-03-01
+authors: [qdot]
 ---
 Not much, honestly. It's been a Extremely Fucking Bad couple of weeks out in reality, so things are going very slowly right now.
 

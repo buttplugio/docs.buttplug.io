@@ -1,6 +1,7 @@
 ---
 title: "Buttplug v10/Intiface Central v3 Released!"
 date: 2026-02-01
+authors: [qdot]
 ---
 It happened! It finally happened! 3.5 years of work, now released!
 

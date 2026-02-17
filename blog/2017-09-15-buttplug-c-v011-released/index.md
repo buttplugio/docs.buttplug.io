@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C V011 Released"
 date: 2017-09-15
+authors: [qdot]
 ---
 
 Buttplug C# 0.1.1 is out! Get it at[https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.1](https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.1)

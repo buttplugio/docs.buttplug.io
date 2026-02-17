@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-03-25 Edition)"
 date: 2019-03-25
+authors: [qdot]
 ---
 Survived Pittsburgh. Now back at home and trying to make body adjust back to my normal timezone.
 

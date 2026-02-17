@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-11-09 Edition)"
 date: 2020-11-10
+authors: [qdot]
 ---
 Ugh. Combination of health issues and dayjob really slowing things down, but...
 

@@ -1,6 +1,7 @@
 ---
 title: "Want Your Name In The Credits In My Next Youtube Video"
 date: 2021-02-18
+authors: [qdot]
 ---
 
 Hello, special people in my >= $10 tiers!

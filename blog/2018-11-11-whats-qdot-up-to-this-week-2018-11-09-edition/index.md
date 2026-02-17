@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-11-09 Edition)"
 date: 2018-11-11
+authors: [qdot]
 ---
 Well, after releasing Buttplug C# 0.3.0, someone found a bug, so I released 0.3.1 this week! Yay releases that take less than 5 months!I'm also talking to the author of ScriptPlayer about starting to port it to Buttplug C# 0.3 at some point. This would remove the Websocket requirement (as we now have other, more direct ways to connect. If you're wondering, it's IPC over Named Pipes), making connection much easier.
 

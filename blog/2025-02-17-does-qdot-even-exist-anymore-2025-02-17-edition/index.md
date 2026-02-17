@@ -1,6 +1,7 @@
 ---
 title: "Does qDot Even Exist Anymore? (2025-02-17 Edition)"
 date: 2025-02-17
+authors: [qdot]
 ---
 Sorta.
 

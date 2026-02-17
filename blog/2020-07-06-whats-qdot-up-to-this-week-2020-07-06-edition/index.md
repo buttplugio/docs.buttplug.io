@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-07-06 Edition)"
 date: 2020-07-06
+authors: [qdot]
 ---
 Being my own social media intern.
 

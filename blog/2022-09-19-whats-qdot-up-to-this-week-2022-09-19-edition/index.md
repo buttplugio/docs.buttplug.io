@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-09-19 Edition)"
 date: 2022-09-19
+authors: [qdot]
 ---
 APPS
 

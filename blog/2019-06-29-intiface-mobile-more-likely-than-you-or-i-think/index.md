@@ -1,6 +1,7 @@
 ---
 title: "Intiface Mobile More Likely Than You Or I Think"
 date: 2019-06-29
+authors: [qdot]
 ---
 
 Earlier this weekend, someone submitted a pull request to Buttplug C# to add Xamarin support for Bluetooth. Xamarin is basically a way to run C# code on phones (versus having to write Java for Android and Swift/ObjC for iPhone). 

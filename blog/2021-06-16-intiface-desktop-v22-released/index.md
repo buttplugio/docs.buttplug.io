@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop V22 Released"
 date: 2021-06-16
+authors: [qdot]
 ---
 
 Intiface Desktop v22 is live!

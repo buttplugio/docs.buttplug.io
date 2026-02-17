@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2023-10-09 Edition)"
 date: 2023-10-10
+authors: [qdot]
 ---
 Playing Cyberpunk 2077 so much that I forget it's Monday and therefore write my update on Tuesday. :|
 

@@ -1,6 +1,7 @@
 ---
 title: "Teledildonics 101 Part 4 Livestream April 26 12pm Pacific"
 date: 2020-04-25
+authors: [qdot]
 ---
 
 Tomorrow! Noon Pacific! Hopefully an ok time for those not in the Americas!

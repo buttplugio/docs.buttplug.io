@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-09-12 Edition)"
 date: 2022-09-12
+authors: [qdot]
 ---
 BLoCs!
 

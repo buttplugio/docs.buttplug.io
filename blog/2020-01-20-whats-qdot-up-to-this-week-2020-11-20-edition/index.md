@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-11-20 Edition)"
 date: 2020-01-20
+authors: [qdot]
 ---
 AGH IT'S DONE IT'S FINALLY DONE
 

@@ -1,6 +1,7 @@
 ---
 title: "Periodic Checkin What Do Yall Want More Of"
 date: 2021-01-27
+authors: [qdot]
 ---
 
 Ok, I haven't run one of these in a while, and I'm quietly hemorrhaging patrons lately (while still getting some new ones, so hi new ones!), so:

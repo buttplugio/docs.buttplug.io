@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2026-01-19 Edition)"
 date: 2026-01-19
+authors: [qdot]
 ---
 So much for that end of the year buttplug v4 release
 

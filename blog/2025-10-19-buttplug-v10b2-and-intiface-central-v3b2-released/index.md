@@ -1,6 +1,7 @@
 ---
 title: "Buttplug V10b2 And Intiface Central V3b2 Released"
 date: 2025-10-19
+authors: [qdot]
 ---
 
 The time has come!

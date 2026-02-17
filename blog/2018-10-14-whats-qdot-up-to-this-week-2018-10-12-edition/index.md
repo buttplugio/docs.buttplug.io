@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-10-12 Edition)"
 date: 2018-10-14
+authors: [qdot]
 ---
 Yeah ok at this point it's just time to admit I didn't know what I was doing with C# a year ago and now I'm basically rewriting half of the project to make it actually work like actual C# programmers would actually expect.There. Done. Brutal honesty.
 

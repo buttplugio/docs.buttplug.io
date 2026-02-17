@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Python 002"
 date: 2019-09-05
+authors: [qdot]
 ---
 
 [https://pypi.org/project/buttplug/](https://pypi.org/project/buttplug/)

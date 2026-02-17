@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-10-28 Edition)"
 date: 2019-10-28
+authors: [qdot]
 ---
 Enjoying having electricity again!
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-04-18 Edition)"
 date: 2022-04-18
+authors: [qdot]
 ---
 Being very tired.
 

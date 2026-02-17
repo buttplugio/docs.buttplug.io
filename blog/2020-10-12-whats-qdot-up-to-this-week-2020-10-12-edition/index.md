@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-10-12 Edition)"
 date: 2020-10-12
+authors: [qdot]
 ---
 First newsletter in 3 weeks!
 

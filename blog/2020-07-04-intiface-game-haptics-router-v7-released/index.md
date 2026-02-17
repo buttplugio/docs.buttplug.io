@@ -1,6 +1,7 @@
 ---
 title: "Intiface Game Haptics Router V7 Released"
 date: 2020-07-04
+authors: [qdot]
 ---
 
 [https://intiface.com/ghr](https://intiface.com/ghr)

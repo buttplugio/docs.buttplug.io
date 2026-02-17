@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2023-02-20 Edition)"
 date: 2023-02-20
+authors: [qdot]
 ---
 All the things, slowly...
 

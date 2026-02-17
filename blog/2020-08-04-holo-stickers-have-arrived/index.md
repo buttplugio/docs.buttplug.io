@@ -1,6 +1,7 @@
 ---
 title: "Holo Stickers Have Arrived"
 date: 2020-08-04
+authors: [qdot]
 ---
 
 They’re so pretty!

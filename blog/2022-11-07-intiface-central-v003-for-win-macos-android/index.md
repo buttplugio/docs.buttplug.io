@@ -1,6 +1,7 @@
 ---
 title: "Intiface Central V003 For Win Macos Android"
 date: 2022-11-07
+authors: [qdot]
 ---
 
 Intiface Central v0.0.3 is out, with tons of bugfixes/updates over the past couple of weeks. I'll go into the specifics in the Weekly Update tomorrow but wanted to get release info out now:

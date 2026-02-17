@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-11-11 Edition)"
 date: 2019-11-11
+authors: [qdot]
 ---
 Recovering.
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2025-07-07 Edition)"
 date: 2025-07-07
+authors: [qdot]
 ---
 Edging ever closer to the v4 release...
 

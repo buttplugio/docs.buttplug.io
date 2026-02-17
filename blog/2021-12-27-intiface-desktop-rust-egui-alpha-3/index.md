@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Rust Egui Alpha 3"
 date: 2021-12-27
+authors: [qdot]
 ---
 
 No alpha survives first contact with users.

@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop V14 Released"
 date: 2019-05-09
+authors: [qdot]
 ---
 
 Managed to break through my coding block a bit to get the new version of Intiface Desktop out.

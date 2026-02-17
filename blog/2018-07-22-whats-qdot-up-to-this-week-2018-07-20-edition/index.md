@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-07-20 Edition)"
 date: 2018-07-22
+authors: [qdot]
 ---
 Videos and toy support!We had a couple of questions about toy support this week that we're now getting filled in. Turns out the Kiiroo Onyx 1 was never fully supported in our Kiiroo code, so one of our contributors took care of that. We also now support the WeVibe Classic, as requested by someone on the forums. Finally, I now have access to a Estim Systems 2B, meaning we can fill out a bit more of our estim support.
 

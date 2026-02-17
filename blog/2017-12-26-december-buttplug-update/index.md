@@ -1,6 +1,7 @@
 ---
 title: "December Buttplug Update"
 date: 2017-12-26
+authors: [qdot]
 ---
 
 Thanks to the holidays I've been rather quiet, but that doesn't mean work isn't happening!However, that also doesn't mean the work is very interesting to anyone but core developers, either. :)

@@ -1,6 +1,7 @@
 ---
 title: "The Yak Factory"
 date: 2017-03-26
+authors: [qdot]
 ---
 New blog post going up on buttplug.io tomorrow, but you get to read it first!--
 

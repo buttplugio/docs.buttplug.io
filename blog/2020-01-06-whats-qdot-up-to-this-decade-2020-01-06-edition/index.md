@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Decade? (2020-01-06 Edition)"
 date: 2020-01-06
+authors: [qdot]
 ---
 Same thing we do every decade, Pinky. Try to buttplug the world.
 

@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Development Video Update"
 date: 2018-01-29
+authors: [qdot]
 ---
 
 Here's a quick update about what's going on around Buttplug HQ (aka my office in my house)We released Buttplug C# 0.2 and Buttplug-js 0.5 last week. So far, the C# version has seen over 160 downloads and zero crashes reported so far, which is pretty exciting. 

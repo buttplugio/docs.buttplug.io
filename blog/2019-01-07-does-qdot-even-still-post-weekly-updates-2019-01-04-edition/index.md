@@ -1,6 +1,7 @@
 ---
 title: "Does qDot Even Still Post Weekly Updates? (2019-01-04 Edition)"
 date: 2019-01-07
+authors: [qdot]
 ---
 Ostensibly, yes.
 

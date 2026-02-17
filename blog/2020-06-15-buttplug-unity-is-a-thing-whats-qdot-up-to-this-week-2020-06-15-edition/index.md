@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Unity Is A Thing Whats Qdot Up To This Week 2020 06 15 Edition"
 date: 2020-06-15
+authors: [qdot]
 ---
 
 AN ACTUAL PATREON PERK: I HAVEN'T ANNOUNCED THIS ANYWHERE (BUT DISCORD) YET

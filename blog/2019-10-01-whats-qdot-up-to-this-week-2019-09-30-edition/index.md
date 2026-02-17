@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-09-30 Edition)"
 date: 2019-10-01
+authors: [qdot]
 ---
 Crap when did it become Tuesday.
 

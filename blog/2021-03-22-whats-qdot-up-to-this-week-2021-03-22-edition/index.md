@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-03-22 Edition)"
 date: 2021-03-22
+authors: [qdot]
 ---
 I can apparently code again!
 

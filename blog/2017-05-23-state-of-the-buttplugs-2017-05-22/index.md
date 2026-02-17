@@ -1,6 +1,7 @@
 ---
 title: "State Of The Buttplugs 2017 05 22"
 date: 2017-05-23
+authors: [qdot]
 ---
 
 First off, Hello new patrons! Thanks for the donations! They will be used for new buttplugage assuming I don't die from burnout soon.Now then, moving on...

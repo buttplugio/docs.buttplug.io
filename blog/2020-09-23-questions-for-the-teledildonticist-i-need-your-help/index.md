@@ -1,6 +1,7 @@
 ---
 title: "Questions For The Teledildonticist I Need Your Help"
 date: 2020-09-23
+authors: [qdot]
 ---
 
 In order to get more videos up on the Youtube channel, I'm starting a series of shorter videos (< 10 minutes) called "Questions For The Teledildonticist" where I just answer one question per video.

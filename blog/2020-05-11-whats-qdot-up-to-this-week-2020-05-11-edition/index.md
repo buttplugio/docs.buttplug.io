@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-05-11 Edition)"
 date: 2020-05-11
+authors: [qdot]
 ---
 Dear sweet mother of god
 

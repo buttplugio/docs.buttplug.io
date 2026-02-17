@@ -1,6 +1,7 @@
 ---
 title: "New Scriptplayer V103 Release Now With Whirligig Support"
 date: 2017-11-12
+authors: [qdot]
 ---
 
 [https://github.com/FredTungsten/ScriptPlayer/releases](https://github.com/FredTungsten/ScriptPlayer/releases)ScriptPlayer 1.0.3 was released this morning, now with Whirligig support! This means you can now use any buttplug compatible toy with a real VR Movie Player, versus our hacked together player in Syncydink that I still need to fix up.

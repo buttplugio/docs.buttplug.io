@@ -1,6 +1,7 @@
 ---
 title: "Fleshlight Launch Shimming"
 date: 2017-03-22
+authors: [qdot]
 ---
 So, after talking to some people about the Fleshlight Launch hacking last night, I realized that the Launch really could work with almost any ona-hole style toy, all you need is a shim. Gosh. If only there was a way to get custom made, one-off plastics... :3
 

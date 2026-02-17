@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-07-26 Edition)"
 date: 2021-07-26
+authors: [qdot]
 ---
 Too god damn much bluetooth.
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-08-12 Edition)"
 date: 2019-08-12
+authors: [qdot]
 ---
 Writing tweets that should really be blog posts, apparently.
 

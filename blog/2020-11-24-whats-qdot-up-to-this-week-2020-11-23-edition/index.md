@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-11-23 Edition)"
 date: 2020-11-24
+authors: [qdot]
 ---
 I'm on vacation all week! Which means...
 

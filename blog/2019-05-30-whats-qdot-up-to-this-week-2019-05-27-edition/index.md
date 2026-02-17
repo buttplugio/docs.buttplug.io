@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-05-27 Edition)"
 date: 2019-05-30
+authors: [qdot]
 ---
 Well, I'm definitely not jobless anymore.
 

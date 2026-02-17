@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-12-07 Edition)"
 date: 2020-12-07
+authors: [qdot]
 ---
 Redoing shit. :(
 

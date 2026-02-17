@@ -1,6 +1,7 @@
 ---
 title: "Github Sponsors Patreon And The Basically Same Future"
 date: 2019-10-12
+authors: [qdot]
 ---
 
 tl;dr: I'm now using 2 funding platforms, but there will be no fundamental changes due to this. Unless you want the gritty details of what it's like to be a creator with multiple patron streams, you can skip this post. :)

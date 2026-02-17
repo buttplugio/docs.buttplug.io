@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-08-31 Edition)"
 date: 2020-08-31
+authors: [qdot]
 ---
 A surprisingly busy week!
 

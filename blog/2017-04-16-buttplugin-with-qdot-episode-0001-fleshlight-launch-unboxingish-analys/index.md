@@ -1,6 +1,7 @@
 ---
 title: "Buttplug with QDot Episode 0001 - Fleshlight Launch Unboxingish Analysis"
 date: 2023-04-16
+authors: [qdot]
 ---
 Oh my fucking god, I thought I was never going to get this finished. 43 minutes of hardcore buttplug engineering analysis about the Fleshlight Launch.I realize this is a REALLY long episode to start on, but I think I subconsciously decided to just throw all of my ideas at this and will now see what sticks. Upcoming videos will hopefully be closer to the 10-20 minute range, and divided into multiple videos if they're gonna break that limit.
 

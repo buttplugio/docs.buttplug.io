@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-02-10 Edition)"
 date: 2020-02-10
+authors: [qdot]
 ---
 AND WE'RE BACK
 

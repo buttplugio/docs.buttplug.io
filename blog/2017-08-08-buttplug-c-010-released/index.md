@@ -1,6 +1,7 @@
 ---
 title: "Buttplug C 010 Released"
 date: 2017-08-08
+authors: [qdot]
 ---
 
 Finally gave up polishing. Ship it.[https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.0](https://github.com/metafetish/buttplug-csharp/releases/tag/0.1.0)

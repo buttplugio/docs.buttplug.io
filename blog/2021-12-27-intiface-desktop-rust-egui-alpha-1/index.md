@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Rust Egui Alpha 1"
 date: 2021-12-27
+authors: [qdot]
 ---
 
 In lieu of a weekly update, here's what y'all actually pay me for: A chance to be the first to test my extremely alpha software! Isn't paying to be my QA fun? :3

@@ -1,6 +1,7 @@
 ---
 title: "2018 Year Of The Buttplug"
 date: 2018-01-02
+authors: [qdot]
 ---
 
 I mean, 2017 was too, but nothing saying that we can't have multiple years with that as the theme.Working on lots of documentation right now, as well as finishing up the Buttplug Twine interactive fiction engine integration so I can build our new interactive tutorial in that.

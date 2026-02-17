@@ -1,6 +1,7 @@
 ---
 title: "Intiface Central Coming To Steam"
 date: 2023-10-19
+authors: [qdot]
 ---
 
 Finally got through the store page part of the process, now just gotta get a build up and a trailer made. Aiming for Steam release early November.

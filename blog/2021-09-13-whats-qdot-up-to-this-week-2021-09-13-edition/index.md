@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-09-13 Edition)"
 date: 2021-09-13
+authors: [qdot]
 ---
 Watching the bugs roll in...
 

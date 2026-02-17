@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-07-17 Edition)"
 date: 2022-07-18
+authors: [qdot]
 ---
 Oh so that's what Dart looks like
 

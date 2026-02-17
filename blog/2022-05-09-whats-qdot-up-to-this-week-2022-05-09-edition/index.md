@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-05-09 Edition)"
 date: 2022-05-09
+authors: [qdot]
 ---
 Family emergency over, finally, and slowly but surely returning to life as normal...
 

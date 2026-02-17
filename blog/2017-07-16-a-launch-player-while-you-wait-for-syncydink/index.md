@@ -1,6 +1,7 @@
 ---
 title: "A Launch Player While You Wait For Syncydink"
 date: 2017-07-16
+authors: [qdot]
 ---
 
 Around the time I started Buttplug, I met up with someone on the Milovana web tease forums, where a good chunk of the anime Cock Hero community hangs out. They were working on a C# based movie player with Launch support, mostly focused on the Cock Hero community.They ended up putting out their first beta release last week:

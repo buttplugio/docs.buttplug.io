@@ -1,6 +1,7 @@
 ---
 title: "Nobras Silicone Dreams Twin Charger Unboxing"
 date: 2020-03-20
+authors: [qdot]
 ---
 
 So what's worse than me forgetting to post about one live stream?

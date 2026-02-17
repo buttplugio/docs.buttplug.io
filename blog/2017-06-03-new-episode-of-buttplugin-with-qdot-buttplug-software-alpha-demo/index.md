@@ -1,6 +1,7 @@
 ---
 title: "New Episode Of Buttplugin With Qdot Buttplug Software Alpha Demo"
 date: 2017-06-03
+authors: [qdot]
 ---
 
 Episode 1 production time: 3 weeksEpisode 2 production time: 2 hours

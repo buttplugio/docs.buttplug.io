@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop Beta 2 Fixed"
 date: 2022-01-26
+authors: [qdot]
 ---
 
 Fixed the first run experience, so now you can give the new application a shot!

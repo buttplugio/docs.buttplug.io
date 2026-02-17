@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-11-21 Edition)"
 date: 2021-11-22
+authors: [qdot]
 ---
 More than last week! (An admittedly low bar.)
 

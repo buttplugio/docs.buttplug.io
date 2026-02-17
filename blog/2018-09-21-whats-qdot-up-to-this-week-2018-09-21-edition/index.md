@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2018-09-21 Edition)"
 date: 2018-09-21
+authors: [qdot]
 ---
 Wow. Completely flaked on an update last week. I blame Yakuza 0.The good news is, I have finished Yakuza 0 and resumed doing other things with my life. Buttplug related things even!
 

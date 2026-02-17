@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2022-01-31 Edition)"
 date: 2022-01-31
+authors: [qdot]
 ---
 v6 begins.
 

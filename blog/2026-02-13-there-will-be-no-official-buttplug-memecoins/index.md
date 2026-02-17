@@ -1,6 +1,7 @@
 ---
 title: "There will be no official Buttplug related memecoin"
 date: 2026-02-13
+authors: [qdot]
 ---
 
 Was wondering when this particular bit of stupidity would come for me, and here we are.

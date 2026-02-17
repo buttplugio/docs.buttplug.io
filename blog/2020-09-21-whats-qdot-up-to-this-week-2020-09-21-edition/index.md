@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-09-21 Edition)"
 date: 2020-09-21
+authors: [qdot]
 ---
 All the things!
 

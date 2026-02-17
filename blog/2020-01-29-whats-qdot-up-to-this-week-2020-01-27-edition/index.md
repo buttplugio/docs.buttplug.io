@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-01-27 Edition)"
 date: 2020-01-29
+authors: [qdot]
 ---
 Being late to the update and not having much to say because I'm sick. Respiratory infections suck.
 

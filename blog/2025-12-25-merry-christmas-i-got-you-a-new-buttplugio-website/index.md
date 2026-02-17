@@ -1,6 +1,7 @@
 ---
 title: "Merry Christmas, I got you a new Buttplug.io website!"
 date: 2025-12-25
+authors: [qdot]
 ---
 Because why spend the holiday with friends and family when you can spend it debugging docusaurus.
 

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2020-12-21 Edition)"
 date: 2020-12-23
+authors: [qdot]
 ---
 DAMNIT V1 WILL HAPPEN. SOON.
 

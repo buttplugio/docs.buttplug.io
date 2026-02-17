@@ -1,6 +1,7 @@
 ---
 title: "Wheres Qdot 2023 06 05 Edition"
 date: 2023-06-05
+authors: [qdot]
 ---
 
 Ok, short one for this week because it's been ~7 weeks since the last update, but there's good reason for that.

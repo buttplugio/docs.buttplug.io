@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop 001 Maybe Wait On That"
 date: 2019-03-16
+authors: [qdot]
 ---
 
 Ok well it turns out the code signing thing is going to be a bigger problem than I thought on Mac and Windows. My initial tests worked because I was running against a locally built server and didn't realize it. As soon as I cleared my config and downloaded the server through the app (as everyone else is doing), almost nothing works due to downloaded app privilege restrictions.

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2024-05-06 Edition)"
 date: 2024-05-06
+authors: [qdot]
 ---
 Short weekly update 'cause I'm working on stuff, but:
 

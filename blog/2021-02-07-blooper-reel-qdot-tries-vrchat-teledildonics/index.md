@@ -1,6 +1,7 @@
 ---
 title: "Blooper Reel Qdot Tries Vrchat Teledildonics"
 date: 2021-02-07
+authors: [qdot]
 ---
 
 Well I promised bloopers in the tiers at one point, but the past couple of years are mostly me yelling at code so not many interesting ones have happened.

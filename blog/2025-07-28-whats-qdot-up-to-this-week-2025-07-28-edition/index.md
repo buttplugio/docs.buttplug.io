@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2025-07-28 Edition)"
 date: 2025-07-28
+authors: [qdot]
 ---
 Exciting new features!
 

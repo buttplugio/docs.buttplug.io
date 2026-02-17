@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2021-09-27 Edition)"
 date: 2021-09-27
+authors: [qdot]
 ---
 Rewrites!
 

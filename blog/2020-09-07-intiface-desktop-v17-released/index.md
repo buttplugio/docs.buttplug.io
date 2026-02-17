@@ -1,6 +1,7 @@
 ---
 title: "Intiface Desktop V17 Released"
 date: 2020-09-07
+authors: [qdot]
 ---
 
 [https://intiface.com/desktop](https://intiface.com/desktop)

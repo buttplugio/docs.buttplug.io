@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2023-04-17 Edition)"
 date: 2023-04-17
+authors: [qdot]
 ---
 Oops more platform support?
 

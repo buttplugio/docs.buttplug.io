@@ -1,6 +1,7 @@
 ---
 title: "Elden Ring And Haptics Rerouting"
 date: 2022-03-01
+authors: [qdot]
 ---
 
 The weekly update would consist of one project this week, so I'll just post the project itself.

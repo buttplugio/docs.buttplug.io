@@ -1,6 +1,7 @@
 ---
 title: "Yiffspot Teledildonics Via Buttplug"
 date: 2018-03-17
+authors: [qdot]
 ---
 
 If nothing else, you're paying me for these post titles, right? :)Well, this is definitely not how I planned on spending the past couple of weeks, but here we are.

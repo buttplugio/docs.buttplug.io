@@ -1,6 +1,7 @@
 ---
 title: "Buttplug Development Updates"
 date: 2017-11-21
+authors: [qdot]
 ---
 
 It's been a little quiet around here lately, so I figured I'd share what's going on in development.- ET-312 Estim serial protocol support is now in the C# client. This allows users with ET-312 boxes to scale intensity based on input.

@@ -1,6 +1,7 @@
 ---
 title: "What's qDot Up To This Week? (2019-07-22 Edition)"
 date: 2019-07-22
+authors: [qdot]
 ---
 Organization, and even more new projects!
 

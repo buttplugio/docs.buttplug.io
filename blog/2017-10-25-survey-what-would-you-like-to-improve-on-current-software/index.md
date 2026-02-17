@@ -1,6 +1,7 @@
 ---
 title: "Survey What Would You Like To Improve On Current Software"
 date: 2017-10-25
+authors: [qdot]
 ---
 
 While filming the Buttplug Websocket tutorial, I realized how painful it is to do the first SSL setup in the websocket server. On top of that, we're still not signaling to users what toys actually work with their setup.These are things I get lots of questions about, yet we haven't really been addressing those questions lately.
