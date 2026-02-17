@@ -29,6 +29,12 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Hero — lighten in light mode so the dark-circle logo doesn't blend in */
+.hero--primary {
+    --ifm-hero-background-color: #4E5E72;
+    --ifm-hero-text-color: #f5f6f7;
+}
+
 /* Center footer with 3 columns */
 .footer__links {
     justify-content: center !important;

@@ -111,6 +111,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+    background-color: rgba(255,255,255,0.7);
+    background-blend-mode: lighten;
     position: relative;
 }
 
@@ -360,6 +362,11 @@
 }
 
 /* ==================== Dark Mode Adjustments ==================== */
+
+[data-theme='dark'] .features::before  {
+    background-color: rgba(0,0,0,1.0);
+    background-blend-mode: darken;
+}
 
 [data-theme='dark'] .featureCard {
     background-color: var(--ifm-color-emphasis-100);
