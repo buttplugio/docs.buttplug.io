@@ -22,7 +22,7 @@ const config = {
   baseUrl: "/",
   onBrokenAnchors: "warn",
   onBrokenLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.png",
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   // organizationName: 'Nonpolynomial Labs, LLC', // Usually your GitHub org/user name.
