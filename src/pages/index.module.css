@@ -374,7 +374,9 @@
 }
 
 [data-theme='dark'] .newsItem {
-    background-color: var(--ifm-color-emphasis-100);
+    background-color: var(--ifm-color-emphasis-200);
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-left: 1px solid var(--ifm-color-emphasis-300);
 }
 
 [data-theme='dark'] .resourceCard {
