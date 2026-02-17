@@ -4,6 +4,14 @@
  * work well for content-centric websites.
  */
 
+/* Brand font — matches the logo / Intiface navbar */
+@font-face {
+    font-family: "Alternate Gothic";
+    src: url("/fonts/AlternateGotNo2D.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* You can override the default Infima variables here. */
 :root {
     --ifm-color-primary: #3E4C5E;
@@ -15,6 +23,15 @@
     --ifm-color-primary-lightest: #728496;
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+    /* Brand palette — derived from the logo */
+    --bp-accent: #E91E78;
+    --bp-accent-light: #F8A4C8;
+    --bp-accent-dark: #C4146A;
+    --bp-ice-blue: #B8D4E3;
+    --bp-heading-font: 'DM Serif Display', Georgia, serif;
+    --bp-body-font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bp-logo-font: 'Alternate Gothic', sans-serif;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,6 +44,11 @@
     --ifm-color-primary-lighter: #d2dae1;
     --ifm-color-primary-lightest: #e0e5ea;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+    --bp-accent: #F06292;
+    --bp-accent-light: #F8A4C8;
+    --bp-accent-dark: #E91E78;
+    --bp-ice-blue: #A8C4D3;
 }
 
 /* Hero — lighten in light mode so the dark-circle logo doesn't blend in */
@@ -50,18 +72,18 @@
 
 /* ==================== Blog Modernization ==================== */
 
-/* Blog CSS Variables */
+/* Blog CSS Variables — accent & fonts reference shared --bp-* vars */
 :root {
     --blog-card-background: #ffffff;
     --blog-card-border: rgba(62, 76, 94, 0.10);
     --blog-card-shadow: 0 1px 3px rgba(62, 76, 94, 0.06);
     --blog-card-shadow-hover: 0 2px 8px rgba(62, 76, 94, 0.10);
     --blog-card-radius: 8px;
-    --blog-accent-color: #E91E78;
+    --blog-accent-color: var(--bp-accent);
     --blog-text-color: #3E4C5E;
     --blog-text-muted: #5A6A7A;
-    --blog-heading-font: 'DM Serif Display', Georgia, serif;
-    --blog-body-font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --blog-heading-font: var(--bp-heading-font);
+    --blog-body-font: var(--bp-body-font);
 }
 
 [data-theme="dark"] {
@@ -69,7 +91,7 @@
     --blog-card-border: rgba(255, 255, 255, 0.08);
     --blog-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     --blog-card-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --blog-accent-color: #F06292;
+    --blog-accent-color: var(--bp-accent);
     --blog-text-color: #D0D8E0;
     --blog-text-muted: #8A9AAA;
 }

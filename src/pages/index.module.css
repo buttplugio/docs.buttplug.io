@@ -3,6 +3,13 @@
  * and scoped locally.
  */
 
+/* ==================== Logo Float Animation ==================== */
+
+@keyframes heroLogoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
 /* ==================== Hero Banner ==================== */
 
 .heroBanner {
@@ -10,6 +17,26 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, #2D3044 0%, #3E4C5E 40%, #4E5E72 70%, #3D4555 100%);
+}
+
+/* Subtle pink radial glow behind the logo area */
+.heroBanner::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(233,30,120,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heroBanner > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .heroLogo {
@@ -17,11 +44,16 @@
     max-width: 300px;
     height: auto;
     object-fit: contain;
+    animation: heroLogoFloat 4s ease-in-out infinite;
+    will-change: transform;
 }
 
 .heroBanner h1 {
     white-space: nowrap;
     font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-family: var(--bp-logo-font);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .heroSubtitle {
@@ -31,13 +63,14 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    font-family: var(--bp-body-font);
 }
 
 .heroTagline {
     font-size: 1.1rem;
     font-style: italic;
     margin-top: 1rem;
-    opacity: 0.9;
+    color: var(--bp-accent-light);
 }
 
 .buttons {
@@ -58,6 +91,31 @@
 .buttons a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary CTA — hot pink */
+.buttons a:global(.button--primary) {
+    background-color: var(--bp-accent);
+    border-color: var(--bp-accent);
+    color: #ffffff;
+}
+
+.buttons a:global(.button--primary):hover {
+    background-color: var(--bp-accent-dark);
+    border-color: var(--bp-accent-dark);
+}
+
+/* Secondary CTA — ice blue outline */
+.buttons a:global(.button--secondary) {
+    background-color: transparent;
+    border: 2px solid var(--bp-ice-blue);
+    color: var(--bp-ice-blue);
+}
+
+.buttons a:global(.button--secondary):hover {
+    background-color: rgba(184, 212, 227, 0.15);
+    border-color: var(--bp-ice-blue);
+    color: var(--bp-ice-blue);
 }
 
 .infoBox {
@@ -83,7 +141,7 @@
 }
 
 .infoBox a {
-    color: inherit;
+    color: var(--bp-ice-blue);
     text-decoration: underline;
     font-weight: bold;
     transition: opacity 0.2s ease;
@@ -101,6 +159,18 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--ifm-heading-color);
+    font-family: var(--bp-heading-font);
+    letter-spacing: -0.01em;
+}
+
+.sectionTitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--bp-accent);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
 }
 
 /* ==================== Features Section ==================== */
@@ -124,7 +194,7 @@
     right: 0;
     bottom: 0;
     background-color: var(--ifm-background-color);
-    opacity: 0.87;
+    opacity: 0.78;
     z-index: 0;
 }
 
@@ -139,17 +209,19 @@
 
 .featureCard {
     padding: 1.5rem;
-    background-color: var(--ifm-background-surface-color, #ffffff);    
+    background-color: var(--ifm-background-surface-color, #ffffff);
     opacity: 0.93;
     border-radius: 12px;
     border: 1px solid var(--ifm-color-emphasis-200);
+    border-top: 3px solid transparent;
     height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .featureCard:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-top-color: var(--bp-accent);
 }
 
 .featureCard h3 {
@@ -160,6 +232,7 @@
 .featureCard p {
     margin-bottom: 0;
     color: var(--ifm-color-emphasis-700);
+    font-family: var(--bp-body-font);
 }
 
 /* ==================== News Section ==================== */
@@ -167,6 +240,7 @@
 .newsSection {
     padding: 3rem 0;
     background-color: var(--ifm-color-emphasis-100);
+    border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .newsContainer {
@@ -193,7 +267,7 @@
 }
 
 .newsItem:hover {
-    border-left-color: var(--ifm-color-primary);
+    border-left-color: var(--bp-accent);
     transform: translateX(4px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -216,7 +290,7 @@
 }
 
 .newsTitle a:hover {
-    color: var(--ifm-color-primary);
+    color: var(--bp-accent);
 }
 
 .newsEmpty {
@@ -237,13 +311,14 @@
     border-radius: 12px;
     border: 1px solid var(--ifm-color-emphasis-200);
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     background-color: var(--ifm-background-surface-color, #ffffff);
 }
 
 .resourceCard:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--bp-accent-light);
 }
 
 .resourceCardHeader {
@@ -259,6 +334,17 @@
 
 .resourceCardBody {
     padding: 1.25rem;
+}
+
+/* IOSTIndex button — pink override */
+.resourceCardBody a:global(.button--primary) {
+    background-color: var(--bp-accent);
+    border-color: var(--bp-accent);
+}
+
+.resourceCardBody a:global(.button--primary):hover {
+    background-color: var(--bp-accent-dark);
+    border-color: var(--bp-accent-dark);
 }
 
 .resourceLink {
@@ -283,6 +369,7 @@
 .hardware {
     padding: 3rem 0;
     background-color: var(--ifm-color-emphasis-100);
+    border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .hardwareSubtitle {
@@ -293,7 +380,7 @@
 }
 
 .hardwareSubtitle a {
-    color: var(--ifm-color-primary);
+    color: var(--bp-accent);
 }
 
 .brandGrid {
@@ -314,8 +401,8 @@
 
 .brandChip:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-color: var(--ifm-color-primary-light);
+    box-shadow: 0 4px 12px rgba(233, 30, 120, 0.1);
+    border-color: var(--bp-accent-light);
 }
 
 .hardwareNote {
@@ -366,6 +453,7 @@
 [data-theme='dark'] .features::before  {
     background-color: rgba(0,0,0,1.0);
     background-blend-mode: darken;
+    opacity: 0.85;
 }
 
 [data-theme='dark'] .featureCard {
@@ -373,10 +461,18 @@
     border-color: var(--ifm-color-emphasis-300);
 }
 
+[data-theme='dark'] .featureCard:hover {
+    border-top-color: var(--bp-accent);
+}
+
 [data-theme='dark'] .newsItem {
     background-color: var(--ifm-color-emphasis-200);
     border: 1px solid var(--ifm-color-emphasis-300);
-    border-left: 1px solid var(--ifm-color-emphasis-300);
+    border-left: 3px solid transparent;
+}
+
+[data-theme='dark'] .newsItem:hover {
+    border-left-color: var(--bp-accent);
 }
 
 [data-theme='dark'] .resourceCard {
@@ -397,4 +493,8 @@
 [data-theme='dark'] .infoBox {
     background-color: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme='dark'] .infoBox a {
+    color: var(--bp-ice-blue);
 }
