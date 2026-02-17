@@ -3,6 +3,7 @@ import { useThemeConfig } from "@docusaurus/theme-common";
 import { groupBlogSidebarItemsByYear } from "@docusaurus/plugin-content-blog/client";
 import Heading from "@theme/Heading";
 import type { Props } from "@theme/BlogSidebar/Content";
+import styles from "./styles.module.css";
 
 function BlogSidebarYearGroup({
   year,
@@ -17,34 +18,26 @@ function BlogSidebarYearGroup({
   const [isCollapsed, setIsCollapsed] = useState(year !== currentYear);
 
   return (
-    <div role="group" style={{ marginBottom: "1rem" }}>
+    <div role="group" className={styles.yearGroup}>
       <Heading
         as="h3"
-        className={yearGroupHeadingClassName}
+        className={`${yearGroupHeadingClassName ?? ""} ${styles.yearHeading}`}
         onClick={() => setIsCollapsed(!isCollapsed)}
-        style={{
-          cursor: "pointer",
-          userSelect: "none",
-          position: "relative",
-          paddingLeft: "1.5rem",
-          display: "flex",
-          alignItems: "center",
-        }}
       >
         <span
-          style={{
-            position: "absolute",
-            left: 0,
-            transition: "transform 0.2s ease",
-            transform: isCollapsed ? "rotate(-90deg)" : "rotate(0deg)",
-            fontSize: "0.8em",
-          }}
+          className={`${styles.collapseIndicator} ${isCollapsed ? styles.collapseIndicatorCollapsed : ""}`}
         >
           ▼
         </span>
         {year}
       </Heading>
-      <div style={{ display: isCollapsed ? "none" : "block" }}>{children}</div>
+      <div
+        className={
+          isCollapsed ? styles.yearContentCollapsed : styles.yearContent
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 }

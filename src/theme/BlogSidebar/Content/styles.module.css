@@ -1,0 +1,30 @@
+.yearGroup {
+    margin-bottom: 1rem;
+}
+
+.yearHeading {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.collapseIndicator {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.65em;
+    flex-shrink: 0;
+}
+
+.collapseIndicatorCollapsed {
+    transform: rotate(-90deg);
+}
+
+.yearContent {
+    display: block;
+}
+
+.yearContentCollapsed {
+    display: none;
+}
