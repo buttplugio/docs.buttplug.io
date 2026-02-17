@@ -111,6 +111,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Respect OS light/dark preference; user can still toggle manually
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       // Meta image for twitter card
       image: "img/logo.png",
       navbar: {
