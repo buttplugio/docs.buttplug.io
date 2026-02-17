@@ -76,6 +76,20 @@
     color: var(--blog-text-color);
 }
 
+/* Blog content links use the pink accent — excludes titles and nav */
+.blog-list-page article .markdown a,
+.blog-post-page article .markdown a,
+.blog-post-page .pagination-nav a {
+    color: var(--blog-accent-color);
+}
+
+.blog-list-page article .markdown a:hover,
+.blog-post-page article .markdown a:hover,
+.blog-post-page .pagination-nav a:hover {
+    color: var(--blog-accent-color);
+    opacity: 0.8;
+}
+
 .blog-list-page h1,
 .blog-list-page h2,
 .blog-list-page h3,
