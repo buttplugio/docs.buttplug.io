@@ -100,6 +100,52 @@ const config = {
       },
     ],
     "docusaurus-plugin-matomo",
+    [
+      'docusaurus-plugin-llms',
+      {
+        logLevel: 'verbose',
+        // Options here
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        docsDir: 'docs',
+        title: 'Buttplugs',
+        description: 'Spec and developer guide for Buttplug.io',
+        includeBlog: false,
+        // Content cleaning options
+        excludeImports: true,
+        // Generate individual markdown files following llmstxt.org specification
+        generateMarkdownFiles: true,
+        // Control documentation order
+        includeOrder: [
+          'spec/*',
+          'dev-guide/*',
+          'dev-guide/intro/*',
+          'dev-guide/architecture/*',
+          'dev-guide/writing-buttplug-applications/*',
+          'dev-guide/cookbook/*',
+          'dev-guide/inflating-buttplug/*',
+          'dev-guide/appendices/*',
+        ],
+        includeUnmatchedLast: true,
+        // Custom LLM files for specific documentation sections
+        customLLMFiles: [
+          {
+            filename: 'llms-spec.txt',
+            includePatterns: ['spec/**/*.md'],
+            fullContent: true,
+            title: 'Buttplug API Spec',
+            description: 'Complete reference for Buttplug API'
+          },
+          {
+            filename: 'llms-dev-guide.txt',
+            includePatterns: ['dev-guide/**/*.md'],
+            fullContent: true,
+            title: 'Buttplug Developer Guide',
+            description: 'Developer Guide with tutorials for multiple langauges'
+          }
+        ],
+      },
+    ]
   ],
   markdown: {
     mermaid: true,
