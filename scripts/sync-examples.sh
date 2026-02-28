@@ -293,4 +293,10 @@ sync_dart
 sync_python
 
 echo ""
+
+# Sync device config data for STPIHKAL remark plugin
+echo "Syncing device config data..."
+"$(dirname "$0")/sync-device-config.sh"
+
+echo ""
 log_info "Sync complete! Examples are in $EXAMPLES_DIR"
