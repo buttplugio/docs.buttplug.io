@@ -108,9 +108,13 @@ const config = {
         generateLLMsTxt: true,
         generateLLMsFullTxt: true,
         docsDir: 'docs',
-        title: 'Buttplugs',
+        title: 'Buttplug',
         description: 'Spec and developer guide for Buttplug.io',
         includeBlog: false,
+        ignoreFiles: [
+          'device-configurations.md',
+          'modding.md',
+        ],
         // Content cleaning options
         excludeImports: true,
         // Generate individual markdown files following llmstxt.org specification
@@ -141,7 +145,7 @@ const config = {
             includePatterns: ['dev-guide/**/*.md'],
             fullContent: true,
             title: 'Buttplug Developer Guide',
-            description: 'Developer Guide with tutorials for multiple langauges'
+            description: 'Developer Guide with tutorials for multiple languages'
           }
         ],
       },
