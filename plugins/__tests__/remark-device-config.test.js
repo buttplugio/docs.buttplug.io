@@ -1,4 +1,4 @@
-const { describe, it, beforeEach } = require("node:test");
+const { describe, it } = require("node:test");
 const assert = require("node:assert");
 const path = require("path");
 const fs = require("fs");
@@ -17,12 +17,6 @@ function makeVfile(frontmatter = {}) {
     path: "/test/fake.md",
     data: { frontmatter },
   };
-}
-
-// Helper: create a temporary YAML file for testing
-function writeTempYaml(dir, filename, content) {
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, filename), content, "utf8");
 }
 
 describe("remark-device-config", () => {
@@ -54,13 +48,9 @@ describe("remark-device-config", () => {
     assert.strictEqual(tree.children.length, originalLength);
   });
 
-  it("should inject nodes when config_ref points to valid YAML", () => {
+  it("should inject nodes when config_ref points to valid YAML", { skip: !fs.existsSync(testDataDir) || fs.readdirSync(testDataDir).length === 0 }, () => {
     // This test requires the sync script to have been run
     // Check if data directory exists with at least one file
-    if (!fs.existsSync(testDataDir) || fs.readdirSync(testDataDir).length === 0) {
-      console.log("Skipping: data/device-config/ not populated. Run ./scripts/sync-device-config.sh first.");
-      return;
-    }
 
     // Use a known simple config
     const files = fs.readdirSync(testDataDir).filter((f) => f.endsWith(".yml"));
@@ -84,11 +74,7 @@ describe("remark-device-config", () => {
     assert.strictEqual(htmlComments.length, 0, "Placeholder comment should be removed");
   });
 
-  it("should handle identifier filtering", () => {
-    if (!fs.existsSync(testDataDir) || fs.readdirSync(testDataDir).length === 0) {
-      console.log("Skipping: data/device-config/ not populated.");
-      return;
-    }
+  it("should handle identifier filtering", { skip: !fs.existsSync(testDataDir) || fs.readdirSync(testDataDir).length === 0 }, () => {
 
     // Use a config with configurations (lovense.yml has many)
     const lovensePath = path.join(testDataDir, "lovense.yml");

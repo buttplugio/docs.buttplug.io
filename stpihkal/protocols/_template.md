@@ -4,7 +4,7 @@ title: <Device/Protocol Name>
 brand: <brand-slug>
 transport: btle
 config_ref: <file>.yml
-config_identifier: null
+config_identifier: null  # set to specific identifier string, or null for all
 ---
 
 # <Device/Protocol Name>

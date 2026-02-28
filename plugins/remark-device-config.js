@@ -103,9 +103,12 @@ function buildDeviceConfigNodes(config, identifier) {
   // BLE Names
   if (btle.names && btle.names.length > 0) {
     nodes.push(heading(3, "BLE Names"));
-    nodes.push(
-      paragraph(btle.names.map((n) => inlineCode(n)).join(", "))
-    );
+    const children = [];
+    btle.names.forEach((n, i) => {
+      if (i > 0) children.push({ type: "text", value: ", " });
+      children.push({ type: "inlineCode", value: String(n) });
+    });
+    nodes.push({ type: "paragraph", children });
   }
 
   // Advertised Services
