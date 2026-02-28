@@ -4722,6 +4722,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-yaml@npm:^4":
+  version: 4.0.9
+  resolution: "@types/js-yaml@npm:4.0.9"
+  checksum: 10/a0ce595db8a987904badd21fc50f9f444cb73069f4b95a76cc222e0a17b3ff180669059c763ec314bc4c3ce284379177a9da80e83c5f650c6c1310cafbfaa8e6
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.15, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -4760,11 +4767,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 25.3.2
-  resolution: "@types/node@npm:25.3.2"
+  version: 25.3.3
+  resolution: "@types/node@npm:25.3.3"
   dependencies:
     undici-types: "npm:~7.18.0"
-  checksum: 10/3a7783f0a9508dd8bd3f386e44c062d0d9fe0414fa8983ab203350d1b95db24aad694a54f21b9a0f0a30691ca26c7959c9329e37fea909d35124ec99b6e7b418
+  checksum: 10/883e8942b0ddf89f9aae56c4205af8d9a368acd6cab83aa052447a6c5e69ce2bc8ab3f54e549233ada160ba9216dad7f30c62c35867c584fe844ae99f7dea2e0
   languageName: node
   linkType: hard
 
@@ -5732,11 +5739,13 @@ __metadata:
     "@docusaurus/types": "npm:^3.9.2"
     "@mdx-js/react": "npm:^3"
     "@tsconfig/docusaurus": "npm:^2.0.4"
+    "@types/js-yaml": "npm:^4"
     "@types/react": "npm:^19.2.2"
     autoprefixer: "npm:^10.4.21"
     clsx: "npm:^2.1.1"
     docusaurus-plugin-llms: "npm:^0.3.0"
     docusaurus-plugin-matomo: "npm:^0.0.8"
+    js-yaml: "npm:^4.1.1"
     postcss: "npm:^8.5.6"
     prism-react-renderer: "npm:^2"
     raw-loader: "npm:^4.0.2"
@@ -9336,7 +9345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.1.0":
+"js-yaml@npm:^4.1.0, js-yaml@npm:^4.1.1":
   version: 4.1.1
   resolution: "js-yaml@npm:4.1.1"
   dependencies:
