@@ -4,10 +4,14 @@
 # Fixes JSX remnants, resolves raw-loader imports, converts admonitions,
 # and normalizes formatting in LLM output files.
 #
+# Compatible with bash 3.2+ (macOS default).
+#
 set -euo pipefail
 
-BUILD_DIR="${1:-build}"
-DOCS_DIR="docs"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+BUILD_DIR="${1:-$PROJECT_DIR/build}"
+DOCS_DIR="$PROJECT_DIR/docs"
 
 LLM_FILES=(
   "$BUILD_DIR/llms.txt"
@@ -24,21 +28,29 @@ fi
 
 # --- Step 2a: Build import map and resolve code examples ---
 
-declare -A IMPORT_MAP
+# Use a temp file as a key-value store (bash 3.2 lacks associative arrays)
+IMPORT_MAP=$(mktemp)
+trap "rm -f '$IMPORT_MAP'" EXIT
 
 # Scan all .mdx files for raw-loader imports
-while IFS= read -r line; do
-  # Match: import VarName from '!!raw-loader!/path/to/file';
-  if [[ "$line" =~ ^import[[:space:]]+([a-zA-Z_][a-zA-Z0-9_]*)[[:space:]]+from[[:space:]]+[\'\"]!!raw-loader!(/[^\'\"]+)[\'\"] ]]; then
-    varname="${BASH_REMATCH[1]}"
-    filepath="${BASH_REMATCH[2]}"
-    # Strip leading slash — paths are relative to project root
+grep -rh "raw-loader" "$DOCS_DIR" 2>/dev/null | while IFS= read -r line; do
+  # Extract varname and filepath using sed
+  varname=$(echo "$line" | sed -n 's/^import[[:space:]]*\([a-zA-Z_][a-zA-Z0-9_]*\)[[:space:]]*from.*/\1/p')
+  filepath=$(echo "$line" | sed -n "s/.*!!raw-loader!\([^'\"]*\).*/\1/p")
+  if [[ -n "$varname" && -n "$filepath" ]]; then
+    # Strip leading slash
     filepath="${filepath#/}"
-    IMPORT_MAP["$varname"]="$filepath"
+    echo "${varname}=${filepath}" >> "$IMPORT_MAP"
   fi
-done < <(grep -rh "raw-loader" "$DOCS_DIR" 2>/dev/null || true)
+done
 
-echo "Found ${#IMPORT_MAP[@]} raw-loader imports"
+import_count=$(wc -l < "$IMPORT_MAP" | tr -d ' ')
+echo "Found $import_count raw-loader imports"
+
+# Function to look up a varname in the import map
+lookup_import() {
+  grep "^${1}=" "$IMPORT_MAP" 2>/dev/null | head -1 | cut -d= -f2-
+}
 
 for f in "${LLM_FILES[@]}"; do
   [[ -f "$f" ]] || continue
@@ -47,28 +59,29 @@ for f in "${LLM_FILES[@]}"; do
 
   # Process line by line for CodeBlock replacement
   while IFS= read -r line || [[ -n "$line" ]]; do
-    # Match <CodeBlock language="X">{VarName}</CodeBlock>
-    if [[ "$line" =~ \<CodeBlock[[:space:]]+language=\"([^\"]+)\"\>\{([a-zA-Z_][a-zA-Z0-9_]*)\}\</CodeBlock\> ]]; then
-      lang="${BASH_REMATCH[1]}"
-      varname="${BASH_REMATCH[2]}"
-      if [[ -n "${IMPORT_MAP[$varname]+x}" ]]; then
-        filepath="${IMPORT_MAP[$varname]}"
-        if [[ -f "$filepath" ]]; then
-          echo "\`\`\`${lang}"
-          cat "$filepath"
-          echo ""
-          echo "\`\`\`"
+    # Check for CodeBlock pattern
+    lang=$(echo "$line" | sed -n 's/.*<CodeBlock[[:space:]]*language="\([^"]*\)">.*/\1/p')
+    varname=$(echo "$line" | sed -n 's/.*{\([a-zA-Z_][a-zA-Z0-9_]*\)}<\/CodeBlock>.*/\1/p')
+
+    if [[ -n "$lang" && -n "$varname" ]]; then
+      filepath=$(lookup_import "$varname")
+      if [[ -n "$filepath" ]]; then
+        resolved="$PROJECT_DIR/$filepath"
+        if [[ -f "$resolved" ]]; then
+          printf '```%s\n' "$lang" >> "$tmpfile"
+          cat "$resolved" >> "$tmpfile"
+          printf '\n```\n' >> "$tmpfile"
         else
-          echo "<!-- File not found: $filepath -->"
-          echo "$line"
+          echo "<!-- File not found: $filepath -->" >> "$tmpfile"
+          echo "$line" >> "$tmpfile"
         fi
       else
-        echo "$line"
+        echo "$line" >> "$tmpfile"
       fi
     else
-      echo "$line"
+      echo "$line" >> "$tmpfile"
     fi
-  done < "$f" > "$tmpfile"
+  done < "$f"
 
   mv "$tmpfile" "$f"
 done
@@ -87,7 +100,6 @@ for f in "${LLM_FILES[@]}"; do
     "$f"
 
   # 2c: Convert admonition syntax
-  # Opening markers: :::type Title → > **Type: Title**
   sed -i '' \
     -e 's/^:::tip \(.*\)/> **Tip: \1**/g' \
     -e 's/^:::warning \(.*\)/> **Warning: \1**/g' \

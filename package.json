@@ -5,8 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --host 0.0.0.0",
-    "build": "docusaurus build",
-    "postbuild": "bash scripts/clean-llm-output.sh",
+    "build": "docusaurus build && bash scripts/clean-llm-output.sh",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
