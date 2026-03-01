@@ -57,31 +57,50 @@ for f in "${LLM_FILES[@]}"; do
 
   tmpfile=$(mktemp)
 
-  # Process line by line for CodeBlock replacement
-  while IFS= read -r line || [[ -n "$line" ]]; do
-    # Check for CodeBlock pattern
-    lang=$(echo "$line" | sed -n 's/.*<CodeBlock[[:space:]]*language="\([^"]*\)">.*/\1/p')
-    varname=$(echo "$line" | sed -n 's/.*{\([a-zA-Z_][a-zA-Z0-9_]*\)}<\/CodeBlock>.*/\1/p')
-
-    if [[ -n "$lang" && -n "$varname" ]]; then
-      filepath=$(lookup_import "$varname")
-      if [[ -n "$filepath" ]]; then
-        resolved="$PROJECT_DIR/$filepath"
-        if [[ -f "$resolved" ]]; then
-          printf '```%s\n' "$lang" >> "$tmpfile"
-          cat "$resolved" >> "$tmpfile"
-          printf '\n```\n' >> "$tmpfile"
-        else
-          echo "<!-- File not found: $filepath -->" >> "$tmpfile"
-          echo "$line" >> "$tmpfile"
-        fi
-      else
-        echo "$line" >> "$tmpfile"
-      fi
-    else
-      echo "$line" >> "$tmpfile"
-    fi
-  done < "$f"
+  # Replace CodeBlock references with inlined file contents in a single awk pass
+  # Uses string functions instead of capture groups for BSD awk compatibility
+  awk -v import_map="$IMPORT_MAP" -v project_dir="$PROJECT_DIR" '
+    BEGIN {
+      while ((getline mapline < import_map) > 0) {
+        idx = index(mapline, "=")
+        if (idx > 0) {
+          key = substr(mapline, 1, idx - 1)
+          val = substr(mapline, idx + 1)
+          imports[key] = val
+        }
+      }
+      close(import_map)
+    }
+    /<CodeBlock[[:space:]].*language="[^"]*".*<\/CodeBlock>/ {
+      line = $0
+      # Extract language
+      sub(/.*language="/, "", line)
+      lang = line
+      sub(/".*/, "", lang)
+      # Extract varname from {VarName}</CodeBlock>
+      line = $0
+      sub(/.*\{/, "", line)
+      sub(/\}<\/CodeBlock>.*/, "", line)
+      varname = line
+      if (varname in imports) {
+        resolved = project_dir "/" imports[varname]
+        if ((getline testline < resolved) > 0) {
+          close(resolved)
+          printf "```%s\n", lang
+          while ((getline fileline < resolved) > 0) print fileline
+          close(resolved)
+          printf "\n```\n"
+        } else {
+          print "<!-- File not found: " imports[varname] " -->"
+          print
+        }
+      } else {
+        print
+      }
+      next
+    }
+    { print }
+  ' "$f" > "$tmpfile"
 
   mv "$tmpfile" "$f"
 done
