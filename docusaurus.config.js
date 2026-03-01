@@ -44,6 +44,10 @@ const config = {
         docs: {
           sidebarPath: "./sidebars.js",
           path: "docs",
+          exclude: [
+            "design-plans/**",
+            "implementation-plans/**",
+          ],
           // Uncomment this block to slam to v4 when done.
           lastVersion: "current",
           versions: {
@@ -101,29 +105,18 @@ const config = {
           return undefined;
         },
         redirects: [
-          // Migrated protocol pages: old flat URL → new brand directory URL
-          { from: "/stpihkal/protocols/lovense", to: "/stpihkal/protocols/lovense/lovense" },
-          { from: "/stpihkal/protocols/wevibe", to: "/stpihkal/protocols/we-vibe/we-vibe" },
-          { from: "/stpihkal/protocols/prettylove", to: "/stpihkal/protocols/prettylove/prettylove" },
-          { from: "/stpihkal/protocols/bkk", to: "/stpihkal/protocols/bkk/bkk" },
+          // Redirects for protocols whose old flat URL differs from the new brand directory name
+          { from: "/stpihkal/protocols/wevibe", to: "/stpihkal/protocols/we-vibe/we-vibe-protocol" },
           { from: "/stpihkal/protocols/erostek-et232", to: "/stpihkal/protocols/erostek/erostek-et232" },
           { from: "/stpihkal/protocols/erostek-et312b", to: "/stpihkal/protocols/erostek/erostek-et312b" },
           { from: "/stpihkal/protocols/estim-systems-2b", to: "/stpihkal/protocols/estim-systems/estim-systems-2b" },
-          { from: "/stpihkal/protocols/f-machine", to: "/stpihkal/protocols/f-machine/f-machine" },
           { from: "/stpihkal/protocols/fleshlight-launch", to: "/stpihkal/protocols/fleshlight/fleshlight-launch" },
-          { from: "/stpihkal/protocols/imtoy", to: "/stpihkal/protocols/imtoy/imtoy" },
           { from: "/stpihkal/protocols/kiiroo-bootloader", to: "/stpihkal/protocols/kiiroo/kiiroo-bootloader" },
           { from: "/stpihkal/protocols/kiiroo-onyx-2", to: "/stpihkal/protocols/kiiroo/kiiroo-onyx-2" },
           { from: "/stpihkal/protocols/kiiroo-onyx-pearl-1", to: "/stpihkal/protocols/kiiroo/kiiroo-onyx-pearl-1" },
-          { from: "/stpihkal/protocols/mysteryvibe", to: "/stpihkal/protocols/mysteryvibe/mysteryvibe" },
-          { from: "/stpihkal/protocols/nobra", to: "/stpihkal/protocols/nobra/nobra" },
           { from: "/stpihkal/protocols/oriori-ball", to: "/stpihkal/protocols/oriori/oriori-ball" },
-          { from: "/stpihkal/protocols/possible_kiss", to: "/stpihkal/protocols/possible-kiss/possible-kiss" },
-          { from: "/stpihkal/protocols/petrainer", to: "/stpihkal/protocols/petrainer/petrainer" },
-          { from: "/stpihkal/protocols/petroom", to: "/stpihkal/protocols/petroom/petroom" },
+          { from: "/stpihkal/protocols/possible_kiss", to: "/stpihkal/protocols/possible-kiss/possible-kiss-protocol" },
           { from: "/stpihkal/protocols/sportdog-sd400", to: "/stpihkal/protocols/sportdog/sportdog-sd400" },
-          { from: "/stpihkal/protocols/tcode", to: "/stpihkal/protocols/tcode/tcode" },
-          { from: "/stpihkal/protocols/vibratissimo", to: "/stpihkal/protocols/vibratissimo/vibratissimo" },
           { from: "/stpihkal/protocols/vorze-sa", to: "/stpihkal/protocols/vorze/vorze-sa" },
         ],
       },

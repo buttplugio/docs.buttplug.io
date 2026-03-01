@@ -1,5 +1,6 @@
 ---
 title: We-Vibe
+slug: we-vibe-protocol
 brand: we-vibe
 transport: btle
 config_ref: wevibe.yml

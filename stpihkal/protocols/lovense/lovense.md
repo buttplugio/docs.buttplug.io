@@ -1,5 +1,6 @@
 ---
 title: Lovense
+slug: lovense-protocol
 brand: lovense
 transport: btle
 config_ref: lovense.yml
