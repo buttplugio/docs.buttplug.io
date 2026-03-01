@@ -131,8 +131,8 @@ const config = {
         docsDir: 'docs',
         title: 'Buttplug',
         description: 'Spec and developer guide for Buttplug.io',
-        includeBlog: false,
-        rootContent: 'This file contains links to documentation sections following the llmstxt.org standard.\n\n## Additional Resources\n\n- [STPIHKAL - Device Protocol Documentation](https://buttplug.io/llms-stpihkal.txt): Protocol reverse-engineering docs for supported hardware devices',
+        includeBlog: true,
+        rootContent: 'This file contains links to documentation sections following the llmstxt.org standard.\n\n## Additional Resources\n\n- [STPIHKAL - Device Protocol Documentation](https://buttplug.io/llms-stpihkal.txt): Protocol reverse-engineering docs for supported hardware devices\n- [Dev Blog](https://buttplug.io/llms-blog.txt): Development blog posts and project updates',
         ignoreFiles: [
           'device-configurations.md',
           'modding.md',
@@ -168,7 +168,14 @@ const config = {
             fullContent: true,
             title: 'Buttplug Developer Guide',
             description: 'Developer Guide with tutorials for multiple languages'
-          }
+          },
+          {
+            filename: 'llms-blog.txt',
+            includePatterns: ['blog/**/*.md'],
+            fullContent: true,
+            title: 'Buttplug.io Dev Blog',
+            description: 'Development blog posts and project updates',
+          },
         ],
       },
     ],
