@@ -1,16 +1,11 @@
 ---
 title: IMToy
+slug: imtoy-protocol
 brand: imtoy
+transport: btle
 ---
 
 # IMToy
 
-## Overview
-
-IMToy is an interactive toy with multiple control modes and vibration patterns.
-
-## Devices
-
-| Device | Protocol Page | Transport |
-|--------|---------------|-----------|
-| IMToy | [IMToy Protocol](imtoy.md) | BLE |
+* Status: Active
+* Documentation: [https://github.com/metafetish/yotmi-docs](https://github.com/metafetish/yotmi-docs)

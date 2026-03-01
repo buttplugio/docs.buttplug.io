@@ -1,16 +1,44 @@
 ---
 title: Possible Kiss
+slug: possible-kiss-protocol
 brand: possible-kiss
+transport: btle
 ---
 
 # Possible Kiss
 
-## Overview
+## Bluetooth Details
 
-Possible Kiss manufactures interactive kissing simulation devices that can be controlled via Bluetooth for customizable vibration and oscillation patterns.
+**BLE Device Name**
+```
+RS-KNW
+```
 
-## Devices
+**Service UUID**
+```
+0000cb60-0000-1000-8000-00805f9b34fb
+```
 
-| Device | Protocol Page | Transport |
-|--------|---------------|-----------|
-| Possible Kiss | [Possible Kiss Protocol](possible-kiss.md) | BLE |
+**Command (Tx) Characteristic UUID**
+```
+0000cb61-0000-1000-8000-00805f9b34fb
+```
+
+**Read/Notify (Rx) Characteristic UUID**
+```
+0000cb62-0000-1000-8000-00805f9b34fb
+```
+
+## Rx Protocol
+
+- Battery: [ 0x55, 0x80, 0x??, 0x??, 0x??, 0xXX ]
+  - XX is the % battery (8-bit)
+- Pressure: [ 0x55, 0x91, 0x??, 0x??, 0xXX, 0xXX ]
+  - XXXX is the pressure level (16-bit)
+
+## Tx Protocol
+
+- Info: [ 0xAA, 0x00, 0x00, 0x00, 0x00, 0x00 ]
+- Kiss (momentary): [ 0xAA, 0x02, 0xXX, 0x00, 0x00, 0xYY ]
+  - XX=00 oscillate+vibrate 01=vibrate, 02=oscillate
+  - YY is intensity 0-64

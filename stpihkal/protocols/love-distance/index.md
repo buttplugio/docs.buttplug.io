@@ -1,25 +1,67 @@
 ---
 title: Love Distance
 brand: love-distance
+transport: btle
+config_ref: lovedistance.yml
+config_identifier: null
 ---
 
 # Love Distance
 
-## Overview
+## Introduction
 
-Love Distance manufactures a range of BLE-controlled vibrators. Their product line includes multiple models (Reach, Reach G, Mag, Span, Range, Orbit, Join G, Link, Grasp, Receive) all sharing the same protocol.
+Love Distance manufactures a range of BLE-controlled vibrators. All models share the same protocol, advertising under their product names (REACH G, REACH, MAG, SPAN, RANGE, ORBIT, JOIN G, LINK, GRASP, RECEIVE).
 
-## Devices
+## BLE Profile
 
-| Device | BLE Name | Protocol Page | Features |
-|--------|----------|---------------|----------|
-| Reach G | REACH G | [Love Distance](love-distance.md) | Vibrate |
-| Reach | REACH | [Love Distance](love-distance.md) | Vibrate |
-| Mag | MAG | [Love Distance](love-distance.md) | Vibrate |
-| Span | SPAN | [Love Distance](love-distance.md) | Vibrate |
-| Range | RANGE | [Love Distance](love-distance.md) | Vibrate |
-| Orbit | ORBIT | [Love Distance](love-distance.md) | Vibrate |
-| Join G | JOIN G | [Love Distance](love-distance.md) | Vibrate |
-| Link | LINK | [Love Distance](love-distance.md) | Vibrate |
-| Grasp | GRASP | [Love Distance](love-distance.md) | Vibrate |
-| Receive | RECEIVE | [Love Distance](love-distance.md) | Vibrate |
+```yaml
+ble_names: ["REACH G", "REACH", "MAG", "SPAN", "RANGE", "ORBIT", "JOIN G", "LINK", "GRASP", "RECEIVE"]
+services:
+  - uuid: "0000ff00-0000-1000-8000-00805f9b34fb"
+    characteristics:
+      - uuid: "0000ff01-0000-1000-8000-00805f9b34fb"
+        properties: [write]
+        role: tx
+        description: "Command endpoint"
+      - uuid: "0000ff02-0000-1000-8000-00805f9b34fb"
+        properties: [read]
+        description: "Battery level"
+```
+
+## Commands
+
+### Set Speed
+
+Controls the vibration speed directly.
+
+**Format:**
+
+```
+0xF3 0x00 YY
+```
+
+| Byte | Description | Range |
+|------|-------------|-------|
+| `0xF3` | Speed command | Fixed |
+| `0x00` | Unknown | Fixed |
+| `YY` | Speed | `0x00`-`0x79` (0-121) |
+
+### Set Pattern
+
+Activates a built-in vibration pattern.
+
+**Format:**
+
+```
+0xF4 XX
+```
+
+| Byte | Description | Range |
+|------|-------------|-------|
+| `0xF4` | Pattern command | Fixed |
+| `XX` | Pattern number | `0x01`-`0x14` (1-20; `0x01` = constant) |
+
+## Sources
+
+- [GitHub Issue](https://github.com/buttplugio/stpihkal/issues/142)
+- [Buttplug implementation](https://github.com/buttplugio/buttplug/blob/master/crates/buttplug_server/src/device/protocol_impl/lovedistance.rs)
