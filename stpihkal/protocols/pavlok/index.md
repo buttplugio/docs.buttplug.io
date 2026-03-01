@@ -78,6 +78,33 @@ RR II
 | `RR` | Repeats: `0x80` + repeat count (e.g., `0x81` = 1 repeat) |
 | `II` | Intensity: ??? |
 
+## Time calculation
+
+Calculation for time, for firmware versions 5.4.73 and later:
+
+```java
+public static int timeCodeForPavlok2(long timeCode) {
+  if (timeCode > 10000L) {
+    return 62;
+  } else if (timeCode >= 3000L) {
+    return (int)((timeCode - 3000L) / 500L) | 48;
+  } else if (timeCode >= 1000L) {
+    return (int)((timeCode - 1000L) / 100L) | 32;
+  } else {
+    return timeCode >= 200L ? (int)((timeCode - 200L) / 50L) | 16 : (int)(timeCode / 10L) | 0;
+  }
+}
+
+```
+
+Default value fed in is `0x280L`/`640L`, which results in `0x18`/`24`
+The app hard-codes this value, however, it can be freely varied and will work accordingly.
+
+## Sample messages
+
+- Vibrate at 30% intensity 1 time for default duration: write `0x810c1e1818` to `00001001-0000-1000-8000-00805f9b34fb`
+- Zap at 50% intensity twice: write `0x8232` to `00001003-0000-1000-8000-00805f9b34fb`
+
 ## Notes
 
 - The Pavlok 3 exposes additional characteristics beyond the four documented here (RTC alarm, battery, etc.) but only the stimuli characteristics are relevant for actuation.
