@@ -15,6 +15,7 @@
 const sidebars = {
   stpihkalSidebar: [
     "index",
+    "contributing",
     {
       type: "category",
       label: "Protocols",
