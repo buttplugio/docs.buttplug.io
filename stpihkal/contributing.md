@@ -17,7 +17,7 @@ This guide explains how to add new device protocol documentation to STPIHKAL.
 
 ## Directory Structure
 
-```
+```text
 stpihkal/protocols/
   <brand-slug>/
     index.md              # Brand overview page
