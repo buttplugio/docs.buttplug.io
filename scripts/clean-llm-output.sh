@@ -4,7 +4,7 @@
 # Fixes JSX remnants, resolves raw-loader imports, converts admonitions,
 # and normalizes formatting in LLM output files.
 #
-# Compatible with bash 3.2+ (macOS default).
+# Compatible with bash 3.2+ (macOS) and GNU/Linux (CI).
 #
 set -euo pipefail
 
@@ -113,15 +113,15 @@ for f in "${LLM_FILES[@]}"; do
   [[ -f "$f" ]] || continue
 
   # 2b: Convert TabItem/Tabs JSX to plain labels
-  sed -i '' \
+  sed -i.bak \
     -e 's/<TabItem[^>]*label="\([^"]*\)"[^>]*>/**\1:**/g' \
     -e '/<\/TabItem>/d' \
     -e '/<Tabs[^>]*>/d' \
     -e '/<\/Tabs>/d' \
-    "$f"
+    "$f" && rm -f "$f.bak"
 
   # 2c: Convert admonition syntax
-  sed -i '' \
+  sed -i.bak \
     -e 's/^:::tip \(.*\)/> **Tip: \1**/g' \
     -e 's/^:::warning \(.*\)/> **Warning: \1**/g' \
     -e 's/^:::info \(.*\)/> **Info: \1**/g' \
@@ -135,10 +135,10 @@ for f in "${LLM_FILES[@]}"; do
     -e 's/^:::caution$/> **Caution**/g' \
     -e 's/^:::danger$/> **Danger**/g' \
     -e '/^:::$/d' \
-    "$f"
+    "$f" && rm -f "$f.bak"
 
   # 2d: Fix double-slash URLs
-  sed -i '' 's|buttplug\.io//|buttplug.io/|g' "$f"
+  sed -i.bak 's|buttplug\.io//|buttplug.io/|g' "$f" && rm -f "$f.bak"
 
   # 2e: Collapse 3+ consecutive blank lines to 2
   awk '
