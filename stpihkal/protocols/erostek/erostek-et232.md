@@ -20,9 +20,9 @@ the Link port of the box. The link cable consists of a 3.5mm TRS
 Female DB-9 or a RS232-to-USB converter. The pin connections are as
 follows:
 
-- 3.5mm Tip <-> RX (DB-9 Pin 2)
-- 3.5mm Ring <-> TX (DB-9 Pin 3)
-- 3.5mm Sleeve <-> Ground (DB-9 Pin 5)
+- 3.5mm Tip ↔ RX (DB-9 Pin 2)
+- 3.5mm Ring ↔ TX (DB-9 Pin 3)
+- 3.5mm Sleeve ↔ Ground (DB-9 Pin 5)
 
 Serial connections are 19200/8/N/1, or:
 
@@ -58,7 +58,7 @@ Commands work on a peek and poke basis, similar to the ET-312.
 Commands consist:
 
 - ASCII characters
-- A 2-byte checksum _string_, meaning two ASCII uppercase characters
+- A 2-byte checksum string, meaning two ASCII uppercase characters
   representing one hex byte. The checksum is a sum of all the
   characters in the range from '0' (0x30) to 'Z' (0x90) in the string.
   All characters outside of this range are ignored for the purposes of
