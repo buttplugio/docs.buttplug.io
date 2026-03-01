@@ -1,10 +1,16 @@
+---
+title: ErosTek ET-232
+brand: erostek
+transport: serial
+---
+
 # Erostek ET-232
 
 ## Introduction
 
 This document is a specification for the serial communications
 protocol of the ET232 Electrostimulation box by Erostek. The protocol
-was put together through information found around the internet. 
+was put together through information found around the internet.
 
 ## Communication via Link Cable
 
@@ -14,9 +20,9 @@ the Link port of the box. The link cable consists of a 3.5mm TRS
 Female DB-9 or a RS232-to-USB converter. The pin connections are as
 follows:
 
-- 3.5mm Tip &lt;-&gt; RX (DB-9 Pin 2)
-- 3.5mm Ring &lt;-&gt; TX (DB-9 Pin 3)
-- 3.5mm Sleeve &lt;-&gt; Ground (DB-9 Pin 5)
+- 3.5mm Tip <-> RX (DB-9 Pin 2)
+- 3.5mm Ring <-> TX (DB-9 Pin 3)
+- 3.5mm Sleeve <-> Ground (DB-9 Pin 5)
 
 Serial connections are 19200/8/N/1, or:
 
@@ -91,7 +97,7 @@ H80B0\r
 ```
 
 The command will return a two digit hex value at the requested
-location, in ASCII 
+location, in ASCII
 
 ### Write Byte ("I")
 
@@ -222,7 +228,7 @@ FF (maximum) to 90 (auto shutdown threshold)
 
 ### $A3 - Mode Switch Override
 
-- 8X - force modeX 
+- 8X - force modeX
 - 8F - force reset
 
 When top bit set, the requested mode is selected regardless of the

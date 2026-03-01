@@ -1,3 +1,9 @@
+---
+title: ErosTek ET-312B
+brand: erostek
+transport: serial
+---
+
 # Erostek ET-312B
 
 ## Introduction
