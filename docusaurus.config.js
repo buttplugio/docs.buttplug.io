@@ -132,6 +132,7 @@ const config = {
         title: 'Buttplug',
         description: 'Spec and developer guide for Buttplug.io',
         includeBlog: false,
+        rootContent: 'This file contains links to documentation sections following the llmstxt.org standard.\n\n## Additional Resources\n\n- [STPIHKAL - Device Protocol Documentation](https://buttplug.io/llms-stpihkal.txt): Protocol reverse-engineering docs for supported hardware devices',
         ignoreFiles: [
           'device-configurations.md',
           'modding.md',
@@ -170,7 +171,30 @@ const config = {
           }
         ],
       },
-    ]
+    ],
+    [
+      'docusaurus-plugin-llms',
+      {
+        id: 'llms-stpihkal',
+        docsDir: 'stpihkal',
+        generateLLMsTxt: false,
+        generateLLMsFullTxt: false,
+        title: 'STPIHKAL - Device Protocol Documentation',
+        description: 'Protocol documentation for intimate hardware devices supported by Buttplug',
+        includeBlog: false,
+        excludeImports: true,
+        generateMarkdownFiles: true,
+        customLLMFiles: [
+          {
+            filename: 'llms-stpihkal.txt',
+            includePatterns: ['**/*.md'],
+            fullContent: true,
+            title: 'STPIHKAL - Device Protocols',
+            description: 'Protocol reverse-engineering documentation for intimate hardware devices',
+          },
+        ],
+      },
+    ],
   ],
   markdown: {
     mermaid: true,

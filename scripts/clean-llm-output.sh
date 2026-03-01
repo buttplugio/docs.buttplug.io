@@ -18,6 +18,7 @@ LLM_FILES=(
   "$BUILD_DIR/llms-full.txt"
   "$BUILD_DIR/llms-spec.txt"
   "$BUILD_DIR/llms-dev-guide.txt"
+  "$BUILD_DIR/llms-stpihkal.txt"
 )
 
 # Verify build directory exists
