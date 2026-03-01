@@ -1,40 +1,35 @@
+---
+title: Petrainer PET998DRB Shock Collar
+brand: petrainer
+transport: rf
+---
+
 # Petrainer Shock Collar
 
 ## Introduction
 
-This document describes a way to control the
-[Petrainer PET998DRB Dog Training Collar](https://www.amazon.com/gp/product/B00W6UVROK/)
-over 433Mhz-Band Radio Control.
+This document describes a way to control the [Petrainer PET998DRB Dog Training Collar](https://www.amazon.com/gp/product/B00W6UVROK/) over 433Mhz-Band Radio Control.
 
 Credit to [XMPPWocky](https://twitter.com/xmppwocky) for the proof of concept control code.
 
-The information in this document was taken from this code initially and
-extended with information found while coding
-[GoToShock](https://praios.lf-net.org/littlefox/gotoshock).
+The information in this document was taken from this code initially and extended with information found while coding [GoToShock](https://praios.lf-net.org/littlefox/gotoshock).
 
 ## RF protocol
 
-The Petrainer shockers listens to ASK on a 433Mhz carrier wave. While the
-original version of this document said OOK, it understands data sent with ASK
-transmitters like the FS1000A, so it more likely understands OOK "by accident".
+The Petrainer shockers listens to ASK on a 433Mhz carrier wave. While the original version of this document said OOK, it understands data sent with ASK transmitters like the FS1000A, so it more likely understands OOK "by accident".
 
-Bits are encoded using PWM with two different duty cycles, 25% for a 0 and 75%
-for a 1. The total length of each bit is 1ms.
+Bits are encoded using PWM with two different duty cycles, 25% for a 0 and 75% for a 1. The total length of each bit is 1ms.
 
 protocol bit | pwm duty cycle | on-time | off-time
 ------------ | -------------- | ------- | --------
 0            | 25%            | 250µs   | 750µs
 1            | 75%            | 750µs   | 250µs
 
-Each message send is preceded by a longer pulse of 1.25 to 1.5ms, most likely
-to allow the receiver to set its gain.
+Each message send is preceded by a longer pulse of 1.25 to 1.5ms, most likely to allow the receiver to set its gain.
 
 ## Digital protocol
 
-Messages are always 42 bit long and always consist of the same fields. There is
-no field to signal the duration of a given command, instead, the messages are
-just repeated for as long as the command should be done (e.g. the remote just
-sends the same message over and over again until the button is released).
+Messages are always 42 bit long and always consist of the same fields. There is no field to signal the duration of a given command, instead, the messages are just repeated for as long as the command should be done (e.g. the remote just sends the same message over and over again until the button is released).
 
 bits | field         | description
 ---- | ------------- | -----------
@@ -49,13 +44,9 @@ bits | field         | description
 
 ### Check values
 
-Some fields have a kinda "checksum" at a later place in the message. The
-purpose of this is most likely to have something not done by other protocols on
-this RF band, making sure your shockers are not triggered by someone turning on
-their remote controlled outlet.
+Some fields have a kinda "checksum" at a later place in the message. The purpose of this is most likely to have something not done by other protocols on this RF band, making sure your shockers are not triggered by someone turning on their remote controlled outlet.
 
-To build those check values, you take the original bit sequence, flip all the
-bits and reverse their order. Examples:
+To build those check values, you take the original bit sequence, flip all the bits and reverse their order. Examples:
 
 * original bits: 001, all flipped: 110, order reversed: 011
 * original bits: 010, all flipped: 101, order reversed: 101
@@ -64,18 +55,13 @@ bits and reverse their order. Examples:
 
 ### Channels
 
-The original remote can send on two different channels, called channels 1 and 2
-by it. The bit encoding for them is `0000` for channel 1 and `1110` for channel
-two, meaning the protocol might understand more such channels, but this was not
-tested yet.
+The original remote can send on two different channels, called channels 1 and 2 by it. The bit encoding for them is `0000` for channel 1 and `1110` for channel two, meaning the protocol might understand more such channels, but this was not tested yet.
 
 ### Commands
 
-Three commands are supported by the original remote and shockers. With the
-given number of bits, the protocol could, in theory, support more.
+Three commands are supported by the original remote and shockers. With the given number of bits, the protocol could, in theory, support more.
 
-While the intensity field is sent in every message, not all commands make use
-of it - you can set it to whatever value for those.
+While the intensity field is sent in every message, not all commands make use of it - you can set it to whatever value for those.
 
 command   | bits | intensity? | description
 --------- | ---- | ---------- | ---
@@ -112,9 +98,7 @@ Here is a full message ("channel 2: shock with intensity 38%") with annotations:
 
 ## Implementation in Go
 
-Supporting output via Raspberry Pi GPIOs and probably other drivers in the
-future. Meant to built a kinda PiShock experience but in OpenSource, can also
-be used as a library in other projects:
+Supporting output via Raspberry Pi GPIOs and probably other drivers in the future. Meant to built a kinda PiShock experience but in OpenSource, can also be used as a library in other projects:
 
 * developers Gitlab: https://praios.lf-net.org/littlefox/gotoshock
 * Github mirror: https://github.com/LittleFox94/gotoshock
@@ -123,7 +107,7 @@ be used as a library in other projects:
 
 ## Python script
 
-This code talks to an RFCat dongle. Other devices like a YardStickOne likely work with minimal modification.  
+This code talks to an RFCat dongle. Other devices like a YardStickOne likely work with minimal modification.
 DIY solutions like [this](https://rurandom.org/justintime/w/Cheapest_ever_433_Mhz_transceiver_for_PCs) might also work.
 
 The ported python3 script, which should work, provided rflib works with python3.
@@ -146,7 +130,6 @@ bitstring over pypi or here: https://github.com/scott-griffiths/bitstring
 
 import bitstring
 import rflib
-# import binascii
 
 MHZ = 1000*1000
 
@@ -211,7 +194,6 @@ def tx_raw(d, raw, repeat=8):
     pwm = _raw_to_pwm(raw)
     tosend = bitstring.BitString(bytes=b"\x00\x01\xf0", length=(20)) \
         + pwm + bitstring.Bits(bytes=b"\x00\x00\x00")
-    # print(tosend.hex)
     d.RFxmit(tosend.tobytes(), repeat=repeat)
 
 
@@ -239,77 +221,4 @@ class ShockCollar:
 
         zap(self.d, intensity_int)
 
-```
-
-### The original python2 script
-```python
-import rflib
-import binascii
-import bitstring
-
-MHZ=1000*1000
-
-_COLLAR_BAUD_PWM=4200
-_COLLAR_BAUD=_COLLAR_BAUD_PWM/4
-_COLLAR_FREQ=434*MHZ
-
-def _pwm_to_raw(pwm):
-    raw = bitstring.BitStream()
-    while True:
-        try:
-            nybble = pwm.read(4)
-            if nybble.bin == "1110":
-                raw += bitstring.Bits("0b1")
-            elif nybble.bin == "1000":
-                raw += bitstring.Bits("0b0")
-            elif nybble.bin == "0000":
-                pass #ew
-            else:
-                print nybble
-                print nybble.bin
-                raise ValueError("bad nybble")
-
-        except bitstring.ReadError:
-            break
-
-    return raw
-
-def _raw_to_pwm(raw):
-    pwm = bitstring.BitStream()
-    for bit in raw.bin:
-        if bit == "0": pwm += bitstring.Bits("0b1000")
-        else: pwm += bitstring.Bits("0b1110")
-
-    return pwm
-
-
-def configure_rfcat(d):
-    d.setFreq(_COLLAR_FREQ)
-    d.setMdmModulation(rflib.MOD_ASK_OOK)
-    d.setMdmDRate(_COLLAR_BAUD_PWM)
-
-def tx_raw(d, raw, repeat=8):
-    pwm = _raw_to_pwm(raw)
-    tosend = bitstring.BitString(bytes="\x00\x01\xf0", length=(20)) + pwm + bitstring.Bits(bytes="\x00\x00\x00")
-    # print tosend.hex
-    d.RFxmit(tosend.tobytes(), repeat=repeat)
-
-def zap(d, intensity):
-    assert intensity <= 100
-    assert intensity >= 0
-
-    template=bitstring.BitString(bin="010000001101110100101011100101000011111100")
-    template[25:32] = bitstring.Bits(uint=intensity, length=7)
-    tx_raw(d, template)
-
-
-class ShockCollar:
-    def __init__(self):
-        d = rflib.RfCat()
-        configure_rfcat(d)
-        self.d = d
-    def shock(self, intensity=1.0):
-        intensity_int = int(intensity*100.0)
-
-        zap(self.d, intensity_int)
 ```
