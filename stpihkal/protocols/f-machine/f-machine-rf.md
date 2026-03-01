@@ -1,6 +1,12 @@
-# F-machine
+---
+title: F-machine RF Protocol
+brand: f-machine
+transport: rf
+---
 
-F-machine is a UK sex toy company. Two or their products, the **Gigolo** fucking machine and the **Tremblr** male milking machine, can be controlled remotely via radio frequency (RF).
+# F-machine RF Protocol
+
+F-machine is a UK sex toy company. Two of their products, the **Gigolo** fucking machine and the **Tremblr** male milking machine, can be controlled remotely via radio frequency (RF).
 
 ## Overview
 
@@ -158,7 +164,7 @@ More specifically, these buttons control two valves which will either let more a
 
 ## Hardware for sending RF signals
 
-For sending RF signals from a computer, you need a RF device and an antenna. When shopping for a device, be aware that many RF devices (especially when they only cost \$50) can only be used for receiving signals; you'll need a device that can both receive and transmit signals.
+For sending RF signals from a computer, you need a RF device and an antenna. When shopping for a device, be aware that many RF devices (especially when they only cost $50) can only be used for receiving signals; you'll need a device that can both receive and transmit signals.
 
 Also, keep in mind that using a RF transmission device follows strict rules and regulations. The frequency that F-machine operates in, 314.965 MHz, is allowed for unlicensed, civilian use in some jurisdictions but do not send at a higher power level or longer than necessary to avoid interfering in other people's equipment.
 

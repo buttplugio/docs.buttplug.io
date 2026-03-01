@@ -1,18 +1,20 @@
+---
+title: Sportdog SD-400 Collar
+brand: sportdog
+transport: rf
+---
+
 # Sportdog SD-400 Collar
 
 ## Introduction
 
-The Sportdog Fieldtrainer 400 (SD-400) is a shock collar with momentary
-stimulation, continuous stimulation, and tone capabilities. The collar model
-number is FR-200, and the remote model number is FT-100.
+The Sportdog Fieldtrainer 400 (SD-400) is a shock collar with momentary stimulation, continuous stimulation, and tone capabilities. The collar model number is FR-200, and the remote model number is FT-100.
 
-This documentation should apply to any Sportdog training collar compatible
-with the FT-100 remote (including SD-400, SD-400S and SD-400CAMO).
+This documentation should apply to any Sportdog training collar compatible with the FT-100 remote (including SD-400, SD-400S and SD-400CAMO).
 
 ## Communication Protocol
 
-The SD-400 remote uses binary FSK (frequency-shift keying) to send commands to
-the collar.
+The SD-400 remote uses binary FSK (frequency-shift keying) to send commands to the collar.
 
 The carrier frequency is 27.255 MHz (Citizens Band Channel 23).
 
@@ -42,8 +44,7 @@ Format:
 
 ### Continuous Commands
 
-"Continuous" commands have a similar structure to the momentary commands,
-but the transmission sequence repeats for as long as the button is held.
+"Continuous" commands have a similar structure to the momentary commands, but the transmission sequence repeats for as long as the button is held.
 
 ```
 Start:
@@ -56,34 +57,24 @@ End:
 
 ### Other Info
 
-For both momentary and continuous commands, if the remote is in "standby-mode"
-(no buttons pressed for some time), then the initial sequence of 5 '1's
-(20ms), becomes 23.5 bits long instead (94ms). However, the collar doesn't
-seem to require this.
+For both momentary and continuous commands, if the remote is in "standby-mode" (no buttons pressed for some time), then the initial sequence of 5 '1's (20ms), becomes 23.5 bits long instead (94ms). However, the collar doesn't seem to require this.
 
-The FT-100 has an 8-position dial, and 3 buttons (up, down, side). In the
-default Mode 1, these buttons have the following functions:
+The FT-100 has an 8-position dial, and 3 buttons (up, down, side). In the default Mode 1, these buttons have the following functions:
 * Up: Continuous shock at the specified level for up to 8 seconds.
 * Down: Nick at the specified level.
 * Side: Beep.
 
-At this time, only the Mode 1 commands have been documented. The other modes
-provide additional functionality, such as exposing 16 levels of continuous
-stimulation.
+At this time, only the Mode 1 commands have been documented. The other modes provide additional functionality, such as exposing 16 levels of continuous stimulation.
 
 ## Remote IDs
 
 Example remote IDs: 0x6695, 0x999a
 
-The remote is TX-only and the collar is RX-only. A remote has a fixed ID
-that it broadcasts. A collar will pair to a remote, and will only listen to
-its paired remote's ID. To pair a collar to a real or emulated remote:
+The remote is TX-only and the collar is RX-only. A remote has a fixed ID that it broadcasts. A collar will pair to a remote, and will only listen to its paired remote's ID. To pair a collar to a real or emulated remote:
 
  1. Turn the collar off.
- 2. Press and hold the collar power button until the collar LED turns off
-    (4-5 seconds)
- 3. Send the "continuous stimulation" or "beep" command from the remote
-    until the collar LED blinks 5 times.
+ 2. Press and hold the collar power button until the collar LED turns off (4-5 seconds)
+ 3. Send the "continuous stimulation" or "beep" command from the remote until the collar LED blinks 5 times.
 
 ## Command and Argument Values
 
@@ -117,5 +108,4 @@ The arguments are the same as the Nick command.
 
 ## Code
 
-See [biribiribiri/sd400](https://github.com/biribiribiri/sd400) for example
-code.
+See [biribiribiri/sd400](https://github.com/biribiribiri/sd400) for example code.

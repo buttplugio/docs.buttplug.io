@@ -1,3 +1,9 @@
+---
+title: Possible Kiss
+brand: possible-kiss
+transport: btle
+---
+
 # Possible Kiss
 
 ## Bluetooth Details
@@ -24,7 +30,7 @@ RS-KNW
 
 ## Rx Protocol
 
-- Battery: [ 0x55, 0x80, 0x??, 0x??, 0x??, 0xXX ] 
+- Battery: [ 0x55, 0x80, 0x??, 0x??, 0x??, 0xXX ]
   - XX is the % battery (8-bit)
 - Pressure: [ 0x55, 0x91, 0x??, 0x??, 0xXX, 0xXX ]
   - XXXX is the pressure level (16-bit)

@@ -1,3 +1,9 @@
+---
+title: Oriori Ball
+brand: oriori
+transport: btle
+---
+
 # Oriori Ball
 
 The Oriori ball is a grip strength excersiser. It can measure the grip pressure applied to it and it can vibrate. This device can be used as a haptical analog controller.
@@ -29,4 +35,3 @@ The Read Value is a simple ASCII string of the following shape `AABCCC.C|`
 - `AA`: Battery level, likely something between `00` and `99`.
 - `B`: `1` if the pressure is increasing since the last measurement, `0` if not
 - `C`: The pressure applied in kg(/cm^2?), from `0.0` (if untouched) up to the maximum it can measure (have seen values up to `60.0`).
-
