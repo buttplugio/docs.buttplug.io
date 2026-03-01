@@ -1,3 +1,10 @@
+---
+title: Kiiroo Bootloader
+brand: kiiroo
+transport: btle
+config_ref: kiiroo-v1.yml
+---
+
 # Kiiroo Bootloader
 
 While it would be a great marketing strategy for the kind of people
@@ -9,7 +16,7 @@ sketchy venture in the best of conditions.
 
 ## Command Structure and Flow
 
-Most Kiiroo toys will have 3 characteristics. 
+Most Kiiroo toys will have 3 characteristics.
 
 -   Bootloader Commands/Control (CTL)
 -   Data (DATA)
@@ -33,7 +40,7 @@ of the operation.
 -   Anything not 0x2 - Failure
 
 If the operation succeeds and expects data back, it will read the DATA
-characteristic. Data returns can vary in length. If this is the case, 
+characteristic. Data returns can vary in length. If this is the case,
 
 ## Commands
 
@@ -55,14 +62,14 @@ hardware.
 ### Set Execution Mode
 
 Change the execution mode to Bootloader mode and resets the device.
- 
+
  **Command:**
- 
+
  -   Command Index: 0x06
  -   Command Data: 0x00
- 
+
  **Returns:**
- 
+
  None, device will most likely disconnect after command.
 
 ### Get Software Version
@@ -108,18 +115,18 @@ If return is 7 bytes:
 
 -   High nibble of Byte[0] - Address Increment
 -   Low nibble of Byte[0] - Word Size
--   Byte[1] &lt;&lt; 8 || Byte[2] - Program Length
--   Byte[3] &lt;&lt; 8 || Byte[4] - Program Base
--   Byte[5] &lt;&lt; 8 || Byte[6] - Row Length
+-   Byte[1] << 8 || Byte[2] - Program Length
+-   Byte[3] << 8 || Byte[4] - Program Base
+-   Byte[5] << 8 || Byte[6] - Row Length
 
 If return is 9 bytes:
 
 -   Byte[0] - Flash Erase Value
 -   High nibble of Byte[1] - Address Increment
 -   Low nibble of Byte[1] - Word Size
--   Byte[2] &lt;&lt; 8 || Byte[3] - Program Length
--   Byte[4] &lt;&lt; 16 || Byte[5] &lt;&lt; 8 || Byte[6] - Program Base
--   Byte[7] &lt;&lt; 8 || Byte[8] - Row Length
+-   Byte[2] << 8 || Byte[3] - Program Length
+-   Byte[4] << 16 || Byte[5] << 8 || Byte[6] - Program Base
+-   Byte[7] << 8 || Byte[8] - Row Length
 
 ### Erase Memory
 

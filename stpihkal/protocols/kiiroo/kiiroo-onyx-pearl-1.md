@@ -1,3 +1,10 @@
+---
+title: Kiiroo Onyx/Pearl 1
+brand: kiiroo
+transport: btle
+config_ref: kiiroo-v1.yml
+---
+
 # Kiiroo Onyx/Pearl 1
 
 The Kiiroo Onyx 1 and Pearl 1 were a set of toys made to control each
@@ -14,7 +21,7 @@ When pairing using Bluetooth 2.0, serial ports on OS X and linux
 machines will register for the Pearl toy as:
 
 ```
-/dev/tty.PEARL-DevB 
+/dev/tty.PEARL-DevB
 ```
 
 and for the Onyx toy as:
@@ -53,7 +60,7 @@ x,\n
 
 Where x is an integer from 0-4. When sent to the Onyx, this command
 sets the pressure ring position. When sent to the Pearl, this command
-sets vibration levels. 
+sets vibration levels.
 
 These commands are sent from the Pearl whenever a corresponding touch
 sensor is hit. There is no way to send commands from the Oynx.
@@ -68,7 +75,7 @@ but a 'cat' command. If both toys are paired using Bluetooth 2.0, so
 that the Pearl is at
 
 ```
-/dev/tty.PEARL-DevB 
+/dev/tty.PEARL-DevB
 ```
 
 and the Onyx is at
