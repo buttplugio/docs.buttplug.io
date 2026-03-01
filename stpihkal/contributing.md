@@ -10,7 +10,7 @@ This guide explains how to add new device protocol documentation to STPIHKAL.
 ## Quick Start
 
 1. Create a brand directory (if it doesn't exist): `stpihkal/protocols/<brand-slug>/`
-2. Copy `stpihkal/protocols/_template.md` into the brand directory
+2. Copy `stpihkal/protocols/_template.md` to `stpihkal/protocols/<brand-slug>/index.md`
 3. Fill in the template with protocol details
 4. Add `config_ref` frontmatter if a device-config-v4 YAML exists for this device
 5. Build and verify: `yarn build`
@@ -20,35 +20,27 @@ This guide explains how to add new device protocol documentation to STPIHKAL.
 ```text
 stpihkal/protocols/
   <brand-slug>/
+    index.md              # Protocol documentation (single-protocol brands)
+```
+
+For the rare multi-protocol brand:
+
+```text
+stpihkal/protocols/
+  <brand-slug>/
     index.md              # Brand overview page
-    <protocol-name>.md    # Protocol details page
+    <protocol-1>.md       # First protocol
+    <protocol-2>.md       # Second protocol
 ```
 
 - **Brand slug**: lowercase kebab-case (e.g., `we-vibe`, `hot-octopuss`)
-- Every brand gets its own directory, even single-protocol brands
-- The `index.md` serves as the brand landing page in the sidebar
+- Every brand gets its own directory
+- **Most brands have a single protocol** — use `index.md` directly as the protocol page (copy from `_template.md`)
+- **Multi-protocol brands only** (e.g., erostek, kiiroo, libo, magic-motion) use a separate `index.md` overview + individual protocol files (see `_brand-template.md`)
 
-## Creating a Brand Directory
+## Creating a Single-Protocol Brand (most common)
 
-### 1. Brand Index Page
-
-Create `stpihkal/protocols/<brand>/index.md`:
-
-```yaml
----
-title: <Brand Name>
-brand: <brand-slug>
----
-```
-
-Include:
-- **Overview**: Brief brand introduction
-- **Common BLE Patterns**: Shared patterns (name prefixes, service UUIDs, protocol conventions)
-- **Devices table**: Links to individual protocol pages
-
-### 2. Protocol Page
-
-Copy `stpihkal/protocols/_template.md` and fill in each section.
+Copy `_template.md` to `stpihkal/protocols/<brand>/index.md` and fill in the sections.
 
 **Required frontmatter:**
 
@@ -61,6 +53,13 @@ config_ref: <file>.yml   # device-config-v4 YAML filename (if exists)
 config_identifier: null  # specific device identifier, or null for all
 ---
 ```
+
+## Creating a Multi-Protocol Brand (rare)
+
+Only needed when a brand has multiple distinct protocols (different command sets, not just device variants).
+
+1. Create `index.md` from `_brand-template.md` with brand overview and device table
+2. Create individual protocol files from `_template.md`
 
 ## Frontmatter Fields
 
@@ -158,12 +157,13 @@ Check the console for `[remark-device-config]` messages confirming your `config_
 
 Many protocols are documented in GitHub issues at [buttplugio/stpihkal](https://github.com/buttplugio/stpihkal/issues). When importing:
 
-1. Create the brand directory and index page
-2. Extract BLE details (names, UUIDs, characteristics) into the BLE Profile YAML block
-3. Extract command bytes into the Commands section with byte tables
-4. Link the original issue in the Sources section
-5. Mark any unconfirmed information appropriately
-6. Check for a matching device-config-v4 YAML and set `config_ref`
+1. Create the brand directory
+2. Copy `_template.md` to `<brand>/index.md`
+3. Extract BLE details (names, UUIDs, characteristics) into the BLE Profile YAML block
+4. Extract command bytes into the Commands section with byte tables
+5. Link the original issue in the Sources section
+6. Mark any unconfirmed information appropriately
+7. Check for a matching device-config-v4 YAML and set `config_ref`
 
 ## Non-BLE Protocols
 

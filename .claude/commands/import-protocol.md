@@ -41,10 +41,9 @@ If no manifest entry exists, infer brand and slug from the issue title.
 ### Step 4: Determine output location
 
 - Brand slug from manifest or inferred from title
-- Protocol slug from manifest or slugified from protocol name
-- Output path: `stpihkal/protocols/<brand>/<slug>.md`
+- Output path: `stpihkal/protocols/<brand>/index.md`
 
-Check if the brand directory exists. If not, create it with an `index.md`.
+Check if the brand directory exists. If not, create it.
 
 ### Step 5: Generate the protocol page
 
@@ -107,29 +106,17 @@ Before writing the file, ensure:
 
 ### Step 7: Create brand directory if needed
 
-If the brand directory doesn't exist:
-1. Create `stpihkal/protocols/<brand>/index.md` with:
-```yaml
----
-title: <Brand Name>
-brand: <brand-slug>
----
-```
-And a minimal overview + devices table.
+If the brand directory doesn't exist, create `stpihkal/protocols/<brand>/`.
 
-### Step 8: Update brand index
+### Step 8: Write the file
 
-Read the brand's `index.md` and add the new protocol to the Devices table. If no table exists yet, create one.
+Write the protocol page to `stpihkal/protocols/<brand>/index.md`.
 
-### Step 9: Write the file
-
-Write the protocol page to `stpihkal/protocols/<brand>/<slug>.md`.
-
-### Step 10: Verify build
+### Step 9: Verify build
 
 Run `yarn build` and check for errors. If the build fails, fix the issue (usually MDX escaping problems).
 
-### Step 11: Commit
+### Step 10: Commit
 
 Stage only the files you created/modified and commit:
 ```
@@ -138,11 +125,11 @@ docs: add <protocol-name> protocol documentation
 Fixes <issue-url>
 ```
 
-### Step 12: Comment on the issue
+### Step 11: Comment on the issue
 
 Post a comment on the GitHub issue:
 ```
-gh issue comment <number> -R buttplugio/<repo> --body "Protocol documentation has been added at stpihkal/protocols/<brand>/<slug>.md in the docs.buttplug.io repo."
+gh issue comment <number> -R buttplugio/<repo> --body "Protocol documentation has been added at stpihkal/protocols/<brand>/index.md in the docs.buttplug.io repo."
 ```
 
 ## Edge Cases
