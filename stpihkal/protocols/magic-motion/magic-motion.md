@@ -1,5 +1,6 @@
 ---
 title: Magic Motion Protocol
+slug: magic-motion-protocol
 brand: magic-motion
 transport: btle
 config_ref: magic-motion-1.yml
