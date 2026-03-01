@@ -64,7 +64,7 @@ CMD 64 00 00 00 00 31 32 33 34 00 00 00 00 00 00 00 CRC
 ## Notification Response Format
 
 ```
-CMD 64 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 CRC
+CMD 64 00 BITMASK 00 00 00 00 00 00 00 00 00 00 00 00 00 CRC
 ```
 
 | Position | Value | Description |
