@@ -1,6 +1,5 @@
 ---
 title: Possible Kiss
-slug: possible-kiss-protocol
 brand: possible-kiss
 transport: btle
 ---

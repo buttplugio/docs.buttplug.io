@@ -16,7 +16,7 @@ Galaku is a large brand with many product variants spanning vibrators, wearables
 
 Due to the breadth of Galaku's product catalog, full protocol documentation for all variants is tracked in the [GitHub issue](https://github.com/buttplugio/docs.buttplug.io/issues/24). That issue contains reverse-engineering notes for numerous device families.
 
-The Galaku Panty Vib (`WB-TDD`) uses the Mu Se/Love Spouse protocol — see the [Mu Se](../muse/muse.md) page for details.
+The Galaku Panty Vib (`WB-TDD`) uses the Mu Se/Love Spouse protocol — see the [Mu Se](../muse/) page for details.
 
 ## Sources
 

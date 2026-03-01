@@ -1,6 +1,5 @@
 ---
 title: IMToy
-slug: imtoy-protocol
 brand: imtoy
 transport: btle
 ---

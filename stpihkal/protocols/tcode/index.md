@@ -1,6 +1,5 @@
 ---
 title: T-code
-slug: tcode-protocol
 brand: tcode
 transport: serial
 ---

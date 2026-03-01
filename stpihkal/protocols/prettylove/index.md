@@ -1,6 +1,5 @@
 ---
 title: Prettylove
-slug: prettylove-protocol
 brand: prettylove
 transport: btle
 config_ref: prettylove.yml

@@ -106,7 +106,7 @@ const config = {
         },
         redirects: [
           // Redirects for protocols whose old flat URL differs from the new brand directory name
-          { from: "/stpihkal/protocols/wevibe", to: "/stpihkal/protocols/we-vibe/we-vibe-protocol" },
+          { from: "/stpihkal/protocols/wevibe", to: "/stpihkal/protocols/we-vibe/" },
           { from: "/stpihkal/protocols/erostek-et232", to: "/stpihkal/protocols/erostek/erostek-et232" },
           { from: "/stpihkal/protocols/erostek-et312b", to: "/stpihkal/protocols/erostek/erostek-et312b" },
           { from: "/stpihkal/protocols/estim-systems-2b", to: "/stpihkal/protocols/estim-systems/" },
@@ -115,7 +115,7 @@ const config = {
           { from: "/stpihkal/protocols/kiiroo-onyx-2", to: "/stpihkal/protocols/kiiroo/kiiroo-onyx-2" },
           { from: "/stpihkal/protocols/kiiroo-onyx-pearl-1", to: "/stpihkal/protocols/kiiroo/kiiroo-onyx-pearl-1" },
           { from: "/stpihkal/protocols/oriori-ball", to: "/stpihkal/protocols/oriori/" },
-          { from: "/stpihkal/protocols/possible_kiss", to: "/stpihkal/protocols/possible-kiss/possible-kiss-protocol" },
+          { from: "/stpihkal/protocols/possible_kiss", to: "/stpihkal/protocols/possible-kiss/" },
           { from: "/stpihkal/protocols/sportdog-sd400", to: "/stpihkal/protocols/sportdog/" },
           { from: "/stpihkal/protocols/vorze-sa", to: "/stpihkal/protocols/vorze/" },
         ],
@@ -125,7 +125,6 @@ const config = {
     [
       'docusaurus-plugin-llms',
       {
-        logLevel: 'verbose',
         // Options here
         generateLLMsTxt: true,
         generateLLMsFullTxt: true,

@@ -34,6 +34,6 @@ c7b7a04b-2cc4-40ff-8b10-5d531d1161db
 
 ## Protocol
 
-The Kiiroo 2 uses the same protocol as the [Fleshlight Launch](../fleshlight/fleshlight-launch.md),
-including initialization and control. See the [Fleshlight Launch](../fleshlight/fleshlight-launch.md)
+The Kiiroo 2 uses the same protocol as the [Fleshlight Launch](../fleshlight/),
+including initialization and control. See the [Fleshlight Launch](../fleshlight/)
 documentation for more info.
