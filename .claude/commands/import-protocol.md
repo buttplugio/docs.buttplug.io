@@ -77,11 +77,7 @@ services:
         description: "Command endpoint"
 ```
 
-**Device Configuration:** Always include this exact comment:
-```
-<!-- Auto-populated from device-config-v4 at build time -->
-```
-Only include this section if `config_ref` is set in frontmatter.
+**Device Configuration:** Do NOT include this section. The remark plugin does not currently inject content, so the section would be empty.
 
 **Pairing:** Include only if the issue mentions pairing procedures. Otherwise omit the section entirely.
 

@@ -25,10 +25,6 @@ services:
         description: "Vibration and rotation control"
 ```
 
-## Device Configuration
-
-<!-- Auto-populated from device-config-v4 at build time -->
-
 ## Commands
 
 ### Vibrate and Rotate
