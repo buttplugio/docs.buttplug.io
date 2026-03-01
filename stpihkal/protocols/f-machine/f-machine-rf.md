@@ -1,10 +1,10 @@
 ---
-title: F-machine RF Protocol
+title: F-Machine RF Protocol
 brand: f-machine
 transport: rf
 ---
 
-# F-machine RF Protocol
+# F-Machine RF Protocol
 
 F-machine is a UK sex toy company. Two of their products, the **Gigolo** fucking machine and the **Tremblr** male milking machine, can be controlled remotely via radio frequency (RF).
 

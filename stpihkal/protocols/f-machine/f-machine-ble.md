@@ -1,20 +1,30 @@
 ---
-title: Tremblr BT-R Protocol
-brand: tremblr
+title: F-Machine BLE Protocol
+brand: f-machine
 transport: btle
 ---
 
-# Tremblr BT-R Protocol
+# F-Machine BLE Protocol
 
 ## Introduction
 
-The Tremblr BT-R is a BLE-connected prostate massager. Commands map to button presses on the physical UI. The protocol uses an 18-byte message with a CRC-8 checksum. An associated device called "GIGOLO" (BLE name `FM-G`) may share the same protocol.
+Several F-Machine products are available in Bluetooth LE-enabled variants. These devices share a common BLE protocol using an 18-byte message with a CRC-8 checksum. Commands map to button presses on the physical device UI.
+
+Covered devices:
+
+| Device | BLE Name | Secondary Function |
+|--------|----------|--------------------|
+| Tremblr BT-R | `FM-T` | Suction |
+| Gigolo BT-R | `FM-G` | None |
+| Alpha | `FM-A` | Thrust Depth |
 
 ## BLE Profile
 
 ```yaml
 ble_names:
   - "FM-T"
+  - "FM-G"
+  - "FM-A"
 services:
   - uuid: "0xfff0"
     characteristics:
@@ -23,6 +33,10 @@ services:
         role: tx
         description: "Command"
 ```
+
+## Device Configuration
+
+<!-- Auto-populated from device-config-v4 at build time -->
 
 ## Message Format
 
@@ -33,7 +47,7 @@ CMD 64 00 00 00 00 31 32 33 34 00 00 00 00 00 00 00 CRC
 | Position | Value | Description |
 |----------|-------|-------------|
 | Byte 0 | Command byte | See command table below |
-| Bytes 1 | `0x64` | Constant |
+| Byte 1 | `0x64` | Constant |
 | Bytes 2–5 | `0x00` | Constant |
 | Bytes 6–9 | `0x31 0x32 0x33 0x34` | Password placeholder (not implemented) |
 | Bytes 10–16 | `0x00` | Constant |
@@ -50,12 +64,15 @@ Each command represents a button event. Button-held events are followed by a but
 | Speed buttons release | `0x03` | Speed buttons released |
 | Speed Up hold | `0x05` | Speed Up button held down |
 | Speed Down hold | `0x06` | Speed Down button held down |
-| Suction Up hold | `0x07` | Suction Up button held down |
-| Suction Down hold | `0x08` | Suction Down button held down |
+| Secondary Function Up hold | `0x07` | Secondary Function Up button held down |
+| Secondary Function Down hold | `0x08` | Secondary Function Down button held down |
+| Seconday Function buttons release | `0x09` | Secondary Function buttons released |
 
-Additional commands exist for pattern control (not fully documented in the issue).
+The secondary function (`0x07`/`0x08`/`0x09`) controls different physical mechanisms depending on the device: **Suction** on the Tremblr BT-R, and **Thrust Depth** on the Alpha. The Gigolo BT-R has no secondary function and does not use these commands.
 
 ## CRC-8 Checksum
+
+The checksum is computed over the first 17 bytes of the message:
 
 ```javascript
 function calcCRC(data) {
@@ -80,8 +97,8 @@ function calcCRC(data) {
 
 ## Notes
 
+- All three BLE devices (Tremblr BT-R `FM-T`, Gigolo BT-R `FM-G`, Alpha `FM-A`) share this protocol. The secondary function commands (`0x07`/`0x08`/`0x09`) are only applicable to the Tremblr BT-R (suction) and the Alpha (thrust depth); the Gigolo BT-R has no secondary function.
 - Password bytes (`0x31 0x32 0x33 0x34`) are intended for authentication but not implemented in current firmware.
-- A related device "GIGOLO" uses BLE name `FM-G` and likely shares this protocol.
 - CRC formula: divides the total bit count by 1/2/3 based on `bitCount mod 3`, plus a constant offset. The exact formula may need verification.
 
 ## Sources
