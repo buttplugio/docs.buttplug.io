@@ -302,7 +302,7 @@
     "rust_score": 0,
     "confidence": "medium",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -319,7 +319,7 @@
     "rust_score": 0.5,
     "confidence": "medium",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -438,7 +438,7 @@
     "rust_score": 0,
     "confidence": "medium",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -472,7 +472,7 @@
     "rust_score": 0,
     "confidence": "medium",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -874,9 +874,9 @@
     "protocol_name": "HTK Breast Massager",
     "slug": "htk-breast-massager",
     "brand": "htk",
-    "config_ref": null,
+    "config_ref": "htk_bm.yml",
     "config_score": 0,
-    "rust_impl": null,
+    "rust_impl": "htk_rs.yml",
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
@@ -1118,7 +1118,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1407,7 +1407,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1560,7 +1560,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1577,7 +1577,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1594,7 +1594,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1628,7 +1628,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1645,7 +1645,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1662,7 +1662,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1713,7 +1713,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
@@ -1730,7 +1730,7 @@
     "rust_score": 0,
     "confidence": "none",
     "existing_doc": false,
-    "skip": false,
+    "skip": true,
     "notes": ""
   },
   {
