@@ -328,3 +328,4 @@ console.log("Done writing to data.bin!");
   - [Gigolo manual](https://f-machine.com/brochure/Gigolo_Brochure_Version2.pdf)
   - [Tremblr manual](https://f-machine.com/brochure/FINAL-TremblrBrochure.pdf)
 - [HackRF One official website](https://greatscottgadgets.com/hackrf/one/)
+- [BTR-Bridge - A $10 BLE to RF Bridge for the Tremblr & Gigolo](https://github.com/penaltybush/BTR-Bridge)
