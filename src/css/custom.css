@@ -267,6 +267,36 @@
     color: white;
 }
 
+/* Blog Images & Figures */
+.blog-post-page .markdown figure {
+    display: block;
+    max-width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.blog-post-page .markdown figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.blog-post-page .markdown figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--blog-text-muted);
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Fallback for inline images not processed by the plugin */
+.blog-post-page .markdown img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Mobile Responsive */
 @media (max-width: 996px) {
     .blog-list-page article {
@@ -274,6 +304,11 @@
     }
 
     .blog-post-page article .markdown {
+        max-width: 100%;
+    }
+
+    .blog-post-page .markdown figure,
+    .blog-post-page .markdown img {
         max-width: 100%;
     }
 

@@ -5,6 +5,7 @@ const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const remarkDeviceConfig = require("./plugins/remark-device-config");
+const remarkBlogImages = require("./plugins/remark-blog-images");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -80,6 +81,9 @@ const config = {
         blogDescription: "Mistakes as long reads",
         postsPerPage: 10,
         blogSidebarCount: "ALL",
+        beforeDefaultRemarkPlugins: [
+          remarkBlogImages,
+        ],
       },
     ],
     [
