@@ -6,11 +6,15 @@ authors: [qdot]
 
 It's that time again. We're releasing Intiface Central 3.0.3. This is an exciting release with a lot of bug fixes. Not so much in the way a new features this time around, but this'll give us a good basis to build out on, or at least hopefully stop people from yelling at us so much.
 
+<!-- truncate -->
+
 ## Android Changes 
 
 There’s been a lot of updates to the android system in this release, including the Bluetooth system as well as handling keepalives a little bit better. 
 
- On the Bluetooth side, there were just a lot of errors we weren’t throwing, which would cause users to crash when starting and stopping Bluetooth scan. These have been by far the most common crashes we see in our crash logging system for all platforms, since the mobile app was first released. With the changes made this version, we hope these bugs have been resolved, or at least that we'll have a better chance of figuring out how to resolve them versus just falling over. This includes building a full hardware platform for testing our bluetooth library, which already 
+On the Bluetooth side, there were just a lot of errors we weren’t throwing, which would cause users to crash when starting and stopping Bluetooth scan. These have been by far the most common crashes we see in our crash logging system for all platforms, since the mobile app was first released. With the changes made this version, we hope these bugs have been resolved, or at least that we'll have a better chance of figuring out how to resolve them versus just falling over. This includes building a full hardware platform for testing our bluetooth library, which already 
+
+![Android vitals showing wakelocks at 21% when bad behavior threshhold is 5%. This is bad and we should feel bad.](./wakelocks.png)
 
 We’ve been getting a lot of complaints from both users and the Google play store that the app keeps the phone alive for too long and therefore drains power. The only time this really needs to happen is with certain devices that require updates every few seconds to stay on (brands like Satisfyer, VibCrafter, Mysteryvibe, etc). We've done some work to make sure we only stay on when needed, which should hopefully reduce power draw on phones.
 ## Deprecating Lovense Connect and the Lovense Dongle
@@ -35,7 +39,7 @@ We're aware that users of TCode devices have had issues with the device not regi
 For anyone using TCode devices in real time situations (VRChat + OSCGB, etc), please get in touch with us [via our support channels](https://buttplug.io/docs/dev-guide/intro/getting-help), as we're looking at how to support those users better.
 
  Finally, we’ve got some device additions. We’ve added support for HoneyPlayBox devices as well as more Joyhub devices. WeVibe devices now have battery reading support.
- 
+
 ## What's Next
 
 With what is hopefully a more stable base to work on top of, what's next?

@@ -270,7 +270,7 @@
 /* Blog Images & Figures */
 .blog-post-page .markdown figure {
     display: block;
-    max-width: 80%;
+    max-width: 90%;
     margin: 2rem auto;
     text-align: center;
 }
@@ -291,7 +291,7 @@
 
 /* Fallback for inline images not processed by the plugin */
 .blog-post-page .markdown img {
-    max-width: 80%;
+    max-width: 90%;
     height: auto;
     display: block;
     margin: 0 auto;
