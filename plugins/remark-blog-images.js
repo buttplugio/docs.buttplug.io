@@ -24,29 +24,11 @@ function remarkBlogImages() {
       }
 
       const img = node.children[0];
-      const { url, alt, title } = img;
+      const { alt } = img;
 
-      // Build <img> JSX element attributes
-      const imgAttributes = [
-        { type: "mdxJsxAttribute", name: "src", value: url },
-      ];
-      if (alt) {
-        imgAttributes.push({ type: "mdxJsxAttribute", name: "alt", value: alt });
-      }
-      if (title) {
-        imgAttributes.push({ type: "mdxJsxAttribute", name: "title", value: title });
-      }
-
-      // <img src="..." alt="..." />
-      const imgNode = {
-        type: "mdxJsxFlowElement",
-        name: "img",
-        attributes: imgAttributes,
-        children: [],
-      };
-
-      // Build figure children
-      const figureChildren = [imgNode];
+      // Keep the original image node so Docusaurus's default remark plugins
+      // can resolve the relative URL and handle asset imports normally.
+      const figureChildren = [img];
 
       // <figcaption>alt text</figcaption> — only if alt is non-empty
       if (alt) {
