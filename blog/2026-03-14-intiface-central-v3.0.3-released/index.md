@@ -27,6 +27,9 @@ We’ve gotten in tons of reports that Lovense Connect no longer works post Inti
 
 We’re replacing Lovense Connect with using the Interface Central mobile app in a couple of different ways, with [starting documentation already available in the Intiface Docs](https://intiface.com/docs/intiface-central/brands/lovense).
 
+
+![I really cannot emphasize how much the Lovense Dongle sucks.](./dongle.png)
+
 For the Lovense Dongle, the recommendation to is to use a regular Bluetooth dongle. Windows 10 and 11 both have decent Bluetooth capabilities at this point, and a regular bluetooth dongle is far faster and more reliable than the Lovense dongle. [Guidance on which Bluetooth Dongles we recommend are available in the Intiface Documentation](https://intiface.com/docs/intiface-central/hardware/bluetooth).
 
 We're happy to help users through this transition where we can through our [various support channels](https://buttplug.io/docs/dev-guide/intro/getting-help).
