@@ -12,7 +12,7 @@ It's that time again. We're releasing Intiface Central 3.0.3. This is an excitin
 
 There’s been a lot of updates to the android system in this release, including the Bluetooth system as well as handling keepalives a little bit better. 
 
-On the Bluetooth side, there were just a lot of errors we weren’t throwing, which would cause users to crash when starting and stopping Bluetooth scan. These have been by far the most common crashes we see in our crash logging system for all platforms, since the mobile app was first released. With the changes made this version, we hope these bugs have been resolved, or at least that we'll have a better chance of figuring out how to resolve them versus just falling over. This includes building a full hardware platform for testing our bluetooth library, which already 
+On the Bluetooth side, there were just a lot of errors we weren’t throwing, which would cause users to crash when starting and stopping Bluetooth scan. These have been by far the most common crashes we see in our crash logging system for all platforms, since the mobile app was first released. With the changes made this version, we hope these bugs have been resolved, or at least that we'll have a better chance of figuring out how to resolve them versus just falling over. This includes building a full hardware platform for testing our bluetooth library, which has already surfaced several bugs we didn't even know we had. 
 
 ![Android vitals showing wakelocks at 21% when bad behavior threshhold is 5%. This is bad and we should feel bad.](./wakelocks.png)
 
