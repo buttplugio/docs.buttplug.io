@@ -6,6 +6,8 @@ authors: [qdot]
 
 It's that time again. We're releasing Intiface Central 3.0.3. This is an exciting release with a lot of bug fixes. Not so much in the way a new features this time around, but this'll give us a good basis to build out on, or at least hopefully stop people from yelling at us so much.
 
+[You can get it via the Intiface Central front page.](https://intiface.com)
+
 <!-- truncate -->
 
 ## Android Changes 
