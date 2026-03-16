@@ -43,7 +43,7 @@ We're aware that users of TCode devices have had issues with the device not regi
 
 For anyone using TCode devices in real time situations (VRChat + OSCGB, etc), please get in touch with us [via our support channels](https://buttplug.io/docs/dev-guide/intro/getting-help), as we're looking at how to support those users better.
 
- Finally, we’ve got some device additions. We’ve added support for HoneyPlayBox devices as well as more Joyhub devices. WeVibe devices now have battery reading support.
+ Finally, we’ve got some device additions. We’ve added support for [HoneyPlayBox devices](https://honeyplaybox.buttplug.io) as well as more Joyhub devices. WeVibe devices now have battery reading support.
 
 ## What's Next
 
