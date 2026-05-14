@@ -377,7 +377,7 @@ const config = {
         additionalLanguages: ["python", "csharp", "rust", "powershell"],
       },
       matomo: {
-        matomoUrl: "https://nonpolynomial.matomo.cloud/",
+        matomoUrl: "https://metrics.nonpolynomial.com/",
         siteId: "2",
         phpLoader: "matomo.php",
         jsLoader: "matomo.js",
