@@ -40,11 +40,11 @@ the application level.**
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
-* _FeatureIndex_ (unsigned int): Index of actuator
-* _Type_ (InputType): The type of input we expect to receive from this feature. Battery, RSSI,
+* _FeatureIndex_ (unsigned int): Index of feature
+* _Type_ (InputType): The type of input we expect to receive from this feature. Battery, Rssi,
   etc...
 * _Command_ (InputCommandType): One of 3 values: `Read`, `Subscribe`, `Unsubscribe`. Which
-  of these types are available to a feature is transmitted as part of the DeviceAdded/DeviceList info.
+  of these types are available to a feature is transmitted as part of the DeviceList info.
 
 **Expected Response:**
 
@@ -110,7 +110,7 @@ sequenceDiagram
 
 ## InputReading
 
-**Description:** InputReading contains data received from a device input, either after a read request or as part of a stream of readings from a subscription. This can be anything from battery power levels, to motor encoder positions, to accelerometer readings. Expected dimensionality and format is set via the corresponding InputCmd definition in the DeviceAdded/DeviceList messages.
+**Description:** InputReading contains data received from a device input, either after a read request or as part of a stream of readings from a subscription. This can be anything from battery power levels, to radio signal strength, to pressure readings. Expected dimensionality and format is set via the corresponding InputCmd definition in the DeviceList messages.
 
 **Introduced In Spec Version:** 4
 
@@ -120,7 +120,7 @@ sequenceDiagram
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
-* _FeatureIndex_ (unsigned int): Index of actuator
+* _FeatureIndex_ (unsigned int): Index of feature
 * _Reading_ (InputData): Data from the sensor, including InputType and the corresponding format. See InputType table below for more information on expected data types.
 
 **Expected Response:**
@@ -233,11 +233,11 @@ assumed to be running on battery power.
   }]
 ```
 
-### RSSI
+### Rssi
 
 **Introduced In Spec Version:** 4
 
-**Description**: RSSI level of a wireless radio device.
+**Description**: RSSI level of a wireless radio device. This is encoded as _Rssi_ to handle the way most implementation languages expect class casing.
 
 **Device Examples**: This is a feature of Bluetooth, rather than devices. Should technically work for any bluetooth device.
 
@@ -254,7 +254,7 @@ assumed to be running on battery power.
       "DeviceIndex": 0,
       "FeatureIndex": 1,
       "Reading": {
-        "RSSI": {
+        "Rssi": {
           "Value": -53
         }
       }

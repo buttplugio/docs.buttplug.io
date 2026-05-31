@@ -160,20 +160,14 @@ sequenceDiagram
                 "Position": {
                   "Value": [0, 100]
                 }
-              },
-              "Input": {
-                "Position": {
-                  "Value": [[0, 100]],
-                  "Command": ["Read", "Subscribe"]
-                }
               }
             },
             "2": {
               "FeatureIndex": 2,
               "FeatureDescription": "Bluetooth Radio RSSI",
               "Input": {
-                "RSSI": {
-                  "Value": [[-10, -100]],
+                "Rssi": {
+                  "Value": [[-100, -10]],
                   "Command": ["Read"]
                 }
               }
