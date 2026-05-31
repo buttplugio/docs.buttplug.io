@@ -105,20 +105,23 @@ sequenceDiagram
 
 ## OutputType
 
-OutputType denotes a thing that a device feature does to a user. Think of it like a verb, possibly with an added bit of context. 
+OutputType denotes a thing that a device feature does to a user. Think of it like a verb, possibly with an added bit of context.
+
+Output command values are integers. Unless an OutputType says otherwise, a command value is valid if
+it falls within the inclusive _Value_ range advertised for that OutputType in DeviceList.
 
 ### Vibrate
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_. 
+**Description**: Sets a vibrator speed to a certain amount. 0 always denotes stop. Valid speeds are within the _Value_ range advertised in DeviceList, usually `[0, x]`.
 
 **Device Examples**: It's... vibrators. Just vibrators. If you're using this library you are probably familiar with Vibrators. Buttplug's device support is probably 90% vibrators, so this will be used more than any other OutputType. The one thing to note here is that this is mostly assuming Off-axis/Eccentric Rotation Motor (ERM) vibrators. LRA/Voice Coil based vibrating sex toys do exist, but are rare, and can still usually be controlled with this command.
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Vibrator speed
 
 **Example**:
 ```json
@@ -147,7 +150,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 **Fields**
 - Value
   - **Type**: Signed 32-bit integer
-  - **Description**: Rotation speed and direction, valid settings are within the _Value_ range in _DeviceInfo_
+  - **Description**: Rotation speed and direction
 
 **Example**:
 ```json
@@ -169,14 +172,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_.
+**Description**: Sets an oscillator speed to a certain amount. It is assumed we cannot control the start/end oscillation points for this feature, and that we are just controlling the speed between those two points. 0 always denotes stop. Valid speeds are within the _Value_ range advertised in DeviceList, usually `[0, x]`.
 
 **Device Examples**: Hismith Fucking Machines, Lovense Fucking Machine, Lovense Gravity, etc...
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Oscillation speed, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Oscillation speed
 
 **Example**:
 ```json
@@ -198,14 +201,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Used for pumps and squeezing devices. Usually sets a constriction to a level, though whether or not that level is held until next setting can vary per device. 0 always denotes full release, otherwise valid levels are between 0 and the _Value_ range in _DeviceInfo_.
+**Description**: Used for pumps and squeezing devices. Usually sets a constriction to a level, though whether or not that level is held until next setting can vary per device. 0 always denotes full release. Valid levels are within the _Value_ range advertised in DeviceList, usually `[0, x]`.
 
 **Device Examples**: Lovense Max, Svakom Sam Neo 2
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Constriction level, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Constriction level
 
 **Example**:
 ```json
@@ -227,14 +230,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Controls spray/ejaculation mechanisms on devices that support this feature. 0 always denotes off/no spray, otherwise valid levels are between 0 and the _Value_ range in _DeviceInfo_. For the moment, this is expected to be an instanteous command; value is in relation to power, not timing.
+**Description**: Controls spray/ejaculation mechanisms on devices that support this feature. 0 always denotes off/no spray. Valid levels are within the _Value_ range advertised in DeviceList, usually `[0, x]`. For the moment, this is expected to be an instantaneous command; value is in relation to power, not timing.
 
 **Device Examples**: Hismith Lube Injector, Joyhub toys with squirting mechanisms, Bluetooth-Capable Glade Plugins
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Spray intensity, valid settings are within 0 < x < StepCount
+  - **Type**: Signed 32-bit integer
+  - **Description**: Spray intensity
 
 **Example**:
 ```json
@@ -256,14 +259,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Controls temperature for devices with heating or cooling elements. The value range is signed to support both heating (positive values) and cooling (negative values), with 0 denoting neutral/off. It will be vanishingly rare that we have information about the exact temperature a device can reach, so this will normally be some number of "temperature steps" rather than degrees (see [note on sensor units](./input#sensor-units-are-not-standardized)). Valid commands are within the _Value_ range in _DeviceInfo_, which may be `[-x, x]` for devices supporting both heating and cooling, or `[0, x]` for heating-only devices.
+**Description**: Controls temperature for devices with heating or cooling elements. The value range is signed to support both heating (positive values) and cooling (negative values), with 0 denoting neutral/off. It will be vanishingly rare that we have information about the exact temperature a device can reach, so this will normally be some number of "temperature steps" rather than degrees (see [note on sensor units](./input#sensor-units-are-not-standardized)). Valid commands are within the _Value_ range advertised in DeviceList, which may be `[-x, x]` for devices supporting both heating and cooling, or `[0, x]` for heating-only devices.
 
 **Device Examples**: N/A
 
 **Fields**
 - Value
   - **Type**: Signed 32-bit integer
-  - **Description**: Temperature level. 0 is neutral/off, positive values indicate heating, negative values indicate cooling. Valid settings are within the range specified in DeviceInfo.
+  - **Description**: Temperature level. 0 is neutral/off, positive values indicate heating, negative values indicate cooling.
 
 **Example**:
 ```json
@@ -285,7 +288,7 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets the brightness value of an LED. If Value maximum is 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED, otherwise valid commands are between 0 and the _Value_ range in _DeviceInfo_. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
+**Description**: Sets the brightness value of an LED. If Value maximum is 1, can be considered to simply be an off/on switch. Different color LED control (for RGB devices) will show up as multiple LED features, with color in the feature description. 0 always denotes turning off the LED. Valid brightness values are within the _Value_ range advertised in DeviceList, usually `[0, x]`. This is encoded as _Led_ to handle the way most implementation languages expect class casing.
 
 :::tip Why is this Led and not LED?
 
@@ -297,8 +300,8 @@ Because a LOT of programming languages hate multiple capital letters next to eac
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Brightness, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Brightness
 
 **Example**:
 ```json
@@ -325,9 +328,9 @@ Because a LOT of programming languages hate multiple capital letters next to eac
 **Device Examples**: Various axes of the OSR-2/SR-6/SR-1 systems, including the stroker as well as twist/pressure cap/etc mechanisms, possibly other strokers like the Kiiroo Keon or Lovense Solace Pro but with less accuracy than wired devices. Not sure if there's a way to do this with The Handy.
 
 **Fields**
-- Position
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Position to servo to, valid settings are within 0 < x < StepCount 
+- Value
+  - **Type**: Signed 32-bit integer
+  - **Description**: Position to servo to
 
 **Example**:
 ```json
@@ -356,10 +359,10 @@ Because a LOT of programming languages hate multiple capital letters next to eac
 **Fields**
 - Value
   - **Type**: Unsigned 32-bit integer
-  - **Description**: Position to move to over \[duration\] time, valid settings are within 0 < x < StepCount 
+  - **Description**: Position to move to over \[duration\] time, valid settings are within the advertised _Value_ range
 - Duration
   - **Type**: Unsigned 32-bit integer
-  - **Description**: Duration in milliseconds for move to new goal position
+  - **Description**: Duration in milliseconds for move to new goal position, valid settings are within the advertised _Duration_ range
 
 **Example**:
 ```json
