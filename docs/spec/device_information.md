@@ -29,7 +29,19 @@ simplifies the protocol while giving clients full flexibility in how they track 
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device
     Messages.
     * This is a repeat of the map key
-  * _DeviceMessageTimingGap_ (unsigned integer): Minimum gap between device commands, in milliseconds, **enforced by the server in Spec V4+**. If multiple messages are sent within the timespan defined here, the server drops earlier messages and only sends the latest command on the next trigger (a debug-level warning is logged, but no error is returned). This prevents issues with device communication busses with the possibility of buffer backup (like BLE), where devices would stop responding or update with significant delays (e.g., 30+ seconds) when commands were sent faster than the Bluetooth ConnectionInterval allowed. This relieves developers of having to regulate input from users or tune their clients. If this is set to 0, it means there is no minimum update rate.
+  * _DeviceMessageTimingGap_ (unsigned integer): Minimum gap between output command dispatches to this
+    device, in milliseconds, **enforced by the server in Spec V4+**. This applies to `OutputCmd`
+    hardware dispatch only; `InputCmd`, `StopCmd`, and non-device lifecycle messages are not delayed.
+    If multiple `OutputCmd` messages target the same device feature within the timespan defined here,
+    the server may coalesce them and send only the latest command for that feature on the next
+    dispatch trigger. The server still returns an `Ok` or `Error` response for every client message it
+    accepts, even if an earlier output command is superseded before it reaches the device. `StopCmd`
+    bypasses this gap and should clear any pending output command within its selection. This prevents
+    issues with device communication busses with the possibility of buffer backup (like BLE), where
+    devices would stop responding or update with significant delays (e.g., 30+ seconds) when commands
+    were sent faster than the Bluetooth ConnectionInterval allowed. This relieves developers of having
+    to regulate input from users or tune their clients. If this is set to 0, it means there is no
+    minimum update rate.
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
