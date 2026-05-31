@@ -45,7 +45,7 @@ simplifies the protocol while giving clients full flexibility in how they track 
     devices would stop responding or update with significant delays (e.g., 30+ seconds) when commands
     were sent faster than the Bluetooth ConnectionInterval allowed. This relieves developers of having
     to regulate input from users or tune their clients. If this is set to 0, it means there is no
-    minimum update rate.
+    maximum update rate imposed by this field.
   * _DeviceDisplayName_ (_optional_, string): User provided display name for a device. Useful for
     cases where a users may have multiple of the same device connected. Optional field, not required
     to be included in message. Missing value means that no device display name is set, and device
