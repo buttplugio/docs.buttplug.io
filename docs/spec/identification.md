@@ -31,8 +31,8 @@ Messages](deprecated.md#requestserverinfo---spec-v1) for older versions.)
 
 ```mermaid
 sequenceDiagram
-    Client->>Server: RequestServerInfo Id=0
-    Server->>Client: ServerInfo Id=0
+    Client->>Server: RequestServerInfo Id=1
+    Server->>Client: ServerInfo Id=1
 ```
 
 **Serialization Example:**
@@ -76,8 +76,8 @@ None. Server-To-Client message only.
 
 ```mermaid
 sequenceDiagram
-    Client->>Server: RequestServerInfo Id=0
-    Server->>Client: ServerInfo Id=0
+    Client->>Server: RequestServerInfo Id=1
+    Server->>Client: ServerInfo Id=1
 ```
 
 **Serialization Example:**
