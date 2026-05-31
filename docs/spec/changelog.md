@@ -86,11 +86,9 @@
   - [Position](output.md#position) commands a device to move to a position as quickly as possible (servoing).
   - [HwPositionWithDuration](output.md#hwpositionwithduration) commands a device to move to a position over a specified duration
     (the "Hw" prefix indicates this is handled by device hardware, not Buttplug).
-- Added [RotationWithDirection](output.md#rotationwithdirection) OutputType
-  - Provides bidirectional rotation control with an explicit `Clockwise` boolean field.
-  - Devices supporting [RotationWithDirection](output.md#rotationwithdirection) also support the simpler [Rotate](output.md#rotate) command as a fallback.
-- [Rotate](output.md#rotate) actuators can now possibly take negative values
-  - Instead of having a `clockwise` attribute, devices with bidirectional rotation will have a `value` range of negative to positive, with positive being clockwise, negative being counterclockwise.
+- Updated [Rotate](output.md#rotate) to support bidirectional control with signed values
+  - Devices with bidirectional rotation advertise a _Value_ range that includes negative values, with positive values being clockwise and negative values being counterclockwise.
+  - Devices with single-direction rotation continue to advertise a _Value_ range of `[0, x]`.
 - Added [Temperature](output.md#temperature), [Led](output.md#led-encoded-as-led), [Spray](output.md#spray) OutputTypes
   - [Temperature](output.md#temperature) refers to devices with cooling/heating units. This will be communicated as
     negative/positive values, similar to [Rotate](output.md#rotate).

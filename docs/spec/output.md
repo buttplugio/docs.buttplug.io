@@ -140,14 +140,14 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
 
 **Introduced In Spec Version:** 4
 
-**Description**: Sets a rotator speed to a certain amount. It is assumed we cannot control the direction of the rotation for this feature. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_.
+**Description**: Sets a rotator speed to a certain amount. 0 always denotes stop. If the advertised _Value_ range is `[0, x]`, positive values rotate in the device's default direction. If the advertised _Value_ range includes negative values, positive values denote clockwise rotation and negative values denote counterclockwise rotation.
 
-**Device Examples**: Any RotationWithDirection capable device, Lovense Flexer, several Joyhub devices
+**Device Examples**: Lovense Flexer, several Joyhub devices, Lovense Nora, Motorbunny Classic, Nexus Revo, Vorze UFO SA, Cyclone SA
 
 **Fields**
 - Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
+  - **Type**: Signed 32-bit integer
+  - **Description**: Rotation speed and direction, valid settings are within the _Value_ range in _DeviceInfo_
 
 **Example**:
 ```json
@@ -159,40 +159,6 @@ OutputType denotes a thing that a device feature does to a user. Think of it lik
       "Command": {
         "Rotate": {
           "Value": 10
-        }
-      }
-    }
-  }]
-```
-
-### RotationWithDirection
-
-**Introduced In Spec Version:** 4
-
-**Description**: Sets a rotator speed to a certain amount, along with its direction. This resembles [RotateCmd](deprecated.md#rotatecmd) from earlier spec versions. 0 always denotes stop, otherwise valid speeds are between 0 and the _Value_ range in _DeviceInfo_. Note that _RotationWithDirection_ features usually support the simpler _Rotate_ command as a fallback.
-
-**Device Examples**: Lovense Nora, Motorbunny Classic, Nexus Revo, Vorze UFO SA, Cyclone SA,
-
-**Fields**
-- Value
-  - **Type**: Unsigned 32-bit integer
-  - **Description**: Vibrator speed, valid settings are within 0 < x < StepCount 
-- Clockwise
-  - **Type**: Boolean
-  - **Description**: If true, rotate in a clockwise direction. Otherwise, rotate in a
-    counterclockwise direction.  
-
-**Example**:
-```json
-  [{
-    "OutputCmd": {
-      "Id": 1,
-      "DeviceIndex": 0,
-      "FeatureIndex": 0,
-      "Command": {
-        "RotateWithDirection": {
-          "Value": 10,
-          "Clockwise": false
         }
       }
     }

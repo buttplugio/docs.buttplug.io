@@ -126,7 +126,7 @@ sequenceDiagram
               "FeatureIndex": 2,
               "FeatureDescription": "Rotating Head with Directional Control",
               "Output": {
-                "Vibrate": {
+                "Rotate": {
                   "Value": [-20, 20]
                 }
               }
