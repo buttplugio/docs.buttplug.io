@@ -29,6 +29,10 @@ simplifies the protocol while giving clients full flexibility in how they track 
   * _DeviceIndex_ (unsigned integer): Index used to identify the device when sending Device
     Messages.
     * This is a repeat of the map key
+    * Device indexes are stable only while the device appears in the latest `DeviceList`. Servers may
+      reuse a removed device's index for a later connection, including a reconnection of the same
+      physical device. Clients should discard cached feature data and subscriptions when an index
+      disappears from `DeviceList`, and treat a later device with that index as a new device.
   * _DeviceMessageTimingGap_ (unsigned integer): Minimum gap between output command dispatches to this
     device, in milliseconds, **enforced by the server in Spec V4+**. This applies to `OutputCmd`
     hardware dispatch only; `InputCmd`, `StopCmd`, and non-device lifecycle messages are not delayed.
