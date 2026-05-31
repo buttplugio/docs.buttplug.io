@@ -1,9 +1,8 @@
-# Stop Device Messages
+# Stop Messages
 
-Possibly the most important messages in the system, Stop Device Messages stop
-connected devices from doing whatever they are currently doing. **All devices
-support StopDeviceCmd, and this message is not included in device capabilities
-lists in DeviceAdded/DeviceList.**
+Possibly the most important messages in the system, stop messages stop connected devices from doing
+whatever they are currently doing. **All devices support StopCmd, and this message is not included in
+device capabilities lists in DeviceList.**
 
 ---
 ## StopCmd

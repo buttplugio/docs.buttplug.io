@@ -127,10 +127,10 @@ sequenceDiagram
   Server->>-Client: Ok Id=5
   
   Note over Client,Server: The client may instruct the server to<br/>stop a device from whatever it<br/>may be doing.
-  Client->>+Server: StopDeviceCmd Id=6
+  Client->>+Server: StopCmd DeviceIndex=0 Id=6
   Server->>-Client: Ok Id=6
   
   Note over Client,Server: The client may instruct the server to<br/>stop all devices. This is considered<br/> good form for a client that is<br/>shutting down.
-  Client->>+Server: StopAllDevices Id=7
+  Client->>+Server: StopCmd Id=7
   Server->>-Client: Ok Id=7
 ```
