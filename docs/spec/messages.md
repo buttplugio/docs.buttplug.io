@@ -164,8 +164,17 @@ accessible, being to complex to work on and upgrade, etc...
 
 ### Minor Version Differences
 
-As of Spec v4, the Buttplug Protocol now supports Minor Versions. These denote differences in `OutputType`/`InputType`, as well as possibly new Client -> Server message capabilities.
+As of Spec v4, the Buttplug Protocol now supports Minor Versions. These denote additive differences
+in `OutputType`/`InputType`, optional fields, and possibly new Client -> Server message capabilities.
 
-If a server supports a newer minor protocol version than a client, the client should ignore any `OutputType`/`InputType` features it does not understand. There will be no breaking changes, just additions.
+If a server supports a newer minor protocol version than a client, the connection may continue as long
+as the major version matches. The client should ignore any `OutputType`/`InputType` features and
+optional fields it does not understand. Servers must not require clients to use newer-minor messages
+or fields for behaviour that already existed in the client's minor version.
 
-If a client supports a newer minor protocol version than a server, no considerations should be needed. Newer minor versions are a superset of older minor version capabilities, so everything is considered to _just work_.
+If a client supports a newer minor protocol version than a server, the connection may also continue as
+long as the major version matches. The client must treat the server's `ProtocolVersionMinor` from
+`ServerInfo` as the negotiated capability level, and must not send Client -> Server messages, command
+types, fields, `OutputType`s, or `InputType`s introduced after that minor version unless the server
+has explicitly advertised support for them. If it does, the server should treat the message as an
+unsupported or malformed message and return an `Error`.
