@@ -51,8 +51,13 @@ simplifies the protocol while giving clients full flexibility in how they track 
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
       messages like `ValueCmd`, `SensorReadCmd`, etc...
       * This is a repeat of the map key.
-    * _Output_ (Object, may be null): Represents an outputs that are part of this feature. A map of
-      OutputType to information objects. If a feature lists multiple output types, this means that the feature can be controlled through different contexts. For instance, a feature having both _Position_ and _HwPositionWithDuration_ output types means that the feature can move instantaneously to a goal position, or can move to the goal position over a certain amount of itme.
+    * _Output_ (_optional_, Object): Represents outputs that are part of this feature. This field is
+      omitted when a feature has no outputs. A feature must include `Output`, `Input`, or both. A map
+      of OutputType to information objects. If a feature lists multiple output types, this means that
+      the feature can be controlled through different contexts. For instance, a feature having both
+      _Position_ and _HwPositionWithDuration_ output types means that the feature can move
+      instantaneously to a goal position, or can move to the goal position over a certain amount of
+      time.
       * \[_OutputType_\] (OutputType as String): OutputType is used as a key here, so this would be
         something like _Vibrate_, _Position_, etc... [Valid types are listed in the OutputCmd page](./output) **IMPORTANT**: Fields for this will change based on the key value. See below for which fields are valid per output type.
         * _Value_ (Signed 32-bit integer range): Range of the value this output type can be set to.
@@ -62,8 +67,8 @@ simplifies the protocol while giving clients full flexibility in how they track 
         * _Duration_ (Unsigned 32-bit integer range, in milliseconds): Range of duration values, in
           milliseconds, for output types that use time
           * Valid for Output Types: _HwPositionWithDuration_
-    * _Input_ (Object, may be null): Represents a sensor that may be part of this feature. A map of
-      InputType to information objects.
+    * _Input_ (_optional_, Object): Represents inputs that may be part of this feature. This field is
+      omitted when a feature has no inputs. A map of InputType to information objects.
       * \[_InputType_\] (InputType as String): InputType is used as a key here, so this field
         would be something like "Battery", "Pressure", etc...
         * _Command_ (array of string: \["Read", "Subscribe", "Unsubscribe"\]): Some combination of "Read" and/or "Subscribe".
