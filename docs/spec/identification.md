@@ -62,9 +62,9 @@ sequenceDiagram
 
 * _Id_ \(unsigned int\): Message Id
 * _ServerName_ \(string\): Name of the server. Can be null \(0-length, but field will still exist\).
-* _MaxPingTime_ \(uint\): Maximum internal for pings from the client, in milliseconds. If a client
-  takes to longer than this time between sending Ping messages, the server is expected to
-  disconnect.
+* _MaxPingTime_ \(uint\): Maximum interval for pings from the client, in milliseconds. If a client
+  takes longer than this time between sending Ping messages, the server is expected to disconnect. A
+  value of 0 means the server does not require Ping messages for this connection.
 * _ProtocolVersionMajor_ \(uint\): Message spec major version of the client software.
 * _ProtocolVersionMinor_ \(uint\): Message spec minor version of the client software.
 
@@ -118,7 +118,8 @@ the ping timeout mechanism.
 **Expected Response:**
 
 * Ok message with matching Id, followed by server closing the connection.
-* The server may close the connection without sending Ok if the transport supports it.
+* The server may close the connection without sending Ok if the transport supports it. This is an
+  explicit exception to the normal Client -> Server reply rule.
 
 **Flow Diagram:**
 

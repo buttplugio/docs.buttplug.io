@@ -108,7 +108,8 @@ sequenceDiagram
 **Description:** Ping acts a watchdog between the client and the server. The server will expect the
 client to send a ping message at a certain interval (interval will be sent to the client as part of
 the identification step). If the client fails to ping within the specified time, the server will
-disconnect and stop all currently connected devices.
+disconnect and stop all currently connected devices. If the server reports `MaxPingTime` as 0 in
+`ServerInfo`, the server does not require Ping messages.
 
 This will handle cases like the client crashing without a proper disconnect. This is not a
 guaranteed global failsafe, since it will not guard against problems like a client UI thread locking

@@ -42,11 +42,12 @@ There are two types of message flows.
 * Messages can be sent from the server to a client. Messages like DeviceList, ServerInfo, and
   certain device specific input messages can happen without the client making a request. The server
   **will not expect a reply** from the client for these messages.
-* Messages sent from the client to the server **will always receive a reply** from the server. The
-  message type the client will receive in reply is based on the type of message sent. Some messages
-  may receive a simple "Ok" message in reply in order to denote successful receiving, while others
-  may receive something context specific. Messages reply types are listed in the message
-  descriptions section.
+* Messages sent from the client to the server **will receive a reply** from the server, unless a
+  message explicitly documents a transport-level close without a reply, such as
+  [Disconnect](identification.md#disconnect). The message type the client will receive in reply is
+  based on the type of message sent. Some messages may receive a simple "Ok" message in reply in
+  order to denote successful receiving, while others may receive something context specific. Messages
+  reply types are listed in the message descriptions section.
 
 ## A Note On Scaling
 
