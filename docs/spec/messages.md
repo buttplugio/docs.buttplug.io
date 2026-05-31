@@ -146,7 +146,7 @@ introduced in, and is represented as an unsigned integer.
 To establish protocol versions between clients and servers, the client sends the protocol message
 version as part of the [RequestServerInfo](identification.md#requestserverinfo) message (as the
 ProtocolVersionMajor/ProtocolVersionMinor fields), and the server includes its protocol version in
-the [ServerInfo](identification.md#serverinfo) response (as the same fields field).
+the [ServerInfo](identification.md#serverinfo) response (as the same fields).
 
 ### Major Version Differences
 
@@ -158,10 +158,10 @@ the protocol. If a server implementation does not have downgrade capabilities, i
 clients with lower schema versions.
 
 If a client supports a newer major protocol version than a server, this is considered an invalid
-connection situation, and a disconnect should insue. This rule is based on the assumption that the
+connection situation, and a disconnect should ensue. This rule is based on the assumption that the
 user can most likely update the server version to something newer. The client may not be easily
 upgraded for many reasons, such as being a proprietary application or source code not being easily
-accessible, being to complex to work on and upgrade, etc...
+accessible, being too complex to work on and upgrade, etc...
 
 ### Minor Version Differences
 

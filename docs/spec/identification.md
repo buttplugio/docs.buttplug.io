@@ -61,12 +61,12 @@ sequenceDiagram
 **Fields:**
 
 * _Id_ \(unsigned int\): Message Id
-* _ServerName_ \(string\): Name of the server. Can be null \(0-length, but field will still exist\).
+* _ServerName_ \(string\): Name of the server. Can be an empty string, but the field will still exist.
 * _MaxPingTime_ \(uint\): Maximum interval for pings from the client, in milliseconds. If a client
   takes longer than this time between sending Ping messages, the server is expected to disconnect. A
   value of 0 means the server does not require Ping messages for this connection.
-* _ProtocolVersionMajor_ \(uint\): Message spec major version of the client software.
-* _ProtocolVersionMinor_ \(uint\): Message spec minor version of the client software.
+* _ProtocolVersionMajor_ \(uint\): Protocol major version selected by the server for this connection.
+* _ProtocolVersionMinor_ \(uint\): Protocol minor version selected by the server for this connection.
 
 **Expected Response:**
 

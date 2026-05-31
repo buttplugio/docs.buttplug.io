@@ -8,15 +8,14 @@ Controlling devices is done via OutputCmd. Within this message we encode all pos
 
 **Description:** Sends a command to an output of some type. For instance, the vibration speed of a
 vibrator, the oscillating speed of a non-position-based fucking machine, positions with durations to
-strokers, etc... The features portion of the [DeviceList](device_information.md#devicelist) message contains information on the actuator type and description, number of actuators,
-level ranges, and more.
+strokers, etc... The features portion of the [DeviceList](device_information.md#devicelist) message contains information on the output type, feature description, value ranges, and more.
 
 Due to the amount of different value contexts within haptics (vibration speed, oscillation speed,
-inflate/constrict pressures, etc), this message provides flexibility to add new acutuation types
+inflate/constrict pressures, etc), this message provides flexibility to add new actuation types
 without having to introduce new messages into the protocol. The values accepted as output types
 can be extended as needed. Additions of these types will be considered Minor Version bumps.
 
-In practice, OutputCmd is meants to be exposed to developers via crafted APIs, i.e. having
+In practice, OutputCmd is meant to be exposed to developers via crafted APIs, i.e. having
 vibrate()/rotate()/oscillate() etc functions available on a data structure that represents a device
 feature, with the output types denoting which of those methods may be allowed. OutputCmd
 itself can be exposed via API also, but this may lead to a lack of attention to context that could
@@ -43,7 +42,7 @@ As of v4, we move to 1 command per message. This will now require extra logic in
 
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
-* _FeatureIndex_ (unsigned int): Index of actuator
+* _FeatureIndex_ (unsigned int): Index of feature
 * _Command_ (OutputCommand): An object representing the output command. This denotes both the
   context of the command as well as the value.
 

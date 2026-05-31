@@ -53,7 +53,7 @@ simplifies the protocol while giving clients full flexibility in how they track 
   * _DeviceFeatures_ (map of indexes to feature objects, with each object having the following fields)
     * _FeatureDescription_ (string): Text descriptor for a feature.
     * _FeatureIndex_ (unsigned 32-bit integer): Index that should be used to refer to the feature in
-      messages like `ValueCmd`, `SensorReadCmd`, etc...
+      messages like `OutputCmd`, `InputCmd`, etc...
       * This is a repeat of the map key.
     * _Output_ (_optional_, Object): Represents outputs that are part of this feature. This field is
       omitted when a feature has no outputs. A feature must include `Output`, `Input`, or both. A map
@@ -77,7 +77,7 @@ simplifies the protocol while giving clients full flexibility in how they track 
         would be something like "Battery", "Pressure", etc...
         * _Command_ (array of string: \["Read", "Subscribe", "Unsubscribe"\]): Some combination of "Read" and/or "Subscribe".
         * _Value_ (Range, array of 2 signed 32-bit integer values): Range of values that may be
-          received from the sensor, if known.
+          received from the input, if known.
 
 :::tip Range Semantics
 

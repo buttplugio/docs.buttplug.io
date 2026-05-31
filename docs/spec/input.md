@@ -7,7 +7,7 @@ Getting data from devices is done via InputCmd. Within this message we encode al
 ## InputCmd
 
 **Description:** Sends a command to receive input of some type. For instance, the battery level of a
-wireless device, pressure readings from a sensor, axes of an accelerometer, current motor positions,
+wireless device, pressure readings from a sensor, axes of an accelerometer,
 etc... The features portion of the [DeviceList](device_information.md#devicelist) message contains
 information on the input type and description, ranges, and more.
 
@@ -16,7 +16,7 @@ provides flexibility to add new input types without having to introduce new mess
 protocol. The values accepted as input types can be extended as needed. Additions of these types
 will be considered Minor Version bumps.
 
-In practice, InputCmd is meants to be exposed to developers via crafted APIs, i.e. having
+In practice, InputCmd is meant to be exposed to developers via crafted APIs, i.e. having
 battery()/rssi()/subscribe(\[type\]) etc functions available on a data structure that represents a
 device feature, with the input types denoting which of those methods may be allowed.
 
@@ -121,7 +121,7 @@ sequenceDiagram
 * _Id_ (unsigned int): Message Id
 * _DeviceIndex_ (unsigned int): Index of device
 * _FeatureIndex_ (unsigned int): Index of feature
-* _Reading_ (InputData): Data from the sensor, including InputType and the corresponding format. See InputType table below for more information on expected data types.
+* _Reading_ (InputData): Data from the input, including InputType and the corresponding format. See InputType table below for more information on expected data types.
 
 **Expected Response:**
 
