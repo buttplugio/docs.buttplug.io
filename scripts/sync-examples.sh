@@ -94,7 +94,7 @@ sync_rust() {
 
 # Sync TypeScript examples from buttplug-js
 sync_typescript() {
-    local src_dir="$CLIENT_REPOS_DIR/buttplug-js/js/examples/node"
+    local src_dir="$CLIENT_REPOS_DIR/buttplug-js/examples/node"
     local dest_dir="$EXAMPLES_DIR/typescript"
 
     if [[ ! -d "$src_dir" ]]; then
@@ -105,7 +105,7 @@ sync_typescript() {
 
 No examples directory exists in buttplug-js yet.
 
-When examples are added to \`buttplug-js/js/examples/node/\`, run this script to sync them.
+When examples are added to \`buttplug-js/examples/node/\`, run this script to sync them.
 EOF
         return
     fi
@@ -120,7 +120,7 @@ EOF
         git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-js" && git rev-parse --short HEAD)
         echo "- Repository: buttplug-js (TypeScript)" >> "$dest_dir/SYNC_MANIFEST.md"
         echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
-        echo "- Path: js/examples/node/" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: examples/node/" >> "$dest_dir/SYNC_MANIFEST.md"
     fi
 
     echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"
@@ -138,7 +138,7 @@ EOF
 
 # Sync JavaScript web examples
 sync_javascript() {
-    local src_dir="$CLIENT_REPOS_DIR/buttplug-js/js/examples/web"
+    local src_dir="$CLIENT_REPOS_DIR/buttplug-js/examples/web"
     local dest_dir="$EXAMPLES_DIR/javascript"
 
     if [[ ! -d "$src_dir" ]]; then
@@ -159,7 +159,7 @@ EOF
         git_sha=$(cd "$CLIENT_REPOS_DIR/buttplug-js" && git rev-parse --short HEAD)
         echo "- Repository: buttplug-js (JavaScript/TypeScript)" >> "$dest_dir/SYNC_MANIFEST.md"
         echo "- Commit: $git_sha" >> "$dest_dir/SYNC_MANIFEST.md"
-        echo "- Path: js/examples/web/" >> "$dest_dir/SYNC_MANIFEST.md"
+        echo "- Path: examples/web/" >> "$dest_dir/SYNC_MANIFEST.md"
     fi
 
     echo -e "\n## Files\n" >> "$dest_dir/SYNC_MANIFEST.md"

@@ -4,10 +4,10 @@
 // device connection/disconnection events.
 //
 // Include Buttplug via CDN:
-// <script src="https://cdn.jsdelivr.net/npm/buttplug@4.0.0/dist/web/buttplug.min.js"></script>
+// <script src="https://cdn.jsdelivr.net/npm/buttplug@5/dist/web/buttplug.js"></script>
 
 async function runDeviceEnumerationExample() {
-  const client = new Buttplug.ButtplugClient("Device Enumeration Example");
+  const client = new buttplug.ButtplugClient("Device Enumeration Example");
 
   // Set up event handlers BEFORE connecting.
   // This ensures we don't miss any events, including devices
@@ -33,7 +33,7 @@ async function runDeviceEnumerationExample() {
   });
 
   // Connect to the server (requires Intiface Central running)
-  const connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://localhost:12345");
+  const connector = new buttplug.ButtplugBrowserWebsocketClientConnector("ws://localhost:12345");
 
   console.log("Connecting...");
   await client.connect(connector);

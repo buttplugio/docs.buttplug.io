@@ -5,12 +5,12 @@
 // that might block (network, device communication) use async/await.
 //
 // Include Buttplug via CDN:
-// <script src="https://cdn.jsdelivr.net/npm/buttplug@4.0.0/dist/web/buttplug.min.js"></script>
+// <script src="https://cdn.jsdelivr.net/npm/buttplug@5/dist/web/buttplug.js"></script>
 
 async function runAsyncExample() {
   console.log("Running async example");
 
-  const client = new Buttplug.ButtplugClient("Async Example");
+  const client = new buttplug.ButtplugClient("Async Example");
 
   // Events in buttplug-js use EventEmitter3.
   // You can use addListener or on to subscribe to events.
@@ -21,9 +21,9 @@ async function runAsyncExample() {
     console.log(`[Event] Device added: ${device.name}`);
 
     // You can interact with the device in the event handler
-    if (device.hasOutput(Buttplug.OutputType.Vibrate)) {
+    if (device.hasOutput(buttplug.OutputType.Vibrate)) {
       console.log("  Sending welcome vibration...");
-      await device.runOutput(Buttplug.DeviceOutput.Vibrate.percent(0.25));
+      await device.runOutput(buttplug.DeviceOutput.Vibrate.percent(0.25));
       await new Promise(r => setTimeout(r, 200));
       await device.stop();
     }
@@ -47,12 +47,12 @@ async function runAsyncExample() {
 
   // 'inputreading' is fired when subscribed sensor data arrives
   client.addListener("inputreading", (reading) => {
-    console.log(`[Event] Input reading: ${JSON.stringify(reading)}`);
+    console.log(`[Event] ${reading.device.name} ${reading.inputType}: ${reading.value}`);
   });
 
   // Connect asynchronously - this may take time due to network
   console.log("Connecting to server...");
-  const connector = new Buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345");
+  const connector = new buttplug.ButtplugBrowserWebsocketClientConnector("ws://127.0.0.1:12345");
   await client.connect(connector);
   console.log("Connected!");
 
@@ -71,10 +71,10 @@ async function runAsyncExample() {
     if (devices.length > 0) {
       // Send commands to all devices concurrently
       const tasks = devices
-        .filter((d) => d.hasOutput(Buttplug.OutputType.Vibrate))
+        .filter((d) => d.hasOutput(buttplug.OutputType.Vibrate))
         .map(async (device) => {
           console.log(`  Vibrating ${device.name}...`);
-          await device.runOutput(Buttplug.DeviceOutput.Vibrate.percent(0.5));
+          await device.runOutput(buttplug.DeviceOutput.Vibrate.percent(0.5));
           await new Promise(r => setTimeout(r, 500));
           await device.stop();
           console.log(`  ${device.name} stopped.`);
